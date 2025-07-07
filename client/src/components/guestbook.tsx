@@ -124,27 +124,29 @@ export default function Guestbook() {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <Input
-                    placeholder="Your name (first name + last initial is fine)"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    maxLength={50}
-                    required
-                  />
-                </div>
-                <div>
-                  <Select value={role} onValueChange={setRole} required>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select your status" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="Future Student">Future Student</SelectItem>
-                      <SelectItem value="Current Student">Current Student</SelectItem>
-                      <SelectItem value="Graduate">Graduate</SelectItem>
-                      <SelectItem value="Other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <Input
+                      placeholder="Your name (first name + last initial is fine)"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      maxLength={50}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Select value={role} onValueChange={setRole} required>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select your status" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="Future Student">Future Student</SelectItem>
+                        <SelectItem value="Current Student">Current Student</SelectItem>
+                        <SelectItem value="Graduate">Graduate</SelectItem>
+                        <SelectItem value="Other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </div>
                 <div>
                   <Textarea
