@@ -586,6 +586,9 @@ export default function StudyResources() {
                 <Card className="h-full bg-white border-0 shadow-sm hover:shadow-xl transition-all duration-300 rounded-xl overflow-hidden group">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-cyan-400"></div>
                   <CardHeader className="p-6 pb-4">
+                    <div className="flex items-start justify-end mb-3">
+                      {/* Empty space to match Sophia layout structure */}
+                    </div>
                     <CardTitle className="text-lg font-semibold leading-tight mb-2">
                       {course.courseName}
                     </CardTitle>
@@ -595,7 +598,7 @@ export default function StudyResources() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="px-6 pb-6">
-                    <div className="flex items-center gap-4 text-sm text-gray-500 flex-wrap">
+                    <div className="flex items-center gap-4 text-sm text-gray-500">
                       <div className="flex items-center">
                         <Clock className="w-4 h-4 mr-1.5" />
                         <span>{course.completionTime}</span>
