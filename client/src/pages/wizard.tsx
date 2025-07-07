@@ -289,7 +289,7 @@ export default function Wizard() {
                     </div>
 
                     {/* Communication Course Section */}
-                    <div className="p-8">
+                    <div className="p-8 border-b border-gray-100">
                       <div className="flex items-center mb-6">
                         <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
                           <svg className="w-5 h-5 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
@@ -318,6 +318,40 @@ export default function Wizard() {
                             </div>
                           </div>
                         ))}
+                      </div>
+                    </div>
+
+                    {/* What's Next Section */}
+                    <div className="p-8">
+                      <div className="flex items-center mb-6">
+                        <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                          <svg className="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-900">What's Next</h3>
+                      </div>
+                      
+                      <div className="space-y-4 text-gray-600">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                            <span className="text-xs font-medium text-blue-600">1</span>
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-gray-900 mb-1">General Education Courses</h4>
+                            <p className="text-sm">Choose from various categories including Mathematics, Science, Values & Ethical Reasoning, and more. You can select courses from either UoPeople or Sophia Learning.</p>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-start space-x-3">
+                          <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                            <span className="text-xs font-medium text-green-600">2</span>
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-gray-900 mb-1">Elective Courses</h4>
+                            <p className="text-sm">Complete your degree with elective courses. Any Sophia courses not selected for General Education will still be available as electives in the final selection page.</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -784,26 +818,41 @@ export default function Wizard() {
 
         {/* Navigation */}
         <div className="flex justify-between items-center mt-8">
-          <Button 
-            onClick={handleBack}
-            disabled={currentStep === 1}
-            variant="outline"
-            className={`font-semibold py-3 px-6 rounded-xl ${currentStep === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
-          >
-            <ArrowLeft className="mr-2" size={16} />
-            Back
-          </Button>
-          
-          <div className="flex-1" />
-          
-          {currentStep < totalSteps && (
-            <Button 
-              onClick={handleNext}
-              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              Next Step
-              <ArrowRight className="ml-2" size={16} />
-            </Button>
+          {currentStep === 1 ? (
+            /* Foundation page navigation - No back button, custom next button */
+            <div className="flex justify-center w-full">
+              <Button 
+                onClick={handleNext}
+                className="bg-primary hover:bg-primary/90 font-semibold py-3 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                Start Planning
+                <ArrowRight className="ml-2" size={18} />
+              </Button>
+            </div>
+          ) : (
+            /* Regular navigation for other pages */
+            <>
+              <Button 
+                onClick={handleBack}
+                variant="outline"
+                className="font-semibold py-3 px-6 rounded-xl"
+              >
+                <ArrowLeft className="mr-2" size={16} />
+                Back
+              </Button>
+              
+              <div className="flex-1" />
+              
+              {currentStep < totalSteps && (
+                <Button 
+                  onClick={handleNext}
+                  className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  Next Step
+                  <ArrowRight className="ml-2" size={16} />
+                </Button>
+              )}
+            </>
           )}
         </div>
       </div>
