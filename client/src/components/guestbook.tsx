@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { MessageSquare, User, Calendar } from "lucide-react";
+import { MessageSquare, User, Calendar, AlertTriangle, ExternalLink } from "lucide-react";
 
 interface GuestbookEntry {
   id: string;
@@ -30,9 +30,21 @@ const sampleEntries: GuestbookEntry[] = [
   },
   {
     id: "3",
+    name: "Maria L.",
+    message: "Amazing work! This tool helped me save over $1000 on my degree. Thank you to whoever built this!",
+    timestamp: "1 week ago"
+  },
+  {
+    id: "4",
     name: "Jordan T.",
-    message: "Could you add estimated completion times for each course? Otherwise this is perfect for planning my degree path.",
+    message: "Perfect for planning my degree path. Really appreciate having all the information in one place.",
     timestamp: "2 weeks ago"
+  },
+  {
+    id: "5",
+    name: "David K.",
+    message: "Thank you for making this free and accessible to everyone. This is exactly what UoPeople students need!",
+    timestamp: "3 weeks ago"
   }
 ];
 
@@ -78,8 +90,8 @@ export default function Guestbook() {
             Student Guestbook
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            Share your experience, leave feedback, or let us know about course changes you've noticed. 
-            Your input helps improve this tool for future students.
+            Share your appreciation, success stories, or thank you messages with the community. 
+            Your positive experiences inspire and help other students on their academic journey.
           </p>
         </motion.div>
 
@@ -111,7 +123,7 @@ export default function Guestbook() {
                 </div>
                 <div>
                   <Textarea
-                    placeholder="Share your experience, feedback, or report course changes..."
+                    placeholder="Share your success story, thank the creator, or leave an encouraging message for other students..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     rows={4}
@@ -171,12 +183,42 @@ export default function Guestbook() {
           </div>
         </motion.div>
 
-        {/* Note about feedback */}
+        {/* Course Changes Report Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-12"
+        >
+          <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
+            <div className="flex items-start">
+              <AlertTriangle className="text-orange-600 mr-3 mt-1 flex-shrink-0" size={20} />
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-orange-900 mb-2">
+                  Report Course or Exam Changes
+                </h3>
+                <p className="text-orange-800 mb-4">
+                  If you've noticed changes to UoPeople courses, Sophia course availability, 
+                  or transfer policies that affect the information on this site, please report them.
+                </p>
+                <Button variant="outline" className="border-orange-300 text-orange-700 hover:bg-orange-100" asChild>
+                  <a href="https://forms.gle/coursechanges" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2" size={16} />
+                    Report Course Changes
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Note about tool */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-8 text-center"
         >
           <div className="bg-blue-50 rounded-lg p-4">
