@@ -24,11 +24,11 @@ export default function CourseCard({ course, isSelected, onSelect }: CourseCardP
         style={isSelected ? { backgroundColor: 'hsl(var(--primary) / 0.05)' } : {}}
         onClick={onSelect}
       >
-        <CardContent className="p-3">
+        <CardContent className="p-4">
           <div className="flex items-start justify-between">
             <div className="flex-1">
-              <h4 className="font-semibold text-gray-800 mb-1 text-sm">{course.name}</h4>
-              <p className="text-xs text-gray-600 mb-2 line-clamp-2">{course.description}</p>
+              <h4 className="font-semibold text-gray-800 mb-1">{course.name}</h4>
+              <p className="text-sm text-gray-600 mb-2">{course.description}</p>
               <Badge variant="secondary" className="text-xs">
                 {course.credits} Credits
               </Badge>

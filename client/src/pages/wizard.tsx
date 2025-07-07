@@ -217,7 +217,7 @@ export default function Wizard() {
         categories={categories}
       />
 
-      <div className="max-w-6xl mx-auto px-6 py-6">
+      <div className="max-w-6xl mx-auto px-6 py-8">
         <AnimatePresence mode="wait">
           {isCoursePage ? (
             <motion.div
@@ -228,11 +228,11 @@ export default function Wizard() {
               transition={{ duration: 0.3 }}
             >
               {/* Category Header */}
-              <div className="text-center mb-6">
-                <h1 className="text-3xl font-bold text-gray-800 mb-2">
+              <div className="text-center mb-8">
+                <h1 className="text-4xl font-bold text-gray-800 mb-2">
                   {currentCategory.name} Courses
                 </h1>
-                <p className="text-base text-gray-600 max-w-2xl mx-auto mb-3">
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-4">
                   {currentCategory.description}
                 </p>
                 
@@ -351,21 +351,21 @@ export default function Wizard() {
                 </div>
               ) : currentCategory.id === 'math' ? (
                 /* Math Category - Special Pairs Layout */
-                <div className="space-y-6">
+                <div className="space-y-8">
                   {/* Algebra Pair */}
                   {uopeopleCourses.find(c => c.name.includes('College Algebra')) && (
-                    <div className="bg-white rounded-lg shadow-lg p-4">
-                      <h3 className="text-lg font-semibold text-gray-800 mb-3 text-center">Algebra (Pick One)</h3>
-                      <div className="grid lg:grid-cols-2 gap-4">
+                    <div className="bg-white rounded-lg shadow-lg p-6">
+                      <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">Algebra (Pick One)</h3>
+                      <div className="grid lg:grid-cols-2 gap-6">
                         {/* UoPeople Option */}
                         <div>
-                          <div className="flex items-center mb-3">
-                            <div className="provider-icon uopeople-icon mr-3">
-                              <University size={20} />
+                          <div className="flex items-center mb-4">
+                            <div className="provider-icon uopeople-icon mr-4">
+                              <University size={24} />
                             </div>
                             <div>
-                              <h4 className="text-base font-semibold text-gray-800">UoPeople</h4>
-                              <p className="text-gray-600 text-xs">University of the People</p>
+                              <h4 className="text-lg font-semibold text-gray-800">UoPeople</h4>
+                              <p className="text-gray-600 text-sm">University of the People</p>
                             </div>
                           </div>
                           <CourseCard
@@ -377,16 +377,16 @@ export default function Wizard() {
 
                         {/* Sophia Options */}
                         <div>
-                          <div className="flex items-center mb-3">
-                            <div className="provider-icon sophia-icon mr-3">
-                              <GraduationCap size={20} />
+                          <div className="flex items-center mb-4">
+                            <div className="provider-icon sophia-icon mr-4">
+                              <GraduationCap size={24} />
                             </div>
                             <div>
-                              <h4 className="text-base font-semibold text-gray-800">Sophia</h4>
-                              <p className="text-gray-600 text-xs">Sophia Learning</p>
+                              <h4 className="text-lg font-semibold text-gray-800">Sophia</h4>
+                              <p className="text-gray-600 text-sm">Sophia Learning</p>
                             </div>
                           </div>
-                          <div className="space-y-2">
+                          <div className="space-y-3">
                             {sophiaCourses.filter(c => 
                               c.name.includes('Introduction to College Mathematics') || 
                               c.name.includes('College Algebra') || 
@@ -423,9 +423,9 @@ export default function Wizard() {
 
                   {/* Calculus Pair */}
                   {uopeopleCourses.find(c => c.name.includes('Calculus')) && sophiaCourses.find(c => c.name.includes('Calculus')) && (
-                    <div className="bg-white rounded-lg shadow-lg p-4">
-                      <h3 className="text-lg font-semibold text-gray-800 mb-3 text-center">Calculus (Pick One)</h3>
-                      <div className="grid lg:grid-cols-2 gap-4">
+                    <div className="bg-white rounded-lg shadow-lg p-6">
+                      <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">Calculus (Pick One)</h3>
+                      <div className="grid lg:grid-cols-2 gap-6">
                         <CourseCard
                           course={uopeopleCourses.find(c => c.name.includes('Calculus'))!}
                           isSelected={selectedCourses.some(c => c.id === uopeopleCourses.find(uo => uo.name.includes('Calculus'))?.id)}
@@ -442,9 +442,9 @@ export default function Wizard() {
 
                   {/* Statistics Pair */}
                   {uopeopleCourses.find(c => c.name.includes('Statistics')) && sophiaCourses.find(c => c.name.includes('Statistics')) && (
-                    <div className="bg-white rounded-lg shadow-lg p-4">
-                      <h3 className="text-lg font-semibold text-gray-800 mb-3 text-center">Statistics (Pick One)</h3>
-                      <div className="grid lg:grid-cols-2 gap-4">
+                    <div className="bg-white rounded-lg shadow-lg p-6">
+                      <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">Statistics (Pick One)</h3>
+                      <div className="grid lg:grid-cols-2 gap-6">
                         <CourseCard
                           course={uopeopleCourses.find(c => c.name.includes('Statistics'))!}
                           isSelected={selectedCourses.some(c => c.id === uopeopleCourses.find(uo => uo.name.includes('Statistics'))?.id)}
@@ -461,21 +461,21 @@ export default function Wizard() {
                 </div>
               ) : currentCategory.id === 'electives' ? (
                 /* Electives Category - Special Layout */
-                <div className="grid lg:grid-cols-2 gap-6">
+                <div className="grid lg:grid-cols-2 gap-8">
                   {/* UoPeople Computer Science Electives */}
                   <Card className="shadow-lg">
-                    <CardContent className="p-4">
-                      <div className="flex items-center mb-4">
-                        <div className="provider-icon uopeople-icon mr-3">
-                          <University size={20} />
+                    <CardContent className="p-6">
+                      <div className="flex items-center mb-6">
+                        <div className="provider-icon uopeople-icon mr-4">
+                          <University size={24} />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-800">Computer Science Electives</h3>
-                          <p className="text-gray-600 text-xs">UoPeople Major-Related Courses</p>
+                          <h3 className="text-xl font-semibold text-gray-800">Computer Science Electives</h3>
+                          <p className="text-gray-600 text-sm">UoPeople Major-Related Courses</p>
                         </div>
                       </div>
 
-                      <div className="space-y-3">
+                      <div className="space-y-4">
                         {isLoading ? (
                           <div className="space-y-4">
                             {[1, 2, 3].map(i => (
@@ -498,18 +498,18 @@ export default function Wizard() {
 
                   {/* Sophia General Electives + Previously Non-picked */}
                   <Card className="shadow-lg">
-                    <CardContent className="p-4">
-                      <div className="flex items-center mb-4">
-                        <div className="provider-icon sophia-icon mr-3">
-                          <GraduationCap size={20} />
+                    <CardContent className="p-6">
+                      <div className="flex items-center mb-6">
+                        <div className="provider-icon sophia-icon mr-4">
+                          <GraduationCap size={24} />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-800">General Electives</h3>
-                          <p className="text-gray-600 text-xs">Sophia Non-Major Courses</p>
+                          <h3 className="text-xl font-semibold text-gray-800">General Electives</h3>
+                          <p className="text-gray-600 text-sm">Sophia Non-Major Courses</p>
                         </div>
                       </div>
 
-                      <div className="space-y-3">
+                      <div className="space-y-4">
                         {isLoading ? (
                           <div className="space-y-4">
                             {[1, 2, 3].map(i => (
@@ -560,21 +560,21 @@ export default function Wizard() {
                 </div>
               ) : (
                 /* All Other Categories - Standard Split Layout */
-                <div className="grid lg:grid-cols-2 gap-6">
+                <div className="grid lg:grid-cols-2 gap-8">
                   {/* UoPeople Courses */}
                   <Card className="shadow-lg">
-                    <CardContent className="p-4">
-                      <div className="flex items-center mb-4">
-                        <div className="provider-icon uopeople-icon mr-3">
-                          <University size={20} />
+                    <CardContent className="p-6">
+                      <div className="flex items-center mb-6">
+                        <div className="provider-icon uopeople-icon mr-4">
+                          <University size={24} />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-800">UoPeople Courses</h3>
-                          <p className="text-gray-600 text-xs">University of the People</p>
+                          <h3 className="text-xl font-semibold text-gray-800">UoPeople Courses</h3>
+                          <p className="text-gray-600 text-sm">University of the People</p>
                         </div>
                       </div>
 
-                      <div className="space-y-3">
+                      <div className="space-y-4">
                         {isLoading ? (
                           <div className="space-y-4">
                             {[1, 2, 3].map(i => (
@@ -597,18 +597,18 @@ export default function Wizard() {
 
                   {/* Sophia Courses */}
                   <Card className="shadow-lg">
-                    <CardContent className="p-4">
-                      <div className="flex items-center mb-4">
-                        <div className="provider-icon sophia-icon mr-3">
-                          <GraduationCap size={20} />
+                    <CardContent className="p-6">
+                      <div className="flex items-center mb-6">
+                        <div className="provider-icon sophia-icon mr-4">
+                          <GraduationCap size={24} />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-800">Sophia Courses</h3>
-                          <p className="text-gray-600 text-xs">Sophia Learning</p>
+                          <h3 className="text-xl font-semibold text-gray-800">Sophia Courses</h3>
+                          <p className="text-gray-600 text-sm">Sophia Learning</p>
                         </div>
                       </div>
 
-                      <div className="space-y-3">
+                      <div className="space-y-4">
                         {isLoading ? (
                           <div className="space-y-4">
                             {[1, 2, 3].map(i => (
