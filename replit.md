@@ -111,6 +111,7 @@ This is a full-stack course selection wizard application built with React, Expre
 - July 07, 2025. Removed banner images from all category pages and summary page for cleaner, more focused interface.
 - July 07, 2025. Added Electives category page after General Education categories and before summary. Features Computer Science electives from UoPeople on left, and general electives from Sophia on right (including previously non-picked Sophia courses from other categories).
 - July 07, 2025. Moved mandatory Communication course (COM 2001 Professional Communication) from Communication category page to Foundation category page alongside other mandatory courses. Communication category now only shows additional course selection options.
+- July 07, 2025. Updated Foundation page title to "Mandatory Foundation & Communication Courses" and reorganized layout to clearly group all mandatory UoPeople courses together in a single container with subsections.
 
 ## User Preferences
 
