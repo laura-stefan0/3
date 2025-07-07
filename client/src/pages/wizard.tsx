@@ -12,7 +12,8 @@ import { useToast } from "@/hooks/use-toast";
 import { nanoid } from "nanoid";
 
 const categories = [
-  { id: 'communication', name: 'Communication', description: 'Pick one course option between UoPeople and Sophia.', maxSelections: 1 },
+  { id: 'foundations', name: 'Foundation Courses', description: 'These mandatory UoPeople courses are automatically assigned to all new students.', maxSelections: 2, readonly: true },
+  { id: 'communication', name: 'Communication', description: 'COM 2001 is mandatory. Pick one additional course option between UoPeople and Sophia.', maxSelections: 2 },
   { id: 'math', name: 'Mathematics', description: 'Pick one course from each of the three pairs (Algebra, Calculus, Statistics).', maxSelections: 3 },
   { id: 'values', name: 'Values and Ethical Reasoning', description: 'Pick one course option between UoPeople and Sophia.', maxSelections: 1 },
   { id: 'civilization', name: 'Civilization Studies, Cultures, and Beliefs', description: 'Pick only one course between these options.', maxSelections: 1 },
@@ -22,6 +23,7 @@ const categories = [
 ];
 
 const categoryImages = {
+  foundations: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
   communication: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
   math: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
   values: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
@@ -41,6 +43,17 @@ export default function Wizard() {
     queryKey: ['/api/courses'],
   });
 
+  // Auto-select mandatory courses when courses are loaded
+  useEffect(() => {
+    if (courses && selectedCourses.length === 0) {
+      const mandatoryCourses = courses.filter(course => 
+        course.category === 'foundations' || 
+        course.name === 'COM 2001 Professional Communication'
+      );
+      setSelectedCourses(mandatoryCourses);
+    }
+  }, [courses, selectedCourses.length]);
+
   const currentCategory = categories[currentStep - 1];
   const totalSteps = categories.length + 1; // +1 for summary
 
@@ -53,6 +66,18 @@ export default function Wizard() {
   ) || [];
 
   const handleCourseSelect = (course: Course) => {
+    // Prevent deselection of mandatory courses
+    if (course.category === 'foundations' || course.name === 'COM 2001 Professional Communication') {
+      setTimeout(() => {
+        toast({
+          title: "Mandatory Course",
+          description: "This course is mandatory and cannot be deselected.",
+          variant: "destructive"
+        });
+      }, 0);
+      return;
+    }
+
     setSelectedCourses(prev => {
       const isSelected = prev.some(c => c.id === course.id);
       if (isSelected) {
@@ -60,6 +85,16 @@ export default function Wizard() {
       } else {
         const currentCategorySelections = prev.filter(c => c.category === course.category);
         const maxSelections = currentCategory.maxSelections;
+        
+        // Special handling for communication category (excluding mandatory course)
+        if (course.category === 'communication') {
+          const nonMandatorySelections = currentCategorySelections.filter(c => c.name !== 'COM 2001 Professional Communication');
+          if (nonMandatorySelections.length >= 1) {
+            // Replace the existing non-mandatory selection
+            return prev.filter(c => c.category !== 'communication' || c.name === 'COM 2001 Professional Communication').concat(course);
+          }
+          return [...prev, course];
+        }
         
         // Special handling for math pairs
         if (course.category === 'math') {
@@ -203,7 +238,111 @@ export default function Wizard() {
               </div>
 
               {/* Course Layout */}
-              {currentCategory.id === 'math' ? (
+              {currentCategory.id === 'foundations' ? (
+                /* Foundations Category - Read-only Information */
+                <div className="space-y-6">
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 className="text-lg font-semibold text-blue-800 mb-3">
+                      📚 Mandatory Foundation Courses
+                    </h3>
+                    <p className="text-blue-700 mb-4">
+                      These courses are automatically assigned to all new UoPeople students and must be completed first. 
+                      They cannot be substituted with Sophia courses.
+                    </p>
+                    <div className="grid gap-4">
+                      {uopeopleCourses.map(course => (
+                        <div key={course.id} className="bg-white rounded-lg p-4 border border-blue-200">
+                          <div className="flex items-center justify-between">
+                            <div>
+                              <h4 className="font-semibold text-gray-800">{course.name}</h4>
+                              <p className="text-sm text-gray-600 mt-1">{course.description}</p>
+                              <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mt-2">
+                                {course.credits} Credits • UoPeople Only
+                              </span>
+                            </div>
+                            <div className="text-green-600">
+                              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : currentCategory.id === 'communication' ? (
+                /* Communication Category - With Mandatory Course */
+                <div className="space-y-6">
+                  {/* Mandatory Course */}
+                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                    <h3 className="text-lg font-semibold text-orange-800 mb-3">
+                      📝 Mandatory Communication Course
+                    </h3>
+                    <p className="text-orange-700 mb-4">
+                      This course is required for all students and must be taken at UoPeople.
+                    </p>
+                    {courses?.filter(c => c.name === 'COM 2001 Professional Communication').map(course => (
+                      <div key={course.id} className="bg-white rounded-lg p-4 border border-orange-200">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <h4 className="font-semibold text-gray-800">{course.name}</h4>
+                            <p className="text-sm text-gray-600 mt-1">{course.description}</p>
+                            <span className="inline-block bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded mt-2">
+                              {course.credits} Credits • UoPeople Only
+                            </span>
+                          </div>
+                          <div className="text-green-600">
+                            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Additional Communication Course Choice */}
+                  <div className="bg-white border border-gray-200 rounded-lg p-6">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                      ➕ Choose One Additional Communication Course
+                    </h3>
+                    <div className="grid lg:grid-cols-2 gap-6">
+                      {/* UoPeople Option */}
+                      <div>
+                        <h4 className="font-medium text-gray-700 mb-3 flex items-center">
+                          <University size={20} className="mr-2 text-primary" />
+                          UoPeople Option
+                        </h4>
+                        {uopeopleCourses.filter(c => c.name !== 'COM 2001 Professional Communication').map(course => (
+                          <CourseCard
+                            key={course.id}
+                            course={course}
+                            isSelected={selectedCourses.some(c => c.id === course.id)}
+                            onSelect={() => handleCourseSelect(course)}
+                          />
+                        ))}
+                      </div>
+                      
+                      {/* Sophia Option */}
+                      <div>
+                        <h4 className="font-medium text-gray-700 mb-3 flex items-center">
+                          <GraduationCap size={20} className="mr-2 text-accent" />
+                          Sophia Option
+                        </h4>
+                        {sophiaCourses.map(course => (
+                          <CourseCard
+                            key={course.id}
+                            course={course}
+                            isSelected={selectedCourses.some(c => c.id === course.id)}
+                            onSelect={() => handleCourseSelect(course)}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : currentCategory.id === 'math' ? (
                 /* Math Category - Special Pairs Layout */
                 <div className="space-y-8">
                   {/* Algebra Pair */}

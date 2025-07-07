@@ -106,6 +106,7 @@ This is a full-stack course selection wizard application built with React, Expre
   - Humanities: Pick 2 courses (multiple options each provider)
   - Social & Behavioral Sciences: Pick 2 courses (multiple options each provider)
 - July 07, 2025. Updated progress bar to show animated scrollbar with percentage instead of category names
+- July 07, 2025. Added Foundation Courses category with mandatory UoPeople courses (UNIV 0001, UNIV 1001) that auto-select and cannot be changed. Updated Communication category to include mandatory COM 2001 Professional Communication course plus one additional selectable course.
 
 ## User Preferences
 

@@ -36,7 +36,12 @@ export class MemStorage implements IStorage {
 
   private initializeCourses() {
     const courseData = [
-      // Communication (pick one or the other)
+      // Foundation Courses (mandatory UoPeople courses)
+      { name: 'UNIV 0001 Orientation', provider: 'uopeople', category: 'foundations', credits: 1, description: 'Introduction to University of the People and online learning environment.' },
+      { name: 'UNIV 1001 Online Education Strategies', provider: 'uopeople', category: 'foundations', credits: 3, description: 'Strategies for success in online education and academic writing.' },
+      
+      // Communication (COM 2001 is mandatory UoPeople, plus one additional choice)
+      { name: 'COM 2001 Professional Communication', provider: 'uopeople', category: 'communication', credits: 3, description: 'Professional communication skills for workplace and academic settings.' },
       { name: 'ENGL 1102 Composition 2', provider: 'uopeople', category: 'communication', credits: 3, description: 'Advanced writing techniques and research methods.' },
       { name: 'Foundations of English Composition', provider: 'sophia', category: 'communication', credits: 3, description: 'Comprehensive writing course with peer review.' },
       
