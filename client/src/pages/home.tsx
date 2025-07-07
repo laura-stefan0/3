@@ -79,8 +79,84 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Simple How It Works Section */}
+      {/* Three Steps Section */}
       <div className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              How It Works
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Three simple steps to plan your academic path at UoPeople
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-blue-600">1</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Choose General Education Courses
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Select from UoPeople courses or Sophia Learning equivalents for each General Education category. Compare options and pick what works best for your schedule and budget.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-green-600">2</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Choose Elective Courses
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Pick between major-related courses at UoPeople that advance your CS knowledge, or other elective courses that interest you. Fill your remaining credit requirements.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-purple-600">3</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Download Your Plan
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Get a complete overview of your course selections with credit counts, cost estimates, and a clear roadmap for your degree completion.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Simple How It Works Section */}
+      <div className="py-16 bg-gray-50">
         <div className="max-w-3xl mx-auto px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -131,7 +207,7 @@ export default function Home() {
       </div>
 
       {/* Simple Info Section */}
-      <div className="py-16 bg-gray-50">
+      <div className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
