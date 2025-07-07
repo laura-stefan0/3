@@ -231,9 +231,10 @@ export default function Home() {
                 {/* Chat bubble */}
                 <div className="bg-white rounded-2xl rounded-tl-sm p-6 shadow-lg border border-gray-100 max-w-2xl">
                   <p className="text-gray-700 leading-relaxed text-lg mb-4">
-                    Hi! I'm Laura, starting my CS degree at UoPeople. I made this site to organize my study notes 
-                    and share what I've learned about using Sophia courses to save money on Gen Ed requirements. 
-                    Feel free to use anything that helps.
+                    Hi! I'm starting my CS degree at UoPeople in September 2025. I created this website to organize 
+                    and share my study notes and materials, plus everything I've learned about using Sophia courses 
+                    to save money on your degree. Feel free to use anything that helps with your studies — and if 
+                    it does help, I'd really appreciate a thank you message on the guestbook! 😊
                   </p>
                   
                   <div className="flex items-center gap-2 text-sm text-gray-500">
