@@ -92,15 +92,15 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+              className="bg-white rounded-lg p-8 border border-gray-100"
             >
-              <div className="mb-4 flex justify-center">
-                <HiOutlineFire className="text-blue-500 text-5xl" />
+              <div className="mb-6 flex justify-center">
+                <HiOutlineFire className="text-blue-500 text-4xl" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
                 Programming Notes
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-center text-sm">
                 Comprehensive notes for Java, Python, C++, and web development courses with examples and best practices.
               </p>
             </motion.div>
@@ -110,15 +110,15 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+              className="bg-white rounded-lg p-8 border border-gray-100"
             >
-              <div className="mb-4 flex justify-center">
-                <HiOutlineSparkles className="text-green-500 text-5xl" />
+              <div className="mb-6 flex justify-center">
+                <HiOutlineSparkles className="text-green-500 text-4xl" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
                 Study Strategies
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-center text-sm">
                 Proven study techniques specifically for CS subjects, time management tips, and exam preparation strategies.
               </p>
             </motion.div>
@@ -128,15 +128,15 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+              className="bg-white rounded-lg p-8 border border-gray-100"
             >
-              <div className="mb-4 flex justify-center">
-                <HiOutlinePuzzle className="text-purple-500 text-5xl" />
+              <div className="mb-6 flex justify-center">
+                <HiOutlinePuzzle className="text-purple-500 text-4xl" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
                 Course Planning
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-center text-sm">
                 Smart course selection tool to optimize your degree path, save money, and graduate faster.
               </p>
             </motion.div>
@@ -146,15 +146,15 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+              className="bg-white rounded-lg p-8 border border-gray-100"
             >
-              <div className="mb-4 flex justify-center">
-                <HiOutlineStar className="text-orange-500 text-5xl" />
+              <div className="mb-6 flex justify-center">
+                <HiOutlineStar className="text-orange-500 text-4xl" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
                 Project Ideas
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-center text-sm">
                 Inspiring project ideas for your portfolio, capstone projects, and skill development with implementation guides.
               </p>
             </motion.div>
@@ -164,15 +164,15 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+              className="bg-white rounded-lg p-8 border border-gray-100"
             >
-              <div className="mb-4 flex justify-center">
-                <HiOutlineLightBulb className="text-red-500 text-5xl" />
+              <div className="mb-6 flex justify-center">
+                <HiOutlineLightBulb className="text-red-500 text-4xl" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
                 Time Management
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-center text-sm">
                 Balance work, studies, and life effectively with proven time management techniques for busy students.
               </p>
             </motion.div>
@@ -182,15 +182,15 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="bg-gradient-to-br from-teal-50 to-teal-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+              className="bg-white rounded-lg p-8 border border-gray-100"
             >
-              <div className="mb-4 flex justify-center">
-                <HiOutlineHeart className="text-teal-500 text-5xl" />
+              <div className="mb-6 flex justify-center">
+                <HiOutlineHeart className="text-teal-500 text-4xl" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
                 Community Tips
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-center text-sm">
                 Learn from fellow students' experiences, networking tips, and collaborative study approaches.
               </p>
             </motion.div>
