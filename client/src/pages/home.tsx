@@ -144,7 +144,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="mb-12 text-left"
           >
             <h2 className="text-3xl font-semibold text-gray-900 mb-6 text-left">
               About This Project
