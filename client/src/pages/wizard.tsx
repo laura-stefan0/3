@@ -357,13 +357,18 @@ export default function Wizard() {
                   {uopeopleCourses.find(c => c.name.includes('College Algebra')) && (
                     <div className="bg-white rounded-lg shadow-lg p-6">
                       <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">Algebra (Pick One)</h3>
-                      <div className="grid gap-6">
+                      <div className="grid lg:grid-cols-2 gap-6">
                         {/* UoPeople Option */}
                         <div>
-                          <h4 className="font-medium text-gray-700 mb-3 flex items-center">
-                            <University size={20} className="mr-2 text-primary" />
-                            UoPeople Option
-                          </h4>
+                          <div className="flex items-center mb-4">
+                            <div className="provider-icon uopeople-icon mr-4">
+                              <University size={24} />
+                            </div>
+                            <div>
+                              <h4 className="text-lg font-semibold text-gray-800">UoPeople</h4>
+                              <p className="text-gray-600 text-sm">University of the People</p>
+                            </div>
+                          </div>
                           <CourseCard
                             course={uopeopleCourses.find(c => c.name.includes('College Algebra'))!}
                             isSelected={selectedCourses.some(c => c.id === uopeopleCourses.find(uo => uo.name.includes('College Algebra'))?.id)}
@@ -373,10 +378,15 @@ export default function Wizard() {
 
                         {/* Sophia Options */}
                         <div>
-                          <h4 className="font-medium text-gray-700 mb-3 flex items-center">
-                            <GraduationCap size={20} className="mr-2 text-accent" />
-                            Sophia Options
-                          </h4>
+                          <div className="flex items-center mb-4">
+                            <div className="provider-icon sophia-icon mr-4">
+                              <GraduationCap size={24} />
+                            </div>
+                            <div>
+                              <h4 className="text-lg font-semibold text-gray-800">Sophia</h4>
+                              <p className="text-gray-600 text-sm">Sophia Learning</p>
+                            </div>
+                          </div>
                           <div className="space-y-3">
                             {sophiaCourses.filter(c => 
                               c.name.includes('Introduction to College Mathematics') || 
