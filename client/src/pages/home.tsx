@@ -67,6 +67,105 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
+
+      {/* How It Works Section */}
+      <div className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              How It Works
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Get your personalized course plan in just three simple steps
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Step 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-center group hover:scale-105 transition-transform duration-300"
+            >
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-shadow">
+                <span className="text-3xl font-bold text-white">1</span>
+              </div>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                Pick General Education
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Choose from UoPeople and Sophia courses across categories like Math, Science, and Humanities to fulfill your requirements.
+              </p>
+            </motion.div>
+
+            {/* Step 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-center group hover:scale-105 transition-transform duration-300"
+            >
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-shadow">
+                <span className="text-3xl font-bold text-white">2</span>
+              </div>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                Select Electives
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Complete your degree with elective courses that match your interests and career goals from both platforms.
+              </p>
+            </motion.div>
+
+            {/* Step 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center group hover:scale-105 transition-transform duration-300"
+            >
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-shadow">
+                <span className="text-3xl font-bold text-white">3</span>
+              </div>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                Download Your Plan
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Get your personalized course roadmap instantly. Save time and money with an optimized academic path.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Call to Action */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center mt-16"
+          >
+            <Button 
+              onClick={handleStartPlanning}
+              className="bg-primary hover:bg-primary/90 text-white font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              <Rocket className="mr-2" size={20} />
+              Start Your Plan Now
+            </Button>
+            <p className="text-sm text-gray-500 mt-3">
+              Free to use • No registration required
+            </p>
+          </motion.div>
+        </div>
+      </div>
     </div>
   );
 }
