@@ -149,7 +149,7 @@ export default function Home() {
             <h2 className="text-3xl font-semibold text-gray-900 mb-6 text-left">
               About This Project
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto text-left">
+            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
               A personal project born from the need to plan my degree journey and organize resources and study materials.
             </p>
           </motion.div>
