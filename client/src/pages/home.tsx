@@ -160,7 +160,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div 
-            className="max-w-4xl mx-auto flex justify-center"
+            className="max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
