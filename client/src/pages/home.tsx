@@ -36,8 +36,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Your go-to resource for CS notes, course planning, and proven strategies to save time and money 
-            on your UoPeople degree. Made by a student, for students.
+            Study materials, notes, Sophia tips and a course planner to help you in your degree. Made by a student, for students.
           </motion.p>
           
           <motion.div
@@ -80,9 +79,6 @@ export default function Home() {
             <h2 className="text-3xl font-semibold text-gray-900 mb-6">
               What You'll Find Here
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed mb-6">
-              Everything you need to succeed in your UoPeople Computer Science degree - from course planning tools to study resources, all organized by a fellow student.
-            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -97,10 +93,10 @@ export default function Home() {
                 <HiOutlineFire className="text-blue-500 text-4xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                Study Resources
+                Study Resources (coming)
               </h3>
               <p className="text-gray-600 leading-relaxed text-center text-sm">
-                Curated study materials, notes, and resources to help you excel in your Computer Science courses.
+                Study materials, notes, and resources I'm using for Computer Science courses.
               </p>
             </motion.div>
 
@@ -115,10 +111,10 @@ export default function Home() {
                 <HiOutlinePuzzle className="text-purple-500 text-4xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                Course Planning
+                Course Planning (coming)
               </h3>
               <p className="text-gray-600 leading-relaxed text-center text-sm">
-                Interactive wizard to help you choose the best combination of UoPeople and Sophia courses for your degree.
+                A tool to help you choose the best mix of UoPeople and Sophia courses.
               </p>
             </motion.div>
 
@@ -133,10 +129,10 @@ export default function Home() {
                 <HiOutlineStar className="text-orange-500 text-4xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                FAQs & Answers
+                FAQs & Answers (coming)
               </h3>
               <p className="text-gray-600 leading-relaxed text-center text-sm">
-                Common questions about UoPeople, course transfers, and degree planning answered by students.
+                Common questions about UoPeople, course transfers, and degree planning.
               </p>
             </motion.div>
 
@@ -159,7 +155,7 @@ export default function Home() {
               About This Site
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-              A personal project born from the need to organize study materials and share knowledge with fellow students.
+              A personal project born from the need to plan my degree journey and organize resources and study materials.
             </p>
           </motion.div>
 
@@ -173,7 +169,7 @@ export default function Home() {
             <div className="flex items-start gap-6">
               <Avatar className="w-20 h-20 flex-shrink-0 border-4 border-white shadow-lg">
                 <AvatarImage 
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=80&h=80&fit=crop&crop=face&auto=format&q=80" 
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&crop=face&auto=format&q=80" 
                   alt="Laura's profile picture" 
                 />
                 <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-2xl font-semibold">
@@ -201,20 +197,6 @@ export default function Home() {
                     to save money on your degree. Feel free to use anything that helps with your studies — and if 
                     it does help, I'd really appreciate a thank you message on the guestbook! 😊
                   </p>
-                  
-                  <div className="flex items-center justify-between">
-                    <div className="text-sm text-gray-500">
-                      Computer Science Student
-                    </div>
-                    <Button 
-                      onClick={() => setLocation("/guestbook")}
-                      size="sm" 
-                      variant="outline"
-                      className="text-blue-600 border-blue-200 hover:bg-blue-50"
-                    >
-                      Leave a message 💬
-                    </Button>
-                  </div>
                 </div>
               </div>
             </div>
