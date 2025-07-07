@@ -145,25 +145,32 @@ export default function FAQs() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Navigation />
       
-      <div className="pt-20 pb-16">
-        <div className="max-w-4xl mx-auto px-8">
+      {/* Hero Section */}
+      <div className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <div className="max-w-5xl mx-auto px-8">
           {/* Header */}
           <motion.div 
-            className="mb-12"
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl font-semibold text-gray-900 mb-6">
+            <h1 className="text-5xl font-bold text-gray-900 mb-6 tracking-tight">
               Questions Everyone Asks
             </h1>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
               Common questions about UoPeople, Sophia, and course planning. Straight answers, no marketing speak.
             </p>
           </motion.div>
+        </div>
+      </div>
+
+      {/* FAQ Content Section */}
+      <div className="py-24 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-6xl mx-auto px-8">
 
           {/* FAQ Categories */}
           <Tabs defaultValue="general" className="w-full">

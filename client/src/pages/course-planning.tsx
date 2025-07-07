@@ -17,53 +17,62 @@ export default function CoursePlanning() {
       <Navigation />
       
       {/* Welcome Screen */}
-      <div className="min-h-[85vh] flex items-center justify-center gradient-bg pt-20">
-        <div className="text-center text-white px-8 max-w-6xl mx-auto">
+      <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
+        <div className="text-center px-8 max-w-6xl mx-auto">
           <motion.h1 
-            className="text-6xl font-bold mb-6 leading-tight"
+            className="text-6xl font-bold mb-6 leading-tight text-gray-900 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            BS-CS Course Planning Helper
+            Course Planning Wizard
           </motion.h1>
           
           <motion.p 
-            className="text-2xl mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed"
+            className="text-2xl mb-4 max-w-4xl mx-auto text-gray-600 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
           >
             A simple tool to help Computer Science students at UoPeople figure out which General Education and Elective courses to take, and where to take them.
           </motion.p>
           
+          <motion.p 
+            className="text-gray-500 mb-8 flex items-center justify-center gap-1"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Save money and time with smart course planning <span className="text-red-500">♥</span>
+          </motion.p>
+          
           <motion.div 
-            className="mb-6 bg-white/20 backdrop-blur-sm rounded-lg p-4 max-w-2xl mx-auto"
+            className="mb-6 bg-white/80 backdrop-blur-sm rounded-lg p-4 max-w-2xl mx-auto border border-gray-200"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <p className="text-lg opacity-90">
+            <p className="text-lg text-gray-700">
               <strong>For:</strong> Bachelor of Science in Computer Science students at University of the People
             </p>
           </motion.div>
           
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="flex items-center bg-white/20 px-4 py-2 rounded-lg">
-              <University className="text-yellow-300 mr-2" size={20} />
-              <span>UoPeople Courses</span>
+            <div className="flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-lg">
+              <University className="mr-2" size={20} />
+              <span className="font-medium">UoPeople Courses</span>
             </div>
-            <div className="text-2xl">
+            <div className="text-2xl text-gray-400">
               <Plus size={24} />
             </div>
-            <div className="flex items-center bg-white/20 px-4 py-2 rounded-lg">
-              <GraduationCap className="text-green-300 mr-2" size={20} />
-              <span>Sophia Courses</span>
+            <div className="flex items-center bg-purple-100 text-purple-800 px-4 py-2 rounded-lg">
+              <GraduationCap className="mr-2" size={20} />
+              <span className="font-medium">Sophia Courses</span>
             </div>
           </motion.div>
           
@@ -74,17 +83,17 @@ export default function CoursePlanning() {
           >
             <Button 
               onClick={handleStartPlanning}
-              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Rocket className="mr-2" size={20} />
-              Start Planning
+              Start Course Planning
             </Button>
           </motion.div>
         </div>
       </div>
 
       {/* Three Steps Section */}
-      <div id="how-it-works" className="py-16 bg-white">
+      <div id="how-it-works" className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -160,7 +169,7 @@ export default function CoursePlanning() {
       </div>
 
       {/* Simple How It Works Section */}
-      <div className="py-16 bg-gray-50">
+      <div className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50">
         <div className="max-w-3xl mx-auto px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

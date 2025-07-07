@@ -213,10 +213,11 @@ export default function StudyResources() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen">
       <Navigation />
       
-      <div className="pt-20 pb-16">
+      {/* Hero Section */}
+      <div className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="max-w-6xl mx-auto px-8">
           {/* Header */}
           <motion.div 
@@ -225,8 +226,8 @@ export default function StudyResources() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              University Study Notes
+            <h1 className="text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+              Study Resources
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Personal study notes and materials organized by course. 
@@ -256,7 +257,12 @@ export default function StudyResources() {
             </div>
           </motion.div>
 
-          {/* Course Notes */}
+        </div>
+      </div>
+
+      {/* Course Notes Section */}
+      <div className="py-24 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-6xl mx-auto px-8">
           <div className="space-y-8">
             {courseNotes.map((course, index) => (
               <motion.div
@@ -319,9 +325,12 @@ export default function StudyResources() {
             ))}
           </div>
 
-          <Separator className="my-16" />
+        </div>
+      </div>
 
-          {/* Featured Notes Section */}
+      {/* Featured Notes Section */}
+      <div className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50">
+        <div className="max-w-6xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

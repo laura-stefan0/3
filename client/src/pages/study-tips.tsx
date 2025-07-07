@@ -170,25 +170,32 @@ export default function StudyTips() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Navigation />
       
-      <div className="pt-20 pb-16">
-        <div className="max-w-4xl mx-auto px-8">
+      {/* Hero Section */}
+      <div className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <div className="max-w-5xl mx-auto px-8">
           {/* Header */}
           <motion.div 
-            className="mb-12"
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl font-semibold text-gray-900 mb-6">
+            <h1 className="text-5xl font-bold text-gray-900 mb-6 tracking-tight">
               Study Tips That Actually Work
             </h1>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
               Here's what I learned from CS students who finished their degrees. No fluff, just what works.
             </p>
           </motion.div>
+        </div>
+      </div>
+
+      {/* Main Content Section */}
+      <div className="py-24 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-6xl mx-auto px-8">
 
           {/* Main Content Tabs */}
           <Tabs defaultValue="strategies" className="w-full">

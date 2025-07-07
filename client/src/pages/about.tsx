@@ -100,19 +100,19 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100">
+    <div className="min-h-screen">
       <Navigation />
       
       {/* Hero Section */}
-      <div className="pt-20 pb-16">
-        <div className="max-w-4xl mx-auto px-8">
+      <div className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <div className="max-w-5xl mx-auto px-8">
           <motion.h1 
-            className="text-4xl font-semibold mb-6 text-gray-900"
+            className="text-5xl font-bold mb-6 text-gray-900 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            About This Tool
+            About This Project
           </motion.h1>
           
           <motion.div 
@@ -144,7 +144,7 @@ export default function About() {
       </div>
 
       {/* What This Tool Does */}
-      <div className="py-16 bg-white">
+      <div className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -221,7 +221,7 @@ export default function About() {
       </div>
 
       {/* Cost Breakdown */}
-      <div className="py-16 bg-gray-50">
+      <div className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -19,52 +19,52 @@ export default function Navigation() {
           {/* Logo/Brand */}
           <button
             onClick={() => setLocation("/")}
-            className="flex items-center space-x-2 text-xl font-semibold text-primary hover:text-primary/80 transition-colors"
+            className="flex items-center space-x-2 text-xl font-semibold text-gray-900 hover:text-blue-600 transition-colors"
           >
             <GraduationCap size={24} />
-            <span>UoPeople Helper</span>
+            <span>UoPeople CS Study Hub</span>
           </button>
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-6">
             <button
               onClick={() => setLocation("/study-resources")}
-              className="text-gray-600 hover:text-primary transition-colors"
+              className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
             >
-              Notes
+              Study Resources
             </button>
 
             <button
               onClick={() => setLocation("/study-tips")}
-              className="text-gray-600 hover:text-primary transition-colors"
+              className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
             >
               Study Tips
             </button>
 
             <button
               onClick={() => setLocation("/faqs")}
-              className="text-gray-600 hover:text-primary transition-colors"
+              className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
             >
               FAQs
             </button>
 
             <button
               onClick={() => setLocation("/about")}
-              className="text-gray-600 hover:text-primary transition-colors"
+              className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
             >
               About
             </button>
 
             <button
               onClick={() => setLocation("/guestbook")}
-              className="text-gray-600 hover:text-primary transition-colors"
+              className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
             >
               Guestbook
             </button>
 
             <Button
               onClick={() => setLocation("/course-planning")}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-4 py-2"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 py-2 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Start Planning
             </Button>
@@ -74,7 +74,7 @@ export default function Navigation() {
           <div className="md:hidden">
             <Button
               onClick={() => setLocation("/course-planning")}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-4 py-2"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-4 py-2 rounded-xl"
             >
               Start Planning
             </Button>
