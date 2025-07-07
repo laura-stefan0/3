@@ -163,23 +163,6 @@ export default function Home() {
               <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-6 h-6 bg-orange-500 rounded-full"></div>
-                  <span className="text-sm text-gray-600">r/UoPeople • 2mo ago</span>
-                </div>
-                <h4 className="font-medium text-gray-900 mb-2">
-                  Help me understand major electives
-                </h4>
-                <p className="text-sm text-gray-600 mb-3">
-                  So it can be any say business class if you are a business major while general elective is any class from any discipline. Is this correct?
-                </p>
-                <div className="flex gap-4 text-xs text-gray-500">
-                  <span>3 comments</span>
-                  <span>↑ 2</span>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-6 h-6 bg-orange-500 rounded-full"></div>
                   <span className="text-sm text-gray-600">r/UoPeople • 11mo ago</span>
                 </div>
                 <h4 className="font-medium text-gray-900 mb-2">
@@ -208,6 +191,23 @@ export default function Home() {
                 <div className="flex gap-4 text-xs text-gray-500">
                   <span>15 comments</span>
                   <span>↑ 28</span>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-6 h-6 bg-orange-500 rounded-full"></div>
+                  <span className="text-sm text-gray-600">r/UoPeople • 1yr ago</span>
+                </div>
+                <h4 className="font-medium text-gray-900 mb-2">
+                  UoPeople and Sophia course issue
+                </h4>
+                <p className="text-sm text-gray-600 mb-3">
+                  I'm having trouble figuring out which Sophia courses are actually accepted by UoPeople. The transfer guides seem outdated and I keep getting conflicting information...
+                </p>
+                <div className="flex gap-4 text-xs text-gray-500">
+                  <span>24 comments</span>
+                  <span>↑ 45</span>
                 </div>
               </div>
 
