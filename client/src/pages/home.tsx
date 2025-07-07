@@ -21,32 +21,34 @@ export default function Home() {
       <div className="min-h-[90vh] flex items-center justify-center bg-white pt-20">
         <div className="text-center px-8 max-w-4xl mx-auto">
           <motion.h1 
-            className="text-5xl font-semibold mb-6 leading-tight text-gray-900"
+            className="text-4xl font-medium mb-6 leading-tight text-gray-900"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Dead-Simple Course Planning for UoPeople CS Students
+            UoPeople CS Notes & Course Planning
           </motion.h1>
           
           <motion.p 
-            className="text-xl mb-8 text-gray-600 leading-relaxed"
+            className="text-lg mb-8 text-gray-600 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Built by a student who got tired of spreadsheets and Reddit threads. No fluff, no paywalls. Just help.
+            Just a CS student sharing my notes and what I've learned about course planning. 
+            Maybe it'll save you some time figuring things out.
           </motion.p>
           
           <motion.div 
-            className="mb-8 bg-gray-50 rounded-lg p-6 max-w-2xl mx-auto border"
+            className="mb-8 bg-blue-50 rounded-lg p-6 max-w-2xl mx-auto border border-blue-100"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-gray-700 leading-relaxed">
-              Hey — I'm Laura. I'm starting CS at UoPeople in Sept, and I built this to stop getting lost in course requirements. 
-              If it helps you plan your degree faster and cheaper, use it.
+              Hi! I'm Laura, starting my CS degree at UoPeople. I made this site to organize my study notes 
+              and share what I've learned about using Sophia courses to save money on Gen Ed requirements. 
+              Feel free to use anything that helps.
             </p>
           </motion.div>
           
@@ -62,14 +64,14 @@ export default function Home() {
               onClick={handleCoursePlanning}
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 px-6 text-base"
             >
-              Start Planning
+              Check Out Course Planning
             </Button>
             <Button 
               onClick={() => setLocation("/study-resources")}
               variant="outline"
               className="font-medium py-3 px-6 text-base"
             >
-              Browse Notes
+              See My Notes
             </Button>
           </motion.div>
         </div>
