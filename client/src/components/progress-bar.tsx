@@ -44,20 +44,17 @@ export default function ProgressBar({ currentStep, totalSteps, categories }: Pro
         {/* Progress Bar */}
         <div className="w-full bg-gray-200 rounded-full h-6 relative overflow-hidden shadow-inner">
           <motion.div 
-            className="water-fill h-6 rounded-full shadow-sm relative"
+            className="bg-gradient-to-r from-primary via-primary to-secondary h-6 rounded-full shadow-sm relative"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
           >
-            {/* Water wave animation */}
-            <div className="absolute inset-0 water-wave rounded-full" />
-            {/* Shimmer effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent water-shimmer rounded-full" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse rounded-full" />
           </motion.div>
           
           {/* Progress percentage text */}
-          <div className="absolute inset-0 flex items-center justify-center z-10">
-            <span className="text-sm font-medium text-gray-700 drop-shadow-sm">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-sm font-medium text-gray-700">
               {Math.round(progress)}%
             </span>
           </div>
