@@ -19,7 +19,7 @@ export default function Navigation() {
           {/* Logo/Brand */}
           <button
             onClick={() => setLocation("/")}
-            className="flex items-center space-x-2 text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
+            className="flex items-center space-x-2 text-xl font-semibold text-primary hover:text-primary/80 transition-colors"
           >
             <GraduationCap size={24} />
             <span>UoPeople Helper</span>
@@ -29,49 +29,43 @@ export default function Navigation() {
           <div className="hidden md:flex items-center space-x-6">
             <button
               onClick={() => setLocation("/study-resources")}
-              className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors"
+              className="text-gray-600 hover:text-primary transition-colors"
             >
-              <Library size={16} />
-              <span>Study Resources</span>
+              Notes
             </button>
 
             <button
               onClick={() => setLocation("/study-tips")}
-              className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors"
+              className="text-gray-600 hover:text-primary transition-colors"
             >
-              <Lightbulb size={16} />
-              <span>Study Tips</span>
+              Study Tips
             </button>
 
             <button
               onClick={() => setLocation("/faqs")}
-              className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors"
+              className="text-gray-600 hover:text-primary transition-colors"
             >
-              <HelpCircle size={16} />
-              <span>FAQs</span>
+              FAQs
             </button>
 
             <button
               onClick={() => setLocation("/about")}
-              className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors"
+              className="text-gray-600 hover:text-primary transition-colors"
             >
-              <Info size={16} />
-              <span>About</span>
+              About
             </button>
 
             <button
               onClick={() => setLocation("/guestbook")}
-              className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors"
+              className="text-gray-600 hover:text-primary transition-colors"
             >
-              <MessageSquare size={16} />
-              <span>Guestbook</span>
+              Guestbook
             </button>
 
             <Button
               onClick={() => setLocation("/course-planning")}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg transition-all duration-300"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-4 py-2"
             >
-              <BookOpen className="mr-2" size={16} />
               Start Planning
             </Button>
           </div>
@@ -80,9 +74,8 @@ export default function Navigation() {
           <div className="md:hidden">
             <Button
               onClick={() => setLocation("/course-planning")}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-4 py-2"
             >
-              <BookOpen className="mr-1" size={16} />
               Start Planning
             </Button>
           </div>

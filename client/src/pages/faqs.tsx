@@ -27,24 +27,24 @@ import {
 export default function FAQs() {
   const generalFAQs = [
     {
-      question: "What is University of the People (UoPeople)?",
-      answer: "University of the People is a tuition-free, accredited online university that offers undergraduate and graduate degree programs. It's designed to make higher education accessible to students worldwide, regardless of their financial or geographical circumstances."
+      question: "What is UoPeople?",
+      answer: "Tuition-free, accredited online university. You only pay assessment fees ($160 per course) when you're ready to take exams. No tuition, no monthly fees."
     },
     {
-      question: "How does this course planning tool work?",
-      answer: "Our tool helps you select the optimal combination of courses from UoPeople and Sophia Learning to complete your General Education requirements efficiently. It guides you through each category, shows equivalencies, and helps you choose the most cost-effective path."
+      question: "How does this tool work?",
+      answer: "Shows you which Gen Ed courses to take at Sophia vs UoPeople. Same courses everyone uses, just organized so you don't have to dig through forums and spreadsheets."
     },
     {
-      question: "Is UoPeople really free?",
-      answer: "Yes, UoPeople is tuition-free. However, there are assessment fees (around $2,460 for a bachelor's degree) that you pay only when you're ready to take your exams. You can study at your own pace and pay fees when you're prepared."
+      question: "Is UoPeople actually free?",
+      answer: "Free tuition, yes. You pay assessment fees (~$160 per course) only when you take exams. Total for a bachelor's degree is around $2,460 in fees."
     },
     {
       question: "What is Sophia Learning?",
-      answer: "Sophia Learning is an online platform that offers self-paced courses that can transfer to many universities, including UoPeople. Their courses are often faster to complete and can be more affordable than traditional college courses."
+      answer: "Self-paced online courses that transfer to UoPeople. $99/month, finish courses in 1-4 weeks each. Much faster than UoPeople's 9-week terms."
     },
     {
-      question: "How much can I save using this approach?",
-      answer: "Students can save thousands of dollars and months of time by strategically combining UoPeople and Sophia courses. The exact savings depend on your chosen path, but most students save 30-50% on their General Education requirements."
+      question: "How much do I actually save?",
+      answer: "Most students save $1,000-1,500 on Gen Ed requirements. Exact amount depends on how many Sophia courses you take vs UoPeople courses."
     }
   ];
 
@@ -145,24 +145,23 @@ export default function FAQs() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-100">
+    <div className="min-h-screen bg-white">
       <Navigation />
       
       <div className="pt-20 pb-16">
         <div className="max-w-4xl mx-auto px-8">
           {/* Header */}
           <motion.div 
-            className="text-center mb-12"
+            className="mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Frequently Asked Questions
+            <h1 className="text-4xl font-semibold text-gray-900 mb-6">
+              Questions Everyone Asks
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Get answers to the most common questions about University of the People, 
-              Sophia Learning, and our course planning tool.
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Common questions about UoPeople, Sophia, and course planning. Straight answers, no marketing speak.
             </p>
           </motion.div>
 

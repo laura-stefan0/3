@@ -28,21 +28,21 @@ export default function StudyTips() {
       color: "bg-blue-100 text-blue-800",
       tips: [
         {
-          title: "The Pomodoro Technique",
-          description: "Study in 25-minute focused intervals followed by 5-minute breaks",
-          difficulty: "Beginner",
+          title: "Work in 25-minute chunks",
+          description: "Set a timer for 25 minutes, focus completely, then take a 5-minute break. Repeat.",
+          difficulty: "Start here",
           time: "25 min sessions"
         },
         {
-          title: "Time Blocking",
-          description: "Dedicate specific time slots for different subjects or tasks",
-          difficulty: "Intermediate",
+          title: "Block your calendar",
+          description: "Treat study time like meetings. Block 2-3 hour chunks and protect them.",
+          difficulty: "When you're consistent",
           time: "2-3 hours"
         },
         {
-          title: "The 80/20 Rule",
-          description: "Focus 80% of your time on the 20% of material that matters most",
-          difficulty: "Advanced",
+          title: "Focus on what matters",
+          description: "20% of the material covers 80% of what you'll actually use. Find that 20%.",
+          difficulty: "When you know the subject",
           time: "Variable"
         }
       ]
@@ -170,24 +170,23 @@ export default function StudyTips() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-100">
+    <div className="min-h-screen bg-white">
       <Navigation />
       
       <div className="pt-20 pb-16">
-        <div className="max-w-6xl mx-auto px-8">
+        <div className="max-w-4xl mx-auto px-8">
           {/* Header */}
           <motion.div 
-            className="text-center mb-12"
+            className="mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Study Tips & Strategies
+            <h1 className="text-4xl font-semibold text-gray-900 mb-6">
+              Study Tips That Actually Work
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Proven techniques and strategies to help you study more effectively, 
-              retain information better, and achieve academic success.
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Here's what I learned from CS students who finished their degrees. No fluff, just what works.
             </p>
           </motion.div>
 

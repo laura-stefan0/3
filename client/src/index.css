@@ -1,52 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   --background: hsl(0, 0%, 100%);
-  --foreground: hsl(20, 14.3%, 4.1%);
-  --muted: hsl(60, 4.8%, 95.9%);
-  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --foreground: hsl(0, 0%, 6.7%);
+  --muted: hsl(0, 0%, 96.1%);
+  --muted-foreground: hsl(0, 0%, 45.1%);
   --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(20, 14.3%, 4.1%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(20, 14.3%, 4.1%);
-  --border: hsl(20, 5.9%, 90%);
-  --input: hsl(20, 5.9%, 90%);
-  --primary: hsl(263, 85%, 65%);
-  --primary-foreground: hsl(211, 100%, 99%);
-  --secondary: hsl(45, 93%, 48%);
-  --secondary-foreground: hsl(24, 9.8%, 10%);
-  --accent: hsl(151, 83%, 43%);
-  --accent-foreground: hsl(24, 9.8%, 10%);
+  --popover-foreground: hsl(0, 0%, 6.7%);
+  --card: hsl(0, 0%, 96.1%);
+  --card-foreground: hsl(0, 0%, 6.7%);
+  --border: hsl(0, 0%, 89.8%);
+  --input: hsl(0, 0%, 89.8%);
+  --primary: hsl(218, 100%, 53%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 96.1%);
+  --secondary-foreground: hsl(0, 0%, 6.7%);
+  --accent: hsl(218, 100%, 53%);
+  --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 84.2%, 60.2%);
-  --destructive-foreground: hsl(60, 9.1%, 97.8%);
-  --ring: hsl(20, 14.3%, 4.1%);
-  --radius: 0.5rem;
-  --cool-gray: hsl(214, 32%, 98%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(218, 100%, 53%);
+  --radius: 0.25rem;
+  --cool-gray: hsl(0, 0%, 96.1%);
 }
 
 .dark {
-  --background: hsl(240, 10%, 3.9%);
-  --foreground: hsl(0, 0%, 98%);
-  --muted: hsl(240, 3.7%, 15.9%);
-  --muted-foreground: hsl(240, 5%, 64.9%);
-  --popover: hsl(240, 10%, 3.9%);
-  --popover-foreground: hsl(0, 0%, 98%);
-  --card: hsl(240, 10%, 3.9%);
-  --card-foreground: hsl(0, 0%, 98%);
-  --border: hsl(240, 3.7%, 15.9%);
-  --input: hsl(240, 3.7%, 15.9%);
-  --primary: hsl(263, 85%, 65%);
-  --primary-foreground: hsl(211, 100%, 99%);
-  --secondary: hsl(240, 3.7%, 15.9%);
-  --secondary-foreground: hsl(0, 0%, 98%);
-  --accent: hsl(240, 3.7%, 15.9%);
-  --accent-foreground: hsl(0, 0%, 98%);
+  --background: hsl(0, 0%, 6.7%);
+  --foreground: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 14.9%);
+  --muted-foreground: hsl(0, 0%, 63.9%);
+  --popover: hsl(0, 0%, 6.7%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --card: hsl(0, 0%, 14.9%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 14.9%);
+  --input: hsl(0, 0%, 14.9%);
+  --primary: hsl(218, 100%, 53%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 14.9%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(218, 100%, 53%);
+  --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 62.8%, 30.6%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(240, 4.9%, 83.9%);
-  --radius: 0.5rem;
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(218, 100%, 53%);
+  --radius: 0.25rem;
 }
 
 @layer base {
@@ -55,30 +57,31 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   }
 }
 
 @layer components {
   .gradient-bg {
-    background: linear-gradient(135deg, hsl(263, 85%, 65%) 0%, hsl(263, 85%, 45%) 100%);
+    background: linear-gradient(135deg, hsl(218, 100%, 53%) 0%, hsl(218, 100%, 43%) 100%);
   }
   
   .course-card {
-    @apply transition-all duration-300 ease-in-out;
+    @apply transition-all duration-200 ease-out;
   }
   
   .course-card:hover {
-    @apply transform scale-105 shadow-lg;
+    @apply shadow-sm;
   }
   
   .course-card.selected {
-    @apply ring-2 ring-primary;
-    background-color: hsl(var(--primary) / 0.05);
+    @apply ring-1 ring-primary;
+    background-color: hsl(var(--primary) / 0.03);
   }
   
   .progress-step {
-    @apply transition-all duration-300 ease-in-out;
+    @apply transition-all duration-200 ease-out;
   }
   
   .progress-step.active {
@@ -90,13 +93,11 @@
   }
   
   .hero-image {
-    @apply rounded-2xl shadow-2xl w-full max-w-4xl mx-auto;
+    @apply w-full max-w-4xl mx-auto;
   }
   
-
-  
   .provider-icon {
-    @apply w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl;
+    @apply w-12 h-12 flex items-center justify-center text-white text-xl;
   }
   
   .uopeople-icon {
@@ -104,6 +105,16 @@
   }
   
   .sophia-icon {
-    @apply bg-accent;
+    @apply bg-primary;
+  }
+  
+  .brand-button {
+    @apply bg-primary text-primary-foreground border-0 font-medium;
+    border-radius: 0.25rem;
+  }
+  
+  .brand-card {
+    @apply bg-card border border-border;
+    border-radius: 0.25rem;
   }
 }

@@ -18,97 +18,97 @@ export default function Home() {
       <Navigation />
       
       {/* Hero Section */}
-      <div className="min-h-[90vh] flex items-center justify-center gradient-bg pt-20">
-        <div className="text-center text-white px-8 max-w-6xl mx-auto">
+      <div className="min-h-[90vh] flex items-center justify-center bg-white pt-20">
+        <div className="text-center px-8 max-w-4xl mx-auto">
           <motion.h1 
-            className="text-6xl font-bold mb-6 leading-tight"
+            className="text-5xl font-semibold mb-6 leading-tight text-gray-900"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
-            CS Study Hub
+            Dead-Simple Course Planning for UoPeople CS Students
           </motion.h1>
           
           <motion.p 
-            className="text-2xl mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed"
+            className="text-xl mb-8 text-gray-600 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Your comprehensive resource for Computer Science study notes, tips, and academic planning at UoPeople
+            Built by a student who got tired of spreadsheets and Reddit threads. No fluff, no paywalls. Just help.
           </motion.p>
           
           <motion.div 
-            className="mb-8 bg-white/20 backdrop-blur-sm rounded-lg p-4 max-w-2xl mx-auto"
+            className="mb-8 bg-gray-50 rounded-lg p-6 max-w-2xl mx-auto border"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-lg opacity-90">
-              <strong>For:</strong> Computer Science students looking to excel in their studies and optimize their academic journey
+            <p className="text-gray-700 leading-relaxed">
+              Hey — I'm Laura. I'm starting CS at UoPeople in Sept, and I built this to stop getting lost in course requirements. 
+              If it helps you plan your degree faster and cheaper, use it.
             </p>
           </motion.div>
           
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className="flex items-center bg-white/20 px-4 py-2 rounded-lg">
-              <Brain className="text-yellow-300 mr-2" size={20} />
-              <span>Study Tips</span>
+            <div className="text-center p-4">
+              <div className="text-2xl font-bold text-primary mb-1">✅</div>
+              <div className="text-sm text-gray-600">Course planner</div>
             </div>
-            <div className="flex items-center bg-white/20 px-4 py-2 rounded-lg">
-              <Code className="text-green-300 mr-2" size={20} />
-              <span>Course Notes</span>
+            <div className="text-center p-4">
+              <div className="text-2xl font-bold text-primary mb-1">📝</div>
+              <div className="text-sm text-gray-600">Study notes</div>
             </div>
-            <div className="flex items-center bg-white/20 px-4 py-2 rounded-lg">
-              <Target className="text-blue-300 mr-2" size={20} />
-              <span>Academic Planning</span>
+            <div className="text-center p-4">
+              <div className="text-2xl font-bold text-primary mb-1">💰</div>
+              <div className="text-sm text-gray-600">Save money</div>
             </div>
           </motion.div>
           
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="space-y-4"
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Button 
-              onClick={() => setLocation("/notes")}
-              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg mr-4"
+              onClick={handleCoursePlanning}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 px-6 text-base"
             >
-              <BookOpen className="mr-2" size={20} />
-              Browse Study Notes
+              Start Planning
             </Button>
             <Button 
-              onClick={handleCoursePlanning}
+              onClick={() => setLocation("/study-resources")}
               variant="outline"
-              className="bg-white/20 hover:bg-white/30 text-white border-white/30 font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="font-medium py-3 px-6 text-base"
             >
-              <Target className="mr-2" size={20} />
-              Course Planning Tool
+              Browse Notes
             </Button>
           </motion.div>
         </div>
       </div>
 
-      {/* Study Resources Section */}
-      <div className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-8">
+      {/* What This Tool Does */}
+      <div className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="mb-12"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Study Resources
+            <h2 className="text-3xl font-semibold text-gray-900 mb-6">
+              What This Tool Does
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Everything you need to succeed in your CS studies
+            <p className="text-lg text-gray-600 leading-relaxed mb-6">
+              Helps you plan your UoPeople CS degree using Sophia courses for Gen Ed requirements. 
+              Same courses everyone uses, just organized so you don't have to hunt through spreadsheets.
             </p>
           </motion.div>
 
