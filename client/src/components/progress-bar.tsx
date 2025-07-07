@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { BookOpen } from "lucide-react";
 
 interface ProgressBarProps {
   currentStep: number;
@@ -25,23 +26,19 @@ export default function ProgressBar({ currentStep, totalSteps, categories }: Pro
   ];
 
   return (
-    <div className="bg-white shadow-md py-4 px-6 sticky top-0 z-10">
+    <div className="bg-white shadow-md py-6 px-6 sticky top-0 z-10">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-gray-800">Course Selection Wizard</h2>
-          <div className="flex items-center space-x-2">
-            <span className="text-sm text-gray-600">
-              Step {currentStep} of {totalSteps}
-            </span>
-            <div className="w-32 bg-gray-200 rounded-full h-2">
-              <motion.div 
-                className="bg-primary h-2 rounded-full"
-                initial={{ width: 0 }}
-                animate={{ width: `${progress}%` }}
-                transition={{ duration: 0.5 }}
-              />
-            </div>
-          </div>
+        {/* Website Name with Icon */}
+        <div className="flex items-center mb-6">
+          <BookOpen className="text-primary mr-3" size={28} />
+          <h2 className="text-2xl font-bold text-gray-800">UoPeople Course Planner</h2>
+        </div>
+        
+        {/* Steps Counter */}
+        <div className="flex items-center justify-center mb-3">
+          <span className="text-sm text-gray-600 font-medium">
+            Step {currentStep} of {totalSteps}
+          </span>
         </div>
         
         {/* Progress Bar */}
