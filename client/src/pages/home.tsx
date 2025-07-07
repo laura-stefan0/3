@@ -18,23 +18,15 @@ export default function Home() {
     <div className="min-h-screen">
       <Navigation />
       {/* Hero Section */}
-      <div className="min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20 relative overflow-hidden">
-        {/* Floating shapes */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-30 animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-16 h-16 bg-purple-200 rounded-full opacity-40 animate-bounce" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-40 left-20 w-12 h-12 bg-indigo-200 rounded-full opacity-30 animate-pulse" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-60 right-40 w-14 h-14 bg-pink-200 rounded-full opacity-30 animate-bounce" style={{animationDelay: '0.5s'}}></div>
+      <div className="min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
         <div className="text-center px-8 max-w-4xl mx-auto">
           <motion.h1 
-            className="text-5xl font-bold mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 tracking-tight relative"
+            className="text-5xl font-bold mb-6 leading-tight text-gray-900 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="relative">
-              UoPeople CS Study Hub
-              <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full transform scale-x-0 animate-[scaleX_1.5s_ease-in-out_0.8s_forwards]"></div>
-            </span>
+            UoPeople CS Study Hub
           </motion.h1>
           
           <motion.p 
@@ -54,11 +46,10 @@ export default function Home() {
           >
             <Button 
               onClick={handleCoursePlanning}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 relative overflow-hidden group"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              <Target className="mr-2 relative z-10" size={20} />
-              <span className="relative z-10">Start Course Planning</span>
+              <Target className="mr-2" size={20} />
+              Start Course Planning
             </Button>
             <Button 
               onClick={() => setLocation("/study-resources")}
@@ -72,10 +63,7 @@ export default function Home() {
         </div>
       </div>
       {/* What This Tool Does */}
-      <div className="py-16 bg-gradient-to-b from-white to-gray-50 relative">
-        {/* Decorative elements */}
-        <div className="absolute top-10 right-10 w-32 h-32 border-4 border-blue-100 rounded-full opacity-20"></div>
-        <div className="absolute bottom-20 left-8 w-24 h-24 border-4 border-purple-100 rounded-full opacity-30"></div>
+      <div className="py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -95,14 +83,10 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white rounded-lg p-8 border border-gray-100 hover:shadow-lg hover:scale-105 transition-all duration-300 relative overflow-hidden group"
+              className="bg-white rounded-lg p-8 border border-gray-100"
             >
-              {/* Gradient accent */}
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
               <div className="mb-6 flex justify-center">
-                <div className="p-3 bg-blue-50 rounded-full group-hover:bg-blue-100 transition-colors duration-300">
-                  <HiOutlineFire className="text-blue-500 text-4xl group-hover:scale-110 transition-transform duration-300" />
-                </div>
+                <HiOutlineFire className="text-blue-500 text-4xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
                 Study Resources (coming)
@@ -117,14 +101,10 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white rounded-lg p-8 border border-gray-100 hover:shadow-lg hover:scale-105 transition-all duration-300 relative overflow-hidden group"
+              className="bg-white rounded-lg p-8 border border-gray-100"
             >
-              {/* Gradient accent */}
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-purple-400 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
               <div className="mb-6 flex justify-center">
-                <div className="p-3 bg-purple-50 rounded-full group-hover:bg-purple-100 transition-colors duration-300">
-                  <HiOutlinePuzzle className="text-purple-500 text-4xl group-hover:scale-110 transition-transform duration-300" />
-                </div>
+                <HiOutlinePuzzle className="text-purple-500 text-4xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
                 Course Planning (coming)
@@ -139,14 +119,10 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white rounded-lg p-8 border border-gray-100 hover:shadow-lg hover:scale-105 transition-all duration-300 relative overflow-hidden group"
+              className="bg-white rounded-lg p-8 border border-gray-100"
             >
-              {/* Gradient accent */}
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-400 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
               <div className="mb-6 flex justify-center">
-                <div className="p-3 bg-orange-50 rounded-full group-hover:bg-orange-100 transition-colors duration-300">
-                  <HiOutlineStar className="text-orange-500 text-4xl group-hover:scale-110 transition-transform duration-300" />
-                </div>
+                <HiOutlineStar className="text-orange-500 text-4xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
                 FAQs & Answers (coming)
@@ -161,12 +137,8 @@ export default function Home() {
         </div>
       </div>
       {/* About Laura Section */}
-      <div className="py-20 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50 relative overflow-hidden">
-        {/* Creative background elements */}
-        <div className="absolute top-20 left-0 w-40 h-40 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-10 right-0 w-60 h-60 bg-gradient-to-tl from-indigo-100 to-pink-100 rounded-full opacity-15 animate-pulse" style={{animationDelay: '1.5s'}}></div>
-        <div className="absolute top-1/2 left-1/4 w-32 h-32 border-2 border-blue-200 rounded-full opacity-30 animate-spin" style={{animationDuration: '20s'}}></div>
-        <div className="max-w-4xl mx-auto px-8 relative z-10">
+      <div className="py-20 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50 relative">
+        <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -190,8 +162,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="flex items-start gap-6">
-              <Avatar className="w-20 h-20 flex-shrink-0 border-4 border-white shadow-lg hover:scale-110 transition-transform duration-300 relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
+              <Avatar className="w-20 h-20 flex-shrink-0 border-4 border-white shadow-lg">
                 <AvatarImage 
                   src="/images/my-notion-face-portrait.png" 
                   alt="Laura's profile picture" 
@@ -206,14 +177,12 @@ export default function Home() {
                 <div className="absolute left-0 top-6 w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-r-[16px] border-r-white transform -translate-x-4"></div>
                 
                 {/* Chat bubble */}
-                <div className="bg-white rounded-3xl rounded-tl-lg p-8 shadow-xl border border-gray-100 max-w-3xl hover:shadow-2xl transition-shadow duration-300 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-50 to-purple-50 rounded-full opacity-50 transform translate-x-10 -translate-y-10"></div>
-                  <div className="flex items-center gap-3 mb-4 relative z-10">
+                <div className="bg-white rounded-3xl rounded-tl-lg p-8 shadow-xl border border-gray-100 max-w-3xl">
+                  <div className="flex items-center gap-3 mb-4">
                     <h3 className="text-xl font-semibold text-gray-900">Laura</h3>
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   </div>
                   
-                  <p className="text-gray-700 leading-relaxed text-lg mb-6 relative z-10">
+                  <p className="text-gray-700 leading-relaxed text-lg mb-6">
                     Hi! I'm starting my CS degree at UoPeople in September 2025. I created this website to organize and share my study notes and materials, plus everything I've learned about using Sophia courses to save money on your degree. Feel free to use anything that helps with your studies. And if it does help, I'd really appreciate a thank you message on the <a href="/guestbook" className="text-blue-500 hover:underline">guestbook</a>! 😊
                   </p>
                 </div>
