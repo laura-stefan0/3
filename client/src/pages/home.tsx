@@ -152,7 +152,7 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-              About This Site
+              About This Project
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
               A personal project born from the need to plan my degree journey and organize resources and study materials.
@@ -166,7 +166,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="flex items-start gap-6">
+            <div className="flex items-start gap-6 justify-center">
               <Avatar className="w-20 h-20 flex-shrink-0 border-4 border-white shadow-lg">
                 <AvatarImage 
                   src="/images/my-notion-face-portrait.png" 
