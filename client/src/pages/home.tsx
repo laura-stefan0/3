@@ -223,14 +223,15 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="flex items-start gap-6">
-              <div className="w-20 h-20 flex-shrink-0 rounded-xl bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 shadow-lg border-4 border-white flex items-center justify-center relative overflow-hidden">
-                {/* Notion-style geometric pattern */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/30 to-purple-600/30"></div>
-                <div className="absolute top-2 left-2 w-6 h-6 bg-white/20 rounded-full"></div>
-                <div className="absolute bottom-2 right-2 w-4 h-4 bg-white/30 rounded-sm rotate-45"></div>
-                <div className="absolute top-1/2 right-1 w-2 h-8 bg-white/20 rounded-full transform -translate-y-1/2"></div>
-                <span className="relative text-white text-2xl font-bold z-10">L</span>
-              </div>
+              <Avatar className="w-20 h-20 flex-shrink-0 border-4 border-white shadow-lg">
+                <AvatarImage 
+                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=80&h=80&fit=crop&crop=face&auto=format&q=80" 
+                  alt="Laura's profile picture" 
+                />
+                <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-2xl font-semibold">
+                  L
+                </AvatarFallback>
+              </Avatar>
               
               <div className="relative flex-1">
                 {/* Chat bubble tail */}
