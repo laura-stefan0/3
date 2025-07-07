@@ -110,6 +110,7 @@ This is a full-stack course selection wizard application built with React, Expre
 - July 07, 2025. Enhanced Math category Algebra section to offer three Sophia options: Introduction to College Mathematics (easier), College Algebra (recommended equivalent), and Precalculus (harder), with visual difficulty indicators.
 - July 07, 2025. Removed banner images from all category pages and summary page for cleaner, more focused interface.
 - July 07, 2025. Added Electives category page after General Education categories and before summary. Features Computer Science electives from UoPeople on left, and general electives from Sophia on right (including previously non-picked Sophia courses from other categories).
+- July 07, 2025. Moved mandatory Communication course (COM 2001 Professional Communication) from Communication category page to Foundation category page alongside other mandatory courses. Communication category now only shows additional course selection options.
 
 ## User Preferences
 

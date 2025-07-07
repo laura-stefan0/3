@@ -277,21 +277,18 @@ export default function Wizard() {
                       ))}
                     </div>
                   </div>
-                </div>
-              ) : currentCategory.id === 'communication' ? (
-                /* Communication Category - With Mandatory Course */
-                <div className="space-y-6">
-                  {/* Mandatory Course */}
-                  <Card className="shadow-lg">
-                    <CardContent className="p-6">
-                      <h3 className="text-lg font-semibold text-orange-800 mb-3">
-                        📝 Mandatory Communication Course
-                      </h3>
-                      <p className="text-orange-700 mb-4">
-                        This course is required for all students and must be taken at UoPeople.
-                      </p>
+                  
+                  {/* Mandatory Communication Course */}
+                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                    <h3 className="text-lg font-semibold text-orange-800 mb-3">
+                      📝 Mandatory Communication Course
+                    </h3>
+                    <p className="text-orange-700 mb-4">
+                      This course is required for all students and must be taken at UoPeople.
+                    </p>
+                    <div className="grid gap-4">
                       {courses?.filter(c => c.name === 'COM 2001 Professional Communication').map(course => (
-                        <div key={course.id} className="bg-orange-50 rounded-lg p-4 border border-orange-200">
+                        <div key={course.id} className="bg-white rounded-lg p-4 border border-orange-200">
                           <div className="flex items-center justify-between">
                             <div>
                               <h4 className="font-semibold text-gray-800">{course.name}</h4>
@@ -308,10 +305,12 @@ export default function Wizard() {
                           </div>
                         </div>
                       ))}
-                    </CardContent>
-                  </Card>
-
-                  {/* Additional Communication Course Choice */}
+                    </div>
+                  </div>
+                </div>
+              ) : currentCategory.id === 'communication' ? (
+                /* Communication Category - Additional Course Selection Only */
+                <div className="space-y-6">
                   <Card className="shadow-lg">
                     <CardContent className="p-6">
                       <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Choose One Additional Communication Course</h3>
