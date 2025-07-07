@@ -467,35 +467,30 @@ export default function StudyResources() {
                 onClick={() => handleCourseClick(course)}
               >
                 <Card className="h-full hover:shadow-lg transition-all duration-300 border-l-4 border-l-orange-300 hover:border-l-orange-500">
-                  <CardHeader className="pb-3">
+                  <CardHeader className="pb-2">
                     <div className="flex items-start justify-between mb-2">
-                      <div className={`p-2 rounded-lg ${course.categoryColor}`}>
+                      <div className={`p-1.5 rounded-lg ${course.categoryColor}`}>
                         {course.categoryIcon}
                       </div>
-                      <div className="flex flex-col gap-1">
-                        <Badge className="bg-orange-100 text-orange-800">
-                          Sophia
+                      {course.difficulty && (
+                        <Badge className={course.difficultyColor}>
+                          {course.difficulty}
                         </Badge>
-                        {course.difficulty && (
-                          <Badge className={course.difficultyColor}>
-                            {course.difficulty}
-                          </Badge>
-                        )}
-                      </div>
+                      )}
                     </div>
-                    <CardTitle className="text-lg leading-tight">{course.courseName}</CardTitle>
-                    <CardDescription className="text-sm line-clamp-2">
+                    <CardTitle className="text-base leading-tight">{course.courseName}</CardTitle>
+                    <CardDescription className="text-xs line-clamp-2">
                       {course.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <div className="space-y-2">
-                      <div className="flex items-center text-sm text-gray-600">
-                        <Clock className="w-4 h-4 mr-1" />
+                    <div className="space-y-1">
+                      <div className="flex items-center text-xs text-gray-600">
+                        <Clock className="w-3 h-3 mr-1" />
                         <span>{course.completionTime}</span>
                       </div>
-                      <div className="flex items-center text-sm text-gray-600">
-                        <BookOpen className="w-4 h-4 mr-1" />
+                      <div className="flex items-center text-xs text-gray-600">
+                        <BookOpen className="w-3 h-3 mr-1" />
                         <span>{course.keyTopics.length} Topics</span>
                       </div>
                     </div>
@@ -572,36 +567,31 @@ export default function StudyResources() {
                 onClick={() => handleCourseClick(course)}
               >
                 <Card className="h-full hover:shadow-lg transition-all duration-300 border-l-4 border-l-blue-300 hover:border-l-blue-500">
-                  <CardHeader className="pb-3">
+                  <CardHeader className="pb-2">
                     <div className="flex items-start justify-between mb-2">
-                      <div className={`p-2 rounded-lg ${course.categoryColor}`}>
+                      <div className={`p-1.5 rounded-lg ${course.categoryColor}`}>
                         {course.categoryIcon}
                       </div>
-                      <div className="flex flex-col gap-1">
-                        <Badge className="bg-blue-100 text-blue-800">
-                          UoPeople
-                        </Badge>
-                      </div>
                     </div>
-                    <CardTitle className="text-lg leading-tight">{course.courseName}</CardTitle>
-                    <p className="text-sm text-gray-600">{course.courseCode} • {course.credits} Credits</p>
-                    <CardDescription className="text-sm line-clamp-2">
+                    <CardTitle className="text-base leading-tight">{course.courseName}</CardTitle>
+                    <p className="text-xs text-gray-600">{course.courseCode} • {course.credits} Credits</p>
+                    <CardDescription className="text-xs line-clamp-2">
                       {course.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <div className="space-y-2">
-                      <div className="flex items-center text-sm text-gray-600">
-                        <Clock className="w-4 h-4 mr-1" />
+                    <div className="space-y-1">
+                      <div className="flex items-center text-xs text-gray-600">
+                        <Clock className="w-3 h-3 mr-1" />
                         <span>{course.completionTime}</span>
                       </div>
-                      <div className="flex items-center text-sm text-gray-600">
-                        <BookOpen className="w-4 h-4 mr-1" />
+                      <div className="flex items-center text-xs text-gray-600">
+                        <BookOpen className="w-3 h-3 mr-1" />
                         <span>{course.keyTopics.length} Topics</span>
                       </div>
                       {course.materials && (
-                        <div className="flex items-center text-sm text-gray-600">
-                          <FileText className="w-4 h-4 mr-1" />
+                        <div className="flex items-center text-xs text-gray-600">
+                          <FileText className="w-3 h-3 mr-1" />
                           <span>{course.materials.length} Materials</span>
                         </div>
                       )}
