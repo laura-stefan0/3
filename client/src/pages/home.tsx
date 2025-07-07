@@ -149,7 +149,7 @@ export default function Home() {
             <h2 className="text-3xl font-semibold text-gray-900 mb-6 text-left">
               About This Project
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
+            <p className="text-lg text-gray-600 leading-relaxed">
               A personal project born from the need to plan my degree journey and organize resources and study materials.
             </p>
           </motion.div>
@@ -183,10 +183,7 @@ export default function Home() {
                   </div>
                   
                   <p className="text-gray-700 leading-relaxed text-lg mb-6">
-                    Hi! I'm starting my CS degree at UoPeople in September 2025. I created this website to organize 
-                    and share my study notes and materials, plus everything I've learned about using Sophia courses 
-                    to save money on your degree. Feel free to use anything that helps with your studies — and if 
-                    it does help, I'd really appreciate a thank you message on the guestbook! 😊
+                    Hi! I'm starting my CS degree at UoPeople in September 2025. I created this website to organize and share my study notes and materials, plus everything I've learned about using Sophia courses to save money on your degree. Feel free to use anything that helps with your studies. And if it does help, I'd really appreciate a thank you message on the <a href="/guestbook" className="text-blue-500 hover:underline">guestbook</a>! 😊
                   </p>
                 </div>
               </div>
