@@ -1,6 +1,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import React from "react";
 import Navigation from "@/components/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -456,7 +457,7 @@ export default function StudyResources() {
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mb-8">
             {displayedSophiaCourses.map((course, index) => (
               <motion.div
                 key={course.id}
@@ -467,31 +468,31 @@ export default function StudyResources() {
                 onClick={() => handleCourseClick(course)}
               >
                 <Card className="h-full hover:shadow-lg transition-all duration-300 border-l-4 border-l-orange-300 hover:border-l-orange-500">
-                  <CardHeader className="pb-2">
-                    <div className="flex items-start justify-between mb-2">
-                      <div className={`p-1.5 rounded-lg ${course.categoryColor}`}>
-                        {course.categoryIcon}
+                  <CardHeader className="pb-1 p-3">
+                    <div className="flex items-start justify-between mb-1">
+                      <div className={`p-1 rounded ${course.categoryColor}`}>
+                        {React.cloneElement(course.categoryIcon as React.ReactElement, { className: "w-3 h-3" })}
                       </div>
                       {course.difficulty && (
-                        <Badge className={course.difficultyColor}>
+                        <Badge className={`text-xs px-1 py-0 ${course.difficultyColor}`}>
                           {course.difficulty}
                         </Badge>
                       )}
                     </div>
-                    <CardTitle className="text-base leading-tight">{course.courseName}</CardTitle>
+                    <CardTitle className="text-sm leading-tight">{course.courseName}</CardTitle>
                     <CardDescription className="text-xs line-clamp-2">
                       {course.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="pt-0">
+                  <CardContent className="pt-0 p-3">
                     <div className="space-y-1">
                       <div className="flex items-center text-xs text-gray-600">
-                        <Clock className="w-3 h-3 mr-1" />
-                        <span>{course.completionTime}</span>
+                        <Clock className="w-2 h-2 mr-1" />
+                        <span className="text-xs">{course.completionTime}</span>
                       </div>
                       <div className="flex items-center text-xs text-gray-600">
-                        <BookOpen className="w-3 h-3 mr-1" />
-                        <span>{course.keyTopics.length} Topics</span>
+                        <BookOpen className="w-2 h-2 mr-1" />
+                        <span className="text-xs">{course.keyTopics.length} Topics</span>
                       </div>
                     </div>
                   </CardContent>
@@ -556,7 +557,7 @@ export default function StudyResources() {
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
             {uopeopleCourses.map((course, index) => (
               <motion.div
                 key={course.id}
@@ -567,32 +568,32 @@ export default function StudyResources() {
                 onClick={() => handleCourseClick(course)}
               >
                 <Card className="h-full hover:shadow-lg transition-all duration-300 border-l-4 border-l-blue-300 hover:border-l-blue-500">
-                  <CardHeader className="pb-2">
-                    <div className="flex items-start justify-between mb-2">
-                      <div className={`p-1.5 rounded-lg ${course.categoryColor}`}>
-                        {course.categoryIcon}
+                  <CardHeader className="pb-1 p-3">
+                    <div className="flex items-start justify-between mb-1">
+                      <div className={`p-1 rounded ${course.categoryColor}`}>
+                        {React.cloneElement(course.categoryIcon as React.ReactElement, { className: "w-3 h-3" })}
                       </div>
                     </div>
-                    <CardTitle className="text-base leading-tight">{course.courseName}</CardTitle>
+                    <CardTitle className="text-sm leading-tight">{course.courseName}</CardTitle>
                     <p className="text-xs text-gray-600">{course.courseCode} • {course.credits} Credits</p>
                     <CardDescription className="text-xs line-clamp-2">
                       {course.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="pt-0">
+                  <CardContent className="pt-0 p-3">
                     <div className="space-y-1">
                       <div className="flex items-center text-xs text-gray-600">
-                        <Clock className="w-3 h-3 mr-1" />
-                        <span>{course.completionTime}</span>
+                        <Clock className="w-2 h-2 mr-1" />
+                        <span className="text-xs">{course.completionTime}</span>
                       </div>
                       <div className="flex items-center text-xs text-gray-600">
-                        <BookOpen className="w-3 h-3 mr-1" />
-                        <span>{course.keyTopics.length} Topics</span>
+                        <BookOpen className="w-2 h-2 mr-1" />
+                        <span className="text-xs">{course.keyTopics.length} Topics</span>
                       </div>
                       {course.materials && (
                         <div className="flex items-center text-xs text-gray-600">
-                          <FileText className="w-3 h-3 mr-1" />
-                          <span>{course.materials.length} Materials</span>
+                          <FileText className="w-2 h-2 mr-1" />
+                          <span className="text-xs">{course.materials.length} Materials</span>
                         </div>
                       )}
                     </div>
