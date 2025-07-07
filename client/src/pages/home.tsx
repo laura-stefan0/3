@@ -30,7 +30,7 @@ export default function Home() {
           </motion.h1>
           
           <motion.p 
-            className="text-xl mb-4 text-gray-600 leading-relaxed max-w-3xl mx-auto"
+            className="text-xl mb-4 text-gray-600 leading-relaxed max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
