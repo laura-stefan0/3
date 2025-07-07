@@ -194,41 +194,41 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
-      {/* CTA Section */}
-      <div className="py-16 bg-gradient-to-br from-blue-600 to-purple-700">
-        <div className="max-w-4xl mx-auto px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to Excel in Your CS Studies?
-            </h2>
-            <p className="text-lg text-blue-100 mb-6 max-w-2xl mx-auto">
-              Access comprehensive study resources, smart course planning, and proven strategies
-            </p>
-            <div className="space-x-4">
-              <Button 
-                onClick={() => setLocation("/notes")}
-                className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg text-lg transition-all duration-300"
-              >
-                <BookOpen className="mr-2" size={18} />
-                Start Studying
-              </Button>
-              <Button 
-                onClick={handleCoursePlanning}
-                variant="outline"
-                className="bg-transparent border-white text-white hover:bg-white/10 font-semibold py-3 px-6 rounded-lg text-lg transition-all duration-300"
-              >
-                <Target className="mr-2" size={18} />
-                Plan Courses
-              </Button>
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-300 py-12">
+        <div className="max-w-4xl mx-auto px-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-white font-semibold mb-4">UoPeople CS Study Hub</h3>
+              <p className="text-sm leading-relaxed">
+                Resources and tools to help Computer Science students succeed at University of the People.
+              </p>
             </div>
-          </motion.div>
+            
+            <div>
+              <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-sm">
+                <li><button onClick={() => setLocation("/course-planning")} className="hover:text-white transition-colors">Course Planning</button></li>
+                <li><button onClick={() => setLocation("/study-resources")} className="hover:text-white transition-colors">Study Resources</button></li>
+                <li><button onClick={() => setLocation("/study-tips")} className="hover:text-white transition-colors">Study Tips</button></li>
+                <li><button onClick={() => setLocation("/faqs")} className="hover:text-white transition-colors">FAQs</button></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="text-white font-semibold mb-4">About</h4>
+              <ul className="space-y-2 text-sm">
+                <li><button onClick={() => setLocation("/about")} className="hover:text-white transition-colors">About This Project</button></li>
+                <li><button onClick={() => setLocation("/guestbook")} className="hover:text-white transition-colors">Guestbook</button></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+            <p>&copy; 2025 UoPeople CS Study Hub. Created by a student, for students.</p>
+          </div>
         </div>
-      </div>
+      </footer>
     </div>
   );
 }
