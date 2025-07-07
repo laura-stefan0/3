@@ -95,42 +95,12 @@ export default function Guestbook() {
           </p>
         </motion.div>
 
-        {/* Course Changes Report Section - Moved to top */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-12"
-        >
-          <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
-            <div className="flex items-start">
-              <AlertTriangle className="text-orange-600 mr-3 mt-1 flex-shrink-0" size={20} />
-              <div className="flex-1">
-                <h3 className="text-lg font-semibold text-orange-900 mb-2">
-                  Report Course or Exam Changes
-                </h3>
-                <p className="text-orange-800 mb-4">
-                  If you've noticed changes to UoPeople courses, Sophia course availability, 
-                  or transfer policies that affect the information on this site, please report them.
-                </p>
-                <Button variant="outline" className="border-orange-300 text-orange-700 hover:bg-orange-100" asChild>
-                  <a href="https://forms.gle/coursechanges" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2" size={16} />
-                    Report Course Changes
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
         {/* Add New Entry Form */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-12"
         >
           <Card>
