@@ -210,12 +210,14 @@ export default function Wizard() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Progress Bar */}
-      <ProgressBar 
-        currentStep={currentStep} 
-        totalSteps={totalSteps} 
-        categories={categories}
-      />
+      {/* Progress Bar - Only show from step 2 onwards */}
+      {currentStep > 1 && (
+        <ProgressBar 
+          currentStep={currentStep} 
+          totalSteps={totalSteps} 
+          categories={categories}
+        />
+      )}
 
       <div className="max-w-6xl mx-auto px-6 py-8">
         <AnimatePresence mode="wait">
