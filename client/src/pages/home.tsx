@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, University, Rocket, Plus } from "lucide-react";
+import Guestbook from "@/components/guestbook";
 
 export default function Home() {
   const [, setLocation] = useLocation();
@@ -13,7 +14,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Welcome Screen */}
-      <div className="min-h-screen flex items-center justify-center gradient-bg">
+      <div className="min-h-[85vh] flex items-center justify-center gradient-bg">
         <div className="text-center text-white px-8 max-w-6xl mx-auto">
           <motion.h1 
             className="text-6xl font-bold mb-6 leading-tight"
@@ -260,6 +261,9 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
+
+      {/* Guestbook Section */}
+      <Guestbook />
 
       {/* Disclaimer Section */}
       <div className="py-12 bg-yellow-50 border-t border-yellow-200">
