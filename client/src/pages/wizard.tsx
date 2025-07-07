@@ -282,72 +282,84 @@ export default function Wizard() {
                 /* Communication Category - With Mandatory Course */
                 <div className="space-y-6">
                   {/* Mandatory Course */}
-                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
-                    <h3 className="text-lg font-semibold text-orange-800 mb-3">
-                      📝 Mandatory Communication Course
-                    </h3>
-                    <p className="text-orange-700 mb-4">
-                      This course is required for all students and must be taken at UoPeople.
-                    </p>
-                    {courses?.filter(c => c.name === 'COM 2001 Professional Communication').map(course => (
-                      <div key={course.id} className="bg-white rounded-lg p-4 border border-orange-200">
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <h4 className="font-semibold text-gray-800">{course.name}</h4>
-                            <p className="text-sm text-gray-600 mt-1">{course.description}</p>
-                            <span className="inline-block bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded mt-2">
-                              {course.credits} Credits • UoPeople Only
-                            </span>
+                  <Card className="shadow-lg">
+                    <CardContent className="p-6">
+                      <h3 className="text-lg font-semibold text-orange-800 mb-3">
+                        📝 Mandatory Communication Course
+                      </h3>
+                      <p className="text-orange-700 mb-4">
+                        This course is required for all students and must be taken at UoPeople.
+                      </p>
+                      {courses?.filter(c => c.name === 'COM 2001 Professional Communication').map(course => (
+                        <div key={course.id} className="bg-orange-50 rounded-lg p-4 border border-orange-200">
+                          <div className="flex items-center justify-between">
+                            <div>
+                              <h4 className="font-semibold text-gray-800">{course.name}</h4>
+                              <p className="text-sm text-gray-600 mt-1">{course.description}</p>
+                              <span className="inline-block bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded mt-2">
+                                {course.credits} Credits • UoPeople Only
+                              </span>
+                            </div>
+                            <div className="text-green-600">
+                              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                              </svg>
+                            </div>
                           </div>
-                          <div className="text-green-600">
-                            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
+                        </div>
+                      ))}
+                    </CardContent>
+                  </Card>
+
+                  {/* Additional Communication Course Choice */}
+                  <Card className="shadow-lg">
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Choose One Additional Communication Course</h3>
+                      <div className="grid lg:grid-cols-2 gap-6">
+                        {/* UoPeople Option */}
+                        <div>
+                          <div className="flex items-center mb-4">
+                            <div className="provider-icon uopeople-icon mr-3">
+                              <University size={20} />
+                            </div>
+                            <h4 className="text-lg font-semibold text-gray-800">UoPeople</h4>
+                            <span className="text-sm text-gray-600 ml-2">(University of the People)</span>
+                          </div>
+                          <div className="space-y-3">
+                            {uopeopleCourses.filter(c => c.name !== 'COM 2001 Professional Communication').map(course => (
+                              <CourseCard
+                                key={course.id}
+                                course={course}
+                                isSelected={selectedCourses.some(c => c.id === course.id)}
+                                onSelect={() => handleCourseSelect(course)}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                        
+                        {/* Sophia Option */}
+                        <div>
+                          <div className="flex items-center mb-4">
+                            <div className="provider-icon sophia-icon mr-3">
+                              <GraduationCap size={20} />
+                            </div>
+                            <h4 className="text-lg font-semibold text-gray-800">Sophia</h4>
+                            <span className="text-sm text-gray-600 ml-2">(Sophia Learning)</span>
+                          </div>
+                          <div className="space-y-3">
+                            {sophiaCourses.map(course => (
+                              <CourseCard
+                                key={course.id}
+                                course={course}
+                                isSelected={selectedCourses.some(c => c.id === course.id)}
+                                onSelect={() => handleCourseSelect(course)}
+                              />
+                            ))}
                           </div>
                         </div>
                       </div>
-                    ))}
-                  </div>
-
-                  {/* Additional Communication Course Choice */}
-                  <div className="bg-white border border-gray-200 rounded-lg p-6">
-                    <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                      ➕ Choose One Additional Communication Course
-                    </h3>
-                    <div className="grid lg:grid-cols-2 gap-6">
-                      {/* UoPeople Option */}
-                      <div>
-                        <h4 className="font-medium text-gray-700 mb-3 flex items-center">
-                          <University size={20} className="mr-2 text-primary" />
-                          UoPeople Option
-                        </h4>
-                        {uopeopleCourses.filter(c => c.name !== 'COM 2001 Professional Communication').map(course => (
-                          <CourseCard
-                            key={course.id}
-                            course={course}
-                            isSelected={selectedCourses.some(c => c.id === course.id)}
-                            onSelect={() => handleCourseSelect(course)}
-                          />
-                        ))}
-                      </div>
-                      
-                      {/* Sophia Option */}
-                      <div>
-                        <h4 className="font-medium text-gray-700 mb-3 flex items-center">
-                          <GraduationCap size={20} className="mr-2 text-accent" />
-                          Sophia Option
-                        </h4>
-                        {sophiaCourses.map(course => (
-                          <CourseCard
-                            key={course.id}
-                            course={course}
-                            isSelected={selectedCourses.some(c => c.id === course.id)}
-                            onSelect={() => handleCourseSelect(course)}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+                    </CardContent>
+                  </Card>
                 </div>
               ) : currentCategory.id === 'math' ? (
                 /* Math Category - Separate Divs for Each Section */
@@ -523,166 +535,176 @@ export default function Wizard() {
                   </Card>
                 </div>
               ) : currentCategory.id === 'electives' ? (
-                /* Electives Category - Separate Sections */
+                /* Electives Category - UoPeople Left, Sophia Right */
                 <div className="space-y-6">
-                  {/* UoPeople Computer Science Electives */}
                   <Card className="shadow-lg">
                     <CardContent className="p-6">
-                      <div className="flex items-center mb-4">
-                        <div className="provider-icon uopeople-icon mr-3">
-                          <University size={20} />
-                        </div>
-                        <h3 className="text-xl font-semibold text-gray-800">Computer Science Electives</h3>
-                        <span className="text-sm text-gray-600 ml-2">(UoPeople)</span>
-                      </div>
-                      <div className="space-y-3">
-                        {isLoading ? (
-                          <div className="space-y-3">
-                            {[1, 2, 3].map(i => (
-                              <div key={i} className="h-20 bg-gray-200 rounded-lg animate-pulse" />
-                            ))}
+                      <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Choose Your Elective Courses</h3>
+                      <div className="grid lg:grid-cols-2 gap-6">
+                        {/* UoPeople Computer Science Electives */}
+                        <div>
+                          <div className="flex items-center mb-4">
+                            <div className="provider-icon uopeople-icon mr-3">
+                              <University size={20} />
+                            </div>
+                            <h4 className="text-lg font-semibold text-gray-800">UoPeople</h4>
+                            <span className="text-sm text-gray-600 ml-2">(Computer Science Electives)</span>
                           </div>
-                        ) : (
-                          uopeopleCourses.map(course => (
-                            <CourseCard
-                              key={course.id}
-                              course={course}
-                              isSelected={selectedCourses.some(c => c.id === course.id)}
-                              onSelect={() => handleCourseSelect(course)}
-                            />
-                          ))
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  {/* Sophia General Electives */}
-                  <Card className="shadow-lg">
-                    <CardContent className="p-6">
-                      <div className="flex items-center mb-4">
-                        <div className="provider-icon sophia-icon mr-3">
-                          <GraduationCap size={20} />
-                        </div>
-                        <h3 className="text-xl font-semibold text-gray-800">General Electives</h3>
-                        <span className="text-sm text-gray-600 ml-2">(Sophia)</span>
-                      </div>
-                      <div className="space-y-3">
-                        {isLoading ? (
                           <div className="space-y-3">
-                            {[1, 2, 3].map(i => (
-                              <div key={i} className="h-20 bg-gray-200 rounded-lg animate-pulse" />
-                            ))}
-                          </div>
-                        ) : (
-                          <>
-                            {/* Previously non-picked courses */}
-                            {sophiaCourses.filter(c => c.category !== 'electives').length > 0 && (
-                              <>
-                                <div className="text-sm font-medium text-gray-600 mb-2">
-                                  Previously Available Courses:
-                                </div>
-                                {sophiaCourses.filter(c => c.category !== 'electives').map(course => (
-                                  <div key={course.id} className="relative">
-                                    <CourseCard
-                                      course={course}
-                                      isSelected={selectedCourses.some(c => c.id === course.id)}
-                                      onSelect={() => handleCourseSelect(course)}
-                                    />
-                                    <div className="absolute top-2 right-2 bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
-                                      {course.category}
-                                    </div>
-                                  </div>
+                            {isLoading ? (
+                              <div className="space-y-3">
+                                {[1, 2, 3].map(i => (
+                                  <div key={i} className="h-20 bg-gray-200 rounded-lg animate-pulse" />
                                 ))}
-                                <div className="border-t border-gray-200 my-3"></div>
+                              </div>
+                            ) : (
+                              uopeopleCourses.map(course => (
+                                <CourseCard
+                                  key={course.id}
+                                  course={course}
+                                  isSelected={selectedCourses.some(c => c.id === course.id)}
+                                  onSelect={() => handleCourseSelect(course)}
+                                />
+                              ))
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Sophia General Electives */}
+                        <div>
+                          <div className="flex items-center mb-4">
+                            <div className="provider-icon sophia-icon mr-3">
+                              <GraduationCap size={20} />
+                            </div>
+                            <h4 className="text-lg font-semibold text-gray-800">Sophia</h4>
+                            <span className="text-sm text-gray-600 ml-2">(General Electives)</span>
+                          </div>
+                          <div className="space-y-3">
+                            {isLoading ? (
+                              <div className="space-y-3">
+                                {[1, 2, 3].map(i => (
+                                  <div key={i} className="h-20 bg-gray-200 rounded-lg animate-pulse" />
+                                ))}
+                              </div>
+                            ) : (
+                              <>
+                                {/* Previously non-picked courses */}
+                                {sophiaCourses.filter(c => c.category !== 'electives').length > 0 && (
+                                  <>
+                                    <div className="text-sm font-medium text-gray-600 mb-2">
+                                      Previously Available Courses:
+                                    </div>
+                                    {sophiaCourses.filter(c => c.category !== 'electives').map(course => (
+                                      <div key={course.id} className="relative">
+                                        <CourseCard
+                                          course={course}
+                                          isSelected={selectedCourses.some(c => c.id === course.id)}
+                                          onSelect={() => handleCourseSelect(course)}
+                                        />
+                                        <div className="absolute top-2 right-2 bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                                          {course.category}
+                                        </div>
+                                      </div>
+                                    ))}
+                                    <div className="border-t border-gray-200 my-3"></div>
+                                  </>
+                                )}
+                                
+                                {/* Dedicated elective courses */}
+                                <div className="text-sm font-medium text-gray-600 mb-2">
+                                  Additional Electives:
+                                </div>
+                                {sophiaCourses.filter(c => c.category === 'electives').map(course => (
+                                  <CourseCard
+                                    key={course.id}
+                                    course={course}
+                                    isSelected={selectedCourses.some(c => c.id === course.id)}
+                                    onSelect={() => handleCourseSelect(course)}
+                                  />
+                                ))}
                               </>
                             )}
-                            
-                            {/* Dedicated elective courses */}
-                            <div className="text-sm font-medium text-gray-600 mb-2">
-                              Additional Electives:
-                            </div>
-                            {sophiaCourses.filter(c => c.category === 'electives').map(course => (
-                              <CourseCard
-                                key={course.id}
-                                course={course}
-                                isSelected={selectedCourses.some(c => c.id === course.id)}
-                                onSelect={() => handleCourseSelect(course)}
-                              />
-                            ))}
-                          </>
-                        )}
+                          </div>
+                        </div>
                       </div>
                     </CardContent>
                   </Card>
                 </div>
               ) : (
-                /* All Other Categories - Separate Sections */
+                /* All Other Categories - UoPeople Left, Sophia Right */
                 <div className="space-y-6">
-                  {/* UoPeople Section */}
-                  {uopeopleCourses.length > 0 && (
-                    <Card className="shadow-lg">
-                      <CardContent className="p-6">
-                        <div className="flex items-center mb-4">
-                          <div className="provider-icon uopeople-icon mr-3">
-                            <University size={20} />
-                          </div>
-                          <h3 className="text-xl font-semibold text-gray-800">UoPeople</h3>
-                          <span className="text-sm text-gray-600 ml-2">(University of the People)</span>
-                        </div>
-                        <div className="space-y-3">
-                          {isLoading ? (
-                            <div className="space-y-3">
-                              {[1, 2, 3].map(i => (
-                                <div key={i} className="h-20 bg-gray-200 rounded-lg animate-pulse" />
-                              ))}
+                  <Card className="shadow-lg">
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">{currentCategory.name} (Pick {currentCategory.maxSelections === 1 ? 'One' : currentCategory.maxSelections})</h3>
+                      <div className="grid lg:grid-cols-2 gap-6">
+                        {/* UoPeople Section */}
+                        <div>
+                          <div className="flex items-center mb-4">
+                            <div className="provider-icon uopeople-icon mr-3">
+                              <University size={20} />
                             </div>
-                          ) : (
-                            uopeopleCourses.map(course => (
-                              <CourseCard
-                                key={course.id}
-                                course={course}
-                                isSelected={selectedCourses.some(c => c.id === course.id)}
-                                onSelect={() => handleCourseSelect(course)}
-                              />
-                            ))
-                          )}
+                            <h4 className="text-lg font-semibold text-gray-800">UoPeople</h4>
+                            <span className="text-sm text-gray-600 ml-2">(University of the People)</span>
+                          </div>
+                          <div className="space-y-3">
+                            {isLoading ? (
+                              <div className="space-y-3">
+                                {[1, 2, 3].map(i => (
+                                  <div key={i} className="h-20 bg-gray-200 rounded-lg animate-pulse" />
+                                ))}
+                              </div>
+                            ) : uopeopleCourses.length > 0 ? (
+                              uopeopleCourses.map(course => (
+                                <CourseCard
+                                  key={course.id}
+                                  course={course}
+                                  isSelected={selectedCourses.some(c => c.id === course.id)}
+                                  onSelect={() => handleCourseSelect(course)}
+                                />
+                              ))
+                            ) : (
+                              <div className="text-gray-500 text-center py-4">
+                                No UoPeople courses available for this category
+                              </div>
+                            )}
+                          </div>
                         </div>
-                      </CardContent>
-                    </Card>
-                  )}
 
-                  {/* Sophia Section */}
-                  {sophiaCourses.length > 0 && (
-                    <Card className="shadow-lg">
-                      <CardContent className="p-6">
-                        <div className="flex items-center mb-4">
-                          <div className="provider-icon sophia-icon mr-3">
-                            <GraduationCap size={20} />
-                          </div>
-                          <h3 className="text-xl font-semibold text-gray-800">Sophia</h3>
-                          <span className="text-sm text-gray-600 ml-2">(Sophia Learning)</span>
-                        </div>
-                        <div className="space-y-3">
-                          {isLoading ? (
-                            <div className="space-y-3">
-                              {[1, 2, 3].map(i => (
-                                <div key={i} className="h-20 bg-gray-200 rounded-lg animate-pulse" />
-                              ))}
+                        {/* Sophia Section */}
+                        <div>
+                          <div className="flex items-center mb-4">
+                            <div className="provider-icon sophia-icon mr-3">
+                              <GraduationCap size={20} />
                             </div>
-                          ) : (
-                            sophiaCourses.map(course => (
-                              <CourseCard
-                                key={course.id}
-                                course={course}
-                                isSelected={selectedCourses.some(c => c.id === course.id)}
-                                onSelect={() => handleCourseSelect(course)}
-                              />
-                            ))
-                          )}
+                            <h4 className="text-lg font-semibold text-gray-800">Sophia</h4>
+                            <span className="text-sm text-gray-600 ml-2">(Sophia Learning)</span>
+                          </div>
+                          <div className="space-y-3">
+                            {isLoading ? (
+                              <div className="space-y-3">
+                                {[1, 2, 3].map(i => (
+                                  <div key={i} className="h-20 bg-gray-200 rounded-lg animate-pulse" />
+                                ))}
+                              </div>
+                            ) : sophiaCourses.length > 0 ? (
+                              sophiaCourses.map(course => (
+                                <CourseCard
+                                  key={course.id}
+                                  course={course}
+                                  isSelected={selectedCourses.some(c => c.id === course.id)}
+                                  onSelect={() => handleCourseSelect(course)}
+                                />
+                              ))
+                            ) : (
+                              <div className="text-gray-500 text-center py-4">
+                                No Sophia courses available for this category
+                              </div>
+                            )}
+                          </div>
                         </div>
-                      </CardContent>
-                    </Card>
-                  )}
+                      </div>
+                    </CardContent>
+                  </Card>
                 </div>
               )}
             </motion.div>
