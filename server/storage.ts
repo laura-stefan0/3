@@ -36,69 +36,54 @@ export class MemStorage implements IStorage {
 
   private initializeCourses() {
     const courseData = [
-      // Communication
-      { name: 'English Composition I', provider: 'uopeople', category: 'communication', credits: 3, description: 'Fundamental writing skills and essay composition.' },
-      { name: 'English Composition II', provider: 'uopeople', category: 'communication', credits: 3, description: 'Advanced writing techniques and research methods.' },
-      { name: 'Public Speaking', provider: 'uopeople', category: 'communication', credits: 3, description: 'Effective oral communication and presentation skills.' },
-      { name: 'English Composition', provider: 'sophia', category: 'communication', credits: 3, description: 'Comprehensive writing course with peer review.' },
-      { name: 'Communications', provider: 'sophia', category: 'communication', credits: 3, description: 'Effective communication in academic and professional settings.' },
-      { name: 'Public Speaking', provider: 'sophia', category: 'communication', credits: 3, description: 'Build confidence in oral communication and presentations.' },
+      // Communication (pick one or the other)
+      { name: 'ENGL 1102 Composition 2', provider: 'uopeople', category: 'communication', credits: 3, description: 'Advanced writing techniques and research methods.' },
+      { name: 'Foundations of English Composition', provider: 'sophia', category: 'communication', credits: 3, description: 'Comprehensive writing course with peer review.' },
       
-      // Math
-      { name: 'College Algebra', provider: 'uopeople', category: 'math', credits: 3, description: 'Fundamental algebraic concepts and problem-solving techniques.' },
-      { name: 'Statistics', provider: 'uopeople', category: 'math', credits: 3, description: 'Introduction to statistical methods and data analysis.' },
-      { name: 'Calculus I', provider: 'uopeople', category: 'math', credits: 3, description: 'Differential calculus and its applications.' },
-      { name: 'Algebra', provider: 'sophia', category: 'math', credits: 3, description: 'Comprehensive algebra course covering linear equations and inequalities.' },
-      { name: 'Statistics', provider: 'sophia', category: 'math', credits: 3, description: 'Statistical concepts with real-world applications.' },
-      { name: 'Precalculus', provider: 'sophia', category: 'math', credits: 3, description: 'Preparation for calculus with trigonometry and functions.' },
+      // Math (pick one for each pair)
+      { name: 'MATH 1201 College Algebra', provider: 'uopeople', category: 'math', credits: 3, description: 'Fundamental algebraic concepts and problem-solving techniques.' },
+      { name: 'College Algebra', provider: 'sophia', category: 'math', credits: 3, description: 'Comprehensive algebra course covering linear equations and inequalities.' },
+      { name: 'MATH 1211 Calculus', provider: 'uopeople', category: 'math', credits: 3, description: 'Differential calculus and its applications.' },
+      { name: 'Calculus', provider: 'sophia', category: 'math', credits: 3, description: 'Comprehensive calculus course with applications.' },
+      { name: 'MATH 1280 Introduction to Statistics', provider: 'uopeople', category: 'math', credits: 3, description: 'Introduction to statistical methods and data analysis.' },
+      { name: 'Introduction to Statistics', provider: 'sophia', category: 'math', credits: 3, description: 'Statistical concepts with real-world applications.' },
       
-      // Values and Ethical Reasoning
-      { name: 'Ethics and Social Responsibility', provider: 'uopeople', category: 'values', credits: 3, description: 'Exploring ethical frameworks and moral decision-making.' },
-      { name: 'Philosophy of Ethics', provider: 'uopeople', category: 'values', credits: 3, description: 'Classical and contemporary ethical theories.' },
-      { name: 'Business Ethics', provider: 'uopeople', category: 'values', credits: 3, description: 'Ethical considerations in business and professional contexts.' },
-      { name: 'Ethics', provider: 'sophia', category: 'values', credits: 3, description: 'Introduction to moral philosophy and ethical reasoning.' },
-      { name: 'Introduction to Philosophy', provider: 'sophia', category: 'values', credits: 3, description: 'Fundamental questions about existence, knowledge, and values.' },
-      { name: 'Critical Thinking', provider: 'sophia', category: 'values', credits: 3, description: 'Develop analytical and logical reasoning skills.' },
+      // Values and Ethical Reasoning (pick one or the other)
+      { name: 'PHIL 1404 Ethics and Social Responsibility', provider: 'uopeople', category: 'values', credits: 3, description: 'Exploring ethical frameworks and moral decision-making.' },
+      { name: 'Introduction to Ethics', provider: 'sophia', category: 'values', credits: 3, description: 'Introduction to moral philosophy and ethical reasoning.' },
       
-      // Civilization Studies, Cultures, and Beliefs
-      { name: 'World History', provider: 'uopeople', category: 'civilization', credits: 3, description: 'Survey of major civilizations and historical developments.' },
-      { name: 'Comparative Religion', provider: 'uopeople', category: 'civilization', credits: 3, description: 'Study of world religions and belief systems.' },
-      { name: 'Cultural Anthropology', provider: 'uopeople', category: 'civilization', credits: 3, description: 'Understanding diverse cultures and human societies.' },
-      { name: 'World History', provider: 'sophia', category: 'civilization', credits: 3, description: 'Comprehensive overview of global historical developments.' },
-      { name: 'World Religions', provider: 'sophia', category: 'civilization', credits: 3, description: 'Exploration of major world religions and their impact.' },
-      { name: 'Art History', provider: 'sophia', category: 'civilization', credits: 3, description: 'Survey of artistic movements and cultural expressions.' },
+      // Civilization Studies, Cultures, and Beliefs (pick only one between these)
+      { name: 'HIST 1421 Greek and Roman Civilization', provider: 'uopeople', category: 'civilization', credits: 3, description: 'Study of ancient Greek and Roman cultures and their impact.' },
+      { name: 'Approaches to Studying Religions', provider: 'sophia', category: 'civilization', credits: 3, description: 'Exploration of major world religions and their methodologies.' },
       
-      // Natural Science
-      { name: 'Biology', provider: 'uopeople', category: 'science', credits: 3, description: 'Introduction to biological systems and life processes.' },
-      { name: 'Chemistry', provider: 'uopeople', category: 'science', credits: 3, description: 'Basic principles of chemistry and molecular interactions.' },
-      { name: 'Physics', provider: 'uopeople', category: 'science', credits: 3, description: 'Fundamental physics concepts and natural phenomena.' },
-      { name: 'Environmental Science', provider: 'sophia', category: 'science', credits: 3, description: 'Study of environmental systems and sustainability.' },
-      { name: 'Chemistry', provider: 'sophia', category: 'science', credits: 3, description: 'Comprehensive chemistry course with lab simulations.' },
-      { name: 'Astronomy', provider: 'sophia', category: 'science', credits: 3, description: 'Exploration of celestial objects and cosmic phenomena.' },
+      // Natural Science (pick only one between these)
+      { name: 'Introduction to Biology', provider: 'uopeople', category: 'science', credits: 3, description: 'Introduction to biological systems and life processes.' },
+      { name: 'Introduction to Environmental Science', provider: 'uopeople', category: 'science', credits: 3, description: 'Study of environmental systems and sustainability.' },
+      { name: 'Introduction to Information Technology', provider: 'sophia', category: 'science', credits: 3, description: 'Fundamentals of information technology and computer systems.' },
+      { name: 'Environmental Science', provider: 'sophia', category: 'science', credits: 3, description: 'Comprehensive study of environmental systems and sustainability.' },
       
-      // Humanities
-      { name: 'Literature', provider: 'uopeople', category: 'humanities', credits: 3, description: 'Analysis of literary works and critical thinking.' },
-      { name: 'Art History', provider: 'uopeople', category: 'humanities', credits: 3, description: 'Survey of artistic movements and cultural expressions.' },
-      { name: 'Music Appreciation', provider: 'uopeople', category: 'humanities', credits: 3, description: 'Understanding music theory and cultural significance.' },
-      { name: 'Literature', provider: 'sophia', category: 'humanities', credits: 3, description: 'Survey of world literature and literary analysis.' },
-      { name: 'Art History', provider: 'sophia', category: 'humanities', credits: 3, description: 'Comprehensive study of art through history.' },
-      { name: 'Philosophy', provider: 'sophia', category: 'humanities', credits: 3, description: 'Introduction to philosophical thinking and major concepts.' },
+      // Humanities (pick 2 between these)
+      { name: 'AHIST 1401 Art History', provider: 'uopeople', category: 'humanities', credits: 3, description: 'Survey of artistic movements and cultural expressions.' },
+      { name: 'PHIL 1402 Introduction to Philosophy', provider: 'uopeople', category: 'humanities', credits: 3, description: 'Introduction to philosophical thinking and major concepts.' },
+      { name: 'ENGL 1405 World Literature', provider: 'uopeople', category: 'humanities', credits: 3, description: 'Analysis of literary works from around the world.' },
+      { name: 'Art History I', provider: 'sophia', category: 'humanities', credits: 3, description: 'Survey of art from ancient times to the Renaissance.' },
+      { name: 'Art History II', provider: 'sophia', category: 'humanities', credits: 3, description: 'Survey of art from the Renaissance to contemporary times.' },
+      { name: 'Visual Communication', provider: 'sophia', category: 'humanities', credits: 3, description: 'Understanding visual elements and design principles.' },
+      { name: 'Ancient Greek Philosophers', provider: 'sophia', category: 'humanities', credits: 3, description: 'Study of ancient Greek philosophical thought.' },
+      { name: 'U.S. History I', provider: 'sophia', category: 'humanities', credits: 3, description: 'American history from colonial times to Civil War.' },
+      { name: 'U.S. History II', provider: 'sophia', category: 'humanities', credits: 3, description: 'American history from Reconstruction to present.' },
+      { name: 'Critical Thinking', provider: 'sophia', category: 'humanities', credits: 3, description: 'Develop analytical and logical reasoning skills.' },
       
-      // Social and Behavioral Sciences
-      { name: 'Psychology', provider: 'uopeople', category: 'social', credits: 3, description: 'Introduction to psychological principles and human behavior.' },
-      { name: 'Sociology', provider: 'uopeople', category: 'social', credits: 3, description: 'Study of society, social institutions, and relationships.' },
-      { name: 'Political Science', provider: 'uopeople', category: 'social', credits: 3, description: 'Government systems, political processes, and civic engagement.' },
-      { name: 'Psychology', provider: 'sophia', category: 'social', credits: 3, description: 'Comprehensive introduction to psychological concepts.' },
-      { name: 'Sociology', provider: 'sophia', category: 'social', credits: 3, description: 'Understanding social structures and human interactions.' },
-      { name: 'Economics', provider: 'sophia', category: 'social', credits: 3, description: 'Basic economic principles and market systems.' },
-      
-      // Electives
-      { name: 'Computer Science Fundamentals', provider: 'uopeople', category: 'electives', credits: 3, description: 'Introduction to programming and computational thinking.' },
-      { name: 'Business Management', provider: 'uopeople', category: 'electives', credits: 3, description: 'Principles of business organization and management.' },
-      { name: 'Foreign Language (Spanish)', provider: 'uopeople', category: 'electives', credits: 3, description: 'Beginning Spanish language and culture.' },
-      { name: 'Web Development', provider: 'sophia', category: 'electives', credits: 3, description: 'HTML, CSS, and JavaScript fundamentals.' },
-      { name: 'Project Management', provider: 'sophia', category: 'electives', credits: 3, description: 'Project planning, execution, and management techniques.' },
-      { name: 'Digital Marketing', provider: 'sophia', category: 'electives', credits: 3, description: 'Online marketing strategies and social media.' },
+      // Social and Behavioral Sciences (pick 2 between these)
+      { name: 'ECON 1580 Introduction to Economics', provider: 'uopeople', category: 'social', credits: 3, description: 'Basic economic principles and market systems.' },
+      { name: 'POLS 1503 Globalization', provider: 'uopeople', category: 'social', credits: 3, description: 'Study of globalization and its impacts on society.' },
+      { name: 'PSYC 1111 Introduction to Health Psychology', provider: 'uopeople', category: 'social', credits: 3, description: 'Psychology of health and wellness behaviors.' },
+      { name: 'PSYC 1205 Emotional Intelligence', provider: 'uopeople', category: 'social', credits: 3, description: 'Understanding and managing emotions in social contexts.' },
+      { name: 'PSYC 1504 Introduction to Psychology', provider: 'uopeople', category: 'social', credits: 3, description: 'Introduction to psychological principles and human behavior.' },
+      { name: 'SOC 1502 Introduction to Sociology', provider: 'uopeople', category: 'social', credits: 3, description: 'Study of society, social institutions, and relationships.' },
+      { name: 'Introduction to Psychology', provider: 'sophia', category: 'social', credits: 3, description: 'Comprehensive introduction to psychological concepts.' },
+      { name: 'Introduction to Sociology', provider: 'sophia', category: 'social', credits: 3, description: 'Understanding social structures and human interactions.' },
+      { name: 'Lifespan Development', provider: 'sophia', category: 'social', credits: 3, description: 'Human development across the lifespan.' },
     ];
 
     courseData.forEach(course => {

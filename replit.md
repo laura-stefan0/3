@@ -96,7 +96,15 @@ This is a full-stack course selection wizard application built with React, Expre
 ## Changelog
 
 - July 07, 2025. Initial setup with 3 categories (Mathematics, Science, English)
-- July 07, 2025. Updated to correct General Education categories: Communication, Math, Values & Ethical Reasoning, Civilization Studies, Natural Science, Humanities, Social & Behavioral Sciences, and Electives
+- July 07, 2025. Updated to correct General Education categories: Communication, Math, Values & Ethical Reasoning, Civilization Studies, Natural Science, Humanities, Social & Behavioral Sciences
+- July 07, 2025. Implemented specific course requirements with selection limits:
+  - Communication: Pick 1 course (UoPeople vs Sophia)
+  - Math: Pick 3 courses (1 from each pair: Algebra, Calculus, Statistics)
+  - Values & Ethical Reasoning: Pick 1 course (UoPeople vs Sophia)
+  - Civilization Studies: Pick 1 course (UoPeople vs Sophia)
+  - Natural Science: Pick 1 course (multiple options each provider)
+  - Humanities: Pick 2 courses (multiple options each provider)
+  - Social & Behavioral Sciences: Pick 2 courses (multiple options each provider)
 
 ## User Preferences
 
