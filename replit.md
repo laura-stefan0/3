@@ -95,7 +95,8 @@ This is a full-stack course selection wizard application built with React, Expre
 
 ## Changelog
 
-- July 07, 2025. Initial setup
+- July 07, 2025. Initial setup with 3 categories (Mathematics, Science, English)
+- July 07, 2025. Updated to correct General Education categories: Communication, Math, Values & Ethical Reasoning, Civilization Studies, Natural Science, Humanities, Social & Behavioral Sciences, and Electives
 
 ## User Preferences
 

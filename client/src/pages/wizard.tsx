@@ -12,15 +12,25 @@ import { useToast } from "@/hooks/use-toast";
 import { nanoid } from "nanoid";
 
 const categories = [
-  { id: 'mathematics', name: 'Mathematics', description: 'Choose from algebra, statistics, and calculus courses to fulfill your mathematics requirements.' },
-  { id: 'science', name: 'Science', description: 'Explore biology, chemistry, and physics courses to meet your science requirements.' },
-  { id: 'english', name: 'English', description: 'Develop your writing and communication skills with these English courses.' }
+  { id: 'communication', name: 'Communication', description: 'Develop your writing and oral communication skills with these courses.' },
+  { id: 'math', name: 'Mathematics', description: 'Choose from algebra, statistics, and calculus courses to fulfill your mathematics requirements.' },
+  { id: 'values', name: 'Values and Ethical Reasoning', description: 'Explore ethical frameworks and moral decision-making principles.' },
+  { id: 'civilization', name: 'Civilization Studies, Cultures, and Beliefs', description: 'Study world civilizations, cultures, and belief systems.' },
+  { id: 'science', name: 'Natural Science', description: 'Explore biology, chemistry, and physics courses to meet your science requirements.' },
+  { id: 'humanities', name: 'Humanities', description: 'Discover literature, art, music, and philosophical thinking.' },
+  { id: 'social', name: 'Social and Behavioral Sciences', description: 'Study human behavior, society, and social institutions.' },
+  { id: 'electives', name: 'Electives', description: 'Choose additional courses that align with your interests and career goals.' }
 ];
 
 const categoryImages = {
-  mathematics: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
+  communication: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
+  math: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
+  values: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
+  civilization: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
   science: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
-  english: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300"
+  humanities: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
+  social: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
+  electives: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300"
 };
 
 export default function Wizard() {
@@ -110,6 +120,7 @@ export default function Wizard() {
   };
 
   const isCoursePage = currentStep <= categories.length;
+  const isSummaryPage = currentStep === categories.length + 1;
 
   return (
     <div className="min-h-screen bg-gray-50">

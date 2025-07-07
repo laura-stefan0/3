@@ -36,15 +36,39 @@ export class MemStorage implements IStorage {
 
   private initializeCourses() {
     const courseData = [
-      // Mathematics
-      { name: 'College Algebra', provider: 'uopeople', category: 'mathematics', credits: 3, description: 'Fundamental algebraic concepts and problem-solving techniques.' },
-      { name: 'Statistics', provider: 'uopeople', category: 'mathematics', credits: 3, description: 'Introduction to statistical methods and data analysis.' },
-      { name: 'Calculus I', provider: 'uopeople', category: 'mathematics', credits: 3, description: 'Differential calculus and its applications.' },
-      { name: 'Algebra', provider: 'sophia', category: 'mathematics', credits: 3, description: 'Comprehensive algebra course covering linear equations and inequalities.' },
-      { name: 'Statistics', provider: 'sophia', category: 'mathematics', credits: 3, description: 'Statistical concepts with real-world applications.' },
-      { name: 'Precalculus', provider: 'sophia', category: 'mathematics', credits: 3, description: 'Preparation for calculus with trigonometry and functions.' },
+      // Communication
+      { name: 'English Composition I', provider: 'uopeople', category: 'communication', credits: 3, description: 'Fundamental writing skills and essay composition.' },
+      { name: 'English Composition II', provider: 'uopeople', category: 'communication', credits: 3, description: 'Advanced writing techniques and research methods.' },
+      { name: 'Public Speaking', provider: 'uopeople', category: 'communication', credits: 3, description: 'Effective oral communication and presentation skills.' },
+      { name: 'English Composition', provider: 'sophia', category: 'communication', credits: 3, description: 'Comprehensive writing course with peer review.' },
+      { name: 'Communications', provider: 'sophia', category: 'communication', credits: 3, description: 'Effective communication in academic and professional settings.' },
+      { name: 'Public Speaking', provider: 'sophia', category: 'communication', credits: 3, description: 'Build confidence in oral communication and presentations.' },
       
-      // Science
+      // Math
+      { name: 'College Algebra', provider: 'uopeople', category: 'math', credits: 3, description: 'Fundamental algebraic concepts and problem-solving techniques.' },
+      { name: 'Statistics', provider: 'uopeople', category: 'math', credits: 3, description: 'Introduction to statistical methods and data analysis.' },
+      { name: 'Calculus I', provider: 'uopeople', category: 'math', credits: 3, description: 'Differential calculus and its applications.' },
+      { name: 'Algebra', provider: 'sophia', category: 'math', credits: 3, description: 'Comprehensive algebra course covering linear equations and inequalities.' },
+      { name: 'Statistics', provider: 'sophia', category: 'math', credits: 3, description: 'Statistical concepts with real-world applications.' },
+      { name: 'Precalculus', provider: 'sophia', category: 'math', credits: 3, description: 'Preparation for calculus with trigonometry and functions.' },
+      
+      // Values and Ethical Reasoning
+      { name: 'Ethics and Social Responsibility', provider: 'uopeople', category: 'values', credits: 3, description: 'Exploring ethical frameworks and moral decision-making.' },
+      { name: 'Philosophy of Ethics', provider: 'uopeople', category: 'values', credits: 3, description: 'Classical and contemporary ethical theories.' },
+      { name: 'Business Ethics', provider: 'uopeople', category: 'values', credits: 3, description: 'Ethical considerations in business and professional contexts.' },
+      { name: 'Ethics', provider: 'sophia', category: 'values', credits: 3, description: 'Introduction to moral philosophy and ethical reasoning.' },
+      { name: 'Introduction to Philosophy', provider: 'sophia', category: 'values', credits: 3, description: 'Fundamental questions about existence, knowledge, and values.' },
+      { name: 'Critical Thinking', provider: 'sophia', category: 'values', credits: 3, description: 'Develop analytical and logical reasoning skills.' },
+      
+      // Civilization Studies, Cultures, and Beliefs
+      { name: 'World History', provider: 'uopeople', category: 'civilization', credits: 3, description: 'Survey of major civilizations and historical developments.' },
+      { name: 'Comparative Religion', provider: 'uopeople', category: 'civilization', credits: 3, description: 'Study of world religions and belief systems.' },
+      { name: 'Cultural Anthropology', provider: 'uopeople', category: 'civilization', credits: 3, description: 'Understanding diverse cultures and human societies.' },
+      { name: 'World History', provider: 'sophia', category: 'civilization', credits: 3, description: 'Comprehensive overview of global historical developments.' },
+      { name: 'World Religions', provider: 'sophia', category: 'civilization', credits: 3, description: 'Exploration of major world religions and their impact.' },
+      { name: 'Art History', provider: 'sophia', category: 'civilization', credits: 3, description: 'Survey of artistic movements and cultural expressions.' },
+      
+      // Natural Science
       { name: 'Biology', provider: 'uopeople', category: 'science', credits: 3, description: 'Introduction to biological systems and life processes.' },
       { name: 'Chemistry', provider: 'uopeople', category: 'science', credits: 3, description: 'Basic principles of chemistry and molecular interactions.' },
       { name: 'Physics', provider: 'uopeople', category: 'science', credits: 3, description: 'Fundamental physics concepts and natural phenomena.' },
@@ -52,13 +76,29 @@ export class MemStorage implements IStorage {
       { name: 'Chemistry', provider: 'sophia', category: 'science', credits: 3, description: 'Comprehensive chemistry course with lab simulations.' },
       { name: 'Astronomy', provider: 'sophia', category: 'science', credits: 3, description: 'Exploration of celestial objects and cosmic phenomena.' },
       
-      // English
-      { name: 'English Composition I', provider: 'uopeople', category: 'english', credits: 3, description: 'Fundamental writing skills and essay composition.' },
-      { name: 'English Composition II', provider: 'uopeople', category: 'english', credits: 3, description: 'Advanced writing techniques and research methods.' },
-      { name: 'Literature', provider: 'uopeople', category: 'english', credits: 3, description: 'Analysis of literary works and critical thinking.' },
-      { name: 'English Composition', provider: 'sophia', category: 'english', credits: 3, description: 'Comprehensive writing course with peer review.' },
-      { name: 'Communications', provider: 'sophia', category: 'english', credits: 3, description: 'Effective communication in academic and professional settings.' },
-      { name: 'Literature', provider: 'sophia', category: 'english', credits: 3, description: 'Survey of world literature and literary analysis.' },
+      // Humanities
+      { name: 'Literature', provider: 'uopeople', category: 'humanities', credits: 3, description: 'Analysis of literary works and critical thinking.' },
+      { name: 'Art History', provider: 'uopeople', category: 'humanities', credits: 3, description: 'Survey of artistic movements and cultural expressions.' },
+      { name: 'Music Appreciation', provider: 'uopeople', category: 'humanities', credits: 3, description: 'Understanding music theory and cultural significance.' },
+      { name: 'Literature', provider: 'sophia', category: 'humanities', credits: 3, description: 'Survey of world literature and literary analysis.' },
+      { name: 'Art History', provider: 'sophia', category: 'humanities', credits: 3, description: 'Comprehensive study of art through history.' },
+      { name: 'Philosophy', provider: 'sophia', category: 'humanities', credits: 3, description: 'Introduction to philosophical thinking and major concepts.' },
+      
+      // Social and Behavioral Sciences
+      { name: 'Psychology', provider: 'uopeople', category: 'social', credits: 3, description: 'Introduction to psychological principles and human behavior.' },
+      { name: 'Sociology', provider: 'uopeople', category: 'social', credits: 3, description: 'Study of society, social institutions, and relationships.' },
+      { name: 'Political Science', provider: 'uopeople', category: 'social', credits: 3, description: 'Government systems, political processes, and civic engagement.' },
+      { name: 'Psychology', provider: 'sophia', category: 'social', credits: 3, description: 'Comprehensive introduction to psychological concepts.' },
+      { name: 'Sociology', provider: 'sophia', category: 'social', credits: 3, description: 'Understanding social structures and human interactions.' },
+      { name: 'Economics', provider: 'sophia', category: 'social', credits: 3, description: 'Basic economic principles and market systems.' },
+      
+      // Electives
+      { name: 'Computer Science Fundamentals', provider: 'uopeople', category: 'electives', credits: 3, description: 'Introduction to programming and computational thinking.' },
+      { name: 'Business Management', provider: 'uopeople', category: 'electives', credits: 3, description: 'Principles of business organization and management.' },
+      { name: 'Foreign Language (Spanish)', provider: 'uopeople', category: 'electives', credits: 3, description: 'Beginning Spanish language and culture.' },
+      { name: 'Web Development', provider: 'sophia', category: 'electives', credits: 3, description: 'HTML, CSS, and JavaScript fundamentals.' },
+      { name: 'Project Management', provider: 'sophia', category: 'electives', credits: 3, description: 'Project planning, execution, and management techniques.' },
+      { name: 'Digital Marketing', provider: 'sophia', category: 'electives', credits: 3, description: 'Online marketing strategies and social media.' },
     ];
 
     courseData.forEach(course => {
