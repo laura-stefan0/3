@@ -44,28 +44,23 @@ export default function ProgressBar({ currentStep, totalSteps, categories }: Pro
           </div>
         </div>
         
-        {/* Step Indicators */}
-        <div className="flex justify-between">
-          {steps.map((step, index) => (
-            <div key={step.id} className="flex items-center">
-              <motion.div 
-                className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300 ${
-                  step.isActive 
-                    ? 'bg-primary text-white' 
-                    : 'bg-gray-300 text-gray-600'
-                }`}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                {step.id}
-              </motion.div>
-              <span className={`ml-2 text-sm font-medium ${
-                step.isActive ? 'text-gray-700' : 'text-gray-500'
-              }`}>
-                {step.name}
-              </span>
-            </div>
-          ))}
+        {/* Progress Bar */}
+        <div className="w-full bg-gray-200 rounded-full h-6 relative overflow-hidden shadow-inner">
+          <motion.div 
+            className="bg-gradient-to-r from-primary via-primary to-secondary h-6 rounded-full shadow-sm relative"
+            initial={{ width: 0 }}
+            animate={{ width: `${progress}%` }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse rounded-full" />
+          </motion.div>
+          
+          {/* Progress percentage text */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-sm font-medium text-gray-700">
+              {Math.round(progress)}%
+            </span>
+          </div>
         </div>
       </div>
     </div>

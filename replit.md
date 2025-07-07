@@ -105,6 +105,7 @@ This is a full-stack course selection wizard application built with React, Expre
   - Natural Science: Pick 1 course (multiple options each provider)
   - Humanities: Pick 2 courses (multiple options each provider)
   - Social & Behavioral Sciences: Pick 2 courses (multiple options each provider)
+- July 07, 2025. Updated progress bar to show animated scrollbar with percentage instead of category names
 
 ## User Preferences
 

@@ -87,11 +87,13 @@ export default function Wizard() {
             return prev.filter(c => c.category !== course.category).concat(course);
           } else {
             // For categories with limit > 1, show a toast and don't add
-            toast({
-              title: "Selection Limit Reached",
-              description: `You can only select ${maxSelections} courses from this category.`,
-              variant: "destructive"
-            });
+            setTimeout(() => {
+              toast({
+                title: "Selection Limit Reached",
+                description: `You can only select ${maxSelections} courses from this category.`,
+                variant: "destructive"
+              });
+            }, 0);
             return prev;
           }
         }
