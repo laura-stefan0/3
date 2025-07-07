@@ -39,7 +39,7 @@ export default function Home() {
           </motion.p>
           
           <motion.p 
-            className="text-sm text-gray-500 mb-10 flex items-center justify-center gap-1"
+            className="text-gray-500 mb-10 flex items-center justify-center gap-1 text-[16px]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
