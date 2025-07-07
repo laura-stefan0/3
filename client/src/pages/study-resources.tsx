@@ -467,32 +467,35 @@ export default function StudyResources() {
                 className="cursor-pointer"
                 onClick={() => handleCourseClick(course)}
               >
-                <Card className="h-full hover:shadow-lg transition-all duration-300 border-l-4 border-l-orange-300 hover:border-l-orange-500">
-                  <CardHeader className="pb-1 p-3">
-                    <div className="flex items-start justify-between mb-1">
-                      <div className={`p-1 rounded ${course.categoryColor}`}>
-                        {React.cloneElement(course.categoryIcon as React.ReactElement, { className: "w-3 h-3" })}
+                <Card className="h-full bg-white border-0 shadow-sm hover:shadow-xl transition-all duration-300 rounded-xl overflow-hidden group">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-pink-400"></div>
+                  <CardHeader className="p-6 pb-4">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className={`p-2 rounded-lg ${course.categoryColor} group-hover:scale-110 transition-transform duration-200`}>
+                        {React.cloneElement(course.categoryIcon as React.ReactElement, { className: "w-4 h-4" })}
                       </div>
                       {course.difficulty && (
-                        <Badge className={`text-xs px-1 py-0 ${course.difficultyColor}`}>
+                        <Badge className={`text-xs px-2 py-1 rounded-full ${course.difficultyColor} border-0`}>
                           {course.difficulty}
                         </Badge>
                       )}
                     </div>
-                    <CardTitle className="text-sm leading-tight">{course.courseName}</CardTitle>
-                    <CardDescription className="text-xs line-clamp-2">
+                    <CardTitle className="text-lg font-semibold leading-tight mb-2 group-hover:text-orange-600 transition-colors">
+                      {course.courseName}
+                    </CardTitle>
+                    <CardDescription className="text-sm text-gray-600 line-clamp-2 leading-relaxed">
                       {course.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="pt-0 p-3">
-                    <div className="space-y-1">
-                      <div className="flex items-center text-xs text-gray-600">
-                        <Clock className="w-2 h-2 mr-1" />
-                        <span className="text-xs">{course.completionTime}</span>
+                  <CardContent className="px-6 pb-6">
+                    <div className="flex items-center gap-4 text-sm text-gray-500">
+                      <div className="flex items-center">
+                        <Clock className="w-4 h-4 mr-1.5" />
+                        <span>{course.completionTime}</span>
                       </div>
-                      <div className="flex items-center text-xs text-gray-600">
-                        <BookOpen className="w-2 h-2 mr-1" />
-                        <span className="text-xs">{course.keyTopics.length} Topics</span>
+                      <div className="flex items-center">
+                        <BookOpen className="w-4 h-4 mr-1.5" />
+                        <span>{course.keyTopics.length} Topics</span>
                       </div>
                     </div>
                   </CardContent>
@@ -567,33 +570,36 @@ export default function StudyResources() {
                 className="cursor-pointer"
                 onClick={() => handleCourseClick(course)}
               >
-                <Card className="h-full hover:shadow-lg transition-all duration-300 border-l-4 border-l-blue-300 hover:border-l-blue-500">
-                  <CardHeader className="pb-1 p-3">
-                    <div className="flex items-start justify-between mb-1">
-                      <div className={`p-1 rounded ${course.categoryColor}`}>
-                        {React.cloneElement(course.categoryIcon as React.ReactElement, { className: "w-3 h-3" })}
+                <Card className="h-full bg-white border-0 shadow-sm hover:shadow-xl transition-all duration-300 rounded-xl overflow-hidden group">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-cyan-400"></div>
+                  <CardHeader className="p-6 pb-4">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className={`p-2 rounded-lg ${course.categoryColor} group-hover:scale-110 transition-transform duration-200`}>
+                        {React.cloneElement(course.categoryIcon as React.ReactElement, { className: "w-4 h-4" })}
                       </div>
                     </div>
-                    <CardTitle className="text-sm leading-tight">{course.courseName}</CardTitle>
-                    <p className="text-xs text-gray-600">{course.courseCode} • {course.credits} Credits</p>
-                    <CardDescription className="text-xs line-clamp-2">
+                    <CardTitle className="text-lg font-semibold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
+                      {course.courseName}
+                    </CardTitle>
+                    <p className="text-sm text-blue-600 font-medium mb-2">{course.courseCode} • {course.credits} Credits</p>
+                    <CardDescription className="text-sm text-gray-600 line-clamp-2 leading-relaxed">
                       {course.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="pt-0 p-3">
-                    <div className="space-y-1">
-                      <div className="flex items-center text-xs text-gray-600">
-                        <Clock className="w-2 h-2 mr-1" />
-                        <span className="text-xs">{course.completionTime}</span>
+                  <CardContent className="px-6 pb-6">
+                    <div className="flex items-center gap-4 text-sm text-gray-500 flex-wrap">
+                      <div className="flex items-center">
+                        <Clock className="w-4 h-4 mr-1.5" />
+                        <span>{course.completionTime}</span>
                       </div>
-                      <div className="flex items-center text-xs text-gray-600">
-                        <BookOpen className="w-2 h-2 mr-1" />
-                        <span className="text-xs">{course.keyTopics.length} Topics</span>
+                      <div className="flex items-center">
+                        <BookOpen className="w-4 h-4 mr-1.5" />
+                        <span>{course.keyTopics.length} Topics</span>
                       </div>
                       {course.materials && (
-                        <div className="flex items-center text-xs text-gray-600">
-                          <FileText className="w-2 h-2 mr-1" />
-                          <span className="text-xs">{course.materials.length} Materials</span>
+                        <div className="flex items-center">
+                          <FileText className="w-4 h-4 mr-1.5" />
+                          <span>{course.materials.length} Materials</span>
                         </div>
                       )}
                     </div>
