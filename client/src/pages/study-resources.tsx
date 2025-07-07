@@ -466,10 +466,17 @@ export default function StudyResources() {
                 className="cursor-pointer"
                 onClick={() => handleCourseClick(course)}
               >
-                <Card className="h-full hover:shadow-lg transition-all duration-300 border-l-4 border-l-orange-300 hover:border-l-orange-500">
-                  <CardHeader className="pb-2">
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-l-4 border-l-orange-300 hover:border-l-orange-500 relative overflow-hidden group">
+                  {/* Background Graphic */}
+                  <div className="absolute top-0 right-0 w-16 h-16 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <div className="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 rounded-bl-2xl transform rotate-12 scale-110"></div>
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-orange-200 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute top-4 -right-1 w-4 h-4 bg-orange-300 rounded-full opacity-30 group-hover:opacity-40 transition-opacity"></div>
+                  
+                  <CardHeader className="pb-2 relative z-10">
                     <div className="flex items-start justify-between mb-2">
-                      <div className={`p-1.5 rounded-lg ${course.categoryColor}`}>
+                      <div className={`p-1.5 rounded-lg ${course.categoryColor} shadow-sm`}>
                         {course.categoryIcon}
                       </div>
                       {course.difficulty && (
@@ -483,7 +490,7 @@ export default function StudyResources() {
                       {course.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="pt-0">
+                  <CardContent className="pt-0 relative z-10">
                     <div className="space-y-1">
                       <div className="flex items-center text-xs text-gray-600">
                         <Clock className="w-3 h-3 mr-1" />
@@ -556,7 +563,7 @@ export default function StudyResources() {
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
             {uopeopleCourses.map((course, index) => (
               <motion.div
                 key={course.id}
@@ -566,10 +573,17 @@ export default function StudyResources() {
                 className="cursor-pointer"
                 onClick={() => handleCourseClick(course)}
               >
-                <Card className="h-full hover:shadow-lg transition-all duration-300 border-l-4 border-l-blue-300 hover:border-l-blue-500">
-                  <CardHeader className="pb-2">
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-l-4 border-l-blue-300 hover:border-l-blue-500 relative overflow-hidden group">
+                  {/* Background Graphic */}
+                  <div className="absolute top-0 right-0 w-16 h-16 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 rounded-bl-2xl transform rotate-12 scale-110"></div>
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-200 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute top-4 -right-1 w-4 h-4 bg-blue-300 rounded-full opacity-30 group-hover:opacity-40 transition-opacity"></div>
+                  
+                  <CardHeader className="pb-2 relative z-10">
                     <div className="flex items-start justify-between mb-2">
-                      <div className={`p-1.5 rounded-lg ${course.categoryColor}`}>
+                      <div className={`p-1.5 rounded-lg ${course.categoryColor} shadow-sm`}>
                         {course.categoryIcon}
                       </div>
                     </div>
@@ -579,7 +593,7 @@ export default function StudyResources() {
                       {course.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="pt-0">
+                  <CardContent className="pt-0 relative z-10">
                     <div className="space-y-1">
                       <div className="flex items-center text-xs text-gray-600">
                         <Clock className="w-3 h-3 mr-1" />
