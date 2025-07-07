@@ -431,26 +431,44 @@ export default function StudyResources() {
         </div>
       </div>
 
-      {/* Course Planner CTA */}
-      <div className="py-12 bg-gradient-to-r from-blue-50 to-purple-50">
-        <div className="max-w-4xl mx-auto px-8 text-center">
+      {/* Course Planner CTA - Accent Section */}
+      <div className="relative py-20 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-y-12"></div>
+        </div>
+        
+        <div className="relative max-w-4xl mx-auto px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
+            className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-3">
-              Unsure which courses to take?
-            </h2>
-            <p className="text-gray-600 mb-6">
-              Use our Course Planner to get personalized recommendations based on your goals and timeline
-            </p>
-            <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-              <a href="/course-planning">
-                Try the Course Planner
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </a>
-            </Button>
+            <div className="mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
+                <Target className="w-8 h-8 text-white" />
+              </div>
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Not sure which courses to choose?
+              </h2>
+              <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Let our intelligent Course Planner guide you through the perfect combination of courses based on your academic goals, timeline, and preferences
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button asChild size="lg" className="bg-white text-indigo-600 hover:bg-gray-50 shadow-lg px-8 py-3 text-lg font-semibold">
+                <a href="/course-planning" className="flex items-center">
+                  <Star className="w-5 h-5 mr-2" />
+                  Start Course Planning
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
+              </Button>
+              <p className="text-white/80 text-sm">
+                ✨ Personalized recommendations in under 5 minutes
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>
