@@ -35,8 +35,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Just a CS student sharing my notes and what I've learned about course planning. 
-            Maybe it'll save you some time figuring things out.
+            An all-in-one platform to plan your CS degree at UoPeople. Built by a student who got tired of spreadsheets and Reddit threads.
           </motion.p>
           
           <motion.div 
