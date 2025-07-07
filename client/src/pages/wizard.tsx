@@ -253,181 +253,96 @@ export default function Wizard() {
               {/* Course Layout */}
               {currentCategory.id === 'foundations' ? (
                 /* Introductory Page - How This Website Works */
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-5xl mx-auto">
                   {/* Hero Section */}
-                  <div className="text-center mb-12">
-                    <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="text-center mb-16">
+                    <div className="w-24 h-24 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-xl">
+                      <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                       </svg>
                     </div>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">How This Course Planner Works</h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                      This wizard will guide you through selecting the optimal combination of courses from UoPeople and Sophia Learning to complete your General Education requirements efficiently and affordably.
+                    <h2 className="text-5xl font-black text-gray-900 mb-6 leading-tight">
+                      Your Course Planning
+                      <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent block">
+                        Made Simple
+                      </span>
+                    </h2>
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                      Get the perfect mix of UoPeople and Sophia courses to complete your degree 
+                      <strong className="text-gray-800"> faster and cheaper</strong>
                     </p>
                   </div>
 
-                  {/* Steps Overview */}
-                  <div className="space-y-8">
+                  {/* Simple 3-Step Process */}
+                  <div className="grid md:grid-cols-3 gap-8 mb-16">
                     {/* Step 1 */}
-                    <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-                      <div className="p-8">
-                        <div className="flex items-center mb-6">
-                          <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                            <span className="text-xl font-bold text-blue-600">1</span>
-                          </div>
-                          <div>
-                            <h3 className="text-2xl font-bold text-gray-900">General Education Courses</h3>
-                            <p className="text-gray-600">Select your required courses across multiple categories</p>
-                          </div>
-                        </div>
-                        
-                        <div className="grid md:grid-cols-2 gap-6">
-                          {/* Mandatory Courses */}
-                          <div className="bg-blue-50 rounded-lg p-6">
-                            <h4 className="font-semibold text-blue-900 mb-3 flex items-center">
-                              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                              </svg>
-                              Mandatory UoPeople Courses
-                            </h4>
-                            <ul className="space-y-2 text-sm text-blue-800">
-                              <li>• 2 Foundation courses (UNIV 0001, UNIV 1001)</li>
-                              <li>• 1 Communication course (COM 2001)</li>
-                              <li className="font-medium">These cannot be substituted</li>
-                            </ul>
-                          </div>
-                          
-                          {/* Optional Courses */}
-                          <div className="bg-green-50 rounded-lg p-6">
-                            <h4 className="font-semibold text-green-900 mb-3 flex items-center">
-                              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"/>
-                              </svg>
-                              Choose Your Courses
-                            </h4>
-                            <ul className="space-y-2 text-sm text-green-800">
-                              <li>• Mathematics (3 courses: Algebra, Calculus, Statistics)</li>
-                              <li>• Science, Humanities, Social Sciences</li>
-                              <li>• Values & Ethical Reasoning, Civilization Studies</li>
-                              <li className="font-medium">Pick from UoPeople or Sophia Learning</li>
-                            </ul>
-                          </div>
-                        </div>
+                    <div className="text-center group">
+                      <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-3xl font-black text-white">1</span>
                       </div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Pick General Ed</h3>
+                      <p className="text-gray-600 text-lg leading-relaxed">
+                        Choose from UoPeople or Sophia courses across 7 categories. 
+                        <strong className="text-gray-800">Some are mandatory</strong> at UoPeople.
+                      </p>
                     </div>
 
                     {/* Step 2 */}
-                    <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-                      <div className="p-8">
-                        <div className="flex items-center mb-6">
-                          <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                            <span className="text-xl font-bold text-purple-600">2</span>
-                          </div>
-                          <div>
-                            <h3 className="text-2xl font-bold text-gray-900">Elective Courses</h3>
-                            <p className="text-gray-600">Complete your degree requirements with additional courses</p>
-                          </div>
-                        </div>
-                        
-                        <div className="bg-purple-50 rounded-lg p-6">
-                          <div className="flex items-start space-x-4">
-                            <div className="w-8 h-8 bg-purple-200 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                              <svg className="w-4 h-4 text-purple-700" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"/>
-                              </svg>
-                            </div>
-                            <div>
-                              <h4 className="font-semibold text-purple-900 mb-2">Smart Course Availability</h4>
-                              <p className="text-sm text-purple-800">
-                                Any Sophia courses you didn't select for General Education will automatically become available as electives. 
-                                Plus, you can choose from UoPeople Computer Science electives and additional Sophia general electives.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
+                    <div className="text-center group">
+                      <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-3xl font-black text-white">2</span>
                       </div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Add Electives</h3>
+                      <p className="text-gray-600 text-lg leading-relaxed">
+                        Fill remaining credits with Computer Science electives or 
+                        <strong className="text-gray-800"> any leftover Sophia courses</strong>.
+                      </p>
                     </div>
 
                     {/* Step 3 */}
-                    <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-                      <div className="p-8">
-                        <div className="flex items-center mb-6">
-                          <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
-                            <span className="text-xl font-bold text-green-600">3</span>
-                          </div>
-                          <div>
-                            <h3 className="text-2xl font-bold text-gray-900">Download Your Plan</h3>
-                            <p className="text-gray-600">Get your personalized course roadmap</p>
-                          </div>
-                        </div>
-                        
-                        <div className="grid md:grid-cols-3 gap-4">
-                          <div className="text-center p-4 bg-gray-50 rounded-lg">
-                            <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                              <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd"/>
-                              </svg>
-                            </div>
-                            <h4 className="font-medium text-gray-900">Download</h4>
-                            <p className="text-xs text-gray-600">Save as JSON file</p>
-                          </div>
-                          
-                          <div className="text-center p-4 bg-gray-50 rounded-lg">
-                            <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                              <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
-                              </svg>
-                            </div>
-                            <h4 className="font-medium text-gray-900">Share</h4>
-                            <p className="text-xs text-gray-600">Copy to clipboard</p>
-                          </div>
-                          
-                          <div className="text-center p-4 bg-gray-50 rounded-lg">
-                            <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                              <svg className="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clipRule="evenodd"/>
-                              </svg>
-                            </div>
-                            <h4 className="font-medium text-gray-900">Edit</h4>
-                            <p className="text-xs text-gray-600">Modify anytime</p>
-                          </div>
-                        </div>
+                    <div className="text-center group">
+                      <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-3xl font-black text-white">3</span>
                       </div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Download Plan</h3>
+                      <p className="text-gray-600 text-lg leading-relaxed">
+                        Get your complete roadmap and 
+                        <strong className="text-gray-800"> start saving immediately</strong>.
+                      </p>
                     </div>
+                  </div>
 
-                    {/* Benefits Section */}
-                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8 text-center">
-                      <h3 className="text-xl font-bold text-gray-900 mb-4">Why Use This Planner?</h3>
-                      <div className="grid md:grid-cols-3 gap-6 text-sm">
-                        <div>
-                          <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                            <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                              <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
-                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clipRule="evenodd"/>
-                            </svg>
-                          </div>
-                          <h4 className="font-medium text-gray-900 mb-1">Save Money</h4>
-                          <p className="text-gray-600">Choose affordable Sophia courses where possible</p>
+                  {/* Key Benefits */}
+                  <div className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 rounded-3xl p-12 text-center text-white shadow-2xl">
+                    <h3 className="text-3xl font-black mb-8">Why Students Love This Planner</h3>
+                    <div className="grid md:grid-cols-3 gap-8">
+                      <div className="space-y-3">
+                        <div className="w-16 h-16 bg-green-400 rounded-2xl flex items-center justify-center mx-auto">
+                          <svg className="w-8 h-8 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clipRule="evenodd"/>
+                          </svg>
                         </div>
-                        <div>
-                          <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                            <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
-                            </svg>
-                          </div>
-                          <h4 className="font-medium text-gray-900 mb-1">Save Time</h4>
-                          <p className="text-gray-600">No need to research course equivalencies</p>
+                        <h4 className="text-xl font-bold">Save Thousands</h4>
+                        <p className="text-gray-300">Sophia courses cost ~$100/month vs UoPeople's assessment fees</p>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="w-16 h-16 bg-blue-400 rounded-2xl flex items-center justify-center mx-auto">
+                          <svg className="w-8 h-8 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
+                          </svg>
                         </div>
-                        <div>
-                          <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                            <svg className="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                            </svg>
-                          </div>
-                          <h4 className="font-medium text-gray-900 mb-1">Stay Compliant</h4>
-                          <p className="text-gray-600">Ensure all degree requirements are met</p>
+                        <h4 className="text-xl font-bold">Graduate Faster</h4>
+                        <p className="text-gray-300">Complete courses at your own pace with flexible scheduling</p>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="w-16 h-16 bg-purple-400 rounded-2xl flex items-center justify-center mx-auto">
+                          <svg className="w-8 h-8 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                          </svg>
                         </div>
+                        <h4 className="text-xl font-bold">Stay Compliant</h4>
+                        <p className="text-gray-300">All courses guaranteed to transfer and meet requirements</p>
                       </div>
                     </div>
                   </div>
