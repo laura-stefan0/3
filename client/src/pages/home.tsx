@@ -17,7 +17,6 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Navigation />
-      
       {/* Hero Section */}
       <div className="min-h-[90vh] flex items-center justify-center bg-white pt-20">
         <div className="text-center px-8 max-w-4xl mx-auto">
@@ -63,9 +62,6 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
-
-      
-
       {/* What This Tool Does */}
       <div className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-8">
@@ -140,7 +136,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       {/* About Laura Section */}
       <div className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="max-w-4xl mx-auto px-8">
@@ -154,7 +149,7 @@ export default function Home() {
             <h2 className="text-3xl font-semibold text-gray-900 mb-6">
               About This Project
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto text-left">
               A personal project born from the need to plan my degree journey and organize resources and study materials.
             </p>
           </motion.div>
@@ -199,7 +194,6 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
-
       {/* CTA Section */}
       <div className="py-16 bg-gradient-to-br from-blue-600 to-purple-700">
         <div className="max-w-4xl mx-auto px-8 text-center">
