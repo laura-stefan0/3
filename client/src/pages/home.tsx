@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { BookOpen, Brain, Code, Target, Users, Lightbulb, Clock, Award } from "lucide-react";
 import Navigation from "@/components/navigation";
 
@@ -20,22 +21,22 @@ export default function Home() {
       <div className="min-h-[90vh] flex items-center justify-center bg-white pt-20">
         <div className="text-center px-8 max-w-4xl mx-auto">
           <motion.h1 
-            className="text-4xl font-medium mb-6 leading-tight text-gray-900"
+            className="text-5xl font-bold mb-6 leading-tight text-gray-900 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            UoPeople CS Notes & Course Planning
+            UoPeople CS Study Hub
           </motion.h1>
           
           <motion.p 
-            className="text-lg mb-8 text-gray-600 leading-relaxed"
+            className="text-xl mb-10 text-gray-600 leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Just a CS student sharing my notes and what I've learned about course planning. 
-            Maybe it'll save you some time figuring things out.
+            Your go-to resource for CS notes, course planning, and proven strategies to save time and money 
+            on your UoPeople degree. Made by a student, for students.
           </motion.p>
           
           <motion.div
@@ -46,16 +47,18 @@ export default function Home() {
           >
             <Button 
               onClick={handleCoursePlanning}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 px-6 text-base"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              Check Out Course Planning
+              <Target className="mr-2" size={20} />
+              Start Course Planning
             </Button>
             <Button 
               onClick={() => setLocation("/study-resources")}
               variant="outline"
-              className="font-medium py-3 px-6 text-base"
+              className="font-semibold py-4 px-8 text-lg border-2 border-gray-300 hover:border-blue-500 hover:bg-blue-50 rounded-xl transition-all duration-300"
             >
-              See My Notes
+              <BookOpen className="mr-2" size={20} />
+              Browse Study Notes
             </Button>
           </motion.div>
         </div>
@@ -213,33 +216,56 @@ export default function Home() {
           </motion.div>
 
           <motion.div 
-            className="max-w-3xl mx-auto"
+            className="max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="flex items-start gap-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-white text-2xl font-bold">L</span>
-              </div>
+            <div className="flex items-start gap-6">
+              <Avatar className="w-20 h-20 flex-shrink-0 border-4 border-white shadow-lg">
+                <AvatarImage 
+                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=80&h=80&fit=crop&crop=face&auto=format&q=80" 
+                  alt="Laura's profile picture" 
+                />
+                <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-2xl font-semibold">
+                  L
+                </AvatarFallback>
+              </Avatar>
               
-              <div className="relative">
+              <div className="relative flex-1">
                 {/* Chat bubble tail */}
-                <div className="absolute left-0 top-4 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white transform -translate-x-2"></div>
+                <div className="absolute left-0 top-6 w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-r-[16px] border-r-white transform -translate-x-4"></div>
                 
                 {/* Chat bubble */}
-                <div className="bg-white rounded-2xl rounded-tl-sm p-6 shadow-lg border border-gray-100 max-w-2xl">
-                  <p className="text-gray-700 leading-relaxed text-lg mb-4">
+                <div className="bg-white rounded-3xl rounded-tl-lg p-8 shadow-xl border border-gray-100 max-w-3xl">
+                  <div className="flex items-center gap-3 mb-4">
+                    <h3 className="text-xl font-semibold text-gray-900">Laura</h3>
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span>Online</span>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-700 leading-relaxed text-lg mb-6">
                     Hi! I'm starting my CS degree at UoPeople in September 2025. I created this website to organize 
                     and share my study notes and materials, plus everything I've learned about using Sophia courses 
                     to save money on your degree. Feel free to use anything that helps with your studies — and if 
                     it does help, I'd really appreciate a thank you message on the guestbook! 😊
                   </p>
                   
-                  <div className="flex items-center gap-2 text-sm text-gray-500">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>Laura, Computer Science Student</span>
+                  <div className="flex items-center justify-between">
+                    <div className="text-sm text-gray-500">
+                      Computer Science Student
+                    </div>
+                    <Button 
+                      onClick={() => setLocation("/guestbook")}
+                      size="sm" 
+                      variant="outline"
+                      className="text-blue-600 border-blue-200 hover:bg-blue-50"
+                    >
+                      Leave a message 💬
+                    </Button>
                   </div>
                 </div>
               </div>
