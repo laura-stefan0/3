@@ -107,6 +107,7 @@ This is a full-stack course selection wizard application built with React, Expre
   - Social & Behavioral Sciences: Pick 2 courses (multiple options each provider)
 - July 07, 2025. Updated progress bar to show animated scrollbar with percentage instead of category names
 - July 07, 2025. Added Foundation Courses category with mandatory UoPeople courses (UNIV 0001, UNIV 1001) that auto-select and cannot be changed. Updated Communication category to include mandatory COM 2001 Professional Communication course plus one additional selectable course.
+- July 07, 2025. Enhanced Math category Algebra section to offer three Sophia options: Introduction to College Mathematics (easier), College Algebra (recommended equivalent), and Precalculus (harder), with visual difficulty indicators.
 
 ## User Preferences
 

@@ -47,7 +47,9 @@ export class MemStorage implements IStorage {
       
       // Math (pick one for each pair)
       { name: 'MATH 1201 College Algebra', provider: 'uopeople', category: 'math', credits: 3, description: 'Fundamental algebraic concepts and problem-solving techniques.' },
-      { name: 'College Algebra', provider: 'sophia', category: 'math', credits: 3, description: 'Comprehensive algebra course covering linear equations and inequalities.' },
+      { name: 'Introduction to College Mathematics', provider: 'sophia', category: 'math', credits: 3, description: 'Foundational mathematics course covering basic algebra and problem-solving (easier option).' },
+      { name: 'College Algebra', provider: 'sophia', category: 'math', credits: 3, description: 'Comprehensive algebra course covering linear equations and inequalities (recommended equivalent).' },
+      { name: 'Precalculus', provider: 'sophia', category: 'math', credits: 3, description: 'Advanced algebra and trigonometry preparation for calculus (harder option).' },
       { name: 'MATH 1211 Calculus', provider: 'uopeople', category: 'math', credits: 3, description: 'Differential calculus and its applications.' },
       { name: 'Calculus', provider: 'sophia', category: 'math', credits: 3, description: 'Comprehensive calculus course with applications.' },
       { name: 'MATH 1280 Introduction to Statistics', provider: 'uopeople', category: 'math', credits: 3, description: 'Introduction to statistical methods and data analysis.' },

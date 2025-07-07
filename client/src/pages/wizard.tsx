@@ -99,14 +99,22 @@ export default function Wizard() {
         // Special handling for math pairs
         if (course.category === 'math') {
           let courseType = '';
-          if (course.name.includes('Algebra')) courseType = 'algebra';
-          else if (course.name.includes('Calculus')) courseType = 'calculus';
-          else if (course.name.includes('Statistics')) courseType = 'statistics';
+          if (course.name.includes('Algebra') || course.name.includes('Introduction to College Mathematics') || course.name.includes('Precalculus')) {
+            courseType = 'algebra';
+          } else if (course.name.includes('Calculus')) {
+            courseType = 'calculus';
+          } else if (course.name.includes('Statistics')) {
+            courseType = 'statistics';
+          }
           
           // Remove any existing course of the same type (algebra, calculus, or statistics)
           const filteredPrev = prev.filter(c => {
             if (c.category !== 'math') return true;
-            if (courseType === 'algebra' && c.name.includes('Algebra')) return false;
+            if (courseType === 'algebra' && (
+              c.name.includes('Algebra') || 
+              c.name.includes('Introduction to College Mathematics') || 
+              c.name.includes('Precalculus')
+            )) return false;
             if (courseType === 'calculus' && c.name.includes('Calculus')) return false;
             if (courseType === 'statistics' && c.name.includes('Statistics')) return false;
             return true;
@@ -346,20 +354,60 @@ export default function Wizard() {
                 /* Math Category - Special Pairs Layout */
                 <div className="space-y-8">
                   {/* Algebra Pair */}
-                  {uopeopleCourses.find(c => c.name.includes('College Algebra')) && sophiaCourses.find(c => c.name.includes('College Algebra')) && (
+                  {uopeopleCourses.find(c => c.name.includes('College Algebra')) && (
                     <div className="bg-white rounded-lg shadow-lg p-6">
                       <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">Algebra (Pick One)</h3>
-                      <div className="grid lg:grid-cols-2 gap-6">
-                        <CourseCard
-                          course={uopeopleCourses.find(c => c.name.includes('College Algebra'))!}
-                          isSelected={selectedCourses.some(c => c.id === uopeopleCourses.find(uo => uo.name.includes('College Algebra'))?.id)}
-                          onSelect={() => handleCourseSelect(uopeopleCourses.find(c => c.name.includes('College Algebra'))!)}
-                        />
-                        <CourseCard
-                          course={sophiaCourses.find(c => c.name.includes('College Algebra'))!}
-                          isSelected={selectedCourses.some(c => c.id === sophiaCourses.find(s => s.name.includes('College Algebra'))?.id)}
-                          onSelect={() => handleCourseSelect(sophiaCourses.find(c => c.name.includes('College Algebra'))!)}
-                        />
+                      <div className="grid gap-6">
+                        {/* UoPeople Option */}
+                        <div>
+                          <h4 className="font-medium text-gray-700 mb-3 flex items-center">
+                            <University size={20} className="mr-2 text-primary" />
+                            UoPeople Option
+                          </h4>
+                          <CourseCard
+                            course={uopeopleCourses.find(c => c.name.includes('College Algebra'))!}
+                            isSelected={selectedCourses.some(c => c.id === uopeopleCourses.find(uo => uo.name.includes('College Algebra'))?.id)}
+                            onSelect={() => handleCourseSelect(uopeopleCourses.find(c => c.name.includes('College Algebra'))!)}
+                          />
+                        </div>
+
+                        {/* Sophia Options */}
+                        <div>
+                          <h4 className="font-medium text-gray-700 mb-3 flex items-center">
+                            <GraduationCap size={20} className="mr-2 text-accent" />
+                            Sophia Options
+                          </h4>
+                          <div className="space-y-3">
+                            {sophiaCourses.filter(c => 
+                              c.name.includes('Introduction to College Mathematics') || 
+                              c.name.includes('College Algebra') || 
+                              c.name.includes('Precalculus')
+                            ).map(course => (
+                              <div key={course.id} className="relative">
+                                <CourseCard
+                                  course={course}
+                                  isSelected={selectedCourses.some(c => c.id === course.id)}
+                                  onSelect={() => handleCourseSelect(course)}
+                                />
+                                {course.name === 'College Algebra' && (
+                                  <div className="absolute top-2 right-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded">
+                                    Recommended
+                                  </div>
+                                )}
+                                {course.name === 'Introduction to College Mathematics' && (
+                                  <div className="absolute top-2 right-2 bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                                    Easier
+                                  </div>
+                                )}
+                                {course.name === 'Precalculus' && (
+                                  <div className="absolute top-2 right-2 bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">
+                                    Harder
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   )}
