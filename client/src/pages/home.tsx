@@ -160,13 +160,13 @@ export default function Home() {
           </motion.div>
 
           <motion.div 
-            className="max-w-4xl mx-auto"
+            className="max-w-4xl mx-auto flex justify-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="flex items-start gap-6 justify-center">
+            <div className="flex items-start gap-6">
               <Avatar className="w-20 h-20 flex-shrink-0 border-4 border-white shadow-lg">
                 <AvatarImage 
                   src="/images/my-notion-face-portrait.png" 
