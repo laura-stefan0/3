@@ -104,7 +104,7 @@ export default function About() {
       <Navigation />
       
       {/* Hero Section */}
-      <div className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <div className="pt-32 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="max-w-5xl mx-auto px-8">
           <motion.h1 
             className="text-5xl font-bold mb-6 text-gray-900 tracking-tight"

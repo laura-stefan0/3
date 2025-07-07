@@ -7,7 +7,7 @@ export default function GuestbookPage() {
     <div className="min-h-screen">
       <Navigation />
       {/* Hero Section */}
-      <div className="pt-20 pb-8 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <div className="pt-32 pb-8 bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="max-w-5xl mx-auto px-8 text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6 tracking-tight">
             Guestbook

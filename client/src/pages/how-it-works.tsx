@@ -17,7 +17,7 @@ export default function HowItWorks() {
       <Navigation />
       
       {/* Hero Section */}
-      <div className="pt-20 pb-16 gradient-bg">
+      <div className="pt-32 pb-16 gradient-bg">
         <div className="max-w-4xl mx-auto px-8 text-center text-white">
           <motion.h1 
             className="text-5xl font-bold mb-6"

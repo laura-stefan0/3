@@ -78,7 +78,7 @@ export default function Notes() {
       <Navigation />
       
       {/* Header */}
-      <div className="bg-gradient-to-br from-blue-600 to-purple-700 pt-20 pb-16">
+      <div className="bg-gradient-to-br from-blue-600 to-purple-700 pt-32 pb-16">
         <div className="max-w-6xl mx-auto px-8 text-center">
           <motion.h1 
             className="text-5xl font-bold text-white mb-6"
