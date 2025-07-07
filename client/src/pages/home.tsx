@@ -152,7 +152,7 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Right: Reddit Posts Mockup */}
+            {/* Right: Real Reddit Posts */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -163,54 +163,51 @@ export default function Home() {
               <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-6 h-6 bg-orange-500 rounded-full"></div>
-                  <span className="text-sm text-gray-600">r/UoPeople • 8mo ago</span>
+                  <span className="text-sm text-gray-600">r/UoPeople • 2mo ago</span>
                 </div>
                 <h4 className="font-medium text-gray-900 mb-2">
-                  Does Sophia Statistics transfer to UoPeople CS degree?
+                  Help me understand major electives
                 </h4>
                 <p className="text-sm text-gray-600 mb-3">
-                  I can't find clear info anywhere. Some posts say yes, others say no. 
-                  Has anyone actually transferred this course recently?
+                  So it can be any say business class if you are a business major while general elective is any class from any discipline. Is this correct?
                 </p>
                 <div className="flex gap-4 text-xs text-gray-500">
-                  <span>23 comments</span>
-                  <span>↑ 45</span>
+                  <span>3 comments</span>
+                  <span>↑ 2</span>
                 </div>
               </div>
 
               <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-6 h-6 bg-orange-500 rounded-full"></div>
-                  <span className="text-sm text-gray-600">r/UoPeople • 1yr ago</span>
+                  <span className="text-sm text-gray-600">r/UoPeople • 11mo ago</span>
                 </div>
                 <h4 className="font-medium text-gray-900 mb-2">
-                  URGENT: Transfer credit deadline confusion
+                  How do electives work and another question
                 </h4>
                 <p className="text-sm text-gray-600 mb-3">
-                  UoPeople website says one thing, admissions email says another. 
-                  When exactly is the deadline? This is stressing me out...
+                  I'm confused about how electives work at UoPeople. Are major electives different from general electives? Which courses count for what?
                 </p>
                 <div className="flex gap-4 text-xs text-gray-500">
-                  <span>17 comments</span>
-                  <span>↑ 32</span>
+                  <span>8 comments</span>
+                  <span>↑ 12</span>
                 </div>
               </div>
 
               <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-6 h-6 bg-orange-500 rounded-full"></div>
-                  <span className="text-sm text-gray-600">r/studycom • 6mo ago</span>
+                  <span className="text-sm text-gray-600">r/UoPeople • 10mo ago</span>
                 </div>
                 <h4 className="font-medium text-gray-900 mb-2">
-                  Complete list of Sophia courses that transfer to UoPeople?
+                  Sophia
                 </h4>
                 <p className="text-sm text-gray-600 mb-3">
-                  Trying to plan my degree path but info is scattered everywhere. 
-                  Can someone please share an updated list?
+                  Can someone help me understand which Sophia courses actually transfer to UoPeople? The information seems to change and I can't find a current list...
                 </p>
                 <div className="flex gap-4 text-xs text-gray-500">
-                  <span>89 comments</span>
-                  <span>↑ 156</span>
+                  <span>15 comments</span>
+                  <span>↑ 28</span>
                 </div>
               </div>
 
