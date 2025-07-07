@@ -432,7 +432,7 @@ export default function StudyResources() {
       </div>
 
       {/* Course Planner CTA */}
-      <div className="py-12 bg-gradient-to-r from-orange-50 to-yellow-50">
+      <div className="py-12 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-4xl mx-auto px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
