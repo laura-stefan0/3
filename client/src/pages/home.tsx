@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { BookOpen, Brain, Code, Target, Users, Lightbulb, Clock, Award } from "lucide-react";
+import { BookOpen, Brain, Code, Target, Users, Lightbulb, Clock, Award, Zap, Sparkles, Rocket, Heart, Trophy, Star } from "lucide-react";
 import Navigation from "@/components/navigation";
 
 export default function Home() {
@@ -55,7 +55,7 @@ export default function Home() {
             <Button 
               onClick={() => setLocation("/study-resources")}
               variant="outline"
-              className="font-semibold py-4 px-8 text-lg border-2 border-gray-300 hover:border-blue-500 hover:bg-blue-50 rounded-xl transition-all duration-300"
+              className="font-semibold py-4 px-8 text-lg border-2 border-gray-300 hover:border-black hover:bg-black hover:text-white rounded-xl transition-all duration-300"
             >
               <BookOpen className="mr-2" size={20} />
               Browse Study Notes
@@ -94,7 +94,7 @@ export default function Home() {
               className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
-                <Code className="text-white" size={24} />
+                <Zap className="text-white" size={24} />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 Programming Notes
@@ -112,7 +112,7 @@ export default function Home() {
               className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4">
-                <Brain className="text-white" size={24} />
+                <Sparkles className="text-white" size={24} />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 Study Strategies
@@ -130,7 +130,7 @@ export default function Home() {
               className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
-                <Target className="text-white" size={24} />
+                <Rocket className="text-white" size={24} />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 Course Planning
@@ -148,7 +148,7 @@ export default function Home() {
               className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
-                <Lightbulb className="text-white" size={24} />
+                <Star className="text-white" size={24} />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 Project Ideas
@@ -166,7 +166,7 @@ export default function Home() {
               className="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-4">
-                <Clock className="text-white" size={24} />
+                <Trophy className="text-white" size={24} />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 Time Management
@@ -184,7 +184,7 @@ export default function Home() {
               className="bg-gradient-to-br from-teal-50 to-teal-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center mb-4">
-                <Users className="text-white" size={24} />
+                <Heart className="text-white" size={24} />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 Community Tips
