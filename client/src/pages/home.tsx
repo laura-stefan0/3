@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Brain, Code, Target, Users, Lightbulb, Clock, Award } from "lucide-react";
-import Guestbook from "@/components/guestbook";
 import Navigation from "@/components/navigation";
 
 export default function Home() {
@@ -39,21 +38,6 @@ export default function Home() {
             Maybe it'll save you some time figuring things out.
           </motion.p>
           
-          <motion.div 
-            className="mb-8 bg-blue-50 rounded-lg p-6 max-w-2xl mx-auto border border-blue-100"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <p className="text-gray-700 leading-relaxed">
-              Hi! I'm Laura, starting my CS degree at UoPeople. I made this site to organize my study notes 
-              and share what I've learned about using Sophia courses to save money on Gen Ed requirements. 
-              Feel free to use anything that helps.
-            </p>
-          </motion.div>
-          
-          
-          
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -73,6 +57,25 @@ export default function Home() {
             >
               See My Notes
             </Button>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* About Laura Section */}
+      <div className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-8">
+          <motion.div 
+            className="bg-blue-50 rounded-lg p-8 border border-blue-100"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-gray-700 leading-relaxed text-lg text-center">
+              Hi! I'm Laura, starting my CS degree at UoPeople. I made this site to organize my study notes 
+              and share what I've learned about using Sophia courses to save money on Gen Ed requirements. 
+              Feel free to use anything that helps.
+            </p>
           </motion.div>
         </div>
       </div>
@@ -207,9 +210,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* Guestbook Section */}
-      <Guestbook />
 
       {/* CTA Section */}
       <div className="py-16 bg-gradient-to-br from-blue-600 to-purple-700">
