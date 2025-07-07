@@ -61,24 +61,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* About Laura Section */}
-      <div className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-8">
-          <motion.div 
-            className="bg-blue-50 rounded-lg p-8 border border-blue-100"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <p className="text-gray-700 leading-relaxed text-lg text-center">
-              Hi! I'm Laura, starting my CS degree at UoPeople. I made this site to organize my study notes 
-              and share what I've learned about using Sophia courses to save money on Gen Ed requirements. 
-              Feel free to use anything that helps.
-            </p>
-          </motion.div>
-        </div>
-      </div>
+      
 
       {/* What This Tool Does */}
       <div className="py-16 bg-gray-50">
@@ -208,6 +191,52 @@ export default function Home() {
               </p>
             </motion.div>
           </div>
+        </div>
+      </div>
+
+      {/* About Laura Section */}
+      <div className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="max-w-4xl mx-auto px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-semibold text-gray-900 mb-6">
+              About This Site
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+              A personal project born from the need to organize study materials and share knowledge with fellow students.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="bg-white rounded-xl p-10 shadow-lg border border-gray-100 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                <span className="text-white text-2xl font-bold">L</span>
+              </div>
+            </div>
+            
+            <blockquote className="text-gray-700 leading-relaxed text-lg text-center italic mb-6">
+              "Hi! I'm Laura, starting my CS degree at UoPeople. I made this site to organize my study notes 
+              and share what I've learned about using Sophia courses to save money on Gen Ed requirements. 
+              Feel free to use anything that helps."
+            </blockquote>
+            
+            <div className="text-center">
+              <p className="text-gray-500 text-sm">
+                — Laura, Computer Science Student
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
 
