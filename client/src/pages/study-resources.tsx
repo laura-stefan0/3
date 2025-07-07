@@ -1,10 +1,10 @@
+
 import { motion } from "framer-motion";
 import Navigation from "@/components/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
   BookOpen, 
   FileText, 
@@ -282,43 +282,78 @@ export default function StudyResources() {
         </div>
       </div>
 
-      {/* Tabs for Sophia vs UoPeople */}
+      {/* Main Content - Side by Side Layout */}
       <div className="py-16 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-6xl mx-auto px-8">
-          <Tabs defaultValue="sophia" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-8">
-              <TabsTrigger value="sophia" className="flex items-center gap-2">
-                <Trophy className="w-4 h-4" />
-                Sophia Course Guides
-              </TabsTrigger>
-              <TabsTrigger value="uopeople" className="flex items-center gap-2">
-                <GraduationCap className="w-4 h-4" />
-                UoPeople Study Notes
-              </TabsTrigger>
-            </TabsList>
-
-            {/* Sophia Materials */}
-            <TabsContent value="sophia" className="space-y-8">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Sophia Learning Course Guides</h2>
-                <p className="text-gray-600 mb-6">Complete guides for finishing Sophia courses quickly and efficiently</p>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
-                  <div className="bg-white rounded-lg p-4 shadow-sm">
-                    <div className="text-2xl font-bold text-blue-600">{sophiaStats.totalCourses}</div>
-                    <div className="text-sm text-gray-600">Course Guides</div>
-                  </div>
-                  <div className="bg-white rounded-lg p-4 shadow-sm">
-                    <div className="text-2xl font-bold text-green-600">{sophiaStats.avgCompletionTime}</div>
-                    <div className="text-sm text-gray-600">Avg. Completion</div>
-                  </div>
-                  <div className="bg-white rounded-lg p-4 shadow-sm">
-                    <div className="text-2xl font-bold text-purple-600">{sophiaStats.successRate}</div>
-                    <div className="text-sm text-gray-600">Success Rate</div>
-                  </div>
+        <div className="max-w-7xl mx-auto px-8">
+          {/* Platform Headers */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            {/* Sophia Section Header */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              <div className="flex items-center justify-center mb-4">
+                <div className="bg-orange-100 p-3 rounded-lg mr-3">
+                  <Trophy className="w-6 h-6 text-orange-600" />
+                </div>
+                <h2 className="text-3xl font-bold text-gray-900">Sophia Learning</h2>
+              </div>
+              <p className="text-gray-600 mb-6">Fast-track your general education requirements</p>
+              
+              <div className="grid grid-cols-3 gap-3">
+                <div className="bg-white rounded-lg p-3 shadow-sm">
+                  <div className="text-lg font-bold text-orange-600">{sophiaStats.totalCourses}</div>
+                  <div className="text-xs text-gray-600">Course Guides</div>
+                </div>
+                <div className="bg-white rounded-lg p-3 shadow-sm">
+                  <div className="text-lg font-bold text-green-600">{sophiaStats.avgCompletionTime}</div>
+                  <div className="text-xs text-gray-600">Avg. Time</div>
+                </div>
+                <div className="bg-white rounded-lg p-3 shadow-sm">
+                  <div className="text-lg font-bold text-purple-600">{sophiaStats.successRate}</div>
+                  <div className="text-xs text-gray-600">Success Rate</div>
                 </div>
               </div>
+            </motion.div>
 
+            {/* UoPeople Section Header */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              <div className="flex items-center justify-center mb-4">
+                <div className="bg-blue-100 p-3 rounded-lg mr-3">
+                  <GraduationCap className="w-6 h-6 text-blue-600" />
+                </div>
+                <h2 className="text-3xl font-bold text-gray-900">UoPeople</h2>
+              </div>
+              <p className="text-gray-600 mb-6">In-depth study materials for core courses</p>
+              
+              <div className="grid grid-cols-3 gap-3">
+                <div className="bg-white rounded-lg p-3 shadow-sm">
+                  <div className="text-lg font-bold text-blue-600">{uopeopleStats.totalCourses}</div>
+                  <div className="text-xs text-gray-600">Courses</div>
+                </div>
+                <div className="bg-white rounded-lg p-3 shadow-sm">
+                  <div className="text-lg font-bold text-green-600">{uopeopleStats.totalMaterials}</div>
+                  <div className="text-xs text-gray-600">Materials</div>
+                </div>
+                <div className="bg-white rounded-lg p-3 shadow-sm">
+                  <div className="text-lg font-bold text-purple-600">{uopeopleStats.totalPages}+</div>
+                  <div className="text-xs text-gray-600">Pages</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Content Grid */}
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Sophia Materials Column */}
+            <div className="space-y-8">
               {sophiaMaterials.map((category, categoryIndex) => (
                 <motion.div
                   key={category.category}
@@ -331,15 +366,16 @@ export default function StudyResources() {
                     <div className={`p-3 rounded-lg ${category.color} mr-4`}>
                       {category.icon}
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900">{category.category}</h3>
+                    <h3 className="text-xl font-bold text-gray-900">{category.category}</h3>
+                    <Badge className="ml-auto bg-orange-100 text-orange-800">Sophia</Badge>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
                     {category.courses.map((course, courseIndex) => (
-                      <Card key={courseIndex} className="hover:shadow-md transition-shadow">
+                      <Card key={courseIndex} className="hover:shadow-md transition-shadow border-l-4 border-l-orange-300">
                         <CardHeader className="pb-3">
                           <div className="flex items-start justify-between">
-                            <CardTitle className="text-lg leading-tight">{course.courseName}</CardTitle>
+                            <CardTitle className="text-base leading-tight">{course.courseName}</CardTitle>
                             <Badge className={course.difficultyColor}>
                               {course.difficulty}
                             </Badge>
@@ -351,12 +387,12 @@ export default function StudyResources() {
                         <CardContent className="pt-0">
                           <div className="space-y-3">
                             <div className="flex items-center justify-between text-sm">
-                              <span className="font-medium">Completion Time:</span>
+                              <span className="font-medium">Time:</span>
                               <span className="text-gray-600">{course.completionTime}</span>
                             </div>
 
                             <div>
-                              <p className="text-sm font-medium mb-2">Key Topics:</p>
+                              <p className="text-sm font-medium mb-2">Topics:</p>
                               <div className="flex flex-wrap gap-1">
                                 {course.keyTopics.map((topic, topicIndex) => (
                                   <Badge key={topicIndex} variant="outline" className="text-xs">
@@ -366,12 +402,12 @@ export default function StudyResources() {
                               </div>
                             </div>
 
-                            <div className="bg-blue-50 p-3 rounded-lg">
-                              <p className="text-sm font-medium text-blue-900 mb-1">💡 Pro Tip:</p>
-                              <p className="text-sm text-blue-800">{course.tips}</p>
+                            <div className="bg-orange-50 p-3 rounded-lg">
+                              <p className="text-sm font-medium text-orange-900 mb-1">💡 Pro Tip:</p>
+                              <p className="text-sm text-orange-800">{course.tips}</p>
                             </div>
 
-                            <Button size="sm" className="w-full">
+                            <Button size="sm" className="w-full bg-orange-600 hover:bg-orange-700">
                               <Download className="w-4 h-4 mr-1" />
                               Download Guide
                             </Button>
@@ -382,10 +418,61 @@ export default function StudyResources() {
                   </div>
                 </motion.div>
               ))}
-            </TabsContent>
+            </div>
 
-            
-          </Tabs>
+            {/* UoPeople Materials Column */}
+            <div className="space-y-8">
+              {uopeopleCourses.map((course, courseIndex) => (
+                <motion.div
+                  key={course.courseCode}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: courseIndex * 0.1 }}
+                  className="bg-white rounded-lg shadow-sm border p-6"
+                >
+                  <div className="flex items-center mb-6">
+                    <div className={`p-3 rounded-lg ${course.color} mr-4`}>
+                      {course.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-gray-900">{course.courseName}</h3>
+                      <p className="text-sm text-gray-600">{course.courseCode} • {course.credits} Credits</p>
+                    </div>
+                    <Badge className="bg-blue-100 text-blue-800">UoPeople</Badge>
+                  </div>
+
+                  <div className="space-y-4">
+                    {course.materials.map((material, materialIndex) => (
+                      <Card key={materialIndex} className="hover:shadow-md transition-shadow border-l-4 border-l-blue-300">
+                        <CardHeader className="pb-3">
+                          <div className="flex items-start justify-between">
+                            <CardTitle className="text-base leading-tight">{material.title}</CardTitle>
+                            <Badge variant="outline" className="text-xs">
+                              {material.type}
+                            </Badge>
+                          </div>
+                          <CardDescription className="text-sm">
+                            {material.description}
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent className="pt-0">
+                          <div className="flex items-center justify-between text-sm mb-3">
+                            <span className="text-gray-600">{material.pages}</span>
+                            <span className="text-gray-500">Updated {material.updated}</span>
+                          </div>
+                          
+                          <Button size="sm" className="w-full">
+                            <Download className="w-4 h-4 mr-1" />
+                            Download Notes
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -417,7 +504,7 @@ export default function StudyResources() {
                   </Button>
                 </div>
                 <p className="text-sm text-blue-200 mt-4">
-                  Includes Sophia course guides + {uopeopleStats.totalPages}+ pages of UoPeople materials
+                  Includes {sophiaStats.totalCourses} Sophia course guides + {uopeopleStats.totalPages}+ pages of UoPeople materials
                 </p>
               </CardContent>
             </Card>
