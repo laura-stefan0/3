@@ -217,7 +217,7 @@ export default function StudyResources() {
       <Navigation />
       
       {/* Hero Section */}
-      <div className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <div className="pt-32 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="max-w-6xl mx-auto px-8">
           {/* Header */}
           <motion.div 
