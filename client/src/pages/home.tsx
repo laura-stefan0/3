@@ -78,11 +78,10 @@ export default function Home() {
             className="mb-12"
           >
             <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-              What This Tool Does
+              What You'll Find Here
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
-              Helps you plan your UoPeople CS degree using Sophia courses for Gen Ed requirements. 
-              Same courses everyone uses, just organized so you don't have to hunt through spreadsheets.
+              Everything you need to succeed in your UoPeople Computer Science degree - from course planning tools to study resources, all organized by a fellow student.
             </p>
           </motion.div>
 
@@ -98,10 +97,10 @@ export default function Home() {
                 <HiOutlineFire className="text-blue-500 text-4xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                Programming Notes
+                Study Resources
               </h3>
               <p className="text-gray-600 leading-relaxed text-center text-sm">
-                Comprehensive notes for Java, Python, C++, and web development courses with examples and best practices.
+                Curated study materials, notes, and resources to help you excel in your Computer Science courses.
               </p>
             </motion.div>
 
@@ -116,10 +115,10 @@ export default function Home() {
                 <HiOutlineSparkles className="text-green-500 text-4xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                Study Strategies
+                Study Tips
               </h3>
               <p className="text-gray-600 leading-relaxed text-center text-sm">
-                Proven study techniques specifically for CS subjects, time management tips, and exam preparation strategies.
+                Practical study strategies, time management techniques, and tips for succeeding as a UoPeople student.
               </p>
             </motion.div>
 
@@ -134,10 +133,10 @@ export default function Home() {
                 <HiOutlinePuzzle className="text-purple-500 text-4xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                Course Planning
+                Course Planning Tool
               </h3>
               <p className="text-gray-600 leading-relaxed text-center text-sm">
-                Smart course selection tool to optimize your degree path, save money, and graduate faster.
+                Interactive wizard to help you choose the best combination of UoPeople and Sophia courses for your degree.
               </p>
             </motion.div>
 
@@ -152,10 +151,10 @@ export default function Home() {
                 <HiOutlineStar className="text-orange-500 text-4xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                Project Ideas
+                FAQs & Answers
               </h3>
               <p className="text-gray-600 leading-relaxed text-center text-sm">
-                Inspiring project ideas for your portfolio, capstone projects, and skill development with implementation guides.
+                Common questions about UoPeople, course transfers, and degree planning answered by students.
               </p>
             </motion.div>
 
@@ -170,10 +169,10 @@ export default function Home() {
                 <HiOutlineLightBulb className="text-red-500 text-4xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                Time Management
+                About the Journey
               </h3>
               <p className="text-gray-600 leading-relaxed text-center text-sm">
-                Balance work, studies, and life effectively with proven time management techniques for busy students.
+                Learn about this project and the student behind it - why it was created and how it can help you.
               </p>
             </motion.div>
 
@@ -188,10 +187,10 @@ export default function Home() {
                 <HiOutlineHeart className="text-teal-500 text-4xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                Community Tips
+                Student Guestbook
               </h3>
               <p className="text-gray-600 leading-relaxed text-center text-sm">
-                Learn from fellow students' experiences, networking tips, and collaborative study approaches.
+                Connect with fellow UoPeople students, share experiences, and leave encouraging messages for others.
               </p>
             </motion.div>
           </div>
