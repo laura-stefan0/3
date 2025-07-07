@@ -73,111 +73,143 @@ export default function Home() {
       </div>
 
       {/* Why We Built This */}
-      <div className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-8">
+      <div className="py-32 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-blue-200 rounded-full opacity-20 blur-xl"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-purple-200 rounded-full opacity-20 blur-xl"></div>
+        
+        <div className="max-w-6xl mx-auto px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6">
+              <HiOutlineLightBulb className="text-white text-2xl" />
+            </div>
+            <h2 className="text-5xl font-bold text-gray-900 mb-6 tracking-tight">
               Why We Built This
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Navigating UoPeople and Sophia can be frustrating. We've been there.
+              Navigating UoPeople and Sophia can be frustrating. We've been there, and we built a better way.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
+          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+            {/* Problems Card */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="space-y-6"
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="relative"
             >
-              <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
-                <h3 className="text-lg font-semibold text-red-800 mb-3">
-                  The Problems We Solved
-                </h3>
-                <ul className="space-y-3 text-red-700">
-                  <li className="flex items-start">
-                    <span className="text-red-500 mr-2">•</span>
-                    UoPeople's website is confusing and hard to navigate
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-red-500 mr-2">•</span>
-                    Course transferability from Sophia isn't clearly documented
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-red-500 mr-2">•</span>
-                    Credit transfer process is unclear and scattered
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-red-500 mr-2">•</span>
-                    Information buried in countless Reddit threads
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-red-500 mr-2">•</span>
-                    Course requirements change, making old posts outdated
-                  </li>
-                </ul>
+              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 h-full">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
+                    <span className="text-white text-xl">⚠️</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    The Problems We Solved
+                  </h3>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    "UoPeople's website is confusing and hard to navigate",
+                    "Course transferability from Sophia isn't clearly documented", 
+                    "Credit transfer process is unclear and scattered",
+                    "Information buried in countless Reddit threads",
+                    "Course requirements change, making old posts outdated"
+                  ].map((problem, index) => (
+                    <motion.div 
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                      className="flex items-start group"
+                    >
+                      <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-0.5 group-hover:bg-red-200 transition-colors">
+                        <span className="text-red-600 text-sm">×</span>
+                      </div>
+                      <p className="text-gray-700 leading-relaxed">{problem}</p>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </motion.div>
 
+            {/* Solutions Card */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-6"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
             >
-              <div className="bg-green-50 border-l-4 border-green-400 p-6 rounded-r-lg">
-                <h3 className="text-lg font-semibold text-green-800 mb-3">
-                  Our Solution
-                </h3>
-                <ul className="space-y-3 text-green-700">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    Current, verified course information in one place
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    Clear Sophia-to-UoPeople transfer mapping
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    Step-by-step credit transfer guidance
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    Personalized course planning recommendations
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    Study materials from real students
-                  </li>
-                </ul>
+              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 h-full">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mr-4">
+                    <span className="text-white text-xl">✨</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    Our Solution
+                  </h3>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    "Current, verified course information in one place",
+                    "Clear Sophia-to-UoPeople transfer mapping",
+                    "Step-by-step credit transfer guidance", 
+                    "Personalized course planning recommendations",
+                    "Study materials from real students"
+                  ].map((solution, index) => (
+                    <motion.div 
+                      key={index}
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                      className="flex items-start group"
+                    >
+                      <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-0.5 group-hover:bg-green-200 transition-colors">
+                        <span className="text-green-600 text-sm">✓</span>
+                      </div>
+                      <p className="text-gray-700 leading-relaxed">{solution}</p>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </div>
 
+          {/* Testimonial */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-gray-50 rounded-xl p-8 text-center"
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="max-w-4xl mx-auto"
           >
-            <p className="text-lg text-gray-600 leading-relaxed italic">
-              "I spent weeks digging through Reddit posts, UoPeople forums, and outdated guides just to figure out 
-              which courses I needed. This tool would have saved me hours of confusion and stress."
-            </p>
-            <p className="text-gray-500 mt-4 font-medium">
-              — Every UoPeople CS Student
-            </p>
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white shadow-2xl">
+              <div className="text-center">
+                <div className="text-6xl mb-4 opacity-50">"</div>
+                <p className="text-xl leading-relaxed mb-6 italic">
+                  I spent weeks digging through Reddit posts, UoPeople forums, and outdated guides just to figure out 
+                  which courses I needed. This tool would have saved me hours of confusion and stress.
+                </p>
+                <div className="flex items-center justify-center">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-white text-lg">👥</span>
+                  </div>
+                  <p className="font-semibold text-blue-100">
+                    Every UoPeople CS Student
+                  </p>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
