@@ -93,9 +93,7 @@
     @apply rounded-2xl shadow-2xl w-full max-w-4xl mx-auto;
   }
   
-  .category-image {
-    @apply rounded-xl shadow-lg w-full h-48 object-cover;
-  }
+
   
   .provider-icon {
     @apply w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl;

@@ -22,16 +22,7 @@ const categories = [
   { id: 'social', name: 'Social and Behavioral Sciences', description: 'Pick 2 courses from these options.', maxSelections: 2 }
 ];
 
-const categoryImages = {
-  foundations: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
-  communication: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
-  math: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
-  values: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
-  civilization: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
-  science: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
-  humanities: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300",
-  social: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300"
-};
+
 
 export default function Wizard() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -224,12 +215,6 @@ export default function Wizard() {
             >
               {/* Category Header */}
               <div className="text-center mb-8">
-                <img 
-                  src={categoryImages[currentCategory.id as keyof typeof categoryImages]} 
-                  alt={`${currentCategory.name} education planning`}
-                  className="category-image mb-6"
-                />
-                
                 <h1 className="text-4xl font-bold text-gray-800 mb-2">
                   {currentCategory.name} Courses
                 </h1>
@@ -543,12 +528,6 @@ export default function Wizard() {
             >
               {/* Summary Screen */}
               <div className="text-center mb-8">
-                <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=300" 
-                  alt="Stack of academic textbooks and materials"
-                  className="category-image mb-6"
-                />
-                
                 <h1 className="text-4xl font-bold text-gray-800 mb-2">Your Course Plan</h1>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                   Here's your personalized course selection to complete your General Education requirements.
