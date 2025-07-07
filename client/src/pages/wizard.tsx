@@ -250,34 +250,34 @@ export default function Wizard() {
 
               {/* Course Layout */}
               {currentCategory.id === 'foundations' ? (
-                /* Foundations Category - Read-only Information */
-                <div className="space-y-6">
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                    <h3 className="text-lg font-semibold text-blue-800 mb-6">
-                      📚 Mandatory Foundation & Communication Courses
-                    </h3>
-                    
-                    {/* Foundation Courses */}
-                    <div className="mb-6">
-                      <h4 className="text-md font-medium text-blue-800 mb-3">Foundation Courses</h4>
-                      <p className="text-blue-700 mb-4 text-sm">
-                        These courses are automatically assigned to all new UoPeople students and must be completed first. 
-                        They cannot be substituted with Sophia courses.
-                      </p>
-                      <div className="grid gap-4">
+                /* Foundations Category - Clean Simplified Design */
+                <div className="max-w-4xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    {/* Foundation Courses Section */}
+                    <div className="p-8 border-b border-gray-100">
+                      <div className="flex items-center mb-6">
+                        <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                          <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                          </svg>
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-900">Foundation Courses</h3>
+                      </div>
+                      
+                      <div className="space-y-4">
                         {uopeopleCourses.map(course => (
-                          <div key={course.id} className="bg-white rounded-lg p-4 border border-blue-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-semibold text-gray-800">{course.name}</h4>
-                                <p className="text-sm text-gray-600 mt-1">{course.description}</p>
-                                <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mt-2">
-                                  {course.credits} Credits • UoPeople Only
-                                </span>
-                              </div>
-                              <div className="text-green-600">
-                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          <div key={course.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div className="flex-1">
+                              <h4 className="font-medium text-gray-900 mb-1">{course.name}</h4>
+                              <p className="text-sm text-gray-600 mb-2">{course.description}</p>
+                              <span className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-blue-100 text-blue-800">
+                                {course.credits} Credits
+                              </span>
+                            </div>
+                            <div className="ml-4 flex-shrink-0">
+                              <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                 </svg>
                               </div>
                             </div>
@@ -285,27 +285,32 @@ export default function Wizard() {
                         ))}
                       </div>
                     </div>
-                    
-                    {/* Communication Course */}
-                    <div>
-                      <h4 className="text-md font-medium text-blue-800 mb-3">Communication Course</h4>
-                      <p className="text-blue-700 mb-4 text-sm">
-                        This course is required for all students and must be taken at UoPeople.
-                      </p>
-                      <div className="grid gap-4">
+
+                    {/* Communication Course Section */}
+                    <div className="p-8">
+                      <div className="flex items-center mb-6">
+                        <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+                          <svg className="w-5 h-5 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-900">Communication Course</h3>
+                      </div>
+                      
+                      <div className="space-y-4">
                         {courses?.filter(c => c.name === 'COM 2001 Professional Communication').map(course => (
-                          <div key={course.id} className="bg-white rounded-lg p-4 border border-blue-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-semibold text-gray-800">{course.name}</h4>
-                                <p className="text-sm text-gray-600 mt-1">{course.description}</p>
-                                <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mt-2">
-                                  {course.credits} Credits • UoPeople Only
-                                </span>
-                              </div>
-                              <div className="text-green-600">
-                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          <div key={course.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div className="flex-1">
+                              <h4 className="font-medium text-gray-900 mb-1">{course.name}</h4>
+                              <p className="text-sm text-gray-600 mb-2">{course.description}</p>
+                              <span className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-orange-100 text-orange-800">
+                                {course.credits} Credits
+                              </span>
+                            </div>
+                            <div className="ml-4 flex-shrink-0">
+                              <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                 </svg>
                               </div>
                             </div>
