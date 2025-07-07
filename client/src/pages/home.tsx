@@ -30,7 +30,7 @@ export default function Home() {
           </motion.h1>
           
           <motion.p 
-            className="text-lg mb-8 text-gray-600 leading-relaxed"
+            className="text-lg mb-12 text-gray-600 leading-relaxed max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -38,17 +38,62 @@ export default function Home() {
             An all-in-one platform to plan your CS degree at UoPeople. Built by a student who got tired of spreadsheets and Reddit threads.
           </motion.p>
           
+          {/* Creative presentation card with gradient border and animation */}
           <motion.div 
-            className="mb-8 bg-blue-50 rounded-lg p-6 max-w-2xl mx-auto border border-blue-100"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-12 relative max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="text-gray-700 leading-relaxed">
-              Hi! I'm Laura, starting my CS degree at UoPeople. I made this site to organize my study notes 
-              and share what I've learned about using Sophia courses to save money on Gen Ed requirements. 
-              Feel free to use anything that helps.
-            </p>
+            {/* Gradient border effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl blur-sm opacity-75 animate-pulse"></div>
+            
+            {/* Main card */}
+            <div className="relative bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+              {/* Decorative elements */}
+              <div className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full opacity-60"></div>
+              <div className="absolute bottom-4 left-4 w-12 h-12 bg-gradient-to-br from-pink-100 to-orange-100 rounded-full opacity-40"></div>
+              
+              {/* Avatar and intro */}
+              <div className="flex items-start space-x-4 mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                  L
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Hi! I'm Laura 👋
+                  </h3>
+                  <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-3">
+                    🎓 Starting CS at UoPeople
+                  </div>
+                </div>
+              </div>
+              
+              {/* Main message */}
+              <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl p-6 border-l-4 border-blue-400">
+                <p className="text-gray-700 leading-relaxed text-lg">
+                  I made this site to organize my study notes and share what I've learned about using 
+                  <span className="font-semibold text-blue-600"> Sophia courses</span> to save money on Gen Ed requirements. 
+                  Feel free to use anything that helps! 🚀
+                </p>
+              </div>
+              
+              {/* Quick stats */}
+              <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-gray-100">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600">💰</div>
+                  <div className="text-sm text-gray-600 mt-1">Save Money</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-green-600">📚</div>
+                  <div className="text-sm text-gray-600 mt-1">Study Notes</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-purple-600">🎯</div>
+                  <div className="text-sm text-gray-600 mt-1">Course Planning</div>
+                </div>
+              </div>
+            </div>
           </motion.div>
           
           
@@ -206,9 +251,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* Guestbook Section */}
-      <Guestbook />
 
       {/* CTA Section */}
       <div className="py-16 bg-gradient-to-br from-blue-600 to-purple-700">
