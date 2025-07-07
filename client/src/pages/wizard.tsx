@@ -290,12 +290,22 @@ export default function Wizard() {
                       </p>
                       <div className="grid gap-4">
                         {courses?.filter(c => c.name === 'COM 2001 Professional Communication').map(course => (
-                          <CourseCard
-                            key={course.id}
-                            course={course}
-                            isSelected={selectedCourses.some(c => c.id === course.id)}
-                            onSelect={() => handleCourseSelect(course)}
-                          />
+                          <div key={course.id} className="bg-white rounded-lg p-4 border border-blue-200">
+                            <div className="flex items-center justify-between">
+                              <div>
+                                <h4 className="font-semibold text-gray-800">{course.name}</h4>
+                                <p className="text-sm text-gray-600 mt-1">{course.description}</p>
+                                <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mt-2">
+                                  {course.credits} Credits • UoPeople Only
+                                </span>
+                              </div>
+                              <div className="text-green-600">
+                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
                         ))}
                       </div>
                     </div>
