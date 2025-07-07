@@ -444,9 +444,10 @@ export default function StudyResources() {
               <Target className="w-5 h-5 mr-2 text-blue-500" />
               <span>Need help choosing courses?</span>
             </div>
-            <Button asChild variant="outline" className="border-blue-300 text-blue-600 hover:bg-blue-50">
+            <Button asChild className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 py-2 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
               <a href="/course-planning" className="flex items-center">
-                Try our Course Planner
+                <Target className="w-4 h-4 mr-2" />
+                Try the Course Planner
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </Button>
