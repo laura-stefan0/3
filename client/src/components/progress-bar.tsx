@@ -8,7 +8,8 @@ interface ProgressBarProps {
 }
 
 export default function ProgressBar({ currentStep, totalSteps, categories }: ProgressBarProps) {
-  const progress = (currentStep / totalSteps) * 100;
+  // Start at 0% for first step, then increase progressively
+  const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
   
   const steps = [
     ...categories.map((category, index) => ({

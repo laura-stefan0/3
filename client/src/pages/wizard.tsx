@@ -271,7 +271,7 @@ export default function Wizard() {
                               <h4 className="font-medium text-gray-900 mb-1">{course.name}</h4>
                               <p className="text-sm text-gray-600 mb-2">{course.description}</p>
                               <span className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-blue-100 text-blue-800">
-                                {course.credits} Credits
+                                {course.credits} {course.credits === 1 ? 'Credit' : 'Credits'}
                               </span>
                             </div>
                             <div className="ml-4 flex-shrink-0">
@@ -304,7 +304,7 @@ export default function Wizard() {
                               <h4 className="font-medium text-gray-900 mb-1">{course.name}</h4>
                               <p className="text-sm text-gray-600 mb-2">{course.description}</p>
                               <span className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-orange-100 text-orange-800">
-                                {course.credits} Credits
+                                {course.credits} {course.credits === 1 ? 'Credit' : 'Credits'}
                               </span>
                             </div>
                             <div className="ml-4 flex-shrink-0">
