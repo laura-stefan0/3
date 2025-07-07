@@ -134,12 +134,18 @@ export default function Guestbook() {
                       required
                     />
                   </div>
-                  <div className="relative">
+                  <div className="relative z-10">
                     <Select value={role} onValueChange={setRole} required>
                       <SelectTrigger>
                         <SelectValue placeholder="Select your status" />
                       </SelectTrigger>
-                      <SelectContent className="z-50">
+                      <SelectContent 
+                        className="z-[200]" 
+                        position="popper" 
+                        side="bottom" 
+                        align="start"
+                        sideOffset={4}
+                      >
                         <SelectItem value="Future Student">Future Student</SelectItem>
                         <SelectItem value="Current Student">Current Student</SelectItem>
                         <SelectItem value="Graduate">Graduate</SelectItem>
