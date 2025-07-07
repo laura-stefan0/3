@@ -50,25 +50,7 @@ export default function Home() {
             </p>
           </motion.div>
           
-          <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <div className="text-center p-4">
-              <div className="text-2xl font-bold text-primary mb-1">✅</div>
-              <div className="text-sm text-gray-600">Course planner</div>
-            </div>
-            <div className="text-center p-4">
-              <div className="text-2xl font-bold text-primary mb-1">📝</div>
-              <div className="text-sm text-gray-600">Study notes</div>
-            </div>
-            <div className="text-center p-4">
-              <div className="text-2xl font-bold text-primary mb-1">💰</div>
-              <div className="text-sm text-gray-600">Save money</div>
-            </div>
-          </motion.div>
+          
           
           <motion.div
             initial={{ opacity: 0, y: 30 }}
