@@ -146,7 +146,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-semibold text-gray-900 mb-6">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-6 text-left">
               About This Project
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto text-left">
