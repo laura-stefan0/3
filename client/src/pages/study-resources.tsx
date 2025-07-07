@@ -431,44 +431,25 @@ export default function StudyResources() {
         </div>
       </div>
 
-      {/* Course Planner CTA - Accent Section */}
-      <div className="relative py-20 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-y-12"></div>
-        </div>
-        
-        <div className="relative max-w-4xl mx-auto px-8 text-center">
+      {/* Course Planner CTA */}
+      <div className="py-12 bg-gray-50 border-t border-b border-gray-200">
+        <div className="max-w-4xl mx-auto px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
+            transition={{ duration: 0.6 }}
+            className="flex items-center justify-center gap-6"
           >
-            <div className="mb-6">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
-                <Target className="w-8 h-8 text-white" />
-              </div>
-              <h2 className="text-3xl font-bold text-white mb-4">
-                Not sure which courses to choose?
-              </h2>
-              <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Let our intelligent Course Planner guide you through the perfect combination of courses based on your academic goals, timeline, and preferences
-              </p>
+            <div className="flex items-center text-gray-600">
+              <Target className="w-5 h-5 mr-2 text-blue-500" />
+              <span>Need help choosing courses?</span>
             </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button asChild size="lg" className="bg-white text-indigo-600 hover:bg-gray-50 shadow-lg px-8 py-3 text-lg font-semibold">
-                <a href="/course-planning" className="flex items-center">
-                  <Star className="w-5 h-5 mr-2" />
-                  Start Course Planning
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </a>
-              </Button>
-              <p className="text-white/80 text-sm">
-                ✨ Personalized recommendations in under 5 minutes
-              </p>
-            </div>
+            <Button asChild variant="outline" className="border-blue-300 text-blue-600 hover:bg-blue-50">
+              <a href="/course-planning" className="flex items-center">
+                Try our Course Planner
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+            </Button>
           </motion.div>
         </div>
       </div>
