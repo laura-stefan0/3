@@ -24,7 +24,9 @@ import {
   Target,
   Timer,
   BookMarked,
-  FileDown
+  FileDown,
+  ChevronDown,
+  ChevronUp
 } from "lucide-react";
 
 interface Course {
@@ -54,6 +56,7 @@ interface Course {
 export default function StudyResources() {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [showAllSophia, setShowAllSophia] = useState(false);
 
   const allCourses: Course[] = [
     // Sophia Courses
@@ -328,6 +331,18 @@ export default function StudyResources() {
   const sophiaCourses = allCourses.filter(course => course.provider === 'sophia');
   const uopeopleCourses = allCourses.filter(course => course.provider === 'uopeople');
 
+  // Popular Sophia courses (most commonly taken)
+  const popularSophiaCourses = sophiaCourses.filter(course => 
+    course.id === 'sophia-college-algebra' ||
+    course.id === 'sophia-english-comp1' ||
+    course.id === 'sophia-english-comp2' ||
+    course.id === 'sophia-statistics' ||
+    course.id === 'sophia-environmental-science' ||
+    course.id === 'sophia-intro-biology'
+  );
+
+  const displayedSophiaCourses = showAllSophia ? sophiaCourses : popularSophiaCourses;
+
   const sophiaStats = {
     totalCourses: sophiaCourses.length,
     avgCompletionTime: "2-4 weeks",
@@ -416,11 +431,138 @@ export default function StudyResources() {
         </div>
       </div>
 
-      {/* Course Grid */}
+      {/* Sophia Learning Section */}
       <div className="py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-12"
+          >
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center">
+                <div className="bg-orange-100 p-3 rounded-lg mr-4">
+                  <Trophy className="w-8 h-8 text-orange-600" />
+                </div>
+                <div>
+                  <h2 className="text-3xl font-bold text-gray-900">Sophia Learning Courses</h2>
+                  <p className="text-gray-600">Fast, affordable courses to complete your general education requirements</p>
+                </div>
+              </div>
+              <Badge className="bg-orange-100 text-orange-800 text-sm px-3 py-1">
+                {sophiaStats.totalCourses} Available
+              </Badge>
+            </div>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+            {displayedSophiaCourses.map((course, index) => (
+              <motion.div
+                key={course.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="cursor-pointer"
+                onClick={() => handleCourseClick(course)}
+              >
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-l-4 border-l-orange-300 hover:border-l-orange-500">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-start justify-between mb-2">
+                      <div className={`p-2 rounded-lg ${course.categoryColor}`}>
+                        {course.categoryIcon}
+                      </div>
+                      <div className="flex flex-col gap-1">
+                        <Badge className="bg-orange-100 text-orange-800">
+                          Sophia
+                        </Badge>
+                        {course.difficulty && (
+                          <Badge className={course.difficultyColor}>
+                            {course.difficulty}
+                          </Badge>
+                        )}
+                      </div>
+                    </div>
+                    <CardTitle className="text-lg leading-tight">{course.courseName}</CardTitle>
+                    <CardDescription className="text-sm line-clamp-2">
+                      {course.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="space-y-2">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <Clock className="w-4 h-4 mr-1" />
+                        <span>{course.completionTime}</span>
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <BookOpen className="w-4 h-4 mr-1" />
+                        <span>{course.keyTopics.length} Topics</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          {!showAllSophia && (
+            <div className="text-center">
+              <Button 
+                onClick={() => setShowAllSophia(true)}
+                variant="outline"
+                className="px-8 py-3 text-orange-600 border-orange-300 hover:bg-orange-50 hover:border-orange-400"
+              >
+                Show All {sophiaStats.totalCourses} Sophia Courses
+                <ChevronDown className="w-4 h-4 ml-2" />
+              </Button>
+              <p className="text-sm text-gray-500 mt-2">
+                Showing {popularSophiaCourses.length} most popular courses
+              </p>
+            </div>
+          )}
+
+          {showAllSophia && (
+            <div className="text-center">
+              <Button 
+                onClick={() => setShowAllSophia(false)}
+                variant="outline"
+                className="px-8 py-3 text-orange-600 border-orange-300 hover:bg-orange-50 hover:border-orange-400"
+              >
+                Show Less
+                <ChevronUp className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* UoPeople Section */}
+      <div className="py-16 bg-gradient-to-b from-gray-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-12"
+          >
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center">
+                <div className="bg-blue-100 p-3 rounded-lg mr-4">
+                  <GraduationCap className="w-8 h-8 text-blue-600" />
+                </div>
+                <div>
+                  <h2 className="text-3xl font-bold text-gray-900">UoPeople Courses</h2>
+                  <p className="text-gray-600">Comprehensive study materials for University of the People courses</p>
+                </div>
+              </div>
+              <Badge className="bg-blue-100 text-blue-800 text-sm px-3 py-1">
+                {uopeopleStats.totalCourses} Courses
+              </Badge>
+            </div>
+          </motion.div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {allCourses.map((course, index) => (
+            {uopeopleCourses.map((course, index) => (
               <motion.div
                 key={course.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -436,20 +578,13 @@ export default function StudyResources() {
                         {course.categoryIcon}
                       </div>
                       <div className="flex flex-col gap-1">
-                        <Badge className={course.provider === 'sophia' ? 'bg-orange-100 text-orange-800' : 'bg-blue-100 text-blue-800'}>
-                          {course.provider === 'sophia' ? 'Sophia' : 'UoPeople'}
+                        <Badge className="bg-blue-100 text-blue-800">
+                          UoPeople
                         </Badge>
-                        {course.difficulty && (
-                          <Badge className={course.difficultyColor}>
-                            {course.difficulty}
-                          </Badge>
-                        )}
                       </div>
                     </div>
                     <CardTitle className="text-lg leading-tight">{course.courseName}</CardTitle>
-                    {course.courseCode && (
-                      <p className="text-sm text-gray-600">{course.courseCode} • {course.credits} Credits</p>
-                    )}
+                    <p className="text-sm text-gray-600">{course.courseCode} • {course.credits} Credits</p>
                     <CardDescription className="text-sm line-clamp-2">
                       {course.description}
                     </CardDescription>
