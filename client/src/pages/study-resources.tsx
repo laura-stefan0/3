@@ -457,7 +457,7 @@ export default function StudyResources() {
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mb-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-8">
             {displayedSophiaCourses.map((course, index) => (
               <motion.div
                 key={course.id}
@@ -470,17 +470,14 @@ export default function StudyResources() {
                 <Card className="h-full bg-white border-0 shadow-sm hover:shadow-xl transition-all duration-300 rounded-xl overflow-hidden group">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-pink-400"></div>
                   <CardHeader className="p-6 pb-4">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className={`p-2 rounded-lg ${course.categoryColor} group-hover:scale-110 transition-transform duration-200`}>
-                        {React.cloneElement(course.categoryIcon as React.ReactElement, { className: "w-4 h-4" })}
-                      </div>
-                      {course.difficulty && (
+                    <div className="flex items-start justify-end mb-3">
+                      {course.difficulty && course.difficulty !== 'Recommended' && (
                         <Badge className={`text-xs px-2 py-1 rounded-full ${course.difficultyColor} border-0`}>
                           {course.difficulty}
                         </Badge>
                       )}
                     </div>
-                    <CardTitle className="text-lg font-semibold leading-tight mb-2 group-hover:text-orange-600 transition-colors">
+                    <CardTitle className="text-lg font-semibold leading-tight mb-2">
                       {course.courseName}
                     </CardTitle>
                     <CardDescription className="text-sm text-gray-600 line-clamp-2 leading-relaxed">
@@ -488,14 +485,10 @@ export default function StudyResources() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="px-6 pb-6">
-                    <div className="flex items-center gap-4 text-sm text-gray-500">
+                    <div className="flex items-center text-sm text-gray-500">
                       <div className="flex items-center">
                         <Clock className="w-4 h-4 mr-1.5" />
                         <span>{course.completionTime}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <BookOpen className="w-4 h-4 mr-1.5" />
-                        <span>{course.keyTopics.length} Topics</span>
                       </div>
                     </div>
                   </CardContent>
@@ -560,7 +553,7 @@ export default function StudyResources() {
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {uopeopleCourses.map((course, index) => (
               <motion.div
                 key={course.id}
@@ -573,12 +566,7 @@ export default function StudyResources() {
                 <Card className="h-full bg-white border-0 shadow-sm hover:shadow-xl transition-all duration-300 rounded-xl overflow-hidden group">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-cyan-400"></div>
                   <CardHeader className="p-6 pb-4">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className={`p-2 rounded-lg ${course.categoryColor} group-hover:scale-110 transition-transform duration-200`}>
-                        {React.cloneElement(course.categoryIcon as React.ReactElement, { className: "w-4 h-4" })}
-                      </div>
-                    </div>
-                    <CardTitle className="text-lg font-semibold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
+                    <CardTitle className="text-lg font-semibold leading-tight mb-2">
                       {course.courseName}
                     </CardTitle>
                     <p className="text-sm text-blue-600 font-medium mb-2">{course.courseCode} • {course.credits} Credits</p>
@@ -591,10 +579,6 @@ export default function StudyResources() {
                       <div className="flex items-center">
                         <Clock className="w-4 h-4 mr-1.5" />
                         <span>{course.completionTime}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <BookOpen className="w-4 h-4 mr-1.5" />
-                        <span>{course.keyTopics.length} Topics</span>
                       </div>
                       {course.materials && (
                         <div className="flex items-center">
