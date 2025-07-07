@@ -234,7 +234,7 @@ export default function Wizard() {
                 </h1>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-4">
                   {currentCategory.id === 'foundations' 
-                    ? 'These mandatory UoPeople courses must be completed as part of your degree requirements.'
+                    ? 'These courses must be completed at UoPeople and cannot be exchanged with Sophia courses.'
                     : currentCategory.description}
                 </p>
                 
