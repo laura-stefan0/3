@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { 
+  ArrowRight,
   BookOpen, 
   FileText, 
   Calculator, 
@@ -332,14 +333,12 @@ export default function StudyResources() {
   const sophiaCourses = allCourses.filter(course => course.provider === 'sophia');
   const uopeopleCourses = allCourses.filter(course => course.provider === 'uopeople');
 
-  // Popular Sophia courses (most commonly taken)
+  // Popular Sophia courses (most commonly taken) - Show only 4 initially
   const popularSophiaCourses = sophiaCourses.filter(course => 
     course.id === 'sophia-college-algebra' ||
     course.id === 'sophia-english-comp1' ||
-    course.id === 'sophia-english-comp2' ||
     course.id === 'sophia-statistics' ||
-    course.id === 'sophia-environmental-science' ||
-    course.id === 'sophia-intro-biology'
+    course.id === 'sophia-environmental-science'
   );
 
   const displayedSophiaCourses = showAllSophia ? sophiaCourses : popularSophiaCourses;
@@ -432,6 +431,30 @@ export default function StudyResources() {
         </div>
       </div>
 
+      {/* Course Planner CTA */}
+      <div className="py-12 bg-gradient-to-r from-blue-50 to-purple-50">
+        <div className="max-w-4xl mx-auto px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">
+              Unsure which courses to take?
+            </h2>
+            <p className="text-gray-600 mb-6">
+              Use our Course Planner to get personalized recommendations based on your goals and timeline
+            </p>
+            <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+              <a href="/course-planning">
+                Try the Course Planner
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
+            </Button>
+          </motion.div>
+        </div>
+      </div>
+
       {/* Sophia Learning Section */}
       <div className="py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-8">
@@ -507,9 +530,6 @@ export default function StudyResources() {
                 Show All {sophiaStats.totalCourses} Sophia Courses
                 <ChevronDown className="w-4 h-4 ml-2" />
               </Button>
-              <p className="text-sm text-gray-500 mt-2">
-                Showing {popularSophiaCourses.length} most popular courses
-              </p>
             </div>
           )}
 
