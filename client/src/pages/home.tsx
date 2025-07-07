@@ -213,28 +213,35 @@ export default function Home() {
           </motion.div>
 
           <motion.div 
-            className="bg-white rounded-xl p-10 shadow-lg border border-gray-100 max-w-3xl mx-auto"
+            className="max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+            <div className="flex items-start gap-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
                 <span className="text-white text-2xl font-bold">L</span>
               </div>
-            </div>
-            
-            <blockquote className="text-gray-700 leading-relaxed text-lg text-center italic mb-6">
-              "Hi! I'm Laura, starting my CS degree at UoPeople. I made this site to organize my study notes 
-              and share what I've learned about using Sophia courses to save money on Gen Ed requirements. 
-              Feel free to use anything that helps."
-            </blockquote>
-            
-            <div className="text-center">
-              <p className="text-gray-500 text-sm">
-                — Laura, Computer Science Student
-              </p>
+              
+              <div className="relative">
+                {/* Chat bubble tail */}
+                <div className="absolute left-0 top-4 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white transform -translate-x-2"></div>
+                
+                {/* Chat bubble */}
+                <div className="bg-white rounded-2xl rounded-tl-sm p-6 shadow-lg border border-gray-100 max-w-2xl">
+                  <p className="text-gray-700 leading-relaxed text-lg mb-4">
+                    Hi! I'm Laura, starting my CS degree at UoPeople. I made this site to organize my study notes 
+                    and share what I've learned about using Sophia courses to save money on Gen Ed requirements. 
+                    Feel free to use anything that helps.
+                  </p>
+                  
+                  <div className="flex items-center gap-2 text-sm text-gray-500">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span>Laura, Computer Science Student</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
