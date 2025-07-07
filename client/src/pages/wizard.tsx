@@ -230,18 +230,22 @@ export default function Wizard() {
               {/* Category Header */}
               <div className="text-center mb-8">
                 <h1 className="text-4xl font-bold text-gray-800 mb-2">
-                  {currentCategory.name} Courses
+                  {currentCategory.id === 'foundations' ? 'Mandatory UoPeople Courses' : `${currentCategory.name} Courses`}
                 </h1>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-4">
-                  {currentCategory.description}
+                  {currentCategory.id === 'foundations' 
+                    ? 'These mandatory UoPeople courses must be completed as part of your degree requirements.'
+                    : currentCategory.description}
                 </p>
                 
-                {/* Selection Counter */}
-                <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-lg">
-                  <span className="font-medium">
-                    Selected: {selectedCourses.filter(c => c.category === currentCategory.id).length} / {currentCategory.maxSelections}
-                  </span>
-                </div>
+                {/* Selection Counter - Hide for foundations */}
+                {currentCategory.id !== 'foundations' && (
+                  <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-lg">
+                    <span className="font-medium">
+                      Selected: {selectedCourses.filter(c => c.category === currentCategory.id).length} / {currentCategory.maxSelections}
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Course Layout */}
