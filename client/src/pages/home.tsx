@@ -31,7 +31,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             A simple tool to help Computer Science students at UoPeople figure out which General Education and Elective courses to take, and where to take them.
-          </p>
+          </motion.p>
           
           <motion.div 
             className="mb-6 bg-white/20 backdrop-blur-sm rounded-lg p-4 max-w-2xl mx-auto"
