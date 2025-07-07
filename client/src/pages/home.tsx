@@ -21,7 +21,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Plan your UoPeople journey
+            Plan Your Academic Journey at UoPeople
           </motion.h1>
           
           <motion.p 
@@ -30,7 +30,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Choose the perfect combination of UoPeople and Sophia courses to complete your General Education and Electives requirements efficiently and affordably.
+            Choose the perfect combination of UoPeople and Sophia courses to complete your General Education and Elective requirements efficiently and affordably.
           </motion.p>
           
           <motion.div 
