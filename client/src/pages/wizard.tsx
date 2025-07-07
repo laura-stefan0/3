@@ -4,121 +4,12 @@ import { useQuery } from "@tanstack/react-query";
 import { Course } from "@shared/schema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, ArrowRight, Edit, Download, Share2, University, GraduationCap, ChevronDown, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Edit, Download, Share2, University, GraduationCap } from "lucide-react";
 import CourseCard from "@/components/course-card";
 import ProgressBar from "@/components/progress-bar";
 import SummaryCard from "@/components/summary-card";
 import { useToast } from "@/hooks/use-toast";
 import { nanoid } from "nanoid";
-
-// Collapsible Tab Components
-interface TabProps {
-  courses: Course[];
-}
-
-function FoundationTab({ courses }: TabProps) {
-  const [isOpen, setIsOpen] = useState(true);
-
-  return (
-    <div className="border-b border-gray-100">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-6 flex items-center justify-between hover:bg-gray-50 transition-colors"
-      >
-        <div className="flex items-center">
-          <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
-            <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.75 2.524z" />
-            </svg>
-          </div>
-          <h3 className="text-xl font-semibold text-gray-900">Foundation Courses</h3>
-        </div>
-        {isOpen ? (
-          <ChevronDown className="w-5 h-5 text-gray-500" />
-        ) : (
-          <ChevronRight className="w-5 h-5 text-gray-500" />
-        )}
-      </button>
-      
-      {isOpen && (
-        <div className="px-6 pb-6">
-          <div className="space-y-4">
-            {courses.map(course => (
-              <div key={course.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                <div className="flex-1">
-                  <h4 className="font-medium text-gray-900 mb-1">{course.name}</h4>
-                  <p className="text-sm text-gray-600 mb-2">{course.description}</p>
-                  <span className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-blue-100 text-blue-800">
-                    {course.credits} {course.credits === 1 ? 'Credit' : 'Credits'}
-                  </span>
-                </div>
-                <div className="ml-4 flex-shrink-0">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                    <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
-function CommunicationTab({ courses }: TabProps) {
-  const [isOpen, setIsOpen] = useState(true);
-
-  return (
-    <div>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-6 flex items-center justify-between hover:bg-gray-50 transition-colors"
-      >
-        <div className="flex items-center">
-          <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
-            <svg className="w-5 h-5 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clipRule="evenodd" />
-            </svg>
-          </div>
-          <h3 className="text-xl font-semibold text-gray-900">Communication Course</h3>
-        </div>
-        {isOpen ? (
-          <ChevronDown className="w-5 h-5 text-gray-500" />
-        ) : (
-          <ChevronRight className="w-5 h-5 text-gray-500" />
-        )}
-      </button>
-      
-      {isOpen && (
-        <div className="px-6 pb-6">
-          <div className="space-y-4">
-            {courses.map(course => (
-              <div key={course.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                <div className="flex-1">
-                  <h4 className="font-medium text-gray-900 mb-1">{course.name}</h4>
-                  <p className="text-sm text-gray-600 mb-2">{course.description}</p>
-                  <span className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-orange-100 text-orange-800">
-                    {course.credits} {course.credits === 1 ? 'Credit' : 'Credits'}
-                  </span>
-                </div>
-                <div className="ml-4 flex-shrink-0">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                    <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
 
 const categories = [
   { id: 'foundations', name: 'Foundation Courses', description: 'These mandatory UoPeople courses are automatically assigned to all new students.', maxSelections: 2, readonly: true },
@@ -361,30 +252,76 @@ export default function Wizard() {
 
               {/* Course Layout */}
               {currentCategory.id === 'foundations' ? (
-                /* Foundations Category - Clean Design with Collapsible Tabs */
-                <div className="max-w-4xl mx-auto space-y-8">
-                  {/* Mandatory Courses Container */}
+                /* Foundations Category - Clean Simplified Design */
+                <div className="max-w-4xl mx-auto">
                   <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-6">
-                      <h2 className="text-2xl font-bold text-white">Required UoPeople Courses</h2>
-                      <p className="text-blue-100 mt-2">All courses below are mandatory and cannot be substituted</p>
+                    {/* Foundation Courses Section */}
+                    <div className="p-8 border-b border-gray-100">
+                      <div className="flex items-center mb-6">
+                        <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                          <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                          </svg>
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-900">Foundation Courses</h3>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        {uopeopleCourses.map(course => (
+                          <div key={course.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div className="flex-1">
+                              <h4 className="font-medium text-gray-900 mb-1">{course.name}</h4>
+                              <p className="text-sm text-gray-600 mb-2">{course.description}</p>
+                              <span className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-blue-100 text-blue-800">
+                                {course.credits} {course.credits === 1 ? 'Credit' : 'Credits'}
+                              </span>
+                            </div>
+                            <div className="ml-4 flex-shrink-0">
+                              <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
 
-                    <div className="divide-y divide-gray-100">
-                      {/* Foundation Courses Tab */}
-                      <FoundationTab 
-                        courses={uopeopleCourses}
-                      />
-
-                      {/* Communication Course Tab */}
-                      <CommunicationTab 
-                        courses={courses?.filter(c => c.name === 'COM 2001 Professional Communication') || []}
-                      />
+                    {/* Communication Course Section */}
+                    <div className="p-8 border-b border-gray-100">
+                      <div className="flex items-center mb-6">
+                        <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+                          <svg className="w-5 h-5 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-900">Communication Course</h3>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        {courses?.filter(c => c.name === 'COM 2001 Professional Communication').map(course => (
+                          <div key={course.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div className="flex-1">
+                              <h4 className="font-medium text-gray-900 mb-1">{course.name}</h4>
+                              <p className="text-sm text-gray-600 mb-2">{course.description}</p>
+                              <span className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-orange-100 text-orange-800">
+                                {course.credits} {course.credits === 1 ? 'Credit' : 'Credits'}
+                              </span>
+                            </div>
+                            <div className="ml-4 flex-shrink-0">
+                              <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* What's Next Section */}
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    {/* What's Next Section */}
                     <div className="p-8">
                       <div className="flex items-center mb-6">
                         <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
