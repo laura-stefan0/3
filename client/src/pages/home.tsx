@@ -3,6 +3,7 @@ import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, University, Rocket, Plus } from "lucide-react";
 import Guestbook from "@/components/guestbook";
+import Navigation from "@/components/navigation";
 
 export default function Home() {
   const [, setLocation] = useLocation();
@@ -13,8 +14,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      <Navigation />
+      
       {/* Welcome Screen */}
-      <div className="min-h-[85vh] flex items-center justify-center gradient-bg">
+      <div className="min-h-[85vh] flex items-center justify-center gradient-bg pt-20">
         <div className="text-center text-white px-8 max-w-6xl mx-auto">
           <motion.h1 
             className="text-6xl font-bold mb-6 leading-tight"
@@ -81,7 +84,7 @@ export default function Home() {
       </div>
 
       {/* Three Steps Section */}
-      <div className="py-16 bg-white">
+      <div id="how-it-works" className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -208,7 +211,7 @@ export default function Home() {
       </div>
 
       {/* Simple Info Section */}
-      <div className="py-16 bg-white">
+      <div id="info" className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -263,7 +266,9 @@ export default function Home() {
       </div>
 
       {/* Guestbook Section */}
-      <Guestbook />
+      <div id="guestbook">
+        <Guestbook />
+      </div>
 
       {/* Disclaimer Section */}
       <div className="py-12 bg-yellow-50 border-t border-yellow-200">

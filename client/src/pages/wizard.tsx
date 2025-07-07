@@ -3,11 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import { Course } from "@shared/schema";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, ArrowRight, Edit, Download, Share2, University, GraduationCap } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowLeft, ArrowRight, Edit, Download, Share2, University, GraduationCap, BookOpen, CheckCircle } from "lucide-react";
 import CourseCard from "@/components/course-card";
-import ProgressBar from "@/components/progress-bar";
 import SummaryCard from "@/components/summary-card";
+import ProgressBar from "@/components/progress-bar";
+import Navigation from "@/components/navigation";
 import { useToast } from "@/hooks/use-toast";
 import { nanoid } from "nanoid";
 
@@ -90,7 +91,7 @@ export default function Wizard() {
       } else {
         const currentCategorySelections = prev.filter(c => c.category === course.category);
         const maxSelections = currentCategory.maxSelections;
-        
+
         // Special handling for communication category (excluding mandatory course)
         if (course.category === 'communication') {
           const nonMandatorySelections = currentCategorySelections.filter(c => c.name !== 'COM 2001 Professional Communication');
@@ -100,7 +101,7 @@ export default function Wizard() {
           }
           return [...prev, course];
         }
-        
+
         // Special handling for math pairs
         if (course.category === 'math') {
           let courseType = '';
@@ -111,7 +112,7 @@ export default function Wizard() {
           } else if (course.name.includes('Statistics')) {
             courseType = 'statistics';
           }
-          
+
           // Remove any existing course of the same type (algebra, calculus, or statistics)
           const filteredPrev = prev.filter(c => {
             if (c.category !== 'math') return true;
@@ -124,10 +125,10 @@ export default function Wizard() {
             if (courseType === 'statistics' && c.name.includes('Statistics')) return false;
             return true;
           });
-          
+
           return [...filteredPrev, course];
         }
-        
+
         // Check if we've reached the limit for other categories
         if (currentCategorySelections.length >= maxSelections) {
           // For categories with limit 1, replace the existing selection
@@ -145,7 +146,7 @@ export default function Wizard() {
             return prev;
           }
         }
-        
+
         return [...prev, course];
       }
     });
@@ -173,7 +174,7 @@ export default function Wizard() {
       sophia: selectedCourses.filter(c => c.provider === 'sophia'),
       totalCredits: selectedCourses.reduce((sum, course) => sum + course.credits, 0)
     };
-    
+
     const blob = new Blob([JSON.stringify(planData, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -181,7 +182,7 @@ export default function Wizard() {
     a.download = 'course-plan.json';
     a.click();
     URL.revokeObjectURL(url);
-    
+
     toast({
       title: "Plan Downloaded",
       description: "Your course plan has been downloaded successfully.",
@@ -190,7 +191,7 @@ export default function Wizard() {
 
   const handleSharePlan = () => {
     const planText = `My UoPeople Course Plan:\n\nUoPeople Courses:\n${selectedCourses.filter(c => c.provider === 'uopeople').map(c => `- ${c.name} (${c.credits} credits)`).join('\n')}\n\nSophia Courses:\n${selectedCourses.filter(c => c.provider === 'sophia').map(c => `- ${c.name} (${c.credits} credits)`).join('\n')}\n\nTotal Credits: ${selectedCourses.reduce((sum, course) => sum + course.credits, 0)}`;
-    
+
     if (navigator.share) {
       navigator.share({
         title: 'My UoPeople Course Plan',
@@ -209,17 +210,10 @@ export default function Wizard() {
   const isSummaryPage = currentStep === categories.length + 1;
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Progress Bar - Only show from step 2 onwards */}
-      {currentStep > 1 && (
-        <ProgressBar 
-          currentStep={currentStep} 
-          totalSteps={totalSteps} 
-          categories={categories}
-        />
-      )}
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <Navigation />
 
-      <div className="max-w-6xl mx-auto px-6 py-8">
+      <div className="container mx-auto px-4 py-8 pt-24">
         <AnimatePresence mode="wait">
           {isCoursePage ? (
             <motion.div
@@ -239,7 +233,7 @@ export default function Wizard() {
                     ? 'These courses must be completed at UoPeople and cannot be exchanged with Sophia courses.'
                     : currentCategory.description}
                 </p>
-                
+
                 {/* Selection Counter - Hide for foundations */}
                 {currentCategory.id !== 'foundations' && (
                   <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-lg">
@@ -265,7 +259,7 @@ export default function Wizard() {
                         </div>
                         <h3 className="text-xl font-semibold text-gray-900">Foundation Courses</h3>
                       </div>
-                      
+
                       <div className="space-y-4">
                         {uopeopleCourses.map(course => (
                           <div key={course.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
@@ -298,7 +292,7 @@ export default function Wizard() {
                         </div>
                         <h3 className="text-xl font-semibold text-gray-900">Communication Course</h3>
                       </div>
-                      
+
                       <div className="space-y-4">
                         {courses?.filter(c => c.name === 'COM 2001 Professional Communication').map(course => (
                           <div key={course.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
@@ -331,7 +325,7 @@ export default function Wizard() {
                         </div>
                         <h3 className="text-xl font-semibold text-gray-900">What's Next</h3>
                       </div>
-                      
+
                       <div className="space-y-4 text-gray-600">
                         <div className="flex items-start space-x-3">
                           <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
@@ -342,7 +336,7 @@ export default function Wizard() {
                             <p className="text-sm">Choose from various categories including Mathematics, Science, Values & Ethical Reasoning, and more. You can select courses from either UoPeople or Sophia Learning.</p>
                           </div>
                         </div>
-                        
+
                         <div className="flex items-start space-x-3">
                           <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
                             <span className="text-xs font-medium text-green-600">2</span>
@@ -383,7 +377,7 @@ export default function Wizard() {
                             ))}
                           </div>
                         </div>
-                        
+
                         {/* Sophia Option */}
                         <div>
                           <div className="flex items-center mb-4">
@@ -436,7 +430,7 @@ export default function Wizard() {
                             ))}
                           </div>
                         </div>
-                        
+
                         {/* Sophia Algebra */}
                         <div>
                           <div className="flex items-center mb-4">
@@ -506,7 +500,7 @@ export default function Wizard() {
                             ))}
                           </div>
                         </div>
-                        
+
                         {/* Sophia Calculus */}
                         <div>
                           <div className="flex items-center mb-4">
@@ -556,7 +550,7 @@ export default function Wizard() {
                             ))}
                           </div>
                         </div>
-                        
+
                         {/* Sophia Statistics */}
                         <div>
                           <div className="flex items-center mb-4">
@@ -656,7 +650,7 @@ export default function Wizard() {
                                     <div className="border-t border-gray-200 my-3"></div>
                                   </>
                                 )}
-                                
+
                                 {/* Dedicated elective courses */}
                                 <div className="text-sm font-medium text-gray-600 mb-2">
                                   Additional Electives:
@@ -840,9 +834,9 @@ export default function Wizard() {
                 <ArrowLeft className="mr-2" size={16} />
                 Back
               </Button>
-              
+
               <div className="flex-1" />
-              
+
               {currentStep < totalSteps && (
                 <Button 
                   onClick={handleNext}
