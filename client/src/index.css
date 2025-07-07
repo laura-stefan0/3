@@ -24,6 +24,8 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
   --cool-gray: hsl(214, 32%, 98%);
+  --uopeople-purple: #50235D;
+  --sophia-green: #D0DF01;
 }
 
 .dark {
@@ -100,10 +102,11 @@
   }
   
   .uopeople-icon {
-    @apply bg-primary;
+    background-color: var(--uopeople-purple);
   }
   
   .sophia-icon {
-    @apply bg-accent;
+    background-color: var(--sophia-green);
+    color: #000;
   }
 }
