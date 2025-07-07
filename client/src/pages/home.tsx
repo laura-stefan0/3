@@ -71,6 +71,117 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
+
+      {/* Why We Built This */}
+      <div className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">
+              Why We Built This
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              Navigating UoPeople and Sophia can be frustrating. We've been there.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="space-y-6"
+            >
+              <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
+                <h3 className="text-lg font-semibold text-red-800 mb-3">
+                  The Problems We Solved
+                </h3>
+                <ul className="space-y-3 text-red-700">
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">•</span>
+                    UoPeople's website is confusing and hard to navigate
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">•</span>
+                    Course transferability from Sophia isn't clearly documented
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">•</span>
+                    Credit transfer process is unclear and scattered
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">•</span>
+                    Information buried in countless Reddit threads
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">•</span>
+                    Course requirements change, making old posts outdated
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="space-y-6"
+            >
+              <div className="bg-green-50 border-l-4 border-green-400 p-6 rounded-r-lg">
+                <h3 className="text-lg font-semibold text-green-800 mb-3">
+                  Our Solution
+                </h3>
+                <ul className="space-y-3 text-green-700">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">✓</span>
+                    Current, verified course information in one place
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">✓</span>
+                    Clear Sophia-to-UoPeople transfer mapping
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">✓</span>
+                    Step-by-step credit transfer guidance
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">✓</span>
+                    Personalized course planning recommendations
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">✓</span>
+                    Study materials from real students
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="bg-gray-50 rounded-xl p-8 text-center"
+          >
+            <p className="text-lg text-gray-600 leading-relaxed italic">
+              "I spent weeks digging through Reddit posts, UoPeople forums, and outdated guides just to figure out 
+              which courses I needed. This tool would have saved me hours of confusion and stress."
+            </p>
+            <p className="text-gray-500 mt-4 font-medium">
+              — Every UoPeople CS Student
+            </p>
+          </motion.div>
+        </div>
+      </div>
+
       {/* What This Tool Does */}
       <div className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-4xl mx-auto px-8">
