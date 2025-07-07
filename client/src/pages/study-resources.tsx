@@ -1,10 +1,11 @@
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Navigation from "@/components/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { 
   BookOpen, 
   FileText, 
@@ -20,113 +21,168 @@ import {
   Star,
   CheckCircle,
   Trophy,
-  Target
+  Target,
+  Timer,
+  BookMarked,
+  FileDown
 } from "lucide-react";
 
-export default function StudyResources() {
-  const sophiaMaterials = [
-    {
-      category: "Mathematics",
-      icon: <Calculator className="w-5 h-5" />,
-      color: "bg-blue-100 text-blue-800",
-      courses: [
-        {
-          courseName: "Introduction to College Mathematics",
-          difficulty: "Easier",
-          difficultyColor: "bg-green-100 text-green-800",
-          description: "Complete study guide with practice problems and formula shortcuts",
-          completionTime: "2-3 weeks",
-          keyTopics: ["Basic Algebra", "Linear Equations", "Problem Solving"],
-          tips: "Focus on the practice quizzes - they're very similar to the final exam"
-        },
-        {
-          courseName: "College Algebra", 
-          difficulty: "Recommended",
-          difficultyColor: "bg-blue-100 text-blue-800",
-          description: "Comprehensive notes covering all algebra concepts with exam strategies",
-          completionTime: "3-4 weeks",
-          keyTopics: ["Polynomials", "Factoring", "Systems of Equations"],
-          tips: "The touchstone assignments are key - master them for easy A's"
-        },
-        {
-          courseName: "Precalculus",
-          difficulty: "Harder", 
-          difficultyColor: "bg-orange-100 text-orange-800",
-          description: "Advanced study materials with trigonometry and function analysis",
-          completionTime: "4-5 weeks",
-          keyTopics: ["Trigonometry", "Functions", "Exponentials"],
-          tips: "Take your time with the unit circle - it's heavily tested"
-        },
-        {
-          courseName: "Introduction to Statistics",
-          difficulty: "Moderate",
-          difficultyColor: "bg-yellow-100 text-yellow-800", 
-          description: "Statistical concepts with real-world examples and calculation guides",
-          completionTime: "3-4 weeks",
-          keyTopics: ["Probability", "Distributions", "Hypothesis Testing"],
-          tips: "Use the provided formulas sheet - memorization isn't required"
-        }
-      ]
-    },
-    {
-      category: "Communication",
-      icon: <FileText className="w-5 h-5" />,
-      color: "bg-purple-100 text-purple-800",
-      courses: [
-        {
-          courseName: "English Composition I",
-          difficulty: "Easy",
-          difficultyColor: "bg-green-100 text-green-800",
-          description: "Essay writing templates and grading rubric analysis",
-          completionTime: "2-3 weeks",
-          keyTopics: ["Essay Structure", "Citations", "Grammar"],
-          tips: "Follow the rubric exactly - Sophia graders are very systematic"
-        },
-        {
-          courseName: "English Composition II", 
-          difficulty: "Moderate",
-          difficultyColor: "bg-yellow-100 text-yellow-800",
-          description: "Research paper guide with source evaluation and advanced writing",
-          completionTime: "3-4 weeks",
-          keyTopics: ["Research Methods", "Critical Analysis", "Advanced Writing"],
-          tips: "Start early on research - finding good sources takes time"
-        }
-      ]
-    },
-    {
-      category: "Science", 
-      icon: <Microscope className="w-5 h-5" />,
-      color: "bg-green-100 text-green-800",
-      courses: [
-        {
-          courseName: "Environmental Science",
-          difficulty: "Easy",
-          difficultyColor: "bg-green-100 text-green-800",
-          description: "Comprehensive study guide with key concepts and terminology",
-          completionTime: "2-3 weeks", 
-          keyTopics: ["Ecosystems", "Pollution", "Sustainability"],
-          tips: "Lots of reading but straightforward - focus on vocabulary"
-        },
-        {
-          courseName: "Introduction to Biology",
-          difficulty: "Moderate",
-          difficultyColor: "bg-yellow-100 text-yellow-800",
-          description: "Detailed notes on cellular processes and biological systems",
-          completionTime: "3-4 weeks",
-          keyTopics: ["Cell Biology", "Genetics", "Evolution"],
-          tips: "The lab simulations are fun and help with understanding"
-        }
-      ]
-    }
-  ];
+interface Course {
+  id: string;
+  courseName: string;
+  courseCode?: string;
+  difficulty?: string;
+  difficultyColor?: string;
+  description: string;
+  completionTime: string;
+  keyTopics: string[];
+  tips: string;
+  provider: 'sophia' | 'uopeople';
+  category: string;
+  categoryColor: string;
+  categoryIcon: React.ReactNode;
+  credits?: number;
+  materials?: {
+    title: string;
+    description: string;
+    type: string;
+    pages: string;
+    updated: string;
+  }[];
+}
 
-  const uopeopleCourses = [
+export default function StudyResources() {
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const allCourses: Course[] = [
+    // Sophia Courses
     {
-      courseCode: "MATH 1201",
+      id: "sophia-college-math",
+      courseName: "Introduction to College Mathematics",
+      difficulty: "Easier",
+      difficultyColor: "bg-green-100 text-green-800",
+      description: "Complete study guide with practice problems and formula shortcuts",
+      completionTime: "2-3 weeks",
+      keyTopics: ["Basic Algebra", "Linear Equations", "Problem Solving"],
+      tips: "Focus on the practice quizzes - they're very similar to the final exam",
+      provider: "sophia",
+      category: "Mathematics",
+      categoryColor: "bg-blue-100 text-blue-800",
+      categoryIcon: <Calculator className="w-5 h-5" />
+    },
+    {
+      id: "sophia-college-algebra",
       courseName: "College Algebra",
+      difficulty: "Recommended",
+      difficultyColor: "bg-blue-100 text-blue-800",
+      description: "Comprehensive notes covering all algebra concepts with exam strategies",
+      completionTime: "3-4 weeks",
+      keyTopics: ["Polynomials", "Factoring", "Systems of Equations"],
+      tips: "The touchstone assignments are key - master them for easy A's",
+      provider: "sophia",
+      category: "Mathematics",
+      categoryColor: "bg-blue-100 text-blue-800",
+      categoryIcon: <Calculator className="w-5 h-5" />
+    },
+    {
+      id: "sophia-precalculus",
+      courseName: "Precalculus",
+      difficulty: "Harder",
+      difficultyColor: "bg-orange-100 text-orange-800",
+      description: "Advanced study materials with trigonometry and function analysis",
+      completionTime: "4-5 weeks",
+      keyTopics: ["Trigonometry", "Functions", "Exponentials"],
+      tips: "Take your time with the unit circle - it's heavily tested",
+      provider: "sophia",
+      category: "Mathematics",
+      categoryColor: "bg-blue-100 text-blue-800",
+      categoryIcon: <Calculator className="w-5 h-5" />
+    },
+    {
+      id: "sophia-statistics",
+      courseName: "Introduction to Statistics",
+      difficulty: "Moderate",
+      difficultyColor: "bg-yellow-100 text-yellow-800",
+      description: "Statistical concepts with real-world examples and calculation guides",
+      completionTime: "3-4 weeks",
+      keyTopics: ["Probability", "Distributions", "Hypothesis Testing"],
+      tips: "Use the provided formulas sheet - memorization isn't required",
+      provider: "sophia",
+      category: "Mathematics",
+      categoryColor: "bg-blue-100 text-blue-800",
+      categoryIcon: <Calculator className="w-5 h-5" />
+    },
+    {
+      id: "sophia-english-comp1",
+      courseName: "English Composition I",
+      difficulty: "Easy",
+      difficultyColor: "bg-green-100 text-green-800",
+      description: "Essay writing templates and grading rubric analysis",
+      completionTime: "2-3 weeks",
+      keyTopics: ["Essay Structure", "Citations", "Grammar"],
+      tips: "Follow the rubric exactly - Sophia graders are very systematic",
+      provider: "sophia",
+      category: "Communication",
+      categoryColor: "bg-purple-100 text-purple-800",
+      categoryIcon: <FileText className="w-5 h-5" />
+    },
+    {
+      id: "sophia-english-comp2",
+      courseName: "English Composition II",
+      difficulty: "Moderate",
+      difficultyColor: "bg-yellow-100 text-yellow-800",
+      description: "Research paper guide with source evaluation and advanced writing",
+      completionTime: "3-4 weeks",
+      keyTopics: ["Research Methods", "Critical Analysis", "Advanced Writing"],
+      tips: "Start early on research - finding good sources takes time",
+      provider: "sophia",
+      category: "Communication",
+      categoryColor: "bg-purple-100 text-purple-800",
+      categoryIcon: <FileText className="w-5 h-5" />
+    },
+    {
+      id: "sophia-environmental-science",
+      courseName: "Environmental Science",
+      difficulty: "Easy",
+      difficultyColor: "bg-green-100 text-green-800",
+      description: "Comprehensive study guide with key concepts and terminology",
+      completionTime: "2-3 weeks",
+      keyTopics: ["Ecosystems", "Pollution", "Sustainability"],
+      tips: "Lots of reading but straightforward - focus on vocabulary",
+      provider: "sophia",
+      category: "Science",
+      categoryColor: "bg-green-100 text-green-800",
+      categoryIcon: <Microscope className="w-5 h-5" />
+    },
+    {
+      id: "sophia-intro-biology",
+      courseName: "Introduction to Biology",
+      difficulty: "Moderate",
+      difficultyColor: "bg-yellow-100 text-yellow-800",
+      description: "Detailed notes on cellular processes and biological systems",
+      completionTime: "3-4 weeks",
+      keyTopics: ["Cell Biology", "Genetics", "Evolution"],
+      tips: "The lab simulations are fun and help with understanding",
+      provider: "sophia",
+      category: "Science",
+      categoryColor: "bg-green-100 text-green-800",
+      categoryIcon: <Microscope className="w-5 h-5" />
+    },
+    // UoPeople Courses
+    {
+      id: "uopeople-math1201",
+      courseName: "College Algebra",
+      courseCode: "MATH 1201",
       credits: 3,
-      icon: <Calculator className="w-5 h-5" />,
-      color: "bg-blue-100 text-blue-800",
+      description: "Comprehensive study materials for UoPeople's College Algebra course",
+      completionTime: "8 weeks",
+      keyTopics: ["Linear Equations", "Polynomials", "Quadratic Functions"],
+      tips: "Practice problems are essential - work through all examples in the textbook",
+      provider: "uopeople",
+      category: "Mathematics",
+      categoryColor: "bg-blue-100 text-blue-800",
+      categoryIcon: <Calculator className="w-5 h-5" />,
       materials: [
         {
           title: "Chapter 1-3: Linear Equations & Inequalities",
@@ -138,7 +194,7 @@ export default function StudyResources() {
         {
           title: "Chapter 4-6: Polynomials & Factoring",
           description: "Detailed explanations of polynomial operations, factoring techniques, and applications",
-          type: "Study Notes", 
+          type: "Study Notes",
           pages: "18 pages",
           updated: "1 week ago"
         },
@@ -152,11 +208,18 @@ export default function StudyResources() {
       ]
     },
     {
-      courseCode: "BIOL 1301",
+      id: "uopeople-biol1301",
       courseName: "Introduction to Biology",
+      courseCode: "BIOL 1301",
       credits: 4,
-      icon: <Microscope className="w-5 h-5" />,
-      color: "bg-green-100 text-green-800",
+      description: "Complete study materials for UoPeople's Introduction to Biology course",
+      completionTime: "8 weeks",
+      keyTopics: ["Cell Structure", "Genetics", "Evolution"],
+      tips: "Focus on understanding concepts rather than memorization - use diagrams extensively",
+      provider: "uopeople",
+      category: "Science",
+      categoryColor: "bg-green-100 text-green-800",
+      categoryIcon: <Microscope className="w-5 h-5" />,
       materials: [
         {
           title: "Cell Structure & Function",
@@ -169,7 +232,7 @@ export default function StudyResources() {
           title: "Genetics & Heredity",
           description: "Comprehensive coverage of DNA, RNA, protein synthesis, and inheritance patterns",
           type: "Study Notes",
-          pages: "28 pages", 
+          pages: "28 pages",
           updated: "4 days ago"
         },
         {
@@ -182,11 +245,18 @@ export default function StudyResources() {
       ]
     },
     {
-      courseCode: "ENGL 1102",
+      id: "uopeople-engl1102",
       courseName: "English Composition II",
+      courseCode: "ENGL 1102",
       credits: 3,
-      icon: <FileText className="w-5 h-5" />,
-      color: "bg-purple-100 text-purple-800",
+      description: "Research writing and literary analysis materials for UoPeople's English Composition II",
+      completionTime: "8 weeks",
+      keyTopics: ["Research Writing", "Literary Analysis", "Critical Thinking"],
+      tips: "Start research papers early and use the writing center for feedback",
+      provider: "uopeople",
+      category: "Communication",
+      categoryColor: "bg-purple-100 text-purple-800",
+      categoryIcon: <FileText className="w-5 h-5" />,
       materials: [
         {
           title: "Research Paper Writing Guide",
@@ -212,11 +282,18 @@ export default function StudyResources() {
       ]
     },
     {
-      courseCode: "CS 1101",
+      id: "uopeople-cs1101",
       courseName: "Programming Fundamentals",
+      courseCode: "CS 1101",
       credits: 3,
-      icon: <Lightbulb className="w-5 h-5" />,
-      color: "bg-indigo-100 text-indigo-800",
+      description: "Python programming fundamentals with practical examples and projects",
+      completionTime: "8 weeks",
+      keyTopics: ["Python Basics", "Data Structures", "Algorithms"],
+      tips: "Practice coding daily - consistency is key to mastering programming",
+      provider: "uopeople",
+      category: "Computer Science",
+      categoryColor: "bg-indigo-100 text-indigo-800",
+      categoryIcon: <Lightbulb className="w-5 h-5" />,
       materials: [
         {
           title: "Python Basics & Syntax",
@@ -243,18 +320,26 @@ export default function StudyResources() {
     }
   ];
 
+  const handleCourseClick = (course: Course) => {
+    setSelectedCourse(course);
+    setIsDialogOpen(true);
+  };
+
+  const sophiaCourses = allCourses.filter(course => course.provider === 'sophia');
+  const uopeopleCourses = allCourses.filter(course => course.provider === 'uopeople');
+
   const sophiaStats = {
-    totalCourses: sophiaMaterials.reduce((sum, category) => sum + category.courses.length, 0),
+    totalCourses: sophiaCourses.length,
     avgCompletionTime: "2-4 weeks",
     successRate: "95%"
   };
 
   const uopeopleStats = {
     totalCourses: uopeopleCourses.length,
-    totalMaterials: uopeopleCourses.reduce((sum, course) => sum + course.materials.length, 0),
+    totalMaterials: uopeopleCourses.reduce((sum, course) => sum + (course.materials?.length || 0), 0),
     totalPages: uopeopleCourses.reduce((sum, course) => 
-      sum + course.materials.reduce((matSum, mat) => 
-        matSum + parseInt(mat.pages.split(' ')[0]), 0), 0),
+      sum + (course.materials?.reduce((matSum, mat) => 
+        matSum + parseInt(mat.pages.split(' ')[0]), 0) || 0), 0),
     lastUpdated: "3 days ago"
   };
 
@@ -276,32 +361,19 @@ export default function StudyResources() {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Complete study materials for both Sophia Learning and UoPeople courses. 
-              Get the resources you need to succeed in your degree journey.
+              Click on any course to see detailed materials, tips, and completion guides.
             </p>
           </motion.div>
-        </div>
-      </div>
 
-      {/* Main Content - Side by Side Layout */}
-      <div className="py-16 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-7xl mx-auto px-8">
-          {/* Platform Headers */}
-          <div className="grid lg:grid-cols-2 gap-8 mb-12">
-            {/* Sophia Section Header */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center"
-            >
+          {/* Stats Overview */}
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="text-center">
               <div className="flex items-center justify-center mb-4">
                 <div className="bg-orange-100 p-3 rounded-lg mr-3">
                   <Trophy className="w-6 h-6 text-orange-600" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Sophia Learning</h2>
+                <h2 className="text-2xl font-bold text-gray-900">Sophia Learning</h2>
               </div>
-              <p className="text-gray-600 mb-6">Fast-track your general education requirements</p>
-              
               <div className="grid grid-cols-3 gap-3">
                 <div className="bg-white rounded-lg p-3 shadow-sm">
                   <div className="text-lg font-bold text-orange-600">{sophiaStats.totalCourses}</div>
@@ -316,23 +388,15 @@ export default function StudyResources() {
                   <div className="text-xs text-gray-600">Success Rate</div>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            {/* UoPeople Section Header */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center"
-            >
+            <div className="text-center">
               <div className="flex items-center justify-center mb-4">
                 <div className="bg-blue-100 p-3 rounded-lg mr-3">
                   <GraduationCap className="w-6 h-6 text-blue-600" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">UoPeople</h2>
+                <h2 className="text-2xl font-bold text-gray-900">UoPeople</h2>
               </div>
-              <p className="text-gray-600 mb-6">In-depth study materials for core courses</p>
-              
               <div className="grid grid-cols-3 gap-3">
                 <div className="bg-white rounded-lg p-3 shadow-sm">
                   <div className="text-lg font-bold text-blue-600">{uopeopleStats.totalCourses}</div>
@@ -347,134 +411,200 @@ export default function StudyResources() {
                   <div className="text-xs text-gray-600">Pages</div>
                 </div>
               </div>
-            </motion.div>
-          </div>
-
-          {/* Content Grid */}
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Sophia Materials Column */}
-            <div className="space-y-8">
-              {sophiaMaterials.map((category, categoryIndex) => (
-                <motion.div
-                  key={category.category}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-                  className="bg-white rounded-lg shadow-sm border p-6"
-                >
-                  <div className="flex items-center mb-6">
-                    <div className={`p-3 rounded-lg ${category.color} mr-4`}>
-                      {category.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900">{category.category}</h3>
-                    <Badge className="ml-auto bg-orange-100 text-orange-800">Sophia</Badge>
-                  </div>
-
-                  <div className="space-y-4">
-                    {category.courses.map((course, courseIndex) => (
-                      <Card key={courseIndex} className="hover:shadow-md transition-shadow border-l-4 border-l-orange-300">
-                        <CardHeader className="pb-3">
-                          <div className="flex items-start justify-between">
-                            <CardTitle className="text-base leading-tight">{course.courseName}</CardTitle>
-                            <Badge className={course.difficultyColor}>
-                              {course.difficulty}
-                            </Badge>
-                          </div>
-                          <CardDescription className="text-sm">
-                            {course.description}
-                          </CardDescription>
-                        </CardHeader>
-                        <CardContent className="pt-0">
-                          <div className="space-y-3">
-                            <div className="flex items-center justify-between text-sm">
-                              <span className="font-medium">Time:</span>
-                              <span className="text-gray-600">{course.completionTime}</span>
-                            </div>
-
-                            <div>
-                              <p className="text-sm font-medium mb-2">Topics:</p>
-                              <div className="flex flex-wrap gap-1">
-                                {course.keyTopics.map((topic, topicIndex) => (
-                                  <Badge key={topicIndex} variant="outline" className="text-xs">
-                                    {topic}
-                                  </Badge>
-                                ))}
-                              </div>
-                            </div>
-
-                            <div className="bg-orange-50 p-3 rounded-lg">
-                              <p className="text-sm font-medium text-orange-900 mb-1">💡 Pro Tip:</p>
-                              <p className="text-sm text-orange-800">{course.tips}</p>
-                            </div>
-
-                            <Button size="sm" className="w-full bg-orange-600 hover:bg-orange-700">
-                              <Download className="w-4 h-4 mr-1" />
-                              Download Guide
-                            </Button>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* UoPeople Materials Column */}
-            <div className="space-y-8">
-              {uopeopleCourses.map((course, courseIndex) => (
-                <motion.div
-                  key={course.courseCode}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: courseIndex * 0.1 }}
-                  className="bg-white rounded-lg shadow-sm border p-6"
-                >
-                  <div className="flex items-center mb-6">
-                    <div className={`p-3 rounded-lg ${course.color} mr-4`}>
-                      {course.icon}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-gray-900">{course.courseName}</h3>
-                      <p className="text-sm text-gray-600">{course.courseCode} • {course.credits} Credits</p>
-                    </div>
-                    <Badge className="bg-blue-100 text-blue-800">UoPeople</Badge>
-                  </div>
-
-                  <div className="space-y-4">
-                    {course.materials.map((material, materialIndex) => (
-                      <Card key={materialIndex} className="hover:shadow-md transition-shadow border-l-4 border-l-blue-300">
-                        <CardHeader className="pb-3">
-                          <div className="flex items-start justify-between">
-                            <CardTitle className="text-base leading-tight">{material.title}</CardTitle>
-                            <Badge variant="outline" className="text-xs">
-                              {material.type}
-                            </Badge>
-                          </div>
-                          <CardDescription className="text-sm">
-                            {material.description}
-                          </CardDescription>
-                        </CardHeader>
-                        <CardContent className="pt-0">
-                          <div className="flex items-center justify-between text-sm mb-3">
-                            <span className="text-gray-600">{material.pages}</span>
-                            <span className="text-gray-500">Updated {material.updated}</span>
-                          </div>
-                          
-                          <Button size="sm" className="w-full">
-                            <Download className="w-4 h-4 mr-1" />
-                            Download Notes
-                          </Button>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
             </div>
           </div>
         </div>
       </div>
+
+      {/* Course Grid */}
+      <div className="py-16 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {allCourses.map((course, index) => (
+              <motion.div
+                key={course.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="cursor-pointer"
+                onClick={() => handleCourseClick(course)}
+              >
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-l-4 border-l-blue-300 hover:border-l-blue-500">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-start justify-between mb-2">
+                      <div className={`p-2 rounded-lg ${course.categoryColor}`}>
+                        {course.categoryIcon}
+                      </div>
+                      <div className="flex flex-col gap-1">
+                        <Badge className={course.provider === 'sophia' ? 'bg-orange-100 text-orange-800' : 'bg-blue-100 text-blue-800'}>
+                          {course.provider === 'sophia' ? 'Sophia' : 'UoPeople'}
+                        </Badge>
+                        {course.difficulty && (
+                          <Badge className={course.difficultyColor}>
+                            {course.difficulty}
+                          </Badge>
+                        )}
+                      </div>
+                    </div>
+                    <CardTitle className="text-lg leading-tight">{course.courseName}</CardTitle>
+                    {course.courseCode && (
+                      <p className="text-sm text-gray-600">{course.courseCode} • {course.credits} Credits</p>
+                    )}
+                    <CardDescription className="text-sm line-clamp-2">
+                      {course.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="space-y-2">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <Clock className="w-4 h-4 mr-1" />
+                        <span>{course.completionTime}</span>
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <BookOpen className="w-4 h-4 mr-1" />
+                        <span>{course.keyTopics.length} Topics</span>
+                      </div>
+                      {course.materials && (
+                        <div className="flex items-center text-sm text-gray-600">
+                          <FileText className="w-4 h-4 mr-1" />
+                          <span>{course.materials.length} Materials</span>
+                        </div>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Course Detail Dialog */}
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          {selectedCourse && (
+            <>
+              <DialogHeader>
+                <div className="flex items-start justify-between">
+                  <div>
+                    <DialogTitle className="text-2xl">{selectedCourse.courseName}</DialogTitle>
+                    {selectedCourse.courseCode && (
+                      <p className="text-gray-600 mt-1">{selectedCourse.courseCode} • {selectedCourse.credits} Credits</p>
+                    )}
+                    <DialogDescription className="text-base mt-2">
+                      {selectedCourse.description}
+                    </DialogDescription>
+                  </div>
+                  <div className="flex flex-col gap-2 ml-4">
+                    <Badge className={selectedCourse.provider === 'sophia' ? 'bg-orange-100 text-orange-800' : 'bg-blue-100 text-blue-800'}>
+                      {selectedCourse.provider === 'sophia' ? 'Sophia' : 'UoPeople'}
+                    </Badge>
+                    {selectedCourse.difficulty && (
+                      <Badge className={selectedCourse.difficultyColor}>
+                        {selectedCourse.difficulty}
+                      </Badge>
+                    )}
+                  </div>
+                </div>
+              </DialogHeader>
+
+              <div className="grid md:grid-cols-2 gap-6 mt-6">
+                {/* Course Info */}
+                <div className="space-y-4">
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
+                      <Timer className="w-5 h-5 mr-2" />
+                      Course Details
+                    </h3>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-gray-600">Completion Time:</span>
+                        <span className="font-medium">{selectedCourse.completionTime}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600">Category:</span>
+                        <span className="font-medium">{selectedCourse.category}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600">Provider:</span>
+                        <span className="font-medium">{selectedCourse.provider === 'sophia' ? 'Sophia Learning' : 'UoPeople'}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <h3 className="font-semibold text-blue-900 mb-3 flex items-center">
+                      <Lightbulb className="w-5 h-5 mr-2" />
+                      Pro Tips
+                    </h3>
+                    <p className="text-sm text-blue-800">{selectedCourse.tips}</p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
+                      <BookMarked className="w-5 h-5 mr-2" />
+                      Key Topics
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedCourse.keyTopics.map((topic, index) => (
+                        <Badge key={index} variant="outline" className="text-xs">
+                          {topic}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Materials */}
+                <div className="space-y-4">
+                  <h3 className="font-semibold text-gray-900 flex items-center">
+                    <FileDown className="w-5 h-5 mr-2" />
+                    Available Materials
+                  </h3>
+                  
+                  {selectedCourse.materials ? (
+                    <div className="space-y-3">
+                      {selectedCourse.materials.map((material, index) => (
+                        <Card key={index} className="p-4">
+                          <div className="space-y-2">
+                            <div className="flex items-start justify-between">
+                              <h4 className="font-medium text-sm">{material.title}</h4>
+                              <Badge variant="outline" className="text-xs">
+                                {material.type}
+                              </Badge>
+                            </div>
+                            <p className="text-xs text-gray-600">{material.description}</p>
+                            <div className="flex items-center justify-between text-xs text-gray-500">
+                              <span>{material.pages}</span>
+                              <span>Updated {material.updated}</span>
+                            </div>
+                            <Button size="sm" className="w-full">
+                              <Download className="w-4 h-4 mr-1" />
+                              Download
+                            </Button>
+                          </div>
+                        </Card>
+                      ))}
+                    </div>
+                  ) : (
+                    <Card className="p-6 text-center">
+                      <BookOpen className="w-8 h-8 text-gray-400 mx-auto mb-3" />
+                      <h4 className="font-medium text-gray-900 mb-2">Study Guide Available</h4>
+                      <p className="text-sm text-gray-600 mb-4">
+                        Complete study guide with all course materials, practice problems, and exam prep.
+                      </p>
+                      <Button className="w-full">
+                        <Download className="w-4 h-4 mr-1" />
+                        Download Study Guide
+                      </Button>
+                    </Card>
+                  )}
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
 
       {/* Download All Section */}
       <div className="py-16 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50">
