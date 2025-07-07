@@ -2,28 +2,12 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Home, MessageSquare, BookOpen } from "lucide-react";
+import { GraduationCap, MessageSquare, BookOpen } from "lucide-react";
 
 export default function Navigation() {
   const [location, setLocation] = useLocation();
 
-  const scrollToSection = (sectionId: string) => {
-    if (location !== "/") {
-      setLocation("/");
-      // Wait for navigation to complete before scrolling
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100);
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
+  
 
   return (
     <motion.nav 
@@ -46,29 +30,21 @@ export default function Navigation() {
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
             <button
-              onClick={() => setLocation("/")}
-              className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors"
-            >
-              <Home size={16} />
-              <span>Home</span>
-            </button>
-
-            <button
-              onClick={() => scrollToSection("how-it-works")}
+              onClick={() => setLocation("/how-it-works")}
               className="text-gray-600 hover:text-blue-600 transition-colors"
             >
               How It Works
             </button>
 
             <button
-              onClick={() => scrollToSection("info")}
+              onClick={() => setLocation("/about")}
               className="text-gray-600 hover:text-blue-600 transition-colors"
             >
               About
             </button>
 
             <button
-              onClick={() => scrollToSection("guestbook")}
+              onClick={() => setLocation("/guestbook")}
               className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors"
             >
               <MessageSquare size={16} />
