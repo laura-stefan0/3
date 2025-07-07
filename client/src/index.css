@@ -63,49 +63,47 @@
   .gradient-bg {
     background: linear-gradient(135deg, hsl(263, 85%, 65%) 0%, hsl(263, 85%, 45%) 100%);
   }
-
+  
   .course-card {
     @apply transition-all duration-300 ease-in-out;
   }
-
+  
   .course-card:hover {
     @apply transform scale-105 shadow-lg;
   }
-
+  
   .course-card.selected {
     @apply ring-2 ring-primary;
     background-color: hsl(var(--primary) / 0.05);
   }
-
+  
   .progress-step {
     @apply transition-all duration-300 ease-in-out;
   }
-
+  
   .progress-step.active {
     @apply bg-primary text-primary-foreground;
   }
-
+  
   .progress-step.inactive {
     @apply bg-muted text-muted-foreground;
   }
-
+  
   .hero-image {
     @apply rounded-2xl shadow-2xl w-full max-w-4xl mx-auto;
   }
+  
 
-
-
+  
   .provider-icon {
     @apply w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl;
   }
-
+  
   .uopeople-icon {
-    background-color: #50235D;
-    color: white;
+    @apply bg-primary;
   }
-
+  
   .sophia-icon {
-    background-color: #D0DF01;
-    color: #000;
+    @apply bg-accent;
   }
 }
