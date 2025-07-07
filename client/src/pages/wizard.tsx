@@ -19,7 +19,8 @@ const categories = [
   { id: 'civilization', name: 'Civilization Studies, Cultures, and Beliefs', description: 'Pick only one course between these options.', maxSelections: 1 },
   { id: 'science', name: 'Natural Science', description: 'Pick only one course between these options.', maxSelections: 1 },
   { id: 'humanities', name: 'Humanities', description: 'Pick 2 courses from these options.', maxSelections: 2 },
-  { id: 'social', name: 'Social and Behavioral Sciences', description: 'Pick 2 courses from these options.', maxSelections: 2 }
+  { id: 'social', name: 'Social and Behavioral Sciences', description: 'Pick 2 courses from these options.', maxSelections: 2 },
+  { id: 'electives', name: 'Elective Courses', description: 'Choose elective courses to complete your degree requirements.', maxSelections: 6 }
 ];
 
 
@@ -52,9 +53,22 @@ export default function Wizard() {
     course.provider === 'uopeople' && course.category === currentCategory?.id
   ) || [];
 
-  const sophiaCourses = courses?.filter(course => 
-    course.provider === 'sophia' && course.category === currentCategory?.id
-  ) || [];
+  const sophiaCourses = currentCategory?.id === 'electives' 
+    ? [
+        // Previously non-picked Sophia courses from other categories
+        ...(courses?.filter(course => 
+          course.provider === 'sophia' && 
+          course.category !== 'electives' && 
+          !selectedCourses.some(selected => selected.id === course.id)
+        ) || []),
+        // Dedicated elective courses
+        ...(courses?.filter(course => 
+          course.provider === 'sophia' && course.category === 'electives'
+        ) || [])
+      ]
+    : courses?.filter(course => 
+        course.provider === 'sophia' && course.category === currentCategory?.id
+      ) || [];
 
   const handleCourseSelect = (course: Course) => {
     // Prevent deselection of mandatory courses
@@ -444,6 +458,105 @@ export default function Wizard() {
                       </div>
                     </div>
                   )}
+                </div>
+              ) : currentCategory.id === 'electives' ? (
+                /* Electives Category - Special Layout */
+                <div className="grid lg:grid-cols-2 gap-8">
+                  {/* UoPeople Computer Science Electives */}
+                  <Card className="shadow-lg">
+                    <CardContent className="p-6">
+                      <div className="flex items-center mb-6">
+                        <div className="provider-icon uopeople-icon mr-4">
+                          <University size={24} />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-semibold text-gray-800">Computer Science Electives</h3>
+                          <p className="text-gray-600 text-sm">UoPeople Major-Related Courses</p>
+                        </div>
+                      </div>
+
+                      <div className="space-y-4">
+                        {isLoading ? (
+                          <div className="space-y-4">
+                            {[1, 2, 3].map(i => (
+                              <div key={i} className="h-24 bg-gray-200 rounded-lg animate-pulse" />
+                            ))}
+                          </div>
+                        ) : (
+                          uopeopleCourses.map(course => (
+                            <CourseCard
+                              key={course.id}
+                              course={course}
+                              isSelected={selectedCourses.some(c => c.id === course.id)}
+                              onSelect={() => handleCourseSelect(course)}
+                            />
+                          ))
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Sophia General Electives + Previously Non-picked */}
+                  <Card className="shadow-lg">
+                    <CardContent className="p-6">
+                      <div className="flex items-center mb-6">
+                        <div className="provider-icon sophia-icon mr-4">
+                          <GraduationCap size={24} />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-semibold text-gray-800">General Electives</h3>
+                          <p className="text-gray-600 text-sm">Sophia Non-Major Courses</p>
+                        </div>
+                      </div>
+
+                      <div className="space-y-4">
+                        {isLoading ? (
+                          <div className="space-y-4">
+                            {[1, 2, 3].map(i => (
+                              <div key={i} className="h-24 bg-gray-200 rounded-lg animate-pulse" />
+                            ))}
+                          </div>
+                        ) : (
+                          <>
+                            {/* Previously non-picked courses */}
+                            {sophiaCourses.filter(c => c.category !== 'electives').length > 0 && (
+                              <>
+                                <div className="text-sm font-medium text-gray-600 mb-2">
+                                  Previously Available Courses:
+                                </div>
+                                {sophiaCourses.filter(c => c.category !== 'electives').map(course => (
+                                  <div key={course.id} className="relative">
+                                    <CourseCard
+                                      course={course}
+                                      isSelected={selectedCourses.some(c => c.id === course.id)}
+                                      onSelect={() => handleCourseSelect(course)}
+                                    />
+                                    <div className="absolute top-2 right-2 bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                                      {course.category}
+                                    </div>
+                                  </div>
+                                ))}
+                                <hr className="my-4" />
+                              </>
+                            )}
+                            
+                            {/* Dedicated elective courses */}
+                            <div className="text-sm font-medium text-gray-600 mb-2">
+                              Additional Electives:
+                            </div>
+                            {sophiaCourses.filter(c => c.category === 'electives').map(course => (
+                              <CourseCard
+                                key={course.id}
+                                course={course}
+                                isSelected={selectedCourses.some(c => c.id === course.id)}
+                                onSelect={() => handleCourseSelect(course)}
+                              />
+                            ))}
+                          </>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
                 </div>
               ) : (
                 /* All Other Categories - Standard Split Layout */

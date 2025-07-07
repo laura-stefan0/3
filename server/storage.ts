@@ -91,6 +91,20 @@ export class MemStorage implements IStorage {
       { name: 'Introduction to Psychology', provider: 'sophia', category: 'social', credits: 3, description: 'Comprehensive introduction to psychological concepts.' },
       { name: 'Introduction to Sociology', provider: 'sophia', category: 'social', credits: 3, description: 'Understanding social structures and human interactions.' },
       { name: 'Lifespan Development', provider: 'sophia', category: 'social', credits: 3, description: 'Human development across the lifespan.' },
+      
+      // Electives - Computer Science Related (UoPeople)
+      { name: 'CS 1101 Programming Fundamentals', provider: 'uopeople', category: 'electives', credits: 3, description: 'Introduction to programming concepts and problem-solving techniques.' },
+      { name: 'CS 2203 Databases 1', provider: 'uopeople', category: 'electives', credits: 3, description: 'Fundamentals of database design and management.' },
+      { name: 'CS 2204 Communications and Networking', provider: 'uopeople', category: 'electives', credits: 3, description: 'Computer networks and communication protocols.' },
+      { name: 'CS 3305 Web Programming 1', provider: 'uopeople', category: 'electives', credits: 3, description: 'Introduction to web development technologies.' },
+      { name: 'CS 3307 Operating Systems 1', provider: 'uopeople', category: 'electives', credits: 3, description: 'Principles of operating system design and implementation.' },
+      { name: 'CS 4407 Data Mining and Machine Learning', provider: 'uopeople', category: 'electives', credits: 3, description: 'Introduction to data mining techniques and machine learning algorithms.' },
+      
+      // Electives - General (Sophia) - Placeholder for now
+      { name: 'Elective', provider: 'sophia', category: 'electives', credits: 3, description: 'Additional elective course option.' },
+      { name: 'Elective', provider: 'sophia', category: 'electives', credits: 3, description: 'Additional elective course option.' },
+      { name: 'Elective', provider: 'sophia', category: 'electives', credits: 3, description: 'Additional elective course option.' },
+      { name: 'Elective', provider: 'sophia', category: 'electives', credits: 3, description: 'Additional elective course option.' },
     ];
 
     courseData.forEach(course => {
