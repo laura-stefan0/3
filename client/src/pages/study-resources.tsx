@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import Navigation from "@/components/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -262,7 +261,7 @@ export default function StudyResources() {
   return (
     <div className="min-h-screen">
       <Navigation />
-      
+
       {/* Hero Section */}
       <div className="pt-32 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="max-w-6xl mx-auto px-8">
@@ -303,7 +302,7 @@ export default function StudyResources() {
               <div className="text-center mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Sophia Learning Course Guides</h2>
                 <p className="text-gray-600 mb-6">Complete guides for finishing Sophia courses quickly and efficiently</p>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
                   <div className="bg-white rounded-lg p-4 shadow-sm">
                     <div className="text-2xl font-bold text-blue-600">{sophiaStats.totalCourses}</div>
@@ -334,7 +333,7 @@ export default function StudyResources() {
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900">{category.category}</h3>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     {category.courses.map((course, courseIndex) => (
                       <Card key={courseIndex} className="hover:shadow-md transition-shadow">
@@ -355,7 +354,7 @@ export default function StudyResources() {
                               <span className="font-medium">Completion Time:</span>
                               <span className="text-gray-600">{course.completionTime}</span>
                             </div>
-                            
+
                             <div>
                               <p className="text-sm font-medium mb-2">Key Topics:</p>
                               <div className="flex flex-wrap gap-1">
@@ -366,12 +365,12 @@ export default function StudyResources() {
                                 ))}
                               </div>
                             </div>
-                            
+
                             <div className="bg-blue-50 p-3 rounded-lg">
                               <p className="text-sm font-medium text-blue-900 mb-1">💡 Pro Tip:</p>
                               <p className="text-sm text-blue-800">{course.tips}</p>
                             </div>
-                            
+
                             <Button size="sm" className="w-full">
                               <Download className="w-4 h-4 mr-1" />
                               Download Guide
@@ -385,94 +384,7 @@ export default function StudyResources() {
               ))}
             </TabsContent>
 
-            {/* UoPeople Materials */}
-            <TabsContent value="uopeople" className="space-y-8">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">UoPeople Course Materials</h2>
-                <p className="text-gray-600 mb-6">Detailed study notes, assignments, and resources for UoPeople courses</p>
-                
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
-                  <div className="bg-white rounded-lg p-4 shadow-sm">
-                    <div className="text-2xl font-bold text-blue-600">{uopeopleStats.totalCourses}</div>
-                    <div className="text-sm text-gray-600">Courses</div>
-                  </div>
-                  <div className="bg-white rounded-lg p-4 shadow-sm">
-                    <div className="text-2xl font-bold text-green-600">{uopeopleStats.totalMaterials}</div>
-                    <div className="text-sm text-gray-600">Study Materials</div>
-                  </div>
-                  <div className="bg-white rounded-lg p-4 shadow-sm">
-                    <div className="text-2xl font-bold text-purple-600">{uopeopleStats.totalPages}+</div>
-                    <div className="text-sm text-gray-600">Pages</div>
-                  </div>
-                  <div className="bg-white rounded-lg p-4 shadow-sm">
-                    <div className="text-2xl font-bold text-orange-600">
-                      <Clock className="w-6 h-6 inline" />
-                    </div>
-                    <div className="text-sm text-gray-600">Updated {uopeopleStats.lastUpdated}</div>
-                  </div>
-                </div>
-              </div>
-
-              {uopeopleCourses.map((course, index) => (
-                <motion.div
-                  key={course.courseCode}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <div className="bg-white rounded-lg shadow-sm border p-6">
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="flex items-center">
-                        <div className={`p-3 rounded-lg ${course.color} mr-4`}>
-                          {course.icon}
-                        </div>
-                        <div>
-                          <h2 className="text-2xl font-bold text-gray-900">{course.courseCode}</h2>
-                          <p className="text-gray-600">{course.courseName}</p>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <Badge variant="outline" className="mb-2">
-                          {course.credits} Credits
-                        </Badge>
-                        <div className="flex items-center text-sm text-gray-500">
-                          <GraduationCap className="w-4 h-4 mr-1" />
-                          {course.materials.length} Materials
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {course.materials.map((material, materialIndex) => (
-                        <Card key={materialIndex} className="hover:shadow-md transition-shadow">
-                          <CardHeader className="pb-3">
-                            <div className="flex items-start justify-between">
-                              <CardTitle className="text-lg leading-tight">{material.title}</CardTitle>
-                              <Badge variant="secondary" className="text-xs ml-2">
-                                {material.type}
-                              </Badge>
-                            </div>
-                            <CardDescription className="text-sm">
-                              {material.description}
-                            </CardDescription>
-                          </CardHeader>
-                          <CardContent className="pt-0">
-                            <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
-                              <span>{material.pages}</span>
-                              <span>Updated {material.updated}</span>
-                            </div>
-                            <Button size="sm" variant="outline" className="w-full">
-                              <Download className="w-4 h-4 mr-1" />
-                              Download Notes
-                            </Button>
-                          </CardContent>
-                        </Card>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </TabsContent>
+            
           </Tabs>
         </div>
       </div>
