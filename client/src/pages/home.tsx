@@ -185,10 +185,6 @@ export default function Home() {
                 <div className="bg-white rounded-3xl rounded-tl-lg p-8 shadow-xl border border-gray-100 max-w-3xl">
                   <div className="flex items-center gap-3 mb-4">
                     <h3 className="text-xl font-semibold text-gray-900">Laura</h3>
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <span>Online</span>
-                    </div>
                   </div>
                   
                   <p className="text-gray-700 leading-relaxed text-lg mb-6">
