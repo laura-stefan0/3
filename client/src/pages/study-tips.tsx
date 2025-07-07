@@ -364,7 +364,7 @@ export default function StudyTips() {
               </CardHeader>
               <CardContent>
                 <Button size="lg" variant="secondary" asChild>
-                  <a href="/wizard">
+                  <a href="/course-planning">
                     <BookOpen className="w-5 h-5 mr-2" />
                     Plan Your Courses
                   </a>

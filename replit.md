@@ -112,6 +112,7 @@ This is a full-stack course selection wizard application built with React, Expre
 - July 07, 2025. Added Electives category page after General Education categories and before summary. Features Computer Science electives from UoPeople on left, and general electives from Sophia on right (including previously non-picked Sophia courses from other categories).
 - July 07, 2025. Moved mandatory Communication course (COM 2001 Professional Communication) from Communication category page to Foundation category page alongside other mandatory courses. Communication category now only shows additional course selection options.
 - July 07, 2025. Updated Foundation page title to "Mandatory Foundation & Communication Courses" and reorganized layout to clearly group all mandatory UoPeople courses together in a single container with subsections.
+- July 07, 2025. Completed migration from Replit Agent to Replit environment. Updated navigation bar with comprehensive sections: Study Resources, Study Tips, FAQs, About, Guestbook, and "Start Planning" CTA button. Created comprehensive content for all new pages with proper routing. Navigation correctly routes "Start Planning" button to purple course-planning homepage which then leads to the wizard.
 
 ## User Preferences
 

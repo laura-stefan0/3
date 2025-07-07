@@ -25,7 +25,7 @@ export default function About() {
   const [, setLocation] = useLocation();
 
   const handleStartPlanning = () => {
-    setLocation("/wizard");
+    setLocation("/course-planning");
   };
 
   const teamMembers = [

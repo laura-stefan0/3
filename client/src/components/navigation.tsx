@@ -68,7 +68,7 @@ export default function Navigation() {
             </button>
 
             <Button
-              onClick={() => setLocation("/wizard")}
+              onClick={() => setLocation("/course-planning")}
               className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg transition-all duration-300"
             >
               <BookOpen className="mr-2" size={16} />
@@ -79,7 +79,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <Button
-              onClick={() => setLocation("/wizard")}
+              onClick={() => setLocation("/course-planning")}
               className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg"
             >
               <BookOpen className="mr-1" size={16} />
