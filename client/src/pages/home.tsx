@@ -30,18 +30,27 @@ export default function Home() {
           </motion.h1>
           
           <motion.p 
-            className="text-xl mb-10 text-gray-600 leading-relaxed max-w-3xl mx-auto"
+            className="text-xl mb-4 text-gray-600 leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Study materials, notes, Sophia tips and a course planner to help you in your degree. Made by a student, for students.
+            Study materials, notes, Sophia tips and a course planner to help you in your degree.
+          </motion.p>
+          
+          <motion.p 
+            className="text-sm text-gray-500 mb-10 flex items-center justify-center gap-1"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Made by a student, for students <span className="text-red-500">♥</span>
           </motion.p>
           
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Button 
