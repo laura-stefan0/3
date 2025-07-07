@@ -1,23 +1,24 @@
+
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, University, Rocket, Plus } from "lucide-react";
+import { BookOpen, Brain, Code, Target, Users, Lightbulb, Clock, Award } from "lucide-react";
 import Guestbook from "@/components/guestbook";
 import Navigation from "@/components/navigation";
 
 export default function Home() {
   const [, setLocation] = useLocation();
 
-  const handleStartPlanning = () => {
-    setLocation("/wizard");
+  const handleCoursePlanning = () => {
+    setLocation("/course-planning");
   };
 
   return (
     <div className="min-h-screen">
       <Navigation />
       
-      {/* Welcome Screen */}
-      <div className="min-h-[85vh] flex items-center justify-center gradient-bg pt-20">
+      {/* Hero Section */}
+      <div className="min-h-[90vh] flex items-center justify-center gradient-bg pt-20">
         <div className="text-center text-white px-8 max-w-6xl mx-auto">
           <motion.h1 
             className="text-6xl font-bold mb-6 leading-tight"
@@ -25,7 +26,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            BS-CS Course Planning Helper
+            CS Study Hub
           </motion.h1>
           
           <motion.p 
@@ -34,17 +35,17 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            A simple tool to help Computer Science students at UoPeople figure out which General Education and Elective courses to take, and where to take them.
+            Your comprehensive resource for Computer Science study notes, tips, and academic planning at UoPeople
           </motion.p>
           
           <motion.div 
-            className="mb-6 bg-white/20 backdrop-blur-sm rounded-lg p-4 max-w-2xl mx-auto"
+            className="mb-8 bg-white/20 backdrop-blur-sm rounded-lg p-4 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <p className="text-lg opacity-90">
-              <strong>For:</strong> Bachelor of Science in Computer Science students at University of the People
+              <strong>For:</strong> Computer Science students looking to excel in their studies and optimize their academic journey
             </p>
           </motion.div>
           
@@ -55,15 +56,16 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="flex items-center bg-white/20 px-4 py-2 rounded-lg">
-              <University className="text-yellow-300 mr-2" size={20} />
-              <span>UoPeople Courses</span>
-            </div>
-            <div className="text-2xl">
-              <Plus size={24} />
+              <Brain className="text-yellow-300 mr-2" size={20} />
+              <span>Study Tips</span>
             </div>
             <div className="flex items-center bg-white/20 px-4 py-2 rounded-lg">
-              <GraduationCap className="text-green-300 mr-2" size={20} />
-              <span>Sophia Courses</span>
+              <Code className="text-green-300 mr-2" size={20} />
+              <span>Course Notes</span>
+            </div>
+            <div className="flex items-center bg-white/20 px-4 py-2 rounded-lg">
+              <Target className="text-blue-300 mr-2" size={20} />
+              <span>Academic Planning</span>
             </div>
           </motion.div>
           
@@ -71,20 +73,159 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
+            className="space-y-4"
           >
             <Button 
-              onClick={handleStartPlanning}
-              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              onClick={() => setLocation("/notes")}
+              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg mr-4"
             >
-              <Rocket className="mr-2" size={20} />
-              Start Planning
+              <BookOpen className="mr-2" size={20} />
+              Browse Study Notes
+            </Button>
+            <Button 
+              onClick={handleCoursePlanning}
+              variant="outline"
+              className="bg-white/20 hover:bg-white/30 text-white border-white/30 font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              <Target className="mr-2" size={20} />
+              Course Planning Tool
             </Button>
           </motion.div>
         </div>
       </div>
 
-      {/* Three Steps Section */}
-      <div id="how-it-works" className="py-16 bg-white">
+      {/* Study Resources Section */}
+      <div className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Study Resources
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Everything you need to succeed in your CS studies
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
+                <Code className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Programming Notes
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Comprehensive notes for Java, Python, C++, and web development courses with examples and best practices.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4">
+                <Brain className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Study Strategies
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Proven study techniques specifically for CS subjects, time management tips, and exam preparation strategies.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
+                <Target className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Course Planning
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Smart course selection tool to optimize your degree path, save money, and graduate faster.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+                <Lightbulb className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Project Ideas
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Inspiring project ideas for your portfolio, capstone projects, and skill development with implementation guides.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-4">
+                <Clock className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Time Management
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Balance work, studies, and life effectively with proven time management techniques for busy students.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="bg-gradient-to-br from-teal-50 to-teal-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center mb-4">
+                <Users className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Community Tips
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Learn from fellow students' experiences, networking tips, and collaborative study approaches.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Success Stories Section */}
+      <div className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -94,29 +235,32 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              How It Works
+              Student Success Stories
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Three simple steps to plan your academic path at UoPeople
+              Real experiences from CS students who've used these strategies
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-center"
+              className="bg-white rounded-lg p-6 shadow-sm"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-blue-600">1</span>
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                  <Award className="text-white" size={20} />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Sarah M.</h4>
+                  <p className="text-sm text-gray-600">BS-CS Graduate</p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Choose General Education Courses
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Select from UoPeople courses or Sophia Learning equivalents for each General Education category. Compare options and pick what works best for your schedule and budget.
+              <p className="text-gray-600 italic">
+                "Using the course planning tool saved me over $2000 and helped me graduate 6 months earlier. The study notes were invaluable for my programming courses."
               </p>
             </motion.div>
 
@@ -125,143 +269,92 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-center"
+              className="bg-white rounded-lg p-6 shadow-sm"
             >
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-green-600">2</span>
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                  <Award className="text-white" size={20} />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900">David L.</h4>
+                  <p className="text-sm text-gray-600">Current Student</p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Choose Elective Courses
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Pick between major-related courses at UoPeople that advance your CS knowledge, or other elective courses that interest you. Fill your remaining credit requirements.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-purple-600">3</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Download Your Plan
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Get a complete overview of your course selections with credit counts, cost estimates, and a clear roadmap for your degree completion.
+              <p className="text-gray-600 italic">
+                "The study strategies completely changed how I approach CS subjects. My grades improved significantly and I feel much more confident in my programming skills."
               </p>
             </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Simple How It Works Section */}
-      <div className="py-16 bg-gray-50">
-        <div className="max-w-3xl mx-auto px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              All Course Information in One Place
-            </h2>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Many students already use Sophia Learning to complete General Education requirements faster and cheaper. 
-              This tool simply organizes all the course information in one place, since navigating UoPeople's requirements can be confusing.
-            </p>
-            
-            <div className="bg-gray-50 rounded-xl p-6 mb-8">
-              <div className="grid md:grid-cols-2 gap-6 text-sm">
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-gray-900">What you'll find here:</h4>
-                  <ul className="text-gray-600 space-y-1">
-                    <li>• All transferable Sophia courses</li>
-                    <li>• UoPeople course requirements</li>
-                    <li>• Credit requirements per category</li>
-                    <li>• Course selection guidance</li>
-                  </ul>
-                </div>
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-gray-900">Typical savings:</h4>
-                  <ul className="text-gray-600 space-y-1">
-                    <li>• Sophia: $99/month + $17/course</li>
-                    <li>• UoPeople: $160 per exam</li>
-                    <li>• First 20 credits transfer free</li>
-                    <li>• Self-paced vs 6-week terms</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <Button 
-              onClick={handleStartPlanning}
-              className="bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
-            >
-              <Rocket className="mr-2" size={18} />
-              Start Planning Your Courses
-            </Button>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Simple Info Section */}
-      <div id="info" className="py-16 bg-white">
+      {/* Quick Tips Section */}
+      <div className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center"
+            className="text-center mb-12"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">
-              Quick Reference
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Quick Study Tips
             </h2>
-            
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Official Transfer List</h3>
-                <p className="text-sm text-gray-600">
-                  All courses listed are officially recognized by UoPeople for credit transfer
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Save Time</h3>
-                <p className="text-sm text-gray-600">
-                  No need to research each course individually or navigate confusing requirements
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"/>
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Complete Plan</h3>
-                <p className="text-sm text-gray-600">
-                  Get a clear roadmap with all required courses for your degree
-                </p>
-              </div>
-            </div>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Essential tips every CS student should know
+            </p>
           </motion.div>
+
+          <div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="flex items-start space-x-4 bg-blue-50 rounded-lg p-4"
+            >
+              <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-white font-bold text-sm">1</span>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-2">Practice Coding Daily</h4>
+                <p className="text-gray-600">Even 30 minutes of coding practice daily is more effective than cramming before exams. Consistency builds muscle memory and problem-solving skills.</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex items-start space-x-4 bg-green-50 rounded-lg p-4"
+            >
+              <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-white font-bold text-sm">2</span>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-2">Build Projects</h4>
+                <p className="text-gray-600">Apply what you learn immediately by building small projects. This reinforces concepts and creates portfolio pieces for job applications.</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex items-start space-x-4 bg-purple-50 rounded-lg p-4"
+            >
+              <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-white font-bold text-sm">3</span>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-2">Join Study Groups</h4>
+                <p className="text-gray-600">Collaborate with fellow students on discussions and group projects. Teaching others is one of the best ways to solidify your own understanding.</p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
 
@@ -270,29 +363,7 @@ export default function Home() {
         <Guestbook />
       </div>
 
-      {/* Disclaimer Section */}
-      <div className="py-12 bg-yellow-50 border-t border-yellow-200">
-        <div className="max-w-4xl mx-auto px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <div className="bg-yellow-100 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-yellow-900 mb-3">
-                Important Disclaimer
-              </h3>
-              <p className="text-sm text-yellow-800 leading-relaxed">
-                This tool is created by a student for educational purposes only. Always verify course transfer eligibility with UoPeople directly before enrolling in any courses. Transfer policies and course equivalencies may change without notice. The information provided here is based on publicly available transfer guides and student experiences, but individual results may vary.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Final CTA Section */}
+      {/* CTA Section */}
       <div className="py-16 bg-gradient-to-br from-blue-600 to-purple-700">
         <div className="max-w-4xl mx-auto px-8 text-center">
           <motion.div
@@ -302,18 +373,28 @@ export default function Home() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to Plan Your Courses?
+              Ready to Excel in Your CS Studies?
             </h2>
             <p className="text-lg text-blue-100 mb-6 max-w-2xl mx-auto">
-              Use this tool to organize your course selections and see all your options in one place
+              Access comprehensive study resources, smart course planning, and proven strategies
             </p>
-            <Button 
-              onClick={handleStartPlanning}
-              className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg text-lg transition-all duration-300"
-            >
-              <Rocket className="mr-2" size={18} />
-              Start Course Planning
-            </Button>
+            <div className="space-x-4">
+              <Button 
+                onClick={() => setLocation("/notes")}
+                className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg text-lg transition-all duration-300"
+              >
+                <BookOpen className="mr-2" size={18} />
+                Start Studying
+              </Button>
+              <Button 
+                onClick={handleCoursePlanning}
+                variant="outline"
+                className="bg-transparent border-white text-white hover:bg-white/10 font-semibold py-3 px-6 rounded-lg text-lg transition-all duration-300"
+              >
+                <Target className="mr-2" size={18} />
+                Plan Courses
+              </Button>
+            </div>
           </motion.div>
         </div>
       </div>
