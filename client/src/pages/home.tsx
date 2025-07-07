@@ -169,7 +169,7 @@ export default function Home() {
             <div className="flex items-start gap-6">
               <Avatar className="w-20 h-20 flex-shrink-0 border-4 border-white shadow-lg">
                 <AvatarImage 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&crop=face&auto=format&q=80" 
+                  src="/images/my-notion-face-portrait.png" 
                   alt="Laura's profile picture" 
                 />
                 <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-2xl font-semibold">
