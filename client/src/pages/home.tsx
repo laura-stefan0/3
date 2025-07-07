@@ -108,24 +108,6 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-lg p-8 border border-gray-100"
-            >
-              <div className="mb-6 flex justify-center">
-                <HiOutlineSparkles className="text-green-500 text-4xl" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                Study Tips
-              </h3>
-              <p className="text-gray-600 leading-relaxed text-center text-sm">
-                Practical study strategies, time management techniques, and tips for succeeding as a UoPeople student.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="bg-white rounded-lg p-8 border border-gray-100"
             >
@@ -133,7 +115,7 @@ export default function Home() {
                 <HiOutlinePuzzle className="text-purple-500 text-4xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                Course Planning Tool
+                Course Planning
               </h3>
               <p className="text-gray-600 leading-relaxed text-center text-sm">
                 Interactive wizard to help you choose the best combination of UoPeople and Sophia courses for your degree.
@@ -158,41 +140,7 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="bg-white rounded-lg p-8 border border-gray-100"
-            >
-              <div className="mb-6 flex justify-center">
-                <HiOutlineLightBulb className="text-red-500 text-4xl" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                About the Journey
-              </h3>
-              <p className="text-gray-600 leading-relaxed text-center text-sm">
-                Learn about this project and the student behind it - why it was created and how it can help you.
-              </p>
-            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="bg-white rounded-lg p-8 border border-gray-100"
-            >
-              <div className="mb-6 flex justify-center">
-                <HiOutlineHeart className="text-teal-500 text-4xl" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                Student Guestbook
-              </h3>
-              <p className="text-gray-600 leading-relaxed text-center text-sm">
-                Connect with fellow UoPeople students, share experiences, and leave encouraging messages for others.
-              </p>
-            </motion.div>
           </div>
         </div>
       </div>
