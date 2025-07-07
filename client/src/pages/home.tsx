@@ -18,7 +18,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Navigation />
       {/* Hero Section */}
-      <div className="min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
+      <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
         <div className="text-center px-8 max-w-4xl mx-auto">
           <motion.h1 
             className="text-5xl font-bold mb-6 leading-tight text-gray-900 tracking-tight"
@@ -63,7 +63,7 @@ export default function Home() {
         </div>
       </div>
       {/* What This Tool Does */}
-      <div className="py-16 bg-gradient-to-b from-white to-gray-50">
+      <div className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -137,7 +137,7 @@ export default function Home() {
         </div>
       </div>
       {/* About Laura Section */}
-      <div className="py-20 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50 relative">
+      <div className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50 relative">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -192,7 +192,7 @@ export default function Home() {
         </div>
       </div>
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-gray-900 via-slate-900 to-gray-900 text-gray-300 py-12">
+      <footer className="bg-gradient-to-r from-gray-900 via-slate-900 to-gray-900 text-gray-300 py-16">
         <div className="max-w-4xl mx-auto px-8">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
