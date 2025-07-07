@@ -2,7 +2,23 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Rocket, ExternalLink, AlertCircle } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { 
+  Rocket, 
+  ExternalLink, 
+  AlertCircle, 
+  GraduationCap, 
+  Target, 
+  Clock, 
+  DollarSign,
+  Users,
+  BookOpen,
+  CheckCircle,
+  Globe,
+  Heart
+} from "lucide-react";
 import Navigation from "@/components/navigation";
 
 export default function About() {
@@ -12,30 +28,112 @@ export default function About() {
     setLocation("/wizard");
   };
 
+  const teamMembers = [
+    {
+      name: "Course Planning Team",
+      role: "Educational Consultants",
+      description: "Former UoPeople students who understand the challenges of course planning",
+      icon: <Users className="w-6 h-6" />
+    },
+    {
+      name: "Academic Advisors",
+      role: "Educational Guidance",
+      description: "Professionals who help students navigate academic requirements",
+      icon: <GraduationCap className="w-6 h-6" />
+    },
+    {
+      name: "Tech Team",
+      role: "Platform Development",
+      description: "Developers committed to making education more accessible",
+      icon: <Rocket className="w-6 h-6" />
+    }
+  ];
+
+  const features = [
+    {
+      title: "Official Course Data",
+      description: "All courses are verified and officially recognized by UoPeople",
+      icon: <CheckCircle className="w-6 h-6" />,
+      color: "text-green-600"
+    },
+    {
+      title: "Cost Optimization",
+      description: "Find the most affordable path to complete your degree",
+      icon: <DollarSign className="w-6 h-6" />,
+      color: "text-blue-600"
+    },
+    {
+      title: "Time Efficiency",
+      description: "Complete Gen Ed requirements faster with strategic planning",
+      icon: <Clock className="w-6 h-6" />,
+      color: "text-purple-600"
+    },
+    {
+      title: "Global Accessibility",
+      description: "Available to students worldwide, completely free to use",
+      icon: <Globe className="w-6 h-6" />,
+      color: "text-orange-600"
+    }
+  ];
+
+  const stats = [
+    {
+      number: "50,000+",
+      label: "UoPeople Students Worldwide",
+      description: "Active students from over 200 countries"
+    },
+    {
+      number: "$1,300+",
+      label: "Average Savings",
+      description: "Typical cost reduction using our approach"
+    },
+    {
+      number: "2-3 months",
+      label: "Gen Ed Completion",
+      description: "Time to finish all General Education requirements"
+    },
+    {
+      number: "100%",
+      label: "Free Tool",
+      description: "No hidden fees or premium features"
+    }
+  ];
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100">
       <Navigation />
       
       {/* Hero Section */}
-      <div className="pt-20 pb-16 gradient-bg">
-        <div className="max-w-4xl mx-auto px-8 text-center text-white">
+      <div className="pt-20 pb-16">
+        <div className="max-w-4xl mx-auto px-8 text-center">
           <motion.h1 
-            className="text-5xl font-bold mb-6"
+            className="text-5xl font-bold mb-6 text-gray-900"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            About This Tool
+            About UoPeople Helper
           </motion.h1>
           
           <motion.p 
-            className="text-xl mb-8 opacity-90 leading-relaxed"
+            className="text-xl mb-8 text-gray-600 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Everything you need to know about planning your UoPeople Computer Science degree
+            Empowering students worldwide to achieve their educational goals through smart course planning and strategic degree completion.
           </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <Button size="lg" onClick={handleStartPlanning} className="bg-blue-600 hover:bg-blue-700">
+              <BookOpen className="w-5 h-5 mr-2" />
+              Start Planning Your Degree
+            </Button>
+          </motion.div>
         </div>
       </div>
 

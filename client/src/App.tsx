@@ -10,6 +10,9 @@ import Notes from "@/pages/notes";
 import HowItWorks from "@/pages/how-it-works";
 import About from "@/pages/about";
 import GuestbookPage from "@/pages/guestbook-page";
+import StudyResources from "@/pages/study-resources";
+import StudyTips from "@/pages/study-tips";
+import FAQs from "@/pages/faqs";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -22,6 +25,9 @@ function Router() {
         <Route path="/how-it-works" component={HowItWorks} />
         <Route path="/about" component={About} />
         <Route path="/guestbook" component={GuestbookPage} />
+        <Route path="/study-resources" component={StudyResources} />
+        <Route path="/study-tips" component={StudyTips} />
+        <Route path="/faqs" component={FAQs} />
         <Route component={NotFound} />
       </Switch>
   );

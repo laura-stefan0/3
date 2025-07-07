@@ -2,12 +2,10 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, MessageSquare, BookOpen } from "lucide-react";
+import { GraduationCap, MessageSquare, BookOpen, Library, Lightbulb, HelpCircle, Info } from "lucide-react";
 
 export default function Navigation() {
   const [location, setLocation] = useLocation();
-
-  
 
   return (
     <motion.nav 
@@ -28,19 +26,37 @@ export default function Navigation() {
           </button>
 
           {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <button
-              onClick={() => setLocation("/how-it-works")}
-              className="text-gray-600 hover:text-blue-600 transition-colors"
+              onClick={() => setLocation("/study-resources")}
+              className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors"
             >
-              How It Works
+              <Library size={16} />
+              <span>Study Resources</span>
+            </button>
+
+            <button
+              onClick={() => setLocation("/study-tips")}
+              className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors"
+            >
+              <Lightbulb size={16} />
+              <span>Study Tips</span>
+            </button>
+
+            <button
+              onClick={() => setLocation("/faqs")}
+              className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors"
+            >
+              <HelpCircle size={16} />
+              <span>FAQs</span>
             </button>
 
             <button
               onClick={() => setLocation("/about")}
-              className="text-gray-600 hover:text-blue-600 transition-colors"
+              className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors"
             >
-              About
+              <Info size={16} />
+              <span>About</span>
             </button>
 
             <button
@@ -52,22 +68,22 @@ export default function Navigation() {
             </button>
 
             <Button
-              onClick={() => setLocation("/course-planning")}
+              onClick={() => setLocation("/wizard")}
               className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg transition-all duration-300"
             >
               <BookOpen className="mr-2" size={16} />
-              Course Planning
+              Start Planning
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <Button
-              onClick={() => setLocation("/course-planning")}
+              onClick={() => setLocation("/wizard")}
               className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg"
             >
               <BookOpen className="mr-1" size={16} />
-              Plan
+              Start Planning
             </Button>
           </div>
         </div>
