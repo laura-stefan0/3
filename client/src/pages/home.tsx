@@ -136,27 +136,7 @@ export default function Home() {
                   Most of the useful advice I found came from Reddit threads, which can be outdated since course options and transfer rules can change.
                 </p>
 
-                <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
-                  <h4 className="font-semibold text-gray-900 mb-3">I built this site to keep things simple and organized:</h4>
-                  <ul className="space-y-2 text-gray-700">
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 mt-1">•</span>
-                      A planner tool to help decide which courses to take at UoPeople or Sophia
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 mt-1">•</span>
-                      Notes and tips from my own experience
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 mt-1">•</span>
-                      External resources that I found genuinely helpful
-                    </li>
-                  </ul>
-                </div>
 
-                <p className="text-sm text-gray-500 italic">
-                  It's not official, and it doesn't replace the university's guidance. It's just a side project from a fellow student who wanted a clearer path through the program.
-                </p>
               </div>
             </motion.div>
 
@@ -240,29 +220,29 @@ export default function Home() {
                   So I Built This Site
                 </h3>
                 <p className="text-gray-600 max-w-2xl mx-auto">
-                  A simple resource to organize course information and study materials in one place
+                  A simple resource to organize course information and study materials in one place. Here is what you'll find:
                 </p>
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Course Information</h4>
-                  <p className="text-sm text-gray-600">
-                    Transfer requirements and course mappings I've researched
-                  </p>
-                </div>
-
-                <div className="text-center p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Planning Tools</h4>
-                  <p className="text-sm text-gray-600">
-                    Simple tools to help choose between UoPeople and Sophia courses
-                  </p>
-                </div>
-
-                <div className="text-center p-4">
                   <h4 className="font-semibold text-gray-900 mb-2">Study Materials</h4>
                   <p className="text-sm text-gray-600">
-                    Notes and resources I'm collecting as I work through my degree
+                    Course notes, resources and insights that I'm collecting as I work through my degreed
+                  </p>
+                </div>
+
+                <div className="text-center p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Course Planner</h4>
+                  <p className="text-sm text-gray-600">
+                    A planner tool to help students decide which courses to take at UoPeople or Sophia
+                  </p>
+                </div>
+
+                <div className="text-center p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Course Information</h4>
+                  <p className="text-sm text-gray-600">
+                    Useful information and external resources that can help students during their CompSci degree
                   </p>
                 </div>
               </div>
