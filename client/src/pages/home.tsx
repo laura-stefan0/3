@@ -113,7 +113,7 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
                     <p className="text-gray-600 leading-relaxed">
-                      The official website lists all the degree requirements, but isn't always clear on which courses are mandatory, which ones aren't, and which can be transferred in
+                      It's not always clear which UoPeople courses are mandatory, which ones aren't, and which can be transferred in
                     </p>
                   </div>
                   
@@ -131,6 +131,15 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-gray-600 leading-relaxed">
+                      Information is scattered in multiple Reddit threads, some of which are outdated
+                    </p>
+                  </div>
+                </div>
+
               </div>
             </motion.div>
 
