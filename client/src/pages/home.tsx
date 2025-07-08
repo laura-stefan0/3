@@ -208,10 +208,10 @@ export default function Home() {
                   <span className="text-sm text-gray-600">r/UoPeople • 10mo ago</span>
                 </div>
                 <h4 className="font-medium text-gray-900 mb-2">
-                  Sophia
+                  Sophia course difficulty and time?
                 </h4>
                 <p className="text-sm text-gray-600 mb-3">
-                  Can someone help me understand which Sophia courses actually transfer to UoPeople? The information seems to change and I can't find a current list...
+                  Can someone tell me how long College Algebra takes on Sophia? I've heard anywhere from 2 weeks to 2 months. Also is it harder than the UoPeople version?
                 </p>
                 <div className="flex gap-4 text-xs text-gray-500">
                   <span>15 comments</span>

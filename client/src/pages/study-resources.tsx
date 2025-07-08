@@ -55,125 +55,70 @@ interface Course {
   }[];
 }
 
+const getCategoryColor = (category: string): string => {
+  switch (category) {
+    case 'Mathematics':
+      return 'bg-blue-100 text-blue-800';
+    case 'Communication':
+      return 'bg-purple-100 text-purple-800';
+    case 'Science':
+      return 'bg-green-100 text-green-800';
+    case 'Social Sciences':
+      return 'bg-pink-100 text-pink-800';
+    case 'History':
+      return 'bg-amber-100 text-amber-800';
+    case 'Philosophy':
+      return 'bg-indigo-100 text-indigo-800';
+    default:
+      return 'bg-gray-100 text-gray-800';
+  }
+};
+
+const getCategoryIcon = (category: string): React.ReactNode => {
+  switch (category) {
+    case 'Mathematics':
+      return <Calculator className="w-5 h-5" />;
+    case 'Communication':
+      return <FileText className="w-5 h-5" />;
+    case 'Science':
+      return <Microscope className="w-5 h-5" />;
+    case 'Social Sciences':
+      return <Users className="w-5 h-5" />;
+    case 'History':
+      return <BookOpen className="w-5 h-5" />;
+    case 'Philosophy':
+      return <Lightbulb className="w-5 h-5" />;
+    default:
+      return <BookOpen className="w-5 h-5" />;
+  }
+};
+
 export default function StudyResources() {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [showAllSophia, setShowAllSophia] = useState(false);
 
+  import { sophiaCourses, getDifficultyColor } from "../data/sophia-courses";
+
+  // Convert Sophia course data to match the Course interface
+  const sophiaCoursesConverted = sophiaCourses.map(course => ({
+    id: course.id,
+    courseName: course.name,
+    difficulty: course.difficulty,
+    difficultyColor: getDifficultyColor(course.difficulty),
+    description: course.description,
+    completionTime: course.completionTime,
+    keyTopics: course.tips.slice(0, 3), // Use first 3 tips as key topics
+    tips: course.tips[0] || "Study guide includes detailed strategies for success",
+    provider: "sophia" as const,
+    category: course.category,
+    categoryColor: getCategoryColor(course.category),
+    categoryIcon: getCategoryIcon(course.category)
+  }));
+
   const allCourses: Course[] = [
-    // Sophia Courses
-    {
-      id: "sophia-college-math",
-      courseName: "Introduction to College Mathematics",
-      difficulty: "Easier",
-      difficultyColor: "bg-green-100 text-green-800",
-      description: "Complete study guide with practice problems and formula shortcuts",
-      completionTime: "2-3 weeks",
-      keyTopics: ["Basic Algebra", "Linear Equations", "Problem Solving"],
-      tips: "Focus on the practice quizzes - they're very similar to the final exam",
-      provider: "sophia",
-      category: "Mathematics",
-      categoryColor: "bg-blue-100 text-blue-800",
-      categoryIcon: <Calculator className="w-5 h-5" />
-    },
-    {
-      id: "sophia-college-algebra",
-      courseName: "College Algebra",
-      difficulty: "Recommended",
-      difficultyColor: "bg-blue-100 text-blue-800",
-      description: "Comprehensive notes covering all algebra concepts with exam strategies",
-      completionTime: "3-4 weeks",
-      keyTopics: ["Polynomials", "Factoring", "Systems of Equations"],
-      tips: "The touchstone assignments are key - master them for easy A's",
-      provider: "sophia",
-      category: "Mathematics",
-      categoryColor: "bg-blue-100 text-blue-800",
-      categoryIcon: <Calculator className="w-5 h-5" />
-    },
-    {
-      id: "sophia-precalculus",
-      courseName: "Precalculus",
-      difficulty: "Harder",
-      difficultyColor: "bg-orange-100 text-orange-800",
-      description: "Advanced study materials with trigonometry and function analysis",
-      completionTime: "4-5 weeks",
-      keyTopics: ["Trigonometry", "Functions", "Exponentials"],
-      tips: "Take your time with the unit circle - it's heavily tested",
-      provider: "sophia",
-      category: "Mathematics",
-      categoryColor: "bg-blue-100 text-blue-800",
-      categoryIcon: <Calculator className="w-5 h-5" />
-    },
-    {
-      id: "sophia-statistics",
-      courseName: "Introduction to Statistics",
-      difficulty: "Moderate",
-      difficultyColor: "bg-yellow-100 text-yellow-800",
-      description: "Statistical concepts with real-world examples and calculation guides",
-      completionTime: "3-4 weeks",
-      keyTopics: ["Probability", "Distributions", "Hypothesis Testing"],
-      tips: "Use the provided formulas sheet - memorization isn't required",
-      provider: "sophia",
-      category: "Mathematics",
-      categoryColor: "bg-blue-100 text-blue-800",
-      categoryIcon: <Calculator className="w-5 h-5" />
-    },
-    {
-      id: "sophia-english-comp1",
-      courseName: "English Composition I",
-      difficulty: "Easy",
-      difficultyColor: "bg-green-100 text-green-800",
-      description: "Essay writing templates and grading rubric analysis",
-      completionTime: "2-3 weeks",
-      keyTopics: ["Essay Structure", "Citations", "Grammar"],
-      tips: "Follow the rubric exactly - Sophia graders are very systematic",
-      provider: "sophia",
-      category: "Communication",
-      categoryColor: "bg-purple-100 text-purple-800",
-      categoryIcon: <FileText className="w-5 h-5" />
-    },
-    {
-      id: "sophia-english-comp2",
-      courseName: "English Composition II",
-      difficulty: "Moderate",
-      difficultyColor: "bg-yellow-100 text-yellow-800",
-      description: "Research paper guide with source evaluation and advanced writing",
-      completionTime: "3-4 weeks",
-      keyTopics: ["Research Methods", "Critical Analysis", "Advanced Writing"],
-      tips: "Start early on research - finding good sources takes time",
-      provider: "sophia",
-      category: "Communication",
-      categoryColor: "bg-purple-100 text-purple-800",
-      categoryIcon: <FileText className="w-5 h-5" />
-    },
-    {
-      id: "sophia-environmental-science",
-      courseName: "Environmental Science",
-      difficulty: "Easy",
-      difficultyColor: "bg-green-100 text-green-800",
-      description: "Comprehensive study guide with key concepts and terminology",
-      completionTime: "2-3 weeks",
-      keyTopics: ["Ecosystems", "Pollution", "Sustainability"],
-      tips: "Lots of reading but straightforward - focus on vocabulary",
-      provider: "sophia",
-      category: "Science",
-      categoryColor: "bg-green-100 text-green-800",
-      categoryIcon: <Microscope className="w-5 h-5" />
-    },
-    {
-      id: "sophia-intro-biology",
-      courseName: "Introduction to Biology",
-      difficulty: "Moderate",
-      difficultyColor: "bg-yellow-100 text-yellow-800",
-      description: "Detailed notes on cellular processes and biological systems",
-      completionTime: "3-4 weeks",
-      keyTopics: ["Cell Biology", "Genetics", "Evolution"],
-      tips: "The lab simulations are fun and help with understanding",
-      provider: "sophia",
-      category: "Science",
-      categoryColor: "bg-green-100 text-green-800",
-      categoryIcon: <Microscope className="w-5 h-5" />
-    },
+    // Sophia Courses - now using comprehensive data
+    ...sophiaCoursesConverted,
     // UoPeople Courses
     {
       id: "uopeople-math1201",
