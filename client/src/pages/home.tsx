@@ -72,197 +72,76 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Why We Built This */}
-      <div className="py-32 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] opacity-50"></div>
-        
-        <div className="max-w-7xl mx-auto px-8 relative">
-          {/* Header */}
+      {/* What I'm Sharing */}
+      <div className="py-24 bg-gradient-to-b from-white to-blue-50">
+        <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
+            className="text-center mb-16"
           >
-            <h2 className="text-5xl font-bold text-gray-900 mb-6 tracking-tight">
-              Why I Built This
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">
+              What I'm Sharing With You
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Course planning shouldn't feel like detective work
+            <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+              As I work through my Computer Science degree, I'm documenting everything that could help other students save time and money
             </p>
           </motion.div>
 
-          {/* Problem Statement */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto mb-16"
-          >
-            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
-                The Problem
-              </h3>
-              
-              <div className="space-y-6">
-                <p className="text-lg text-gray-700 leading-relaxed text-center">
-                  When I started planning my courses at University of the People and looking at transferring credits from Sophia, I found the information scattered in different places and not always consistent.
-                </p>
-                
-                <div className="space-y-4 max-w-2xl mx-auto">
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-gray-600 leading-relaxed">
-                      The official website lists all the degree requirements, but it wasn't always clear which Sophia courses could be transferred in
-                    </p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-gray-600 leading-relaxed">
-                      How the credit transfer process actually worked wasn't straightforward
-                    </p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-gray-600 leading-relaxed">
-                      What the best choices were for each category was unclear
-                    </p>
-                  </div>
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <span className="text-blue-600 font-semibold">📚</span>
                 </div>
-
-                <p className="text-gray-600 leading-relaxed text-center">
-                  Most of the useful advice I found came from Reddit threads, which can be outdated since course options and transfer rules can change.
-                </p>
+                <h3 className="text-xl font-semibold text-gray-900">My Study Notes & Resources</h3>
               </div>
-            </div>
-          </motion.div>
+              <p className="text-gray-600 leading-relaxed">
+                Course materials, study guides, and helpful resources I'm collecting as I take each class. Real insights from a real student.
+              </p>
+            </motion.div>
 
-          {/* Reddit Posts Evidence */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <span className="text-purple-600 font-semibold">🎯</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">My Course Choices</h3>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                The specific UoPeople and Sophia courses I'm taking, with honest reviews about difficulty, time commitment, and transfer process.
+              </p>
+            </motion.div>
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-16"
+            className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl border border-green-200 p-8 text-center"
           >
-            <h3 className="text-xl font-semibold text-gray-900 mb-8 text-center">
-              Students are struggling with the same questions
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+              Why This Helps You
             </h3>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-6 h-6 bg-orange-500 rounded-full"></div>
-                  <span className="text-sm text-gray-600">r/UoPeople • 1yr ago</span>
-                </div>
-                <h4 className="font-medium text-gray-900 mb-2">
-                  UoPeople and Sophia course issue
-                </h4>
-                <p className="text-sm text-gray-600 mb-3">
-                  I'm having trouble figuring out which Sophia courses are actually accepted by UoPeople. The transfer guides seem outdated and I keep getting conflicting information...
-                </p>
-                <div className="flex gap-4 text-xs text-gray-500">
-                  <span>24 comments</span>
-                  <span>↑ 45</span>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-6 h-6 bg-orange-500 rounded-full"></div>
-                  <span className="text-sm text-gray-600">r/UoPeople • 11mo ago</span>
-                </div>
-                <h4 className="font-medium text-gray-900 mb-2">
-                  How do electives work and another question
-                </h4>
-                <p className="text-sm text-gray-600 mb-3">
-                  I'm confused about how electives work at UoPeople. Are major electives different from general electives? Which courses count for what?
-                </p>
-                <div className="flex gap-4 text-xs text-gray-500">
-                  <span>8 comments</span>
-                  <span>↑ 12</span>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-6 h-6 bg-orange-500 rounded-full"></div>
-                  <span className="text-sm text-gray-600">r/UoPeople • 10mo ago</span>
-                </div>
-                <h4 className="font-medium text-gray-900 mb-2">
-                  Sophia course difficulty and time?
-                </h4>
-                <p className="text-sm text-gray-600 mb-3">
-                  Can someone tell me how long College Algebra takes on Sophia? I've heard anywhere from 2 weeks to 2 months. Also is it harder than the UoPeople version?
-                </p>
-                <div className="flex gap-4 text-xs text-gray-500">
-                  <span>15 comments</span>
-                  <span>↑ 28</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="text-center mt-6">
-              <span className="text-sm text-gray-500 italic">
-                ...and hundreds more like these
-              </span>
-            </div>
-          </motion.div>
-
-          {/* Solution Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl border border-green-200 shadow-sm p-8">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-3">
-                  The Solution
-                </h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  So I built this site to organize course information and study materials in one place
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center p-4">
-                  <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-semibold">1</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Study Materials</h4>
-                  <p className="text-sm text-gray-600">
-                    Course notes, resources and insights that I'm collecting as I work through my degree
-                  </p>
-                </div>
-
-                <div className="text-center p-4">
-                  <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-semibold">2</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Course Planner</h4>
-                  <p className="text-sm text-gray-600">
-                    A planner tool to help students decide which courses to take at UoPeople or Sophia
-                  </p>
-                </div>
-
-                <div className="text-center p-4">
-                  <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-semibold">3</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Course Information</h4>
-                  <p className="text-sm text-gray-600">
-                    Useful information and external resources that can help students during their CompSci degree
-                  </p>
-                </div>
-              </div>
+            <div className="max-w-2xl mx-auto space-y-3 text-gray-700">
+              <p>• <strong>Save money</strong> by knowing which Sophia courses actually transfer</p>
+              <p>• <strong>Save time</strong> with study materials that work</p>
+              <p>• <strong>Make better choices</strong> with real student experiences</p>
             </div>
           </motion.div>
         </div>
