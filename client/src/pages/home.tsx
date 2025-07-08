@@ -111,7 +111,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      UoPeople's website is confusing
+                      UoPeople's website can be confusing
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
                       Course catalogs are buried deep, transfer requirements are scattered across multiple pages, 
