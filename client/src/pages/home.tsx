@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { BookOpen, Target, ArrowRight } from "lucide-react";
+import { BookOpen, Target } from "lucide-react";
 import { HiOutlineSparkles, HiOutlineLightBulb, HiOutlineHeart, HiOutlineStar, HiOutlineFire, HiOutlinePuzzle } from "react-icons/hi";
 import Navigation from "@/components/navigation";
 
@@ -113,35 +113,52 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
                     <p className="text-gray-600 leading-relaxed">
-                      It's not always clear which UoPeople courses are mandatory, which ones aren't, and which can be transferred in
+                      The official website lists all the degree requirements, but it wasn't always clear which Sophia courses could be transferred in
                     </p>
                   </div>
                   
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
                     <p className="text-gray-600 leading-relaxed">
-                      The credit transfer process isn't straightforward and is not clearly explained
+                      How the credit transfer process actually worked wasn't straightforward
                     </p>
                   </div>
                   
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
                     <p className="text-gray-600 leading-relaxed">
-                      It usually isn't clear if the best choice for a course is taking it at UoPeople or at Sophia
+                      What the best choices were for each category was unclear
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-gray-600 leading-relaxed">
-                      Information is scattered in multiple Reddit threads, some of which are outdated
-                    </p>
-                  </div>
+                <p className="text-gray-600 leading-relaxed">
+                  Most of the useful advice I found came from Reddit threads, which can be outdated since course options and transfer rules can change.
+                </p>
+
+                <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                  <h4 className="font-semibold text-gray-900 mb-3">I built this site to keep things simple and organized:</h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 mt-1">•</span>
+                      A planner tool to help decide which courses to take at UoPeople or Sophia
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 mt-1">•</span>
+                      Notes and tips from my own experience
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 mt-1">•</span>
+                      External resources that I found genuinely helpful
+                    </li>
+                  </ul>
                 </div>
+
+                <p className="text-sm text-gray-500 italic">
+                  It's not official, and it doesn't replace the university's guidance. It's just a side project from a fellow student who wanted a clearer path through the program.
+                </p>
               </div>
             </motion.div>
-          </div>
 
             {/* Right: Real Reddit Posts */}
             <motion.div
@@ -217,70 +234,36 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="relative">
-              {/* Background with subtle pattern */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 rounded-3xl"></div>
-              <div className="absolute inset-0 opacity-10 rounded-3xl" style={{backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '20px 20px'}}></div>
-              
-              <div className="relative p-12 text-white">
-                <div className="max-w-6xl mx-auto">
-                  {/* Header */}
-                  <div className="text-center mb-12">
-                    <h3 className="text-4xl font-bold mb-4 tracking-tight">
-                      So I Built a Better Way
-                    </h3>
-                    <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
-                      I built this site to keep things simple and organized, in one place, for other students like me. What you'll find here:
-                    </p>
-                  </div>
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                  So I Built This Site
+                </h3>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  A simple resource to organize course information and study materials in one place
+                </p>
+              </div>
 
-                  {/* Features Grid */}
-                  <div className="grid md:grid-cols-3 gap-8">
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.5 }}
-                      className="group"
-                    >
-                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
-                        <h4 className="text-xl font-bold mb-4">✓ Organized Information</h4>
-                        <p className="text-blue-100 leading-relaxed">
-                          Current course information and transfer requirements from my own planning process, including difficulty ratings and time estimates for Sophia courses.
-                        </p>
-                      </div>
-                    </motion.div>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Course Information</h4>
+                  <p className="text-sm text-gray-600">
+                    Transfer requirements and course mappings I've researched
+                  </p>
+                </div>
 
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.6 }}
-                      className="group"
-                    >
-                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
-                        <h4 className="text-xl font-bold mb-4">🎯 Course Planning</h4>
-                        <p className="text-blue-100 leading-relaxed">
-                          A course planning tool I'm building based on my own degree planning research, to help you choose the best mix of UoPeople and Sophia courses.
-                        </p>
-                      </div>
-                    </motion.div>
+                <div className="text-center p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Planning Tools</h4>
+                  <p className="text-sm text-gray-600">
+                    Simple tools to help choose between UoPeople and Sophia courses
+                  </p>
+                </div>
 
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.7 }}
-                      className="group"
-                    >
-                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
-                        <h4 className="text-xl font-bold mb-4">📚 Study Resources</h4>
-                        <p className="text-blue-100 leading-relaxed">
-                          Course notes, study materials, study maps, resources and insights I'm collecting as I work through my CS degree.
-                        </p>
-                      </div>
-                    </motion.div>
-                  </div>
+                <div className="text-center p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Study Materials</h4>
+                  <p className="text-sm text-gray-600">
+                    Notes and resources I'm collecting as I work through my degree
+                  </p>
                 </div>
               </div>
             </div>
@@ -288,31 +271,81 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Course Planner CTA */}
-      <div className="py-12 bg-gray-50 border-t border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-8 text-center">
+      {/* What This Tool Does */}
+      <div className="py-24 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-4xl mx-auto px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex items-center justify-center gap-6"
+            className="mb-12"
           >
-            <div className="flex items-center text-gray-600">
-              <Target className="w-5 h-5 mr-2 text-blue-500" />
-              <span>Need help choosing courses?</span>
-            </div>
-            <Button asChild className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 py-2 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <a href="/course-planning" className="flex items-center">
-                <Target className="w-4 h-4 mr-2" />
-                Try the Course Planner
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
-            </Button>
+            <h2 className="text-3xl font-semibold text-gray-900 mb-6">
+              What You'll Find Here
+            </h2>
           </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-white rounded-lg p-8 border border-gray-100"
+            >
+              <div className="mb-6 flex justify-center">
+                <HiOutlineFire className="text-blue-500 text-4xl" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
+                Study Resources (coming)
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-center text-sm">
+                Study materials, notes, and resources I'm using for Computer Science courses.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white rounded-lg p-8 border border-gray-100"
+            >
+              <div className="mb-6 flex justify-center">
+                <HiOutlinePuzzle className="text-purple-500 text-4xl" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
+                Course Planning (coming)
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-center text-sm">
+                A tool to help you choose the best mix of UoPeople and Sophia courses.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-white rounded-lg p-8 border border-gray-100"
+            >
+              <div className="mb-6 flex justify-center">
+                <HiOutlineStar className="text-orange-500 text-4xl" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
+                FAQs & Answers (coming)
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-center text-sm">
+                Common questions about UoPeople, course transfers, and degree planning.
+              </p>
+            </motion.div>
+
+
+          </div>
         </div>
       </div>
-
-      {/* About Section */}
+      {/* About Laura Section */}
       <div className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50 relative">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
