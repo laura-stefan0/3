@@ -141,6 +141,7 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
+          </div>
 
             {/* Right: Real Reddit Posts */}
             <motion.div
