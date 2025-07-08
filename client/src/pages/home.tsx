@@ -87,10 +87,10 @@ export default function Home() {
             className="text-center mb-20"
           >
             <h2 className="text-5xl font-bold text-gray-900 mb-6 tracking-tight">
-              The Problem We're Solving
+              Why I Built This
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Finding accurate course information shouldn't feel like detective work
+              Course planning shouldn't feel like detective work
             </p>
           </motion.div>
 
@@ -105,50 +105,58 @@ export default function Home() {
               className="space-y-8"
             >
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-red-600 text-sm font-bold">1</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      UoPeople's website can be confusing
-                    </h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  When I started planning my courses at University of the People, I found the information a bit hard to navigate.
+                </p>
+                
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
                     <p className="text-gray-600 leading-relaxed">
-                      Course catalogs are buried deep, transfer requirements are scattered across multiple pages, 
-                      and the information often contradicts itself.
+                      The official website lists all the degree requirements, but it wasn't always clear which Sophia courses could be transferred in
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-gray-600 leading-relaxed">
+                      How the credit transfer process actually worked wasn't straightforward
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-gray-600 leading-relaxed">
+                      What the best choices were for each category was unclear
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-orange-600 text-sm font-bold">2</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      Sophia transferability is unclear
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      Which Sophia courses actually transfer? What are the exact equivalencies? 
-                      The official documentation is vague and often outdated.
-                    </p>
-                  </div>
+                <p className="text-gray-600 leading-relaxed">
+                  Most of the useful advice I found came from Reddit threads, which can be outdated since course options and transfer rules can change.
+                </p>
+
+                <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                  <h4 className="font-semibold text-gray-900 mb-3">I built this site to keep things simple and organized:</h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 mt-1">•</span>
+                      A planner tool to help decide which courses to take at UoPeople or Sophia
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 mt-1">•</span>
+                      Notes and tips from my own experience
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 mt-1">•</span>
+                      External resources that I found genuinely helpful
+                    </li>
+                  </ul>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-blue-600 text-sm font-bold">3</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      Students resort to Reddit
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      Desperate for answers, students dig through hundreds of Reddit posts, 
-                      forum threads, and Discord conversations looking for reliable information.
-                    </p>
-                  </div>
-                </div>
+                <p className="text-sm text-gray-500 italic">
+                  It's not official, and it doesn't replace the university's guidance. It's just a side project from a fellow student who wanted a clearer path through the program.
+                </p>
               </div>
             </motion.div>
 
