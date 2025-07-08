@@ -106,7 +106,7 @@ export default function Home() {
             >
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  When I started planning my courses at University of the People, I found the information a bit hard to navigate.
+                  When I started planning my courses at University of the People and looking at transferring credits from Sophia, I found the information scattered in different places and not always consistent.
                 </p>
                 
                 <div className="space-y-4">
