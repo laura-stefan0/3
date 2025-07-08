@@ -234,134 +234,36 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="relative">
-              {/* Background with subtle pattern */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 rounded-3xl"></div>
-              <div className="absolute inset-0 opacity-10 rounded-3xl" style={{backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '20px 20px'}}></div>
-              
-              <div className="relative p-12 text-white">
-                <div className="max-w-6xl mx-auto">
-                  {/* Header */}
-                  <div className="text-center mb-12">
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6 border border-white/20">
-                      <HiOutlineLightBulb className="text-3xl text-white" />
-                    </div>
-                    <h3 className="text-4xl font-bold mb-4 tracking-tight">
-                      So I Built a Better Way
-                    </h3>
-                    <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
-                      A student-made resource that organizes everything you need in one place
-                    </p>
-                  </div>
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                  So I Built This Site
+                </h3>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  A simple resource to organize course information and study materials in one place
+                </p>
+              </div>
 
-                  {/* Features Grid */}
-                  <div className="grid md:grid-cols-3 gap-8">
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.5 }}
-                      className="group"
-                    >
-                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
-                        <h4 className="text-xl font-bold mb-4">✓ Organized Information</h4>
-                        <p className="text-blue-100 leading-relaxed">
-                          I've researched and compiled current course mappings and transfer requirements from my own planning process.
-                        </p>
-                        <ul className="mt-4 space-y-2 text-sm text-blue-200">
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            Real transfer paths I've discovered
-                          </li>
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            Updated from my research
-                          </li>
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            Student perspective
-                          </li>
-                        </ul>
-                      </div>
-                    </motion.div>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Course Information</h4>
+                  <p className="text-sm text-gray-600">
+                    Transfer requirements and course mappings I've researched
+                  </p>
+                </div>
 
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.6 }}
-                      className="group"
-                    >
-                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
-                        <h4 className="text-xl font-bold mb-4">🎯 Planning Tools</h4>
-                        <p className="text-blue-100 leading-relaxed">
-                          Course planning tools I'm building based on my own degree planning experience.
-                        </p>
-                        <ul className="mt-4 space-y-2 text-sm text-blue-200">
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            Cost-saving strategies
-                          </li>
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            Timeline suggestions
-                          </li>
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            Course sequencing
-                          </li>
-                        </ul>
-                      </div>
-                    </motion.div>
+                <div className="text-center p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Planning Tools</h4>
+                  <p className="text-sm text-gray-600">
+                    Simple tools to help choose between UoPeople and Sophia courses
+                  </p>
+                </div>
 
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.7 }}
-                      className="group"
-                    >
-                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
-                        <h4 className="text-xl font-bold mb-4">📚 Study Resources</h4>
-                        <p className="text-blue-100 leading-relaxed">
-                          Notes, materials, and insights I'm collecting as I work through my CS degree.
-                        </p>
-                        <ul className="mt-4 space-y-2 text-sm text-blue-200">
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            My course notes & guides
-                          </li>
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            Study strategies I find helpful
-                          </li>
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            Learning from my experience
-                          </li>
-                        </ul>
-                      </div>
-                    </motion.div>
-                  </div>
-
-                  {/* Call to Action */}
-                  <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.8 }}
-                    className="text-center mt-12"
-                  >
-                    <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 border border-white/30">
-                      <span className="text-blue-100 font-medium">Ready to get started?</span>
-                      <button 
-                        onClick={() => setLocation("/course-planning")}
-                        className="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors"
-                      >
-                        Try Course Planning
-                      </button>
-                    </div>
-                  </motion.div>
+                <div className="text-center p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Study Materials</h4>
+                  <p className="text-sm text-gray-600">
+                    Notes and resources I'm collecting as I work through my degree
+                  </p>
                 </div>
               </div>
             </div>
