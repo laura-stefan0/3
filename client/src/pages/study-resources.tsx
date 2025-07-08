@@ -274,21 +274,21 @@ export default function StudyResources() {
     setIsDialogOpen(true);
   };
 
-  const sophiaCourses = allCourses.filter(course => course.provider === 'sophia');
+  const sophiaCoursesFiltered = allCourses.filter(course => course.provider === 'sophia');
   const uopeopleCourses = allCourses.filter(course => course.provider === 'uopeople');
 
   // Popular Sophia courses (most commonly taken) - Show only 4 initially
-  const popularSophiaCourses = sophiaCourses.filter(course => 
+  const popularSophiaCourses = sophiaCoursesFiltered.filter(course => 
     course.id === 'sophia-college-algebra' ||
     course.id === 'sophia-english-comp1' ||
     course.id === 'sophia-statistics' ||
     course.id === 'sophia-environmental-science'
   );
 
-  const displayedSophiaCourses = showAllSophia ? sophiaCourses : popularSophiaCourses;
+  const displayedSophiaCourses = showAllSophia ? sophiaCoursesFiltered : popularSophiaCourses;
 
   const sophiaStats = {
-    totalCourses: sophiaCourses.length,
+    totalCourses: sophiaCoursesFiltered.length,
     avgCompletionTime: "2-4 weeks",
     successRate: "95%"
   };
