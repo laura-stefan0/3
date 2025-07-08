@@ -72,7 +72,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Why We Built This */}
+      {/* Problem & Solution Section */}
       <div className="py-32 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] opacity-50"></div>
@@ -87,16 +87,16 @@ export default function Home() {
             className="text-center mb-20"
           >
             <h2 className="text-5xl font-bold text-gray-900 mb-6 tracking-tight">
-              Why I Built This
+              The Problem with Course Planning
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Course planning shouldn't feel like detective work
+              Information is scattered, inconsistent, and confusing for students
             </p>
           </motion.div>
 
-          {/* Story Section */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-            {/* Left: The Story */}
+          {/* The Problem */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+            {/* Left: The Issues */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -106,35 +106,35 @@ export default function Home() {
             >
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  When I started planning my courses at University of the People and looking at transferring credits from Sophia, I found the information scattered in different places and not always consistent.
+                  When I started planning my CS degree at UoPeople and researching Sophia transfers, I quickly discovered why so many students struggle:
                 </p>
                 
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-gray-600 leading-relaxed">
-                      The official website lists all the degree requirements, but isn't always clear on which courses are mandatory, which ones aren't, and which can be transferred in
+                <div className="space-y-5">
+                  <div className="flex items-start gap-4">
+                    <div className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-gray-700 leading-relaxed">
+                      <span className="font-semibold text-gray-900">Scattered information:</span> Course requirements, transfer policies, and Sophia mappings are spread across multiple sites with conflicting details
                     </p>
                   </div>
                   
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-gray-600 leading-relaxed">
-                      The credit transfer process isn't straightforward and is not clearly explained
+                  <div className="flex items-start gap-4">
+                    <div className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-gray-700 leading-relaxed">
+                      <span className="font-semibold text-gray-900">Unclear transfer process:</span> Which Sophia courses actually transfer? What's the approval process? No one seems to have clear answers
                     </p>
                   </div>
                   
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-gray-600 leading-relaxed">
-                      It usually isn't clear if the best choice for a course is taking it at UoPeople or at Sophia
+                  <div className="flex items-start gap-4">
+                    <div className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-gray-700 leading-relaxed">
+                      <span className="font-semibold text-gray-900">Missing context:</span> No information about course difficulty, time commitment, or whether UoPeople or Sophia is the better choice
                     </p>
                   </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Right: Real Reddit Posts */}
+            {/* Right: Student Frustration Examples */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -142,6 +142,10 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-4"
             >
+              <div className="text-center mb-6">
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">Real student struggles:</h4>
+              </div>
+              
               <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-6 h-6 bg-orange-500 rounded-full"></div>
@@ -151,7 +155,7 @@ export default function Home() {
                   UoPeople and Sophia course issue
                 </h4>
                 <p className="text-sm text-gray-600 mb-3">
-                  I'm having trouble figuring out which Sophia courses are actually accepted by UoPeople. The transfer guides seem outdated and I keep getting conflicting information...
+                  "I'm having trouble figuring out which Sophia courses are actually accepted by UoPeople. The transfer guides seem outdated and I keep getting conflicting information..."
                 </p>
                 <div className="flex gap-4 text-xs text-gray-500">
                   <span>24 comments</span>
@@ -165,10 +169,10 @@ export default function Home() {
                   <span className="text-sm text-gray-600">r/UoPeople • 11mo ago</span>
                 </div>
                 <h4 className="font-medium text-gray-900 mb-2">
-                  How do electives work and another question
+                  How do electives work?
                 </h4>
                 <p className="text-sm text-gray-600 mb-3">
-                  I'm confused about how electives work at UoPeople. Are major electives different from general electives? Which courses count for what?
+                  "I'm confused about how electives work at UoPeople. Are major electives different from general electives? Which courses count for what?"
                 </p>
                 <div className="flex gap-4 text-xs text-gray-500">
                   <span>8 comments</span>
@@ -185,7 +189,7 @@ export default function Home() {
                   Sophia course difficulty and time?
                 </h4>
                 <p className="text-sm text-gray-600 mb-3">
-                  Can someone tell me how long College Algebra takes on Sophia? I've heard anywhere from 2 weeks to 2 months. Also is it harder than the UoPeople version?
+                  "Can someone tell me how long College Algebra takes on Sophia? I've heard anywhere from 2 weeks to 2 months..."
                 </p>
                 <div className="flex gap-4 text-xs text-gray-500">
                   <span>15 comments</span>
@@ -193,15 +197,15 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="text-center mt-4">
+              <div className="text-center mt-6">
                 <span className="text-sm text-gray-500 italic">
-                  ...and hundreds more like these
+                  ...and hundreds more like these every month
                 </span>
               </div>
             </motion.div>
           </div>
 
-          {/* Solution Section */}
+          {/* The Solution */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -218,10 +222,10 @@ export default function Home() {
                   {/* Header */}
                   <div className="text-center mb-12">
                     <h3 className="text-4xl font-bold mb-4 tracking-tight">
-                      So I Built a Better Way
+                      My Solution: Everything in One Place
                     </h3>
                     <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
-                      I built this site to keep things simple and organized, in one place, for other students like me. What you'll find here:
+                      I organized all the information I researched for my own degree planning into a clear, student-friendly resource
                     </p>
                   </div>
 
@@ -235,9 +239,9 @@ export default function Home() {
                       className="group"
                     >
                       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
-                        <h4 className="text-xl font-bold mb-4">✓ Organized Information</h4>
+                        <h4 className="text-xl font-bold mb-4">📋 Clear Course Information</h4>
                         <p className="text-blue-100 leading-relaxed">
-                          Current course information and transfer requirements from my own planning process, including difficulty ratings and time estimates for Sophia courses.
+                          All degree requirements, transfer mappings, and course details organized clearly with difficulty ratings and time estimates for Sophia courses.
                         </p>
                       </div>
                     </motion.div>
@@ -250,9 +254,9 @@ export default function Home() {
                       className="group"
                     >
                       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
-                        <h4 className="text-xl font-bold mb-4">🎯 Course Planning</h4>
+                        <h4 className="text-xl font-bold mb-4">🎯 Smart Course Planning</h4>
                         <p className="text-blue-100 leading-relaxed">
-                          A course planning tool I'm building based on my own degree planning research, to help you choose the best mix of UoPeople and Sophia courses.
+                          A planning tool that helps you choose the optimal mix of UoPeople and Sophia courses based on your timeline and budget.
                         </p>
                       </div>
                     </motion.div>
@@ -267,7 +271,7 @@ export default function Home() {
                       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
                         <h4 className="text-xl font-bold mb-4">📚 Study Resources</h4>
                         <p className="text-blue-100 leading-relaxed">
-                          Course notes, study materials, study maps, resources and insights I'm collecting as I work through my CS degree.
+                          Course notes, study guides, and learning strategies I'm collecting as I work through my CS degree.
                         </p>
                       </div>
                     </motion.div>
