@@ -113,50 +113,24 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
                     <p className="text-gray-600 leading-relaxed">
-                      The official website lists all the degree requirements, but it wasn't always clear which Sophia courses could be transferred in
+                      The official website lists all the degree requirements, but isn't always clear on which courses are mandatory, which ones aren't, and which can be transferred in
                     </p>
                   </div>
                   
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
                     <p className="text-gray-600 leading-relaxed">
-                      How the credit transfer process actually worked wasn't straightforward
+                      The credit transfer process isn't straightforward and is not clearly explained
                     </p>
                   </div>
                   
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
                     <p className="text-gray-600 leading-relaxed">
-                      What the best choices were for each category was unclear
+                      It usually isn't clear if the best choice for a course is taking it at UoPeople or at Sophia
                     </p>
                   </div>
                 </div>
-
-                <p className="text-gray-600 leading-relaxed">
-                  Most of the useful advice I found came from Reddit threads, which can be outdated since course options and transfer rules can change.
-                </p>
-
-                <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
-                  <h4 className="font-semibold text-gray-900 mb-3">I built this site to keep things simple and organized:</h4>
-                  <ul className="space-y-2 text-gray-700">
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 mt-1">•</span>
-                      A planner tool to help decide which courses to take at UoPeople or Sophia
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 mt-1">•</span>
-                      Notes and tips from my own experience
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 mt-1">•</span>
-                      External resources that I found genuinely helpful
-                    </li>
-                  </ul>
-                </div>
-
-                <p className="text-sm text-gray-500 italic">
-                  It's not official, and it doesn't replace the university's guidance. It's just a side project from a fellow student who wanted a clearer path through the program.
-                </p>
               </div>
             </motion.div>
 
@@ -243,14 +217,11 @@ export default function Home() {
                 <div className="max-w-6xl mx-auto">
                   {/* Header */}
                   <div className="text-center mb-12">
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6 border border-white/20">
-                      <HiOutlineLightBulb className="text-3xl text-white" />
-                    </div>
                     <h3 className="text-4xl font-bold mb-4 tracking-tight">
                       So I Built a Better Way
                     </h3>
                     <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
-                      A student-made resource that organizes everything you need in one place
+                      I built this site to keep things simple and organized, in one place, for other students like me. What you'll find here:
                     </p>
                   </div>
 
@@ -266,22 +237,8 @@ export default function Home() {
                       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
                         <h4 className="text-xl font-bold mb-4">✓ Organized Information</h4>
                         <p className="text-blue-100 leading-relaxed">
-                          I've researched and compiled current course mappings and transfer requirements from my own planning process.
+                          Current course information and transfer requirements from my own planning process, including difficulty ratings and time estimates for Sophia courses.
                         </p>
-                        <ul className="mt-4 space-y-2 text-sm text-blue-200">
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            Real transfer paths I've discovered
-                          </li>
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            Updated from my research
-                          </li>
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            Student perspective
-                          </li>
-                        </ul>
                       </div>
                     </motion.div>
 
@@ -293,24 +250,10 @@ export default function Home() {
                       className="group"
                     >
                       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
-                        <h4 className="text-xl font-bold mb-4">🎯 Planning Tools</h4>
+                        <h4 className="text-xl font-bold mb-4">🎯 Course Planning</h4>
                         <p className="text-blue-100 leading-relaxed">
-                          Course planning tools I'm building based on my own degree planning experience.
+                          A course planning tool I'm building based on my own degree planning research, to help you choose the best mix of UoPeople and Sophia courses.
                         </p>
-                        <ul className="mt-4 space-y-2 text-sm text-blue-200">
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            Cost-saving strategies
-                          </li>
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            Timeline suggestions
-                          </li>
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            Course sequencing
-                          </li>
-                        </ul>
                       </div>
                     </motion.div>
 
@@ -324,44 +267,11 @@ export default function Home() {
                       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
                         <h4 className="text-xl font-bold mb-4">📚 Study Resources</h4>
                         <p className="text-blue-100 leading-relaxed">
-                          Notes, materials, and insights I'm collecting as I work through my CS degree.
+                          Course notes, study materials, study maps, resources and insights I'm collecting as I work through my CS degree.
                         </p>
-                        <ul className="mt-4 space-y-2 text-sm text-blue-200">
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            My course notes & guides
-                          </li>
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            Study strategies I find helpful
-                          </li>
-                          <li className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            Learning from my experience
-                          </li>
-                        </ul>
                       </div>
                     </motion.div>
                   </div>
-
-                  {/* Call to Action */}
-                  <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.8 }}
-                    className="text-center mt-12"
-                  >
-                    <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 border border-white/30">
-                      <span className="text-blue-100 font-medium">Ready to get started?</span>
-                      <button 
-                        onClick={() => setLocation("/course-planning")}
-                        className="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors"
-                      >
-                        Try Course Planning
-                      </button>
-                    </div>
-                  </motion.div>
                 </div>
               </div>
             </div>
@@ -369,81 +279,31 @@ export default function Home() {
         </div>
       </div>
 
-      {/* What This Tool Does */}
-      <div className="py-24 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-4xl mx-auto px-8">
+      {/* Course Planner CTA */}
+      <div className="py-12 bg-gray-50 border-t border-b border-gray-200">
+        <div className="max-w-4xl mx-auto px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-12"
+            className="flex items-center justify-center gap-6"
           >
-            <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-              What You'll Find Here
-            </h2>
+            <div className="flex items-center text-gray-600">
+              <Target className="w-5 h-5 mr-2 text-blue-500" />
+              <span>Need help choosing courses?</span>
+            </div>
+            <Button asChild className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 py-2 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <a href="/course-planning" className="flex items-center">
+                <Target className="w-4 h-4 mr-2" />
+                Try the Course Planner
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+            </Button>
           </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white rounded-lg p-8 border border-gray-100"
-            >
-              <div className="mb-6 flex justify-center">
-                <HiOutlineFire className="text-blue-500 text-4xl" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                Study Resources (coming)
-              </h3>
-              <p className="text-gray-600 leading-relaxed text-center text-sm">
-                Study materials, notes, and resources I'm using for Computer Science courses.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white rounded-lg p-8 border border-gray-100"
-            >
-              <div className="mb-6 flex justify-center">
-                <HiOutlinePuzzle className="text-purple-500 text-4xl" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                Course Planning (coming)
-              </h3>
-              <p className="text-gray-600 leading-relaxed text-center text-sm">
-                A tool to help you choose the best mix of UoPeople and Sophia courses.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white rounded-lg p-8 border border-gray-100"
-            >
-              <div className="mb-6 flex justify-center">
-                <HiOutlineStar className="text-orange-500 text-4xl" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                FAQs & Answers (coming)
-              </h3>
-              <p className="text-gray-600 leading-relaxed text-center text-sm">
-                Common questions about UoPeople, course transfers, and degree planning.
-              </p>
-            </motion.div>
-
-
-          </div>
         </div>
       </div>
-      {/* About Laura Section */}
+
+      {/* About Section */}
       <div className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50 relative">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
