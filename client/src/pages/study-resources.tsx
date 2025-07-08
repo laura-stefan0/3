@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { sophiaCourses, getDifficultyColor } from "../data/sophia-courses";
 import { 
   ArrowRight,
   BookOpen, 
@@ -97,8 +98,6 @@ export default function StudyResources() {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [showAllSophia, setShowAllSophia] = useState(false);
-
-  import { sophiaCourses, getDifficultyColor } from "../data/sophia-courses";
 
   // Convert Sophia course data to match the Course interface
   const sophiaCoursesConverted = sophiaCourses.map(course => ({
