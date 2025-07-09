@@ -18,8 +18,14 @@ export default function Home() {
     <div className="min-h-screen">
       <Navigation />
       {/* Hero Section */}
-      <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
-        <div className="text-center px-8 max-w-4xl mx-auto ml-[290px] mr-[290px]">
+      <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20 relative overflow-hidden">
+        {/* Subtle animated background elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-400 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-400 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+        
+        <div className="text-center px-8 max-w-4xl mx-auto ml-[290px] mr-[290px] relative z-10">
           <motion.h1 
             className="text-5xl font-bold mb-6 leading-tight text-gray-900 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
@@ -30,7 +36,7 @@ export default function Home() {
           </motion.h1>
           
           <motion.p 
-            className="text-xl mb-4 text-gray-600 leading-relaxed max-w-4xl mx-auto"
+            className="text-xl mb-8 text-gray-600 leading-relaxed max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -46,7 +52,7 @@ export default function Home() {
           >
             <Button 
               onClick={handleCoursePlanning}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
               <Target className="mr-2" size={20} />
               Start Course Planning
@@ -54,14 +60,12 @@ export default function Home() {
             <Button 
               onClick={() => setLocation("/study-resources")}
               variant="outline"
-              className="font-semibold py-4 px-8 text-lg border-2 border-gray-300 hover:border-black hover:bg-black hover:text-white rounded-xl transition-all duration-300"
+              className="font-semibold py-4 px-8 text-lg border-2 border-gray-300 hover:border-black hover:bg-black hover:text-white rounded-xl hover:scale-105 transition-all duration-300"
             >
               <BookOpen className="mr-2" size={20} />
               Browse Study Notes
             </Button>
           </motion.div>
-
-          
         </div>
       </div>
       {/* What I'm Sharing */}
@@ -88,13 +92,14 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm"
+              whileHover={{ y: -5 }}
+              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <span className="text-blue-600 font-semibold">📚</span>
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-300">
+                  <span className="text-blue-600 font-semibold text-lg">📚</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">My Study Notes & Resources</h3>
+                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">My Study Notes & Resources</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
                 Course materials, study guides, notes and helpful resources I'm collecting as I take each class.
@@ -106,13 +111,14 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm"
+              whileHover={{ y: -5 }}
+              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <span className="text-purple-600 font-semibold">🎯</span>
+                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors duration-300">
+                  <span className="text-purple-600 font-semibold text-lg">🎯</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">My Course Choices</h3>
+                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-purple-600 transition-colors duration-300">My Course Choices</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
                 The specific UoPeople and Sophia courses I'm taking, with honest reviews about difficulty and time commitment.
@@ -124,13 +130,14 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm"
+              whileHover={{ y: -5 }}
+              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                  <span className="text-green-600 font-semibold">🧩</span>
+                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-200 transition-colors duration-300">
+                  <span className="text-green-600 font-semibold text-lg">🧩</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">A Course Planner</h3>
+                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-green-600 transition-colors duration-300">A Course Planner</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
                 A tool to help you choose the best mix of UoPeople and Sophia courses.
@@ -141,8 +148,14 @@ export default function Home() {
       </div>
 
       {/* About Laura Section */}
-      <div className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50 relative">
-        <div className="max-w-4xl mx-auto px-8">
+      <div className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50 relative overflow-hidden">
+        {/* Subtle background decoration */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 right-10 w-64 h-64 bg-indigo-300 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-80 h-80 bg-slate-300 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -150,10 +163,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="mb-12 text-left"
           >
-            <h2 className="text-3xl font-semibold text-gray-900 mb-6 text-left">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 text-left tracking-tight">
               About This Project
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
               A personal project born from the need to plan my degree journey and organize resources and study materials.
             </p>
           </motion.div>
@@ -166,30 +179,40 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="flex items-start gap-6">
-              <Avatar className="w-20 h-20 flex-shrink-0 border-4 border-white shadow-lg">
-                <AvatarImage 
-                  src="/images/my-notion-face-portrait.png" 
-                  alt="Laura's profile picture" 
-                />
-                <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-2xl font-semibold">
-                  L
-                </AvatarFallback>
-              </Avatar>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Avatar className="w-20 h-20 flex-shrink-0 border-4 border-white shadow-lg">
+                  <AvatarImage 
+                    src="/images/my-notion-face-portrait.png" 
+                    alt="Laura's profile picture" 
+                  />
+                  <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-2xl font-semibold">
+                    L
+                  </AvatarFallback>
+                </Avatar>
+              </motion.div>
               
               <div className="relative flex-1">
                 {/* Chat bubble tail */}
                 <div className="absolute left-0 top-6 w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-r-[16px] border-r-white transform -translate-x-4"></div>
                 
                 {/* Chat bubble */}
-                <div className="bg-white rounded-3xl rounded-tl-lg p-8 shadow-xl border border-gray-100 max-w-3xl">
+                <motion.div 
+                  className="bg-white rounded-3xl rounded-tl-lg p-8 shadow-xl border border-gray-100 max-w-3xl hover:shadow-2xl transition-shadow duration-300"
+                  whileHover={{ y: -2 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
                   <div className="flex items-center gap-3 mb-4">
                     <h3 className="text-xl font-semibold text-gray-900">Laura</h3>
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   </div>
                   
                   <p className="text-gray-700 leading-relaxed text-lg mb-6">
-                    Hi! I'm starting my CS degree at UoPeople in September 2025. I created this website to organize and share my study notes and materials, plus everything I've learned about using Sophia courses to save money on your degree. Feel free to use anything that helps with your studies. And if it does help, I'd really appreciate a thank you message on the <a href="/guestbook" className="text-blue-500 hover:underline">guestbook</a>! 😊
+                    Hi! I'm starting my CS degree at UoPeople in September 2025. I created this website to organize and share my study notes and materials, plus everything I've learned about using Sophia courses to save money on your degree. Feel free to use anything that helps with your studies. And if it does help, I'd really appreciate a thank you message on the <a href="/guestbook" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors duration-200">guestbook</a>! 😊
                   </p>
-                </div>
+                </motion.div>
               </div>
             </div>
           </motion.div>
