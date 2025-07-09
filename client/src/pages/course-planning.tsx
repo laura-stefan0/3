@@ -18,68 +18,70 @@ export default function CoursePlanning() {
       
       {/* Welcome Screen */}
       <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
-        <div className="text-center px-8 max-w-6xl mx-auto">
-          <motion.h1 
-            className="text-6xl font-bold mb-6 leading-tight text-gray-900 tracking-tight"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Course Planning Wizard
-          </motion.h1>
-          
-          <motion.p 
-            className="text-2xl mb-4 max-w-4xl mx-auto text-gray-600 leading-relaxed"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-          >
-            A simple tool to help Computer Science students at UoPeople figure out which General Education and Elective courses to take, and where to take them.
-          </motion.p>
-          
-          <motion.div 
-            className="mb-6 bg-white/80 backdrop-blur-sm rounded-lg p-4 max-w-2xl mx-auto border border-gray-200"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <p className="text-lg text-gray-800">
-              <strong>For:</strong> Bachelor of Science in Computer Science at University of the People
-            </p>
-          </motion.div>
-          
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div className="flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-lg">
-              <University className="mr-2" size={20} />
-              <span className="font-medium">UoPeople Courses</span>
-            </div>
-            <div className="text-2xl text-gray-400">
-              <Plus size={24} />
-            </div>
-            <div className="flex items-center bg-purple-100 text-purple-800 px-4 py-2 rounded-lg">
-              <GraduationCap className="mr-2" size={20} />
-              <span className="font-medium">Sophia Courses</span>
-            </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <Button 
-              onClick={handleStartPlanning}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+        <div className="bg-gradient-to-br from-blue-600 via-purple-700 to-indigo-800 rounded-3xl p-12 mx-8">
+          <div className="text-center px-8 max-w-6xl mx-auto">
+            <motion.h1 
+              className="text-6xl font-bold mb-6 leading-tight text-white tracking-tight"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              <Rocket className="mr-2" size={20} />
-              Start Course Planning
-            </Button>
-          </motion.div>
+              Course Planning Wizard
+            </motion.h1>
+            
+            <motion.p 
+              className="text-2xl mb-4 max-w-4xl mx-auto text-blue-100 leading-relaxed"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              A simple tool to help Computer Science students at UoPeople figure out which General Education and Elective courses to take, and where to take them.
+            </motion.p>
+            
+            <motion.div 
+              className="mb-6 bg-white/20 backdrop-blur-sm rounded-lg p-4 max-w-2xl mx-auto border border-white/30"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <p className="text-lg text-white">
+                <strong>For:</strong> Bachelor of Science in Computer Science at University of the People
+              </p>
+            </motion.div>
+          
+          <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <div className="flex items-center bg-white/20 text-white px-4 py-2 rounded-lg backdrop-blur-sm border border-white/30">
+                <University className="mr-2" size={20} />
+                <span className="font-medium">UoPeople Courses</span>
+              </div>
+              <div className="text-2xl text-white/60">
+                <Plus size={24} />
+              </div>
+              <div className="flex items-center bg-white/20 text-white px-4 py-2 rounded-lg backdrop-blur-sm border border-white/30">
+                <GraduationCap className="mr-2" size={20} />
+                <span className="font-medium">Sophia Courses</span>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <Button 
+                onClick={handleStartPlanning}
+                className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <Rocket className="mr-2" size={20} />
+                Start Course Planning
+              </Button>
+            </motion.div>
+          </div>
         </div>
       </div>
 
