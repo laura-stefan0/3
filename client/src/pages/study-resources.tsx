@@ -470,9 +470,12 @@ export default function StudyResources() {
                         </Badge>
                       )}
                     </div>
-                    <CardTitle className="text-lg font-semibold leading-tight mb-2">
+                    <CardTitle className="text-lg font-semibold leading-tight mb-1">
                       {course.courseName}
                     </CardTitle>
+                    {course.provider === 'sophia' && (
+                      <p className="text-sm text-orange-600 font-medium mb-2">Sophia Learning • 3 Credits</p>
+                    )}
                     <CardDescription className="text-sm text-gray-600 line-clamp-2 leading-relaxed">
                       {course.description}
                     </CardDescription>
@@ -596,9 +599,11 @@ export default function StudyResources() {
               <DialogHeader>
                 <div>
                   <DialogTitle className="text-2xl">{selectedCourse.courseName}</DialogTitle>
-                  {selectedCourse.courseCode && (
+                  {selectedCourse.courseCode ? (
                     <p className="text-gray-600 mt-1">{selectedCourse.courseCode} • {selectedCourse.credits} Credits</p>
-                  )}
+                  ) : selectedCourse.provider === 'sophia' ? (
+                    <p className="text-gray-600 mt-1">Sophia Learning • 3 Credits</p>
+                  ) : null}
                   <DialogDescription className="text-base mt-2">
                     {selectedCourse.description}
                   </DialogDescription>
