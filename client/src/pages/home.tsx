@@ -15,10 +15,10 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <Navigation />
       {/* Hero Section */}
-      <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
+      <div className="min-h-[85vh] flex items-center justify-center pt-20">
         <div className="text-center px-8 max-w-4xl mx-auto ml-[290px] mr-[290px]">
           <motion.h1 
             className="text-5xl font-bold mb-6 leading-tight text-gray-900 tracking-tight"
@@ -65,7 +65,7 @@ export default function Home() {
         </div>
       </div>
       {/* What I'm Sharing */}
-      <div className="py-24 bg-gradient-to-b from-white to-blue-50">
+      <div className="py-24">
         <div className="max-w-6xl mx-auto px-8">
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 md:p-12">
             <motion.div
@@ -146,7 +146,7 @@ export default function Home() {
       </div>
 
       {/* About Laura Section */}
-      <div className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50 relative">
+      <div className="py-32 relative">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
