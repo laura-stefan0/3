@@ -72,61 +72,146 @@ export default function Home() {
               Sample study materials I'm sharing
             </p>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-              {/* Course Notes Tile */}
-              <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
-                <div className="aspect-square bg-gradient-to-br from-blue-50 to-blue-100 rounded-md mb-3 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-8 h-8 bg-blue-500 rounded mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">CS</span>
-                    </div>
-                    <div className="text-xs text-gray-600">Study Notes</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {/* CS 1101 Study Notes Preview */}
+              <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+                <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-3 rounded-lg mb-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-semibold text-sm">CS 1101 - Programming Fundamentals</h3>
+                    <span className="text-xs bg-blue-400 px-2 py-1 rounded">Week 3</span>
                   </div>
                 </div>
-                <div className="text-xs font-medium text-gray-900 mb-1">CS 1101 Notes</div>
-                <div className="text-xs text-gray-500">Programming concepts</div>
+                <div className="space-y-3">
+                  <div className="border-l-4 border-blue-200 pl-3">
+                    <h4 className="font-medium text-sm text-gray-800">Control Structures</h4>
+                    <p className="text-xs text-gray-600 mt-1">• If-else statements and nested conditions</p>
+                    <p className="text-xs text-gray-600">• For and while loops with examples</p>
+                    <p className="text-xs text-gray-600">• Break and continue statements</p>
+                  </div>
+                  <div className="bg-gray-50 p-3 rounded text-xs font-mono">
+                    <span className="text-purple-600">for</span> i <span className="text-purple-600">in</span> <span className="text-blue-600">range</span>(10):
+                    <br />
+                    &nbsp;&nbsp;<span className="text-blue-600">print</span>(f"Number: {'{i}'}")
+                  </div>
+                </div>
+                <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-100">
+                  <span className="text-xs text-gray-500">📝 My actual study notes</span>
+                  <span className="text-xs text-blue-600 font-medium">View full notes →</span>
+                </div>
               </div>
 
-              {/* Sophia Guide Tile */}
-              <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
-                <div className="aspect-square bg-gradient-to-br from-green-50 to-green-100 rounded-md mb-3 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-8 h-8 bg-green-500 rounded mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">✓</span>
-                    </div>
-                    <div className="text-xs text-gray-600">Transfer Guide</div>
+              {/* Sophia Course Transfer Guide */}
+              <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+                <div className="bg-gradient-to-r from-green-500 to-green-600 text-white p-3 rounded-lg mb-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-semibold text-sm">Sophia → UoPeople Transfer</h3>
+                    <span className="text-xs bg-green-400 px-2 py-1 rounded">✓ Verified</span>
                   </div>
                 </div>
-                <div className="text-xs font-medium text-gray-900 mb-1">Sophia Tips</div>
-                <div className="text-xs text-gray-500">Course transfer info</div>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center p-2 bg-green-50 rounded">
+                    <span className="text-sm font-medium">College Algebra</span>
+                    <span className="text-xs text-green-700 bg-green-200 px-2 py-1 rounded">3 Credits</span>
+                  </div>
+                  <div className="text-xs text-gray-600 space-y-1">
+                    <p><strong>Completion time:</strong> 4 weeks (my experience)</p>
+                    <p><strong>Difficulty:</strong> ⭐⭐⭐ Moderate</p>
+                    <p><strong>Study tip:</strong> Focus on practice tests</p>
+                    <p><strong>Cost saved:</strong> $1,890 vs UoPeople equivalent</p>
+                  </div>
+                  <div className="bg-yellow-50 border border-yellow-200 p-2 rounded text-xs">
+                    💡 <strong>Pro tip:</strong> Screenshot your completion certificate immediately
+                  </div>
+                </div>
+                <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-100">
+                  <span className="text-xs text-gray-500">🎯 Transfer confirmed</span>
+                  <span className="text-xs text-green-600 font-medium">See all courses →</span>
+                </div>
               </div>
 
-              {/* Course Planner Tile */}
-              <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
-                <div className="aspect-square bg-gradient-to-br from-purple-50 to-purple-100 rounded-md mb-3 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-8 h-8 bg-purple-500 rounded mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">📋</span>
-                    </div>
-                    <div className="text-xs text-gray-600">Planner Tool</div>
+              {/* Course Planning Tool Preview */}
+              <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+                <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-3 rounded-lg mb-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-semibold text-sm">Degree Planning Wizard</h3>
+                    <span className="text-xs bg-purple-400 px-2 py-1 rounded">Interactive</span>
                   </div>
                 </div>
-                <div className="text-xs font-medium text-gray-900 mb-1">Course Wizard</div>
-                <div className="text-xs text-gray-500">Plan your degree</div>
+                <div className="space-y-3">
+                  <div className="grid grid-cols-3 gap-2 text-xs">
+                    <div className="bg-blue-50 p-2 rounded text-center">
+                      <div className="font-medium text-blue-700">Communication</div>
+                      <div className="text-blue-600">2/2 courses</div>
+                    </div>
+                    <div className="bg-green-50 p-2 rounded text-center">
+                      <div className="font-medium text-green-700">Mathematics</div>
+                      <div className="text-green-600">3/3 courses</div>
+                    </div>
+                    <div className="bg-orange-50 p-2 rounded text-center">
+                      <div className="font-medium text-orange-700">Science</div>
+                      <div className="text-orange-600">1/1 courses</div>
+                    </div>
+                  </div>
+                  <div className="bg-gray-50 p-3 rounded">
+                    <div className="flex justify-between items-center text-xs mb-2">
+                      <span className="font-medium">Total Progress</span>
+                      <span className="text-purple-600">68% complete</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="bg-purple-500 h-2 rounded-full" style={{ width: '68%' }}></div>
+                    </div>
+                  </div>
+                  <div className="text-xs text-gray-600">
+                    <p><strong>Estimated savings:</strong> $4,320 with Sophia</p>
+                    <p><strong>Time to completion:</strong> 8 months</p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-100">
+                  <span className="text-xs text-gray-500">🎯 Plan your path</span>
+                  <span className="text-xs text-purple-600 font-medium">Try the wizard →</span>
+                </div>
               </div>
 
-              {/* Study Resources Tile */}
-              <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
-                <div className="aspect-square bg-gradient-to-br from-orange-50 to-orange-100 rounded-md mb-3 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-8 h-8 bg-orange-500 rounded mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">📚</span>
-                    </div>
-                    <div className="text-xs text-gray-600">Resources</div>
+              {/* Study Resource Preview */}
+              <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+                <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-3 rounded-lg mb-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-semibold text-sm">Study Resources Hub</h3>
+                    <span className="text-xs bg-orange-400 px-2 py-1 rounded">Updated</span>
                   </div>
                 </div>
-                <div className="text-xs font-medium text-gray-900 mb-1">Study Materials</div>
-                <div className="text-xs text-gray-500">Helpful resources</div>
+                <div className="space-y-3">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between p-2 border border-gray-100 rounded">
+                      <div className="flex items-center space-x-2">
+                        <span className="text-xs">📚</span>
+                        <span className="text-xs font-medium">CS 1101 Textbook Notes</span>
+                      </div>
+                      <span className="text-xs text-gray-500">PDF</span>
+                    </div>
+                    <div className="flex items-center justify-between p-2 border border-gray-100 rounded">
+                      <div className="flex items-center space-x-2">
+                        <span className="text-xs">🎥</span>
+                        <span className="text-xs font-medium">Python Tutorial Playlist</span>
+                      </div>
+                      <span className="text-xs text-gray-500">Video</span>
+                    </div>
+                    <div className="flex items-center justify-between p-2 border border-gray-100 rounded">
+                      <div className="flex items-center space-x-2">
+                        <span className="text-xs">✅</span>
+                        <span className="text-xs font-medium">Final Exam Checklist</span>
+                      </div>
+                      <span className="text-xs text-gray-500">Guide</span>
+                    </div>
+                  </div>
+                  <div className="bg-blue-50 border border-blue-200 p-2 rounded text-xs">
+                    <strong>Latest addition:</strong> MATH 1201 practice problems with solutions
+                  </div>
+                </div>
+                <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-100">
+                  <span className="text-xs text-gray-500">📖 Free resources</span>
+                  <span className="text-xs text-orange-600 font-medium">Browse all →</span>
+                </div>
               </div>
             </div>
           </motion.div>
