@@ -17,8 +17,8 @@ export default function CoursePlanning() {
       <Navigation />
       
       {/* Welcome Screen */}
-      <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
-        <div className="bg-gradient-to-br from-blue-600 via-purple-700 to-indigo-800 rounded-3xl p-20 mx-4 max-w-7xl">
+      <div className="min-h-[75vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-40">
+        <div className="bg-gradient-to-br from-blue-600 via-purple-700 to-indigo-800 rounded-3xl p-40 mx-4 max-w-7xl">
           <div className="text-center px-8 max-w-6xl mx-auto">
             <motion.h1 
               className="text-6xl font-bold mb-6 leading-tight text-white tracking-tight"
@@ -26,7 +26,7 @@ export default function CoursePlanning() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Course Planning Wizard
+              BS CS Course Planner
             </motion.h1>
             
             <motion.p 
@@ -35,19 +35,8 @@ export default function CoursePlanning() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              A simple tool to help Computer Science students at UoPeople figure out which General Education and Elective courses to take, and where to take them.
+              A simple tool to help Computer Science students at UoPeople plan their academic journey, with General Education and Elective courses to take, and where to take them.
             </motion.p>
-            
-            <motion.div 
-              className="mb-6 bg-white/20 backdrop-blur-sm rounded-lg p-4 max-w-2xl mx-auto border border-white/30"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <p className="text-lg text-white">
-                <strong>For:</strong> Bachelor of Science in Computer Science at University of the People
-              </p>
-            </motion.div>
           
           <motion.div 
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10"
