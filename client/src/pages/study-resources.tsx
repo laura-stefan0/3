@@ -277,15 +277,8 @@ export default function StudyResources() {
   const sophiaCoursesFiltered = allCourses.filter(course => course.provider === 'sophia');
   const uopeopleCourses = allCourses.filter(course => course.provider === 'uopeople');
 
-  // Popular Sophia courses (most commonly taken) - Show only 4 initially
-  const popularSophiaCourses = sophiaCoursesFiltered.filter(course => 
-    course.id === 'sophia-college-algebra' ||
-    course.id === 'sophia-english-comp1' ||
-    course.id === 'sophia-statistics' ||
-    course.id === 'sophia-environmental-science'
-  );
-
-  const displayedSophiaCourses = showAllSophia ? sophiaCoursesFiltered : popularSophiaCourses;
+  // Show only first 4 Sophia courses initially
+  const displayedSophiaCourses = showAllSophia ? sophiaCoursesFiltered : sophiaCoursesFiltered.slice(0, 4);
 
   const sophiaStats = {
     totalCourses: sophiaCoursesFiltered.length,
