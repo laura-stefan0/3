@@ -18,7 +18,7 @@ export default function CoursePlanning() {
       
       {/* Welcome Screen */}
       <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
-        <div className="bg-gradient-to-br from-blue-600 via-purple-700 to-indigo-800 rounded-3xl p-12 mx-8">
+        <div className="bg-gradient-to-br from-blue-600 via-purple-700 to-indigo-800 rounded-3xl p-20 mx-4 max-w-7xl">
           <div className="text-center px-8 max-w-6xl mx-auto">
             <motion.h1 
               className="text-6xl font-bold mb-6 leading-tight text-white tracking-tight"
