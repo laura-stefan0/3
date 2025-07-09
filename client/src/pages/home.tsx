@@ -62,6 +62,75 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
+
+      {/* Quick Preview */}
+      <div className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-2xl font-semibold text-gray-900 mb-3">
+              See what students are sharing
+            </h2>
+            <p className="text-gray-600">Real study materials and course insights</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="bg-gray-50 rounded-lg p-4 border border-gray-100 hover:border-gray-200 transition-colors"
+            >
+              <div className="text-xs text-green-600 font-medium mb-2">SOPHIA</div>
+              <h3 className="font-medium text-gray-900 text-sm mb-1">College Algebra</h3>
+              <p className="text-xs text-gray-500">3 weeks • Study guide included</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="bg-gray-50 rounded-lg p-4 border border-gray-100 hover:border-gray-200 transition-colors"
+            >
+              <div className="text-xs text-blue-600 font-medium mb-2">UOPEOPLE</div>
+              <h3 className="font-medium text-gray-900 text-sm mb-1">CS 1101 Programming</h3>
+              <p className="text-xs text-gray-500">8 weeks • All assignments</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+              className="bg-gray-50 rounded-lg p-4 border border-gray-100 hover:border-gray-200 transition-colors"
+            >
+              <div className="text-xs text-purple-600 font-medium mb-2">NOTES</div>
+              <h3 className="font-medium text-gray-900 text-sm mb-1">Statistics Cheat Sheet</h3>
+              <p className="text-xs text-gray-500">4 pages • Visual formulas</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+              className="bg-gray-50 rounded-lg p-4 border border-gray-100 hover:border-gray-200 transition-colors"
+            >
+              <div className="text-xs text-orange-600 font-medium mb-2">GUIDE</div>
+              <h3 className="font-medium text-gray-900 text-sm mb-1">Transfer Process</h3>
+              <p className="text-xs text-gray-500">Step-by-step • Documents</p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
       {/* What I'm Sharing */}
       <div className="py-24 bg-gradient-to-b from-white to-blue-50">
         <div className="max-w-4xl mx-auto px-8">
