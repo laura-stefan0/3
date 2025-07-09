@@ -594,26 +594,14 @@ export default function StudyResources() {
           {selectedCourse && (
             <>
               <DialogHeader>
-                <div className="flex items-start justify-between">
-                  <div>
-                    <DialogTitle className="text-2xl">{selectedCourse.courseName}</DialogTitle>
-                    {selectedCourse.courseCode && (
-                      <p className="text-gray-600 mt-1">{selectedCourse.courseCode} • {selectedCourse.credits} Credits</p>
-                    )}
-                    <DialogDescription className="text-base mt-2">
-                      {selectedCourse.description}
-                    </DialogDescription>
-                  </div>
-                  <div className="flex flex-col gap-2 ml-4">
-                    <Badge className={selectedCourse.provider === 'sophia' ? 'bg-orange-100 text-orange-800' : 'bg-blue-100 text-blue-800'}>
-                      {selectedCourse.provider === 'sophia' ? 'Sophia' : 'UoPeople'}
-                    </Badge>
-                    {selectedCourse.difficulty && (
-                      <Badge className={selectedCourse.difficultyColor}>
-                        {selectedCourse.difficulty}
-                      </Badge>
-                    )}
-                  </div>
+                <div>
+                  <DialogTitle className="text-2xl">{selectedCourse.courseName}</DialogTitle>
+                  {selectedCourse.courseCode && (
+                    <p className="text-gray-600 mt-1">{selectedCourse.courseCode} • {selectedCourse.credits} Credits</p>
+                  )}
+                  <DialogDescription className="text-base mt-2">
+                    {selectedCourse.description}
+                  </DialogDescription>
                 </div>
               </DialogHeader>
 
@@ -621,7 +609,7 @@ export default function StudyResources() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="text-lg font-semibold mb-3 text-gray-900">Course Details</h3>
-                  <div className="space-y-3">
+                  <div className="space-y-3 mb-6">
                     <div className="flex justify-between items-center">
                       <span className="text-gray-600">Platform:</span>
                       <Badge className={selectedCourse.provider === 'sophia' ? 'bg-orange-100 text-orange-800' : 'bg-blue-100 text-blue-800'}>
@@ -649,9 +637,7 @@ export default function StudyResources() {
                       </div>
                     )}
                   </div>
-                </div>
 
-                <div>
                   <h3 className="text-lg font-semibold mb-3 text-gray-900 flex items-center">
                     <Lightbulb className="w-5 h-5 mr-2 text-yellow-500" />
                     Pro Tips
@@ -680,32 +666,41 @@ export default function StudyResources() {
                     )}
                   </div>
                 </div>
-              </div>
 
-              {/* Available Materials */}
-              <div className="mt-6">
-                <h3 className="text-lg font-semibold mb-3 text-gray-900 flex items-center">
-                  <FileDown className="w-5 h-5 mr-2 text-blue-500" />
-                  Available Materials
-                </h3>
-                <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="flex items-center">
-                      <BookOpen className="w-4 h-4 text-blue-600 mr-2" />
-                      <span className="text-xs text-gray-700">Study Guide</span>
-                    </div>
-                    <div className="flex items-center">
-                      <FileText className="w-4 h-4 text-blue-600 mr-2" />
-                      <span className="text-xs text-gray-700">Practice Tests</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Download className="w-4 h-4 text-blue-600 mr-2" />
-                      <span className="text-xs text-gray-700">Notes Template</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Star className="w-4 h-4 text-blue-600 mr-2" />
-                      <span className="text-xs text-gray-700">Success Tips</span>
-                    </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-3 text-gray-900 flex items-center">
+                    <FileDown className="w-5 h-5 mr-2 text-blue-500" />
+                    Available Materials
+                  </h3>
+                  <div className="space-y-2">
+                    <Button variant="outline" className="w-full justify-start text-left h-auto p-3">
+                      <BookOpen className="w-4 h-4 text-blue-600 mr-3 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Study Guide</div>
+                        <div className="text-xs text-gray-500">Comprehensive course overview</div>
+                      </div>
+                    </Button>
+                    <Button variant="outline" className="w-full justify-start text-left h-auto p-3">
+                      <FileText className="w-4 h-4 text-blue-600 mr-3 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Practice Tests</div>
+                        <div className="text-xs text-gray-500">Sample questions and exams</div>
+                      </div>
+                    </Button>
+                    <Button variant="outline" className="w-full justify-start text-left h-auto p-3">
+                      <Download className="w-4 h-4 text-blue-600 mr-3 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Notes Template</div>
+                        <div className="text-xs text-gray-500">Structured note-taking format</div>
+                      </div>
+                    </Button>
+                    <Button variant="outline" className="w-full justify-start text-left h-auto p-3">
+                      <Star className="w-4 h-4 text-blue-600 mr-3 flex-shrink-0" />
+                      <div>
+                        <div className="font-medium text-sm">Success Tips</div>
+                        <div className="text-xs text-gray-500">Expert strategies and advice</div>
+                      </div>
+                    </Button>
                   </div>
                 </div>
               </div>
