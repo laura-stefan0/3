@@ -79,7 +79,7 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="space-y-4 mb-12 max-w-2xl mx-auto">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -87,51 +87,72 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm"
             >
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <span className="text-blue-600 text-sm">📚</span>
+              <div className="flex items-center gap-3">
+                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-white text-sm">✓</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">My Study Notes & Resources</h3>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <span className="text-blue-600 text-sm">📚</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900">My Study Notes & Resources</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Course materials, study guides, notes and helpful resources I'm collecting as I take each class.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Course materials, study guides, notes and helpful resources I'm collecting as I take each class.
-              </p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm"
             >
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <span className="text-purple-600 text-sm">🎯</span>
+              <div className="flex items-center gap-3">
+                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-white text-sm">✓</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">My Course Choices</h3>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <span className="text-purple-600 text-sm">🎯</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900">My Course Choices</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      The specific UoPeople and Sophia courses I'm taking, with honest reviews about difficulty and time commitment.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                The specific UoPeople and Sophia courses I'm taking, with honest reviews about difficulty and time commitment.
-              </p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm"
             >
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                  <span className="text-green-600 text-sm">🧩</span>
+              <div className="flex items-center gap-3">
+                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-white text-sm">✓</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">A Course Planner</h3>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                    <span className="text-green-600 text-sm">🧩</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900">A Course Planner</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      A tool to help you choose the best mix of UoPeople and Sophia courses.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                A tool to help you choose the best mix of UoPeople and Sophia courses.
-              </p>
             </motion.div>
           </div>
         </div>
