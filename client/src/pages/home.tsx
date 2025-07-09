@@ -18,28 +18,44 @@ export default function Home() {
     <div className="min-h-screen">
       <Navigation />
       {/* Hero Section */}
-      <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20 relative overflow-hidden">
-        {/* Subtle animated background elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-400 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-400 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      <div className="min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-10 -left-10 w-80 h-80 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-10 -right-10 w-96 h-96 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="text-center px-8 max-w-4xl mx-auto ml-[290px] mr-[290px] relative z-10">
+        <div className="text-center px-8 max-w-5xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="mb-8"
+          >
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full px-6 py-3 mb-8 shadow-lg">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-gray-700">Currently helping CS students save time & money</span>
+            </div>
+          </motion.div>
+          
           <motion.h1 
-            className="text-5xl font-bold mb-6 leading-tight text-gray-900 tracking-tight"
+            className="text-6xl md:text-7xl font-bold mb-8 leading-tight text-gray-900 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            UoPeople CS Study Hub
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              UoPeople CS
+            </span>
+            <br />
+            Study Hub
           </motion.h1>
           
           <motion.p 
-            className="text-xl mb-8 text-gray-600 leading-relaxed max-w-4xl mx-auto"
+            className="text-xl md:text-2xl mb-12 text-gray-600 leading-relaxed max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
             Study materials, notes, Sophia tips and a course planner to help you in your CS degree at the University of the People.
           </motion.p>
@@ -47,41 +63,48 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-6 justify-center"
           >
             <Button 
               onClick={handleCoursePlanning}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-5 px-10 text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-0"
             >
-              <Target className="mr-2" size={20} />
+              <Target className="mr-3" size={22} />
               Start Course Planning
             </Button>
             <Button 
               onClick={() => setLocation("/study-resources")}
               variant="outline"
-              className="font-semibold py-4 px-8 text-lg border-2 border-gray-300 hover:border-black hover:bg-black hover:text-white rounded-xl hover:scale-105 transition-all duration-300"
+              className="font-semibold py-5 px-10 text-lg border-2 border-gray-300 hover:border-purple-500 hover:bg-purple-500 hover:text-white rounded-2xl transition-all duration-300 transform hover:scale-105 bg-white/80 backdrop-blur-sm"
             >
-              <BookOpen className="mr-2" size={20} />
+              <BookOpen className="mr-3" size={22} />
               Browse Study Notes
             </Button>
           </motion.div>
+
+          
         </div>
       </div>
       {/* What I'm Sharing */}
-      <div className="py-24 bg-gradient-to-b from-white to-blue-50">
-        <div className="max-w-4xl mx-auto px-8">
+      <div className="py-32 bg-gradient-to-b from-white to-blue-50/50 relative">
+        <div className="max-w-6xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">
+            <div className="inline-block mb-4">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-sm font-semibold tracking-wide uppercase">
+                Everything You Need
+              </span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 tracking-tight">
               What You'll Find Here
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
               As I work through my Computer Science degree, I'm documenting everything that could help other students save time and money
             </p>
           </motion.div>
@@ -92,16 +115,15 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              whileHover={{ y: -5 }}
-              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group"
+              className="group bg-white rounded-2xl border border-gray-200 p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-300">
-                  <span className="text-blue-600 font-semibold text-lg">📚</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-white font-semibold text-2xl">📚</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">My Study Notes & Resources</h3>
+                <h3 className="text-xl font-semibold text-gray-900">My Study Notes & Resources</h3>
               </div>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-lg">
                 Course materials, study guides, notes and helpful resources I'm collecting as I take each class.
               </p>
             </motion.div>
@@ -111,16 +133,15 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              whileHover={{ y: -5 }}
-              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group"
+              className="group bg-white rounded-2xl border border-gray-200 p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors duration-300">
-                  <span className="text-purple-600 font-semibold text-lg">🎯</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-white font-semibold text-2xl">🎯</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-purple-600 transition-colors duration-300">My Course Choices</h3>
+                <h3 className="text-xl font-semibold text-gray-900">My Course Choices</h3>
               </div>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-lg">
                 The specific UoPeople and Sophia courses I'm taking, with honest reviews about difficulty and time commitment.
               </p>
             </motion.div>
@@ -130,16 +151,15 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              whileHover={{ y: -5 }}
-              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group"
+              className="group bg-white rounded-2xl border border-gray-200 p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-200 transition-colors duration-300">
-                  <span className="text-green-600 font-semibold text-lg">🧩</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-white font-semibold text-2xl">🧩</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-green-600 transition-colors duration-300">A Course Planner</h3>
+                <h3 className="text-xl font-semibold text-gray-900">A Course Planner</h3>
               </div>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-lg">
                 A tool to help you choose the best mix of UoPeople and Sophia courses.
               </p>
             </motion.div>
@@ -149,41 +169,44 @@ export default function Home() {
 
       {/* About Laura Section */}
       <div className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50 relative overflow-hidden">
-        {/* Subtle background decoration */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-indigo-300 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-80 h-80 bg-slate-300 rounded-full blur-3xl"></div>
-        </div>
+        {/* Background decoration */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-indigo-200/30 to-blue-200/30 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-blue-200/30 to-purple-200/30 rounded-full blur-2xl"></div>
         
-        <div className="max-w-4xl mx-auto px-8 relative z-10">
+        <div className="max-w-5xl mx-auto px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-12 text-left"
+            className="mb-16 text-left"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 text-left tracking-tight">
+            <div className="inline-block mb-4">
+              <span className="bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent text-sm font-semibold tracking-wide uppercase">
+                Behind the Project
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
               About This Project
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
+            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl">
               A personal project born from the need to plan my degree journey and organize resources and study materials.
             </p>
           </motion.div>
 
           <motion.div 
-            className="max-w-4xl mx-auto"
+            className="max-w-5xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="flex items-start gap-6">
+            <div className="flex items-start gap-8">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                transition={{ duration: 0.2 }}
               >
-                <Avatar className="w-20 h-20 flex-shrink-0 border-4 border-white shadow-lg">
+                <Avatar className="w-24 h-24 flex-shrink-0 border-4 border-white shadow-2xl ring-4 ring-blue-100">
                   <AvatarImage 
                     src="/images/my-notion-face-portrait.png" 
                     alt="Laura's profile picture" 
@@ -195,24 +218,24 @@ export default function Home() {
               </motion.div>
               
               <div className="relative flex-1">
-                {/* Chat bubble tail */}
-                <div className="absolute left-0 top-6 w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-r-[16px] border-r-white transform -translate-x-4"></div>
+                {/* Enhanced chat bubble tail */}
+                <div className="absolute left-0 top-8 w-0 h-0 border-t-[14px] border-t-transparent border-b-[14px] border-b-transparent border-r-[18px] border-r-white transform -translate-x-4 drop-shadow-sm"></div>
                 
-                {/* Chat bubble */}
-                <motion.div 
-                  className="bg-white rounded-3xl rounded-tl-lg p-8 shadow-xl border border-gray-100 max-w-3xl hover:shadow-2xl transition-shadow duration-300"
-                  whileHover={{ y: -2 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <h3 className="text-xl font-semibold text-gray-900">Laura</h3>
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                {/* Enhanced chat bubble */}
+                <div className="bg-white rounded-3xl rounded-tl-2xl p-10 shadow-2xl border border-gray-100 max-w-4xl backdrop-blur-sm">
+                  <div className="flex items-center gap-3 mb-6">
+                    <h3 className="text-2xl font-bold text-gray-900">Laura</h3>
+                    <div className="flex gap-1">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse delay-75"></div>
+                      <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse delay-150"></div>
+                    </div>
                   </div>
                   
-                  <p className="text-gray-700 leading-relaxed text-lg mb-6">
-                    Hi! I'm starting my CS degree at UoPeople in September 2025. I created this website to organize and share my study notes and materials, plus everything I've learned about using Sophia courses to save money on your degree. Feel free to use anything that helps with your studies. And if it does help, I'd really appreciate a thank you message on the <a href="/guestbook" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors duration-200">guestbook</a>! 😊
+                  <p className="text-gray-700 leading-relaxed text-xl mb-6">
+                    Hi! I'm starting my CS degree at UoPeople in September 2025. I created this website to organize and share my study notes and materials, plus everything I've learned about using Sophia courses to save money on your degree. Feel free to use anything that helps with your studies. And if it does help, I'd really appreciate a thank you message on the <a href="/guestbook" className="text-blue-600 hover:text-blue-700 underline decoration-2 underline-offset-2">guestbook</a>! 😊
                   </p>
-                </motion.div>
+                </div>
               </div>
             </div>
           </motion.div>
