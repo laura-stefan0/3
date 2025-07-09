@@ -1,6 +1,4 @@
-The provided change snippet replaces a closing div structure with an identical one, likely to correct a potential formatting issue, thus the final code will be the same as the original code.
-```
-```replit_final_file
+
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -17,7 +15,7 @@ export default function CoursePlanning() {
   return (
     <div className="min-h-screen">
       <Navigation />
-
+      
       {/* Welcome Screen */}
       <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-600 via-purple-700 to-indigo-800 pt-20">
         <div className="text-center px-8 max-w-6xl mx-auto">
@@ -29,7 +27,7 @@ export default function CoursePlanning() {
           >
             Course Planning Wizard
           </motion.h1>
-
+          
           <motion.p 
             className="text-2xl mb-4 max-w-4xl mx-auto text-blue-100 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
@@ -38,7 +36,7 @@ export default function CoursePlanning() {
           >
             A simple tool to help Computer Science students at UoPeople figure out which General Education and Elective courses to take, and where to take them.
           </motion.p>
-
+          
           <motion.div 
             className="mb-6 bg-white/20 backdrop-blur-sm rounded-lg p-4 max-w-2xl mx-auto border border-white/30"
             initial={{ opacity: 0, y: 30 }}
@@ -49,7 +47,7 @@ export default function CoursePlanning() {
               <strong>For:</strong> Bachelor of Science in Computer Science at University of the People
             </p>
           </motion.div>
-
+          
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10"
             initial={{ opacity: 0, y: 30 }}
@@ -68,7 +66,7 @@ export default function CoursePlanning() {
               <span className="font-medium">Sophia Courses</span>
             </div>
           </motion.div>
-
+          
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -177,7 +175,7 @@ export default function CoursePlanning() {
               Many students already use Sophia Learning to complete General Education requirements faster and cheaper. 
               This tool simply organizes all the course information in one place, since navigating UoPeople's requirements can be confusing.
             </p>
-
+            
             <div className="bg-gray-50 rounded-xl p-6 mb-8">
               <div className="grid md:grid-cols-2 gap-6 text-sm">
                 <div className="space-y-2">
@@ -225,7 +223,7 @@ export default function CoursePlanning() {
             <h2 className="text-2xl font-bold text-gray-900 mb-8">
               Quick Reference
             </h2>
-
+            
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white rounded-lg p-6 shadow-sm">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
