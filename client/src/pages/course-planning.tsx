@@ -92,7 +92,7 @@ export default function CoursePlanning() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -122,6 +122,24 @@ export default function CoursePlanning() {
                 <span className="text-2xl font-bold text-green-600">2</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Review Your UoPeople Pathway
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Take a look at the mandatory CS courses you will have to take at UoPeople.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-orange-600">3</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 Choose Elective Courses
               </h3>
               <p className="text-gray-600 leading-relaxed">
@@ -133,11 +151,11 @@ export default function CoursePlanning() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               className="text-center"
             >
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-purple-600">3</span>
+                <span className="text-2xl font-bold text-purple-600">4</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 Download Your Plan
