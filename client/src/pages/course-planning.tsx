@@ -37,15 +37,6 @@ export default function CoursePlanning() {
             A simple tool to help Computer Science students at UoPeople figure out which General Education and Elective courses to take, and where to take them.
           </motion.p>
           
-          <motion.p 
-            className="text-gray-500 mb-8 flex items-center justify-center gap-1"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Save money and time with smart course planning <span className="text-red-500">♥</span>
-          </motion.p>
-          
           <motion.div 
             className="mb-6 bg-white/80 backdrop-blur-sm rounded-lg p-4 max-w-2xl mx-auto border border-gray-200"
             initial={{ opacity: 0, y: 30 }}
@@ -53,7 +44,7 @@ export default function CoursePlanning() {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <p className="text-lg text-gray-700">
-              <strong>For:</strong> Bachelor of Science in Computer Science students at University of the People
+              <strong>For:</strong> Bachelor of Science in Computer Science at University of the People
             </p>
           </motion.div>
           
@@ -106,7 +97,7 @@ export default function CoursePlanning() {
               How It Works
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Three simple steps to plan your academic path at UoPeople
+              Plan your academic path at UoPeople
             </p>
           </motion.div>
 
