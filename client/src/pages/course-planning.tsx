@@ -13,13 +13,13 @@ export default function CoursePlanning() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-800 via-blue-800 to-indigo-800">
       <Navigation />
       
       {/* Hero Section */}
       <div className="relative min-h-[85vh] flex items-center justify-center pt-20">
         {/* Subtle background pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-purple-900/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
         <div className="relative z-10 text-center px-8 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -101,7 +101,7 @@ export default function CoursePlanning() {
       </div>
 
       {/* Three Steps Section */}
-      <div id="how-it-works" className="py-24 bg-slate-800">
+      <div id="how-it-works" className="py-24 bg-slate-700">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -113,7 +113,7 @@ export default function CoursePlanning() {
             <h2 className="text-3xl font-bold text-white mb-6">
               How It Works
             </h2>
-            <p className="text-lg text-gray-300 leading-relaxed">
+            <p className="text-lg text-gray-200 leading-relaxed">
               Three simple steps to plan your academic path at UoPeople
             </p>
           </motion.div>
@@ -132,7 +132,7 @@ export default function CoursePlanning() {
               <h3 className="text-xl font-semibold text-white mb-3">
                 Choose General Education Courses
               </h3>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-200 leading-relaxed">
                 Select from UoPeople courses or Sophia Learning equivalents for each General Education category. Compare options and pick what works best for your schedule and budget.
               </p>
             </motion.div>
@@ -150,7 +150,7 @@ export default function CoursePlanning() {
               <h3 className="text-xl font-semibold text-white mb-3">
                 Choose Elective Courses
               </h3>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-200 leading-relaxed">
                 Pick between major-related courses at UoPeople that advance your CS knowledge, or other elective courses that interest you. Fill your remaining credit requirements.
               </p>
             </motion.div>
@@ -168,7 +168,7 @@ export default function CoursePlanning() {
               <h3 className="text-xl font-semibold text-white mb-3">
                 Download Your Plan
               </h3>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-200 leading-relaxed">
                 Get a complete overview of your course selections with credit counts, cost estimates, and a clear roadmap for your degree completion.
               </p>
             </motion.div>
@@ -177,7 +177,7 @@ export default function CoursePlanning() {
       </div>
 
       {/* Features Section */}
-      <div className="py-24 bg-gray-900">
+      <div className="py-24 bg-gray-800">
         <div className="max-w-3xl mx-auto px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -188,16 +188,16 @@ export default function CoursePlanning() {
             <h2 className="text-3xl font-bold text-white mb-6">
               All Course Information in One Place
             </h2>
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+            <p className="text-lg text-gray-200 mb-8 leading-relaxed">
               Many students already use Sophia Learning to complete General Education requirements faster and cheaper. 
               This tool simply organizes all the course information in one place, since navigating UoPeople's requirements can be confusing.
             </p>
             
-            <div className="bg-slate-800 rounded-xl p-6 mb-8 border border-slate-700">
+            <div className="bg-slate-700 rounded-xl p-6 mb-8 border border-slate-600">
               <div className="grid md:grid-cols-2 gap-6 text-sm">
                 <div className="space-y-2">
                   <h4 className="font-semibold text-white">What you'll find here:</h4>
-                  <ul className="text-gray-300 space-y-1">
+                  <ul className="text-gray-200 space-y-1">
                     <li>• All transferable Sophia courses</li>
                     <li>• UoPeople course requirements</li>
                     <li>• Credit requirements per category</li>
@@ -206,7 +206,7 @@ export default function CoursePlanning() {
                 </div>
                 <div className="space-y-2">
                   <h4 className="font-semibold text-white">Typical savings:</h4>
-                  <ul className="text-gray-300 space-y-1">
+                  <ul className="text-gray-200 space-y-1">
                     <li>• Sophia: $99/month + $17/course</li>
                     <li>• UoPeople: $160 per exam</li>
                     <li>• First 20 credits transfer free</li>
@@ -228,7 +228,7 @@ export default function CoursePlanning() {
       </div>
 
       {/* Features Grid Section */}
-      <div id="info" className="py-16 bg-slate-900">
+      <div id="info" className="py-16 bg-slate-800">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -242,38 +242,38 @@ export default function CoursePlanning() {
             </h2>
             
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-slate-800 rounded-lg p-6 border border-slate-700">
+              <div className="bg-slate-700 rounded-lg p-6 border border-slate-600">
                 <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
                 </div>
                 <h3 className="font-semibold text-white mb-2">Official Transfer List</h3>
-                <p className="text-sm text-gray-300">
+                <p className="text-sm text-gray-200">
                   All courses listed are officially recognized by UoPeople for credit transfer
                 </p>
               </div>
 
-              <div className="bg-slate-800 rounded-lg p-6 border border-slate-700">
+              <div className="bg-slate-700 rounded-lg p-6 border border-slate-600">
                 <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
                   </svg>
                 </div>
                 <h3 className="font-semibold text-white mb-2">Save Time</h3>
-                <p className="text-sm text-gray-300">
+                <p className="text-sm text-gray-200">
                   No need to research each course individually or navigate confusing requirements
                 </p>
               </div>
 
-              <div className="bg-slate-800 rounded-lg p-6 border border-slate-700">
+              <div className="bg-slate-700 rounded-lg p-6 border border-slate-600">
                 <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"/>
                   </svg>
                 </div>
                 <h3 className="font-semibold text-white mb-2">Complete Plan</h3>
-                <p className="text-sm text-gray-300">
+                <p className="text-sm text-gray-200">
                   Get a clear roadmap with all required courses for your degree
                 </p>
               </div>
@@ -283,7 +283,7 @@ export default function CoursePlanning() {
       </div>
 
       {/* Disclaimer Section */}
-      <div className="py-12 bg-slate-800 border-t border-slate-700">
+      <div className="py-12 bg-slate-700 border-t border-slate-600">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
