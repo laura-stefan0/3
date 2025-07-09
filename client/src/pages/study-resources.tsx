@@ -70,6 +70,10 @@ const getCategoryColor = (category: string): string => {
       return 'bg-amber-100 text-amber-800';
     case 'Philosophy':
       return 'bg-indigo-100 text-indigo-800';
+    case 'Computer Science':
+      return 'bg-cyan-100 text-cyan-800';
+    case 'General Education':
+      return 'bg-slate-100 text-slate-800';
     default:
       return 'bg-gray-100 text-gray-800';
   }
@@ -89,6 +93,10 @@ const getCategoryIcon = (category: string): React.ReactNode => {
       return <BookOpen className="w-5 h-5" />;
     case 'Philosophy':
       return <Lightbulb className="w-5 h-5" />;
+    case 'Computer Science':
+      return <Lightbulb className="w-5 h-5" />;
+    case 'General Education':
+      return <GraduationCap className="w-5 h-5" />;
     default:
       return <BookOpen className="w-5 h-5" />;
   }

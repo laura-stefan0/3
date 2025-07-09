@@ -360,6 +360,258 @@ export const sophiaCourses: SophiaCourse[] = [
       'Prepares well for business ethics'
     ],
     cost: 17
+  },
+  {
+    id: 'sophia-foundations-english',
+    name: 'Foundations of English Composition',
+    category: 'Communication',
+    difficulty: 'Easy',
+    completionTime: '2-3 weeks',
+    averageTimeWeeks: 2.5,
+    transfersTo: ['ENGL 1101 - English Composition I'],
+    description: 'Foundational writing skills, grammar, and basic composition principles',
+    tips: [
+      'Focus on structure and organization',
+      'Practice different writing formats',
+      'Use feedback to improve drafts'
+    ],
+    redditInsights: [
+      'Good preparation for Composition I',
+      'Builds confidence in writing',
+      'Covers essential grammar concepts'
+    ],
+    cost: 17
+  },
+  {
+    id: 'sophia-calculus',
+    name: 'Calculus',
+    category: 'Mathematics',
+    difficulty: 'Very Hard',
+    completionTime: '6-8 weeks',
+    averageTimeWeeks: 7,
+    transfersTo: ['MATH 1401 - Calculus I'],
+    description: 'Limits, derivatives, integrals, and applications of calculus',
+    tips: [
+      'Strong algebra foundation required',
+      'Practice problems daily',
+      'Understand concepts before memorizing formulas'
+    ],
+    redditInsights: [
+      'Most challenging math course on Sophia',
+      'Requires significant time investment',
+      'Good for STEM majors'
+    ],
+    cost: 17
+  },
+  {
+    id: 'sophia-studying-religions',
+    name: 'Approaches to Studying Religions',
+    category: 'Philosophy',
+    difficulty: 'Moderate',
+    completionTime: '3-4 weeks',
+    averageTimeWeeks: 3.5,
+    transfersTo: ['RLGN 1301 - World Religions'],
+    description: 'Comparative study of world religions and religious practices',
+    tips: [
+      'Approach with open mind and respect',
+      'Focus on understanding different perspectives',
+      'Take notes on key concepts and practices'
+    ],
+    redditInsights: [
+      'Eye-opening and educational',
+      'Good for cultural understanding',
+      'Respectful approach to sensitive topics'
+    ],
+    cost: 17
+  },
+  {
+    id: 'sophia-intro-it',
+    name: 'Introduction to Information Technology',
+    category: 'Computer Science',
+    difficulty: 'Easy',
+    completionTime: '2-3 weeks',
+    averageTimeWeeks: 2.5,
+    transfersTo: ['CS 1101 - Programming Fundamentals', 'IT 1101 - Introduction to IT'],
+    description: 'Basic computer concepts, software, hardware, and digital literacy',
+    tips: [
+      'Hands-on practice with software',
+      'Learn keyboard shortcuts',
+      'Understand basic troubleshooting'
+    ],
+    redditInsights: [
+      'Great for non-technical students',
+      'Practical skills learned',
+      'Good foundation for computer courses'
+    ],
+    cost: 17
+  },
+  {
+    id: 'sophia-art-history-1',
+    name: 'Art History I',
+    category: 'History',
+    difficulty: 'Moderate',
+    completionTime: '3-4 weeks',
+    averageTimeWeeks: 3.5,
+    transfersTo: ['ART 1101 - Art History I'],
+    description: 'Ancient to medieval art history, styles, and cultural contexts',
+    tips: [
+      'Use visual memory techniques',
+      'Connect art to historical periods',
+      'Study artist names and time periods'
+    ],
+    redditInsights: [
+      'Visually engaging course',
+      'Good for humanities requirements',
+      'Memorization of dates and artists required'
+    ],
+    cost: 17
+  },
+  {
+    id: 'sophia-art-history-2',
+    name: 'Art History II',
+    category: 'History',
+    difficulty: 'Moderate',
+    completionTime: '3-4 weeks',
+    averageTimeWeeks: 3.5,
+    transfersTo: ['ART 1102 - Art History II'],
+    description: 'Renaissance to modern art history, movements, and artistic evolution',
+    tips: [
+      'Build on Art History I knowledge',
+      'Focus on artistic movements',
+      'Understand social and cultural influences'
+    ],
+    redditInsights: [
+      'More engaging than Art History I for many',
+      'Covers more familiar art periods',
+      'Good continuation course'
+    ],
+    cost: 17
+  },
+  {
+    id: 'sophia-visual-communication',
+    name: 'Visual Communication',
+    category: 'Communication',
+    difficulty: 'Easy',
+    completionTime: '2-3 weeks',
+    averageTimeWeeks: 2.5,
+    transfersTo: ['ART 1301 - Visual Arts', 'COMM 1301 - Communication'],
+    description: 'Design principles, visual elements, and effective communication through imagery',
+    tips: [
+      'Practice with design software',
+      'Study color theory and composition',
+      'Analyze effective visual designs'
+    ],
+    redditInsights: [
+      'Creative and practical course',
+      'Good for design-minded students',
+      'Useful skills for presentations'
+    ],
+    cost: 17
+  },
+  {
+    id: 'sophia-greek-philosophers',
+    name: 'Ancient Greek Philosophers',
+    category: 'Philosophy',
+    difficulty: 'Hard',
+    completionTime: '4-5 weeks',
+    averageTimeWeeks: 4.5,
+    transfersTo: ['PHIL 1101 - Introduction to Philosophy'],
+    description: 'Study of Socrates, Plato, Aristotle, and other ancient Greek philosophical thought',
+    tips: [
+      'Take time to understand complex concepts',
+      'Connect philosophical ideas to modern applications',
+      'Practice critical thinking skills'
+    ],
+    redditInsights: [
+      'Intellectually challenging but rewarding',
+      'Good foundation for philosophy',
+      'Requires careful reading and analysis'
+    ],
+    cost: 17
+  },
+  {
+    id: 'sophia-lifespan-development',
+    name: 'Lifespan Development',
+    category: 'Social Sciences',
+    difficulty: 'Moderate',
+    completionTime: '3-4 weeks',
+    averageTimeWeeks: 3.5,
+    transfersTo: ['PSYC 1301 - Developmental Psychology'],
+    description: 'Human development from birth to death, psychological and social changes',
+    tips: [
+      'Connect theories to real-life examples',
+      'Study developmental stages carefully',
+      'Understand nature vs. nurture debates'
+    ],
+    redditInsights: [
+      'Practical and applicable to life',
+      'Good for education and psychology majors',
+      'Interesting case studies and examples'
+    ],
+    cost: 17
+  },
+  {
+    id: 'sophia-intro-nutrition',
+    name: 'Introduction to Nutrition',
+    category: 'Science',
+    difficulty: 'Easy',
+    completionTime: '2-3 weeks',
+    averageTimeWeeks: 2.5,
+    transfersTo: ['BIOL 1301 - Introduction to Biology', 'HLTH 1301 - Personal Health'],
+    description: 'Basic nutrition principles, dietary guidelines, and health applications',
+    tips: [
+      'Apply concepts to personal diet',
+      'Learn to read nutrition labels',
+      'Understand macronutrients and micronutrients'
+    ],
+    redditInsights: [
+      'Practical and immediately useful',
+      'Good for health-conscious students',
+      'Easy to relate to daily life'
+    ],
+    cost: 17
+  },
+  {
+    id: 'sophia-conflict-resolution',
+    name: 'Conflict Resolution',
+    category: 'Social Sciences',
+    difficulty: 'Moderate',
+    completionTime: '3-4 weeks',
+    averageTimeWeeks: 3.5,
+    transfersTo: ['COMM 1301 - Communication', 'PSYC 1301 - Social Psychology'],
+    description: 'Strategies for managing and resolving conflicts in various settings',
+    tips: [
+      'Practice active listening techniques',
+      'Learn de-escalation strategies',
+      'Apply concepts to real situations'
+    ],
+    redditInsights: [
+      'Valuable life skills learned',
+      'Good for business and education majors',
+      'Practical applications in workplace'
+    ],
+    cost: 17
+  },
+  {
+    id: 'sophia-college-readiness',
+    name: 'College Readiness',
+    category: 'General Education',
+    difficulty: 'Very Easy',
+    completionTime: '1-2 weeks',
+    averageTimeWeeks: 1.5,
+    transfersTo: ['UNIV 1101 - University Success'],
+    description: 'Study skills, time management, and college success strategies',
+    tips: [
+      'Implement strategies immediately',
+      'Focus on time management techniques',
+      'Practice note-taking methods'
+    ],
+    redditInsights: [
+      'Perfect for new college students',
+      'Quick and easy completion',
+      'Practical skills for academic success'
+    ],
+    cost: 17
   }
 ];
 
