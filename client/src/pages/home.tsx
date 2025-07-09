@@ -75,7 +75,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">
-              What I'm Sharing With You
+              What You'll Find Here
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
               As I work through my Computer Science degree, I'm documenting everything that could help other students save time and money
@@ -97,7 +97,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-gray-900">My Study Notes & Resources</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                Course materials, study guides, and helpful resources I'm collecting as I take each class. Real insights from a real student.
+                Course materials, study guides, notes and helpful resources I'm collecting as I take each class.
               </p>
             </motion.div>
 
@@ -115,103 +115,31 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-gray-900">My Course Choices</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                The specific UoPeople and Sophia courses I'm taking, with honest reviews about difficulty, time commitment, and transfer process.
+                The specific UoPeople and Sophia courses I'm taking, with honest reviews about difficulty and time commitment.
               </p>
             </motion.div>
-          </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl border border-green-200 p-8 text-center"
-          >
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Why This Helps You
-            </h3>
-            <div className="max-w-2xl mx-auto space-y-3 text-gray-700">
-              <p>• <strong>Save money</strong> by knowing which Sophia courses actually transfer</p>
-              <p>• <strong>Save time</strong> with study materials that work</p>
-              <p>• <strong>Make better choices</strong> with real student experiences</p>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-      {/* What This Tool Does */}
-      <div className="py-24 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-4xl mx-auto px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
-          >
-            <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-              What You'll Find Here
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white rounded-lg p-8 border border-gray-100"
+              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm"
             >
-              <div className="mb-6 flex justify-center">
-                <HiOutlineFire className="text-blue-500 text-4xl" />
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <span className="text-purple-600 font-semibold">🧩</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">A Course Planner</h3>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                Study Resources (coming)
-              </h3>
-              <p className="text-gray-600 leading-relaxed text-center text-sm">
-                Study materials, notes, and resources I'm using for Computer Science courses.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white rounded-lg p-8 border border-gray-100"
-            >
-              <div className="mb-6 flex justify-center">
-                <HiOutlinePuzzle className="text-purple-500 text-4xl" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                Course Planning (coming)
-              </h3>
-              <p className="text-gray-600 leading-relaxed text-center text-sm">
+              <p className="text-gray-600 leading-relaxed">
                 A tool to help you choose the best mix of UoPeople and Sophia courses.
               </p>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white rounded-lg p-8 border border-gray-100"
-            >
-              <div className="mb-6 flex justify-center">
-                <HiOutlineStar className="text-orange-500 text-4xl" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                FAQs & Answers (coming)
-              </h3>
-              <p className="text-gray-600 leading-relaxed text-center text-sm">
-                Common questions about UoPeople, course transfers, and degree planning.
-              </p>
-            </motion.div>
-
-
           </div>
         </div>
       </div>
+
       {/* About Laura Section */}
       <div className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50 relative">
         <div className="max-w-4xl mx-auto px-8">
