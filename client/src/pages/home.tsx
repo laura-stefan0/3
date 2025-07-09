@@ -136,6 +136,172 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
+
+      {/* Course & Materials Preview */}
+      <div className="py-24 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">
+              A Peek at What's Inside
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+              Real courses, real notes, real experiences
+            </p>
+          </motion.div>
+
+          {/* Collage Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {/* Sophia Course Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30, rotate: -2 }}
+              whileInView={{ opacity: 1, y: 0, rotate: -1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-white rounded-xl border border-gray-200 p-6 shadow-lg transform hover:scale-105 transition-all duration-300"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                <span className="text-sm font-medium text-green-700">Sophia Learning</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                College Algebra
+              </h3>
+              <div className="space-y-2 text-sm text-gray-600">
+                <p>⏱️ 3-4 weeks • 💰 $99</p>
+                <p>⭐ Easy difficulty</p>
+                <p className="italic">"Finished in 3 weeks studying 1hr/day. Great alternative to UoPeople math!"</p>
+              </div>
+            </motion.div>
+
+            {/* UoPeople Course Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30, rotate: 2 }}
+              whileInView={{ opacity: 1, y: 0, rotate: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white rounded-xl border border-gray-200 p-6 shadow-lg transform hover:scale-105 transition-all duration-300"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                <span className="text-sm font-medium text-blue-700">UoPeople</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                CS 1101 - Programming 1
+              </h3>
+              <div className="space-y-2 text-sm text-gray-600">
+                <p>📅 8 weeks • 💰 $137 (exam fee)</p>
+                <p>⭐⭐ Moderate difficulty</p>
+                <p className="italic">"Python basics. Study guide with all assignments and solutions included."</p>
+              </div>
+            </motion.div>
+
+            {/* Study Material Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30, rotate: -1 }}
+              whileInView={{ opacity: 1, y: 0, rotate: 0.5 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-200 p-6 shadow-lg transform hover:scale-105 transition-all duration-300"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                <span className="text-sm font-medium text-purple-700">Study Notes</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Statistics Cheat Sheet
+              </h3>
+              <div className="space-y-2 text-sm text-gray-600">
+                <p>📝 4 pages • 📊 Visual formulas</p>
+                <p>🎯 Covers all exam topics</p>
+                <p className="italic">"Everything you need for the final exam in one place."</p>
+              </div>
+            </motion.div>
+
+            {/* Tips Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30, rotate: 1 }}
+              whileInView={{ opacity: 1, y: 0, rotate: -0.5 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl border border-yellow-200 p-6 shadow-lg transform hover:scale-105 transition-all duration-300"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <span className="text-sm font-medium text-yellow-700">Pro Tips</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Transfer Credits Guide
+              </h3>
+              <div className="space-y-2 text-sm text-gray-600">
+                <p>✅ Step-by-step process</p>
+                <p>📋 Required documents</p>
+                <p className="italic">"Exactly what I wish I knew before starting my degree."</p>
+              </div>
+            </motion.div>
+
+            {/* Course Comparison Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30, rotate: -2 }}
+              whileInView={{ opacity: 1, y: 0, rotate: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-200 p-6 shadow-lg transform hover:scale-105 transition-all duration-300"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-3 h-3 bg-indigo-500 rounded-full"></div>
+                <span className="text-sm font-medium text-indigo-700">Comparison</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                English Comp: UoPeople vs Sophia
+              </h3>
+              <div className="space-y-2 text-sm text-gray-600">
+                <p>⚖️ Cost, time, difficulty</p>
+                <p>📝 Assignment examples</p>
+                <p className="italic">"Side-by-side breakdown to help you choose."</p>
+              </div>
+            </motion.div>
+
+            {/* Resource Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30, rotate: 2 }}
+              whileInView={{ opacity: 1, y: 0, rotate: -1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl border border-green-200 p-6 shadow-lg transform hover:scale-105 transition-all duration-300"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                <span className="text-sm font-medium text-green-700">Resources</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Free Textbooks & Tools
+              </h3>
+              <div className="space-y-2 text-sm text-gray-600">
+                <p>🔗 Curated links</p>
+                <p>💾 Software recommendations</p>
+                <p className="italic">"Save hundreds on textbooks with these alternatives."</p>
+              </div>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="text-center"
+          >
+            <p className="text-gray-500 italic">...and much more as I progress through my degree</p>
+          </motion.div>
+        </div>
+      </div>
+
       {/* What This Tool Does */}
       <div className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-4xl mx-auto px-8">
