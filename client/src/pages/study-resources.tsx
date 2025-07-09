@@ -474,7 +474,17 @@ export default function StudyResources() {
                       {course.courseName}
                     </CardTitle>
                     {course.provider === 'sophia' && (
-                      <p className="text-sm text-orange-600 font-medium mb-2">Sophia Learning • 3 Credits</p>
+                      <div className="mb-2">
+                        <p className="text-sm text-orange-600 font-medium">
+                          {(() => {
+                            const sophiaCourse = sophiaCourses.find(sc => sc.name === course.courseName);
+                            return sophiaCourse?.courseCode || 'SOPH-XXXX';
+                          })()} • 3 Credits
+                        </p>
+                        {course.courseName === 'College Algebra' && (
+                          <p className="text-xs text-gray-500">Fulfills UoPeople's MATH 1201 College Algebra</p>
+                        )}
+                      </div>
                     )}
                     <CardDescription className="text-sm text-gray-600 line-clamp-2 leading-relaxed">
                       {course.description}
@@ -602,7 +612,17 @@ export default function StudyResources() {
                   {selectedCourse.courseCode ? (
                     <p className="text-gray-600 mt-1">{selectedCourse.courseCode} • {selectedCourse.credits} Credits</p>
                   ) : selectedCourse.provider === 'sophia' ? (
-                    <p className="text-gray-600 mt-1">Sophia Learning • 3 Credits</p>
+                    <div className="mt-1">
+                      <p className="text-gray-600">
+                        {(() => {
+                          const sophiaCourse = sophiaCourses.find(sc => sc.name === selectedCourse.courseName);
+                          return sophiaCourse?.courseCode || 'SOPH-XXXX';
+                        })()} • 3 Credits
+                      </p>
+                      {selectedCourse.courseName === 'College Algebra' && (
+                        <p className="text-sm text-orange-600 mt-1">Fulfills UoPeople's MATH 1201 College Algebra</p>
+                      )}
+                    </div>
                   ) : null}
                   <DialogDescription className="text-base mt-2">
                     {selectedCourse.description}

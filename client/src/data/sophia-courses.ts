@@ -2,6 +2,7 @@
 export interface SophiaCourse {
   id: string;
   name: string;
+  courseCode: string;
   category: string;
   difficulty: 'Very Easy' | 'Easy' | 'Moderate' | 'Hard' | 'Very Hard';
   completionTime: string;
@@ -18,6 +19,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-intro-college-math',
     name: 'Introduction to College Mathematics',
+    courseCode: 'SOPH-0001',
     category: 'Mathematics',
     difficulty: 'Very Easy',
     completionTime: '1-2 weeks',
@@ -39,6 +41,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-college-algebra',
     name: 'College Algebra',
+    courseCode: 'SOPH-0002',
     category: 'Mathematics',
     difficulty: 'Easy',
     completionTime: '2-3 weeks',
@@ -60,6 +63,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-precalculus',
     name: 'Precalculus',
+    courseCode: 'SOPH-0003',
     category: 'Mathematics',
     difficulty: 'Hard',
     completionTime: '4-6 weeks',
@@ -81,6 +85,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-statistics',
     name: 'Introduction to Statistics',
+    courseCode: 'SOPH-0004',
     category: 'Mathematics',
     difficulty: 'Moderate',
     completionTime: '2-4 weeks',
@@ -104,6 +109,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-english-comp-1',
     name: 'English Composition I',
+    courseCode: 'SOPH-0101',
     category: 'Communication',
     difficulty: 'Easy',
     completionTime: '1-3 weeks',
@@ -125,6 +131,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-english-comp-2',
     name: 'English Composition II',
+    courseCode: 'SOPH-0102',
     category: 'Communication',
     difficulty: 'Moderate',
     completionTime: '2-4 weeks',
@@ -146,6 +153,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-public-speaking',
     name: 'Public Speaking',
+    courseCode: 'SOPH-0103',
     category: 'Communication',
     difficulty: 'Moderate',
     completionTime: '2-3 weeks',
@@ -169,6 +177,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-environmental-science',
     name: 'Environmental Science',
+    courseCode: 'SOPH-0201',
     category: 'Science',
     difficulty: 'Easy',
     completionTime: '1-2 weeks',
@@ -190,6 +199,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-intro-biology',
     name: 'Introduction to Biology',
+    courseCode: 'SOPH-0202',
     category: 'Science',
     difficulty: 'Moderate',
     completionTime: '2-4 weeks',
@@ -211,6 +221,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-human-biology',
     name: 'Human Biology',
+    courseCode: 'SOPH-0203',
     category: 'Science',
     difficulty: 'Moderate',
     completionTime: '3-4 weeks',
@@ -234,6 +245,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-intro-psychology',
     name: 'Introduction to Psychology',
+    courseCode: 'SOPH-0301',
     category: 'Social Sciences',
     difficulty: 'Easy',
     completionTime: '1-3 weeks',
@@ -255,6 +267,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-intro-sociology',
     name: 'Introduction to Sociology',
+    courseCode: 'SOPH-0302',
     category: 'Social Sciences',
     difficulty: 'Easy',
     completionTime: '2-3 weeks',
@@ -278,6 +291,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-us-history-1',
     name: 'U.S. History I',
+    courseCode: 'SOPH-0401',
     category: 'History',
     difficulty: 'Easy',
     completionTime: '2-3 weeks',
@@ -299,6 +313,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-us-history-2',
     name: 'U.S. History II',
+    courseCode: 'SOPH-0402',
     category: 'History',
     difficulty: 'Easy',
     completionTime: '2-3 weeks',
@@ -322,6 +337,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-intro-philosophy',
     name: 'Introduction to Philosophy',
+    courseCode: 'SOPH-0501',
     category: 'Philosophy',
     difficulty: 'Moderate',
     completionTime: '2-4 weeks',
@@ -343,6 +359,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-intro-ethics',
     name: 'Introduction to Ethics',
+    courseCode: 'SOPH-0502',
     category: 'Philosophy',
     difficulty: 'Moderate',
     completionTime: '2-4 weeks',
@@ -364,6 +381,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-foundations-english',
     name: 'Foundations of English Composition',
+    courseCode: 'SOPH-0104',
     category: 'Communication',
     difficulty: 'Easy',
     completionTime: '2-3 weeks',
@@ -385,6 +403,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-calculus',
     name: 'Calculus',
+    courseCode: 'SOPH-0005',
     category: 'Mathematics',
     difficulty: 'Very Hard',
     completionTime: '6-8 weeks',
@@ -406,6 +425,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-studying-religions',
     name: 'Approaches to Studying Religions',
+    courseCode: 'SOPH-0503',
     category: 'Philosophy',
     difficulty: 'Moderate',
     completionTime: '3-4 weeks',
@@ -427,6 +447,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-intro-it',
     name: 'Introduction to Information Technology',
+    courseCode: 'SOPH-0601',
     category: 'Computer Science',
     difficulty: 'Easy',
     completionTime: '2-3 weeks',
@@ -448,6 +469,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-art-history-1',
     name: 'Art History I',
+    courseCode: 'SOPH-0403',
     category: 'History',
     difficulty: 'Moderate',
     completionTime: '3-4 weeks',
@@ -469,6 +491,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-art-history-2',
     name: 'Art History II',
+    courseCode: 'SOPH-0404',
     category: 'History',
     difficulty: 'Moderate',
     completionTime: '3-4 weeks',
@@ -490,6 +513,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-visual-communication',
     name: 'Visual Communication',
+    courseCode: 'SOPH-0105',
     category: 'Communication',
     difficulty: 'Easy',
     completionTime: '2-3 weeks',
@@ -511,6 +535,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-greek-philosophers',
     name: 'Ancient Greek Philosophers',
+    courseCode: 'SOPH-0504',
     category: 'Philosophy',
     difficulty: 'Hard',
     completionTime: '4-5 weeks',
@@ -532,6 +557,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-lifespan-development',
     name: 'Lifespan Development',
+    courseCode: 'SOPH-0303',
     category: 'Social Sciences',
     difficulty: 'Moderate',
     completionTime: '3-4 weeks',
@@ -553,6 +579,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-intro-nutrition',
     name: 'Introduction to Nutrition',
+    courseCode: 'SOPH-0204',
     category: 'Science',
     difficulty: 'Easy',
     completionTime: '2-3 weeks',
@@ -574,6 +601,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-conflict-resolution',
     name: 'Conflict Resolution',
+    courseCode: 'SOPH-0304',
     category: 'Social Sciences',
     difficulty: 'Moderate',
     completionTime: '3-4 weeks',
@@ -595,6 +623,7 @@ export const sophiaCourses: SophiaCourse[] = [
   {
     id: 'sophia-college-readiness',
     name: 'College Readiness',
+    courseCode: 'SOPH-0701',
     category: 'General Education',
     difficulty: 'Very Easy',
     completionTime: '1-2 weeks',
