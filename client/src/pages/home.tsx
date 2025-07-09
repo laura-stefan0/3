@@ -18,8 +18,8 @@ export default function Home() {
     <div className="min-h-screen">
       <Navigation />
       {/* Hero Section */}
-      <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
-        <div className="text-center px-8 max-w-4xl mx-auto ml-[290px] mr-[290px]">
+      <div className="min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
+        <div className="text-center px-8 max-w-4xl mx-auto">
           <motion.h1 
             className="text-5xl font-bold mb-6 leading-tight text-gray-900 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
