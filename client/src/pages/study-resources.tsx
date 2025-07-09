@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import Navigation from "@/components/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -105,47 +105,173 @@ export default function StudyResources() {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [showAllSophia, setShowAllSophia] = useState(false);
+  const [databaseCourses, setDatabaseCourses] = useState<DatabaseCourse[]>([]);
+  const [isLoadingDb, setIsLoadingDb] = useState(true);
 
-  // Specific Sophia courses to display
-  const selectedSophiaCourses = [
-    "Foundations of English Composition",
-    "College Algebra", 
-    "Calculus",
-    "Introduction to Statistics",
-    "Introduction to Ethics",
-    "Approaches to Studying Religions",
-    "Introduction to Information Technology",
-    "Environmental Science",
-    "Art History I",
-    "Art History II", 
-    "Visual Communication",
-    "Ancient Greek Philosophers",
-    "U.S. History I",
-    "U.S. History II",
-    "Introduction to Psychology",
-    "Introduction to Sociology",
-    "Lifespan Development",
-    "Introduction to Nutrition",
-    "Conflict Resolution",
-    "College Readiness"
-  ];
+  useEffect(() => {
+    fetchDatabaseCourses();
+  }, []);
 
-  // Convert selected Sophia course data to match the Course interface
-  const sophiaCoursesConverted = sophiaCourses
-    .filter(course => selectedSophiaCourses.includes(course.name))
+  const fetchDatabaseCourses = async () => {
+    try {
+      // Mock UoPeople and Sophia courses data
+      const mockData: DatabaseCourse[] = [
+        {
+          id: 1,
+          course_name: "English Composition 1",
+          platform: "UoPeople",
+          category: "Communication",
+          credits: 3,
+          equivalencies: "Introduction to Academic Writing, Writing Fundamentals"
+        },
+        {
+          id: 2,
+          course_name: "College Algebra",
+          platform: "UoPeople", 
+          category: "Mathematics",
+          credits: 3,
+          equivalencies: "Algebra, Mathematical Functions, Problem Solving"
+        },
+        {
+          id: 3,
+          course_name: "Introduction to Psychology",
+          platform: "UoPeople",
+          category: "Social Sciences",
+          credits: 3,
+          equivalencies: "Psychology Fundamentals, Human Behavior, Research Methods"
+        },
+        {
+          id: 4,
+          course_name: "Principles of Biology",
+          platform: "UoPeople",
+          category: "Science",
+          credits: 3,
+          equivalencies: "Biology, Life Sciences, Scientific Method"
+        },
+        {
+          id: 5,
+          course_name: "World History",
+          platform: "UoPeople",
+          category: "History",
+          credits: 3,
+          equivalencies: "Historical Analysis, World Civilizations, Cultural Studies"
+        },
+        {
+          id: 6,
+          course_name: "Introduction to Philosophy",
+          platform: "UoPeople",
+          category: "Philosophy",
+          credits: 3,
+          equivalencies: "Critical Thinking, Ethics, Philosophical Methods"
+        },
+        {
+          id: 7,
+          course_name: "Computer Science Fundamentals",
+          platform: "UoPeople",
+          category: "Computer Science",
+          credits: 3,
+          equivalencies: "Programming Logic, Data Structures, Problem Solving"
+        },
+        // Sophia Learning courses
+        {
+          id: 8,
+          course_name: "Foundations of English Composition",
+          platform: "Sophia Learning",
+          category: "Communication",
+          credits: 3,
+          equivalencies: "Academic Writing, Essay Structure, Research Skills"
+        },
+        {
+          id: 9,
+          course_name: "College Algebra",
+          platform: "Sophia Learning",
+          category: "Mathematics",
+          credits: 3,
+          equivalencies: "Algebraic Functions, Polynomial Operations, Graphing"
+        },
+        {
+          id: 10,
+          course_name: "Introduction to Statistics",
+          platform: "Sophia Learning",
+          category: "Mathematics",
+          credits: 3,
+          equivalencies: "Statistical Analysis, Probability, Data Interpretation"
+        },
+        {
+          id: 11,
+          course_name: "Introduction to Ethics",
+          platform: "Sophia Learning",
+          category: "Philosophy",
+          credits: 3,
+          equivalencies: "Moral Philosophy, Ethical Decision Making, Applied Ethics"
+        },
+        {
+          id: 12,
+          course_name: "Environmental Science",
+          platform: "Sophia Learning",
+          category: "Science",
+          credits: 3,
+          equivalencies: "Environmental Systems, Ecology, Sustainability"
+        },
+        {
+          id: 13,
+          course_name: "Introduction to Psychology",
+          platform: "Sophia Learning",
+          category: "Social Sciences",
+          credits: 3,
+          equivalencies: "Human Behavior, Psychological Theories, Research Methods"
+        },
+        {
+          id: 14,
+          course_name: "Art History I",
+          platform: "Sophia Learning",
+          category: "Humanities",
+          credits: 3,
+          equivalencies: "Art Movements, Cultural Context, Visual Analysis"
+        },
+        {
+          id: 15,
+          course_name: "U.S. History I",
+          platform: "Sophia Learning",
+          category: "History",
+          credits: 3,
+          equivalencies: "Colonial America, Revolution, Early Republic"
+        }
+      ];
+      
+      setDatabaseCourses(mockData);
+    } catch (error) {
+      console.error('Error fetching courses:', error);
+    } finally {
+      setIsLoadingDb(false);
+    }
+  };
+
+
+
+  // Convert database Sophia courses to match the Course interface
+  const sophiaCoursesConverted = databaseCourses
+    .filter(course => course.platform === 'Sophia Learning' || course.platform === 'Sophia')
     .map(course => ({
-      id: course.id,
-      courseName: course.name,
-      difficulty: course.difficulty,
-      difficultyColor: getDifficultyColor(course.difficulty),
-      description: course.description,
-      completionTime: course.completionTime,
-      keyTopics: course.tips.slice(0, 3), // Use first 3 tips as key topics
-      tips: course.tips[0] || "Study guide includes detailed strategies for success",
+      id: course.id.toString(),
+      courseName: course.course_name,
+      courseCode: `SOPH-${course.id}`,
+      credits: course.credits,
+      description: `${course.credits} credit course covering ${course.equivalencies}`,
+      completionTime: "2-4 weeks",
+      keyTopics: course.equivalencies.split(',').map(s => s.trim()).slice(0, 3),
+      tips: "Complete all milestone assessments and utilize the course materials efficiently for optimal learning.",
       provider: "sophia" as const,
       category: course.category,
       categoryColor: getCategoryColor(course.category),
-      categoryIcon: getCategoryIcon(course.category)
+      categoryIcon: getCategoryIcon(course.category),
+      materials: [{
+        title: `${course.course_name} Study Guide`,
+        description: 'Comprehensive study materials and practice exercises',
+        type: 'PDF',
+        pages: '45-60',
+        updated: '2024'
+      }]
     }));
 
   const allCourses: Course[] = [
