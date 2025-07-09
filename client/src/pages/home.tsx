@@ -60,6 +60,76 @@ export default function Home() {
               Browse Study Notes
             </Button>
           </motion.div>
+
+          {/* Sample Materials Preview */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="mt-16"
+          >
+            <p className="text-center text-gray-500 mb-8 text-sm">
+              Sample study materials I'm sharing
+            </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+              {/* Course Notes Tile */}
+              <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <div className="aspect-square bg-gradient-to-br from-blue-50 to-blue-100 rounded-md mb-3 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-8 h-8 bg-blue-500 rounded mx-auto mb-2 flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">CS</span>
+                    </div>
+                    <div className="text-xs text-gray-600">Study Notes</div>
+                  </div>
+                </div>
+                <div className="text-xs font-medium text-gray-900 mb-1">CS 1101 Notes</div>
+                <div className="text-xs text-gray-500">Programming concepts</div>
+              </div>
+
+              {/* Sophia Guide Tile */}
+              <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <div className="aspect-square bg-gradient-to-br from-green-50 to-green-100 rounded-md mb-3 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-8 h-8 bg-green-500 rounded mx-auto mb-2 flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">✓</span>
+                    </div>
+                    <div className="text-xs text-gray-600">Transfer Guide</div>
+                  </div>
+                </div>
+                <div className="text-xs font-medium text-gray-900 mb-1">Sophia Tips</div>
+                <div className="text-xs text-gray-500">Course transfer info</div>
+              </div>
+
+              {/* Course Planner Tile */}
+              <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <div className="aspect-square bg-gradient-to-br from-purple-50 to-purple-100 rounded-md mb-3 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-8 h-8 bg-purple-500 rounded mx-auto mb-2 flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">📋</span>
+                    </div>
+                    <div className="text-xs text-gray-600">Planner Tool</div>
+                  </div>
+                </div>
+                <div className="text-xs font-medium text-gray-900 mb-1">Course Wizard</div>
+                <div className="text-xs text-gray-500">Plan your degree</div>
+              </div>
+
+              {/* Study Resources Tile */}
+              <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <div className="aspect-square bg-gradient-to-br from-orange-50 to-orange-100 rounded-md mb-3 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-8 h-8 bg-orange-500 rounded mx-auto mb-2 flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">📚</span>
+                    </div>
+                    <div className="text-xs text-gray-600">Resources</div>
+                  </div>
+                </div>
+                <div className="text-xs font-medium text-gray-900 mb-1">Study Materials</div>
+                <div className="text-xs text-gray-500">Helpful resources</div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
       {/* What I'm Sharing */}
