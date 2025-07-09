@@ -13,7 +13,7 @@ export default function CoursePlanning() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <Navigation />
       
       {/* Welcome Screen */}
@@ -93,7 +93,7 @@ export default function CoursePlanning() {
       </div>
 
       {/* Three Steps Section */}
-      <div id="how-it-works" className="py-24 bg-white">
+      <div id="how-it-works" className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -169,7 +169,7 @@ export default function CoursePlanning() {
       </div>
 
       {/* Simple How It Works Section */}
-      <div className="py-32 bg-white">
+      <div className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50">
         <div className="max-w-3xl mx-auto px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -297,7 +297,7 @@ export default function CoursePlanning() {
       </div>
 
       {/* Final CTA Section */}
-      <div className="py-16 bg-gray-900">
+      <div className="py-16 bg-gradient-to-br from-blue-600 to-purple-700">
         <div className="max-w-4xl mx-auto px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
