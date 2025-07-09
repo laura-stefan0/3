@@ -168,59 +168,8 @@ export default function CoursePlanning() {
         </div>
       </div>
 
-      {/* Simple How It Works Section */}
-      <div className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50">
-        <div className="max-w-3xl mx-auto px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              All Course Information in One Place
-            </h2>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Many students already use Sophia Learning to complete General Education requirements faster and cheaper. 
-              This tool simply organizes all the course information in one place, since navigating UoPeople's requirements can be confusing.
-            </p>
-            
-            <div className="bg-gray-50 rounded-xl p-6 mb-8">
-              <div className="grid md:grid-cols-2 gap-6 text-sm">
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-gray-900">What you'll find here:</h4>
-                  <ul className="text-gray-600 space-y-1">
-                    <li>• All transferable Sophia courses</li>
-                    <li>• UoPeople course requirements</li>
-                    <li>• Credit requirements per category</li>
-                    <li>• Course selection guidance</li>
-                  </ul>
-                </div>
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-gray-900">Typical savings:</h4>
-                  <ul className="text-gray-600 space-y-1">
-                    <li>• Sophia: $99/month + $17/course</li>
-                    <li>• UoPeople: $160 per exam</li>
-                    <li>• First 20 credits transfer free</li>
-                    <li>• Self-paced vs 6-week terms</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <Button 
-              onClick={handleStartPlanning}
-              className="bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
-            >
-              <Rocket className="mr-2" size={18} />
-              Start Planning Your Courses
-            </Button>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Simple Info Section */}
-      <div id="info" className="py-16 bg-white">
+      {/* Why Use Sophia Learning Section */}
+      <div className="py-20 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50">
         <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -229,46 +178,82 @@ export default function CoursePlanning() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">
-              Quick Reference
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Why Use Sophia Learning?
             </h2>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+              Many students already use Sophia Learning to complete General Education requirements faster and cheaper. 
+              This tool organizes all the course information in one place to help you make informed decisions.
+            </p>
             
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
+            <div className="bg-white rounded-xl p-8 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-6">Course Options Comparison</h3>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="text-left">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                      <GraduationCap className="w-6 h-6 text-orange-600" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-gray-900">Sophia Learning</h4>
+                  </div>
+                  <ul className="space-y-2 text-gray-600">
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>
+                      $99/month + $17/course
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>
+                      Self-paced completion
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>
+                      Complete courses in 1-4 weeks
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>
+                      First 20 credits transfer free
+                    </li>
+                  </ul>
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Official Transfer List</h3>
-                <p className="text-sm text-gray-600">
-                  All courses listed are officially recognized by UoPeople for credit transfer
-                </p>
+                
+                <div className="text-left">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                      <University className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-gray-900">UoPeople</h4>
+                  </div>
+                  <ul className="space-y-2 text-gray-600">
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                      $160 per exam
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                      Fixed 6-week terms
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                      Traditional course structure
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                      Required for degree completion
+                    </li>
+                  </ul>
+                </div>
               </div>
+            </div>
 
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Save Time</h3>
-                <p className="text-sm text-gray-600">
-                  No need to research each course individually or navigate confusing requirements
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"/>
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Complete Plan</h3>
-                <p className="text-sm text-gray-600">
-                  Get a clear roadmap with all required courses for your degree
-                </p>
-              </div>
+            <div className="mt-8">
+              <Button 
+                onClick={handleStartPlanning}
+                className="bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300"
+              >
+                <Rocket className="mr-2" size={18} />
+                Start Planning Your Courses
+              </Button>
             </div>
           </motion.div>
         </div>
