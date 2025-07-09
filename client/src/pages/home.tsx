@@ -68,15 +68,12 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="mt-16"
           >
-            <div className="grid md:grid-cols-4 gap-4 max-w-4xl mx-auto relative">
-              {/* Fade-out overlay */}
-              <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-blue-50 via-blue-50/80 to-transparent pointer-events-none z-10"></div>
-              
+            <div className="grid md:grid-cols-4 gap-4 max-w-4xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.6 }}
-                className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-gray-200/30 opacity-80"
+                className="bg-white/80 backdrop-blur-sm rounded-lg p-4 border border-gray-200/50 shadow-sm hover:shadow-md transition-all"
               >
                 <div className="text-xs text-green-600 font-medium mb-2">SOPHIA</div>
                 <h3 className="font-medium text-gray-900 text-sm mb-1">College Algebra</h3>
@@ -87,7 +84,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.7 }}
-                className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-gray-200/30 opacity-80"
+                className="bg-white/80 backdrop-blur-sm rounded-lg p-4 border border-gray-200/50 shadow-sm hover:shadow-md transition-all"
               >
                 <div className="text-xs text-blue-600 font-medium mb-2">UOPEOPLE</div>
                 <h3 className="font-medium text-gray-900 text-sm mb-1">CS 1101 Programming</h3>
@@ -98,7 +95,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.8 }}
-                className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-gray-200/30 opacity-80"
+                className="bg-white/80 backdrop-blur-sm rounded-lg p-4 border border-gray-200/50 shadow-sm hover:shadow-md transition-all"
               >
                 <div className="text-xs text-purple-600 font-medium mb-2">NOTES</div>
                 <h3 className="font-medium text-gray-900 text-sm mb-1">Statistics Cheat Sheet</h3>
@@ -109,7 +106,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.9 }}
-                className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-gray-200/30 opacity-80"
+                className="bg-white/80 backdrop-blur-sm rounded-lg p-4 border border-gray-200/50 shadow-sm hover:shadow-md transition-all"
               >
                 <div className="text-xs text-orange-600 font-medium mb-2">GUIDE</div>
                 <h3 className="font-medium text-gray-900 text-sm mb-1">Transfer Process</h3>
