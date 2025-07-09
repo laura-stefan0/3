@@ -19,7 +19,7 @@ export default function Home() {
       <Navigation />
       {/* Hero Section */}
       <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
-        <div className="text-center px-8 max-w-5xl mx-auto">
+        <div className="text-center px-8 max-w-4xl mx-auto">
           <motion.h1 
             className="text-5xl font-bold mb-6 leading-tight text-gray-900 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
@@ -35,16 +35,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Study materials, notes, Sophia tips and a course planner to help you in your degree.
-          </motion.p>
-          
-          <motion.p 
-            className="text-gray-500 mb-10 flex items-center justify-center gap-1 text-[16px]"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Made by a student, for students <span className="text-red-500">♥</span>
+            Study materials, notes, Sophia tips and a course planner to help you in your CS degree at the University of the People.
           </motion.p>
           
           <motion.div
@@ -307,7 +298,7 @@ export default function Home() {
           </div>
           
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
-            <p>&copy; 2025 UoPeople CS Study Hub. Created by a student, for students.</p>
+            <p>&copy; 2025 UoPeople CS Study Hub. Created by a student, for students. ♥</p>
           </div>
         </div>
       </footer>
