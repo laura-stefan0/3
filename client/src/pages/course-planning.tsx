@@ -74,40 +74,40 @@ export default function CoursePlanning() {
         </div>
       </div>
 
-      {/* Three Steps Section */}
-      <div id="how-it-works" className="py-24 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-4xl mx-auto px-8">
+      {/* Four Steps Section */}
+      <div id="how-it-works" className="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-5xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
               How It Works
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Plan your academic path at UoPeople
+            <p className="text-lg text-gray-600">
+              Four simple steps to plan your CS degree
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-center"
+              className="bg-white rounded-xl p-6 shadow-sm text-center hover:shadow-md transition-shadow"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-blue-600">1</span>
+              <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-bold text-blue-600">1</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Choose General Education Courses
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                General Education
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Select from UoPeople courses or Sophia Learning equivalents for each General Education category. Compare options and pick what works best for your schedule and budget.
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Compare UoPeople and Sophia courses for each category and choose what fits your budget.
               </p>
             </motion.div>
 
@@ -116,16 +116,16 @@ export default function CoursePlanning() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-center"
+              className="bg-white rounded-xl p-6 shadow-sm text-center hover:shadow-md transition-shadow"
             >
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-green-600">2</span>
+              <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-bold text-green-600">2</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Review Your UoPeople Pathway
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                Core CS Pathway
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Take a look at the mandatory CS courses you will have to take at UoPeople.
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Review the mandatory Computer Science courses you'll take at UoPeople.
               </p>
             </motion.div>
 
@@ -134,16 +134,16 @@ export default function CoursePlanning() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-center"
+              className="bg-white rounded-xl p-6 shadow-sm text-center hover:shadow-md transition-shadow"
             >
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-orange-600">3</span>
+              <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-bold text-orange-600">3</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Choose Elective Courses
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                Elective Courses
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Pick between major-related courses at UoPeople that advance your CS knowledge, or other elective courses that interest you. Fill your remaining credit requirements.
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Choose from CS-related or other electives to complete your credit requirements.
               </p>
             </motion.div>
 
@@ -152,16 +152,16 @@ export default function CoursePlanning() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-center"
+              className="bg-white rounded-xl p-6 shadow-sm text-center hover:shadow-md transition-shadow"
             >
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-purple-600">4</span>
+              <div className="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-bold text-purple-600">4</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Download Your Plan
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                Download Plan
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Get a complete overview of your course selections with credit counts, cost estimates, and a clear roadmap for your degree completion.
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Get your complete course roadmap with credits, costs, and timeline.
               </p>
             </motion.div>
           </div>
