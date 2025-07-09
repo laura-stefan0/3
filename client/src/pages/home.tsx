@@ -67,7 +67,7 @@ export default function Home() {
       {/* What I'm Sharing */}
       <div className="py-24">
         <div className="max-w-6xl mx-auto px-8">
-          <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-2xl shadow-lg border border-gray-100 p-8 md:p-12">
+          <div className="bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 rounded-2xl shadow-xl border border-indigo-200 p-8 md:p-12">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -89,8 +89,8 @@ export default function Home() {
               className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm transition-all duration-300"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-blue-600 text-xl">📚</span>
+                <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span className="text-white text-xl">📚</span>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">My Study Notes & Resources</h3>
@@ -109,8 +109,8 @@ export default function Home() {
               className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm transition-all duration-300"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-purple-600 text-xl">🎯</span>
+                <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span className="text-white text-xl">🎯</span>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">My Course Choices</h3>
@@ -129,8 +129,8 @@ export default function Home() {
               className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm transition-all duration-300"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-green-600 text-xl">🧩</span>
+                <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span className="text-white text-xl">🧩</span>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">A Course Planner</h3>
