@@ -17,10 +17,10 @@ export default function CoursePlanning() {
       <Navigation />
       
       {/* Welcome Screen */}
-      <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-600 via-purple-700 to-indigo-800 pt-20">
+      <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
         <div className="text-center px-8 max-w-6xl mx-auto">
           <motion.h1 
-            className="text-6xl font-bold mb-6 leading-tight text-white tracking-tight"
+            className="text-6xl font-bold mb-6 leading-tight text-gray-900 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -29,7 +29,7 @@ export default function CoursePlanning() {
           </motion.h1>
           
           <motion.p 
-            className="text-2xl mb-4 max-w-4xl mx-auto text-blue-100 leading-relaxed"
+            className="text-2xl mb-4 max-w-4xl mx-auto text-gray-600 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -38,12 +38,12 @@ export default function CoursePlanning() {
           </motion.p>
           
           <motion.div 
-            className="mb-6 bg-white/20 backdrop-blur-sm rounded-lg p-4 max-w-2xl mx-auto border border-white/30"
+            className="mb-6 bg-white/80 backdrop-blur-sm rounded-lg p-4 max-w-2xl mx-auto border border-gray-200"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <p className="text-lg text-white">
+            <p className="text-lg text-gray-800">
               <strong>For:</strong> Bachelor of Science in Computer Science at University of the People
             </p>
           </motion.div>
