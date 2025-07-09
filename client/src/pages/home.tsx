@@ -77,9 +77,6 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">
               What You'll Find Here
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-              As I work through my Computer Science degree, I'm documenting everything that could help other students save time and money
-            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
