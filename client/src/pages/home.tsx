@@ -19,7 +19,7 @@ export default function Home() {
       <Navigation />
       {/* Hero Section */}
       <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
-        <div className="text-center px-8 max-w-4xl mx-auto">
+        <div className="text-center px-8 max-w-4xl mx-auto ml-[290px] mr-[290px]">
           <motion.h1 
             className="text-5xl font-bold mb-6 leading-tight text-gray-900 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
@@ -62,7 +62,6 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
-
       {/* What I'm Sharing */}
       <div className="py-24 bg-gradient-to-b from-white to-blue-50">
         <div className="max-w-4xl mx-auto px-8">
@@ -137,7 +136,6 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
-
       {/* What This Tool Does */}
       <div className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-4xl mx-auto px-8">
