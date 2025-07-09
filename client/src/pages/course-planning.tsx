@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, University, Rocket, Plus, ArrowRight, Target, Calculator, Clock, DollarSign, BookOpen, Zap, Check } from "lucide-react";
+import { GraduationCap, University, Rocket, Plus } from "lucide-react";
 import Navigation from "@/components/navigation";
 
 export default function CoursePlanning() {
@@ -13,104 +13,100 @@ export default function CoursePlanning() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <div className="min-h-screen">
       <Navigation />
       
-      {/* Bold Hero Section */}
-      <div className="min-h-[75vh] flex items-center justify-center bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 pt-20 relative overflow-hidden">
-        {/* Geometric background pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-white rounded-full"></div>
-          <div className="absolute top-40 right-32 w-24 h-24 bg-white rounded-lg transform rotate-45"></div>
-          <div className="absolute bottom-32 left-40 w-20 h-20 bg-white rounded-full"></div>
-          <div className="absolute bottom-20 right-20 w-28 h-28 bg-white rounded-lg transform rotate-12"></div>
-        </div>
-        
-        <div className="text-center px-8 max-w-5xl mx-auto relative z-10">
-          <motion.div
+      {/* Welcome Screen */}
+      <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
+        <div className="text-center px-8 max-w-6xl mx-auto">
+          <motion.h1 
+            className="text-6xl font-bold mb-6 leading-tight text-gray-900 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-6"
           >
-            <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-              <Target className="mr-2 text-white" size={20} />
-              <span className="text-white font-medium">Course Planning Tool</span>
-            </div>
-          </motion.div>
+            Course Planning Wizard
+          </motion.h1>
           
-          <motion.h1 
-            className="text-6xl font-black mb-6 leading-tight text-white tracking-tight"
+          <motion.p 
+            className="text-2xl mb-4 max-w-4xl mx-auto text-gray-600 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            Smart Course
-            <br />
-            <span className="text-yellow-300">Planner</span>
-          </motion.h1>
+            A simple tool to help Computer Science students at UoPeople figure out which General Education and Elective courses to take, and where to take them.
+          </motion.p>
           
           <motion.p 
-            className="text-xl mb-8 max-w-3xl mx-auto text-blue-100 leading-relaxed font-medium"
+            className="text-gray-500 mb-8 flex items-center justify-center gap-1"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Plan your UoPeople Computer Science degree with the perfect mix of affordable Sophia courses and required UoPeople classes
+            Save money and time with smart course planning <span className="text-red-500">♥</span>
           </motion.p>
+          
+          <motion.div 
+            className="mb-6 bg-white/80 backdrop-blur-sm rounded-lg p-4 max-w-2xl mx-auto border border-gray-200"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <p className="text-lg text-gray-700">
+              <strong>For:</strong> Bachelor of Science in Computer Science students at University of the People
+            </p>
+          </motion.div>
           
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="flex items-center bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full border border-white/30">
-              <DollarSign className="mr-2" size={20} />
-              <span className="font-semibold">Save Money</span>
+            <div className="flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-lg">
+              <University className="mr-2" size={20} />
+              <span className="font-medium">UoPeople Courses</span>
             </div>
-            <div className="flex items-center bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full border border-white/30">
-              <Clock className="mr-2" size={20} />
-              <span className="font-semibold">Save Time</span>
+            <div className="text-2xl text-gray-400">
+              <Plus size={24} />
             </div>
-            <div className="flex items-center bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full border border-white/30">
-              <Zap className="mr-2" size={20} />
-              <span className="font-semibold">Self-Paced</span>
+            <div className="flex items-center bg-purple-100 text-purple-800 px-4 py-2 rounded-lg">
+              <GraduationCap className="mr-2" size={20} />
+              <span className="font-medium">Sophia Courses</span>
             </div>
           </motion.div>
           
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
             <Button 
               onClick={handleStartPlanning}
-              className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-10 rounded-full text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 border-2 border-yellow-300"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <Rocket className="mr-2" size={24} />
-              Start Planning Now
-              <ArrowRight className="ml-2" size={20} />
+              <Rocket className="mr-2" size={20} />
+              Start Course Planning
             </Button>
           </motion.div>
         </div>
       </div>
 
-      {/* Bold Features Section */}
-      <div className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-8">
+      {/* Three Steps Section */}
+      <div id="how-it-works" className="py-24 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-4xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h2 className="text-4xl font-black text-gray-900 mb-4">
-              Everything You Need to Plan Smart
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              How It Works
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Compare costs, credit requirements, and course difficulty all in one place
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Three simple steps to plan your academic path at UoPeople
             </p>
           </motion.div>
 
@@ -120,16 +116,16 @@ export default function CoursePlanning() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border-2 border-blue-200"
+              className="text-center"
             >
-              <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Calculator className="text-white" size={32} />
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-blue-600">1</span>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                Cost Calculator
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Choose General Education Courses
               </h3>
-              <p className="text-gray-700 leading-relaxed text-center">
-                See exactly how much you'll save by mixing Sophia courses with UoPeople requirements. Get real cost comparisons.
+              <p className="text-gray-600 leading-relaxed">
+                Select from UoPeople courses or Sophia Learning equivalents for each General Education category. Compare options and pick what works best for your schedule and budget.
               </p>
             </motion.div>
 
@@ -138,16 +134,16 @@ export default function CoursePlanning() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 border-2 border-green-200"
+              className="text-center"
             >
-              <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <BookOpen className="text-white" size={32} />
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-green-600">2</span>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                Course Database
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Choose Elective Courses
               </h3>
-              <p className="text-gray-700 leading-relaxed text-center">
-                Access the complete list of transferable courses with difficulty ratings, time estimates, and student reviews.
+              <p className="text-gray-600 leading-relaxed">
+                Pick between major-related courses at UoPeople that advance your CS knowledge, or other elective courses that interest you. Fill your remaining credit requirements.
               </p>
             </motion.div>
 
@@ -156,16 +152,16 @@ export default function CoursePlanning() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 border-2 border-purple-200"
+              className="text-center"
             >
-              <div className="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Target className="text-white" size={32} />
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-purple-600">3</span>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                Smart Recommendations
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Download Your Plan
               </h3>
-              <p className="text-gray-700 leading-relaxed text-center">
-                Get personalized course suggestions based on your goals, timeline, and budget preferences.
+              <p className="text-gray-600 leading-relaxed">
+                Get a complete overview of your course selections with credit counts, cost estimates, and a clear roadmap for your degree completion.
               </p>
             </motion.div>
           </div>
