@@ -67,19 +67,20 @@ export default function Home() {
       {/* What I'm Sharing */}
       <div className="py-24 bg-gradient-to-b from-white to-blue-50">
         <div className="max-w-6xl mx-auto px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">
-              What You'll Find Here
-            </h2>
-          </motion.div>
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 md:p-12">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">
+                What You'll Find Here
+              </h2>
+            </motion.div>
 
-          <div className="space-y-6 mb-12 max-w-4xl mx-auto">
+            <div className="space-y-6 mb-12 max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -139,6 +140,7 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
+            </div>
           </div>
         </div>
       </div>
