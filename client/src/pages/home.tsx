@@ -67,20 +67,25 @@ export default function Home() {
       {/* What I'm Sharing */}
       <div className="py-24">
         <div className="max-w-6xl mx-auto px-8">
-          <div className="bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 rounded-2xl shadow-xl border border-indigo-200 p-8 md:p-12">
+          <div className="bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 rounded-3xl shadow-2xl border border-indigo-200 p-10 md:p-16 relative overflow-hidden">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full blur-xl transform translate-x-16 -translate-y-16"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-purple-200/30 rounded-full blur-lg transform -translate-x-8 translate-y-8"></div>
+            
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-16"
+              className="text-center mb-20 relative z-10"
             >
-              <h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">
+              <h2 className="text-5xl font-bold text-gray-900 mb-4 tracking-tight">
                 What You'll Find Here
               </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
             </motion.div>
 
-            <div className="space-y-6 mb-12 max-w-4xl mx-auto">
+            <div className="space-y-8 mb-12 max-w-5xl mx-auto relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
