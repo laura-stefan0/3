@@ -88,7 +88,7 @@ export default function CoursePlanning() {
               How It Works
             </h2>
             <p className="text-lg text-gray-600">
-              Four simple steps to plan your CS degree
+              Four steps to plan your CS degree
             </p>
           </motion.div>
 
@@ -107,7 +107,7 @@ export default function CoursePlanning() {
                 General Education
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Compare UoPeople and Sophia courses for each category and choose what fits your budget.
+                Compare UoPeople and Sophia courses and pick what works best for you.
               </p>
             </motion.div>
 
@@ -125,7 +125,7 @@ export default function CoursePlanning() {
                 Core CS Pathway
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Review the mandatory Computer Science courses you'll take at UoPeople.
+                Review the Computer Science courses you'll take at UoPeople.
               </p>
             </motion.div>
 
@@ -143,7 +143,7 @@ export default function CoursePlanning() {
                 Elective Courses
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Choose from CS-related or other electives to complete your credit requirements.
+                Choose from CS-related or other electives to fulfill your credit requirements.
               </p>
             </motion.div>
 
@@ -161,7 +161,7 @@ export default function CoursePlanning() {
                 Download Plan
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Get your complete course roadmap with credits, costs, and timeline.
+                Get your complete course roadmap with UoPeople and Sophia courses.
               </p>
             </motion.div>
           </div>
