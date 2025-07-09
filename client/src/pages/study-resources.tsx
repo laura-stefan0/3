@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 import React from "react";
@@ -618,97 +617,96 @@ export default function StudyResources() {
                 </div>
               </DialogHeader>
 
-              <div className="grid md:grid-cols-2 gap-6 mt-6">
-                {/* Course Info */}
-                <div className="space-y-4">
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
-                      <Timer className="w-5 h-5 mr-2" />
-                      Course Details
-                    </h3>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Completion Time:</span>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="text-lg font-semibold mb-3 text-gray-900">Course Details</h3>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Platform:</span>
+                      <Badge className={selectedCourse.provider === 'sophia' ? 'bg-orange-100 text-orange-800' : 'bg-blue-100 text-blue-800'}>
+                        {selectedCourse.provider === 'sophia' ? 'Sophia Learning' : 'UoPeople'}
+                      </Badge>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Category:</span>
+                      <Badge className={selectedCourse.categoryColor}>
+                        {selectedCourse.category}
+                      </Badge>
+                    </div>
+                    {selectedCourse.difficulty && (
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-600">Difficulty:</span>
+                        <Badge className={selectedCourse.difficultyColor}>
+                          {selectedCourse.difficulty}
+                        </Badge>
+                      </div>
+                    )}
+                    {selectedCourse.completionTime && (
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-600">Duration:</span>
                         <span className="font-medium">{selectedCourse.completionTime}</span>
                       </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Category:</span>
-                        <span className="font-medium">{selectedCourse.category}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Provider:</span>
-                        <span className="font-medium">{selectedCourse.provider === 'sophia' ? 'Sophia Learning' : 'UoPeople'}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <h3 className="font-semibold text-blue-900 mb-3 flex items-center">
-                      <Lightbulb className="w-5 h-5 mr-2" />
-                      Pro Tips
-                    </h3>
-                    <p className="text-sm text-blue-800">{selectedCourse.tips}</p>
-                  </div>
-
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
-                      <BookMarked className="w-5 h-5 mr-2" />
-                      Key Topics
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedCourse.keyTopics.map((topic, index) => (
-                        <Badge key={index} variant="outline" className="text-xs">
-                          {topic}
-                        </Badge>
-                      ))}
-                    </div>
+                    )}
                   </div>
                 </div>
 
-                {/* Materials */}
-                <div className="space-y-4">
-                  <h3 className="font-semibold text-gray-900 flex items-center">
-                    <FileDown className="w-5 h-5 mr-2" />
-                    Available Materials
+                <div>
+                  <h3 className="text-lg font-semibold mb-3 text-gray-900 flex items-center">
+                    <Lightbulb className="w-5 h-5 mr-2 text-yellow-500" />
+                    Pro Tips
                   </h3>
-                  
-                  {selectedCourse.materials ? (
-                    <div className="space-y-3">
-                      {selectedCourse.materials.map((material, index) => (
-                        <Card key={index} className="p-4">
-                          <div className="space-y-2">
-                            <div className="flex items-start justify-between">
-                              <h4 className="font-medium text-sm">{material.title}</h4>
-                              <Badge variant="outline" className="text-xs">
-                                {material.type}
-                              </Badge>
+                  <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                    {selectedCourse.provider === 'sophia' ? (
+                      <div className="space-y-2">
+                        {(() => {
+                          const sophiaCourse = sophiaCourses.find(sc => sc.name === selectedCourse.courseName);
+                          return sophiaCourse?.tips?.map((tip, index) => (
+                            <div key={index} className="flex items-start text-sm text-gray-700">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                              {tip}
                             </div>
-                            <p className="text-xs text-gray-600">{material.description}</p>
-                            <div className="flex items-center justify-between text-xs text-gray-500">
-                              <span>{material.pages}</span>
-                              <span>Updated {material.updated}</span>
-                            </div>
-                            <Button size="sm" className="w-full">
-                              <Download className="w-4 h-4 mr-1" />
-                              Download
-                            </Button>
-                          </div>
-                        </Card>
-                      ))}
-                    </div>
-                  ) : (
-                    <Card className="p-6 text-center">
-                      <BookOpen className="w-8 h-8 text-gray-400 mx-auto mb-3" />
-                      <h4 className="font-medium text-gray-900 mb-2">Study Guide Available</h4>
-                      <p className="text-sm text-gray-600 mb-4">
-                        Complete study guide with all course materials, practice problems, and exam prep.
+                          )) || (
+                            <p className="text-sm text-gray-700">
+                              Study tips will be available soon for this course.
+                            </p>
+                          );
+                        })()}
+                      </div>
+                    ) : (
+                      <p className="text-sm text-gray-700">
+                        {selectedCourse.tips || "Study tips will be available soon for this course."}
                       </p>
-                      <Button className="w-full">
-                        <Download className="w-4 h-4 mr-1" />
-                        Download Study Guide
-                      </Button>
-                    </Card>
-                  )}
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Available Materials */}
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900 flex items-center">
+                  <FileDown className="w-5 h-5 mr-2 text-blue-500" />
+                  Available Materials
+                </h3>
+                <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="flex items-center">
+                      <BookOpen className="w-4 h-4 text-blue-600 mr-2" />
+                      <span className="text-xs text-gray-700">Study Guide</span>
+                    </div>
+                    <div className="flex items-center">
+                      <FileText className="w-4 h-4 text-blue-600 mr-2" />
+                      <span className="text-xs text-gray-700">Practice Tests</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Download className="w-4 h-4 text-blue-600 mr-2" />
+                      <span className="text-xs text-gray-700">Notes Template</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Star className="w-4 h-4 text-blue-600 mr-2" />
+                      <span className="text-xs text-gray-700">Success Tips</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </>
@@ -747,8 +745,7 @@ export default function StudyResources() {
                   Includes {sophiaStats.totalCourses} Sophia course guides + {uopeopleStats.totalPages}+ pages of UoPeople materials
                 </p>
               </CardContent>
-            </Card>
-          </motion.div>
+            </Card>          </motion.div>
         </div>
       </div>
     </div>
