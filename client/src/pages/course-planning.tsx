@@ -13,14 +13,14 @@ export default function CoursePlanning() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900">
+    <div className="min-h-screen">
       <Navigation />
       
       {/* Welcome Screen */}
-      <div className="min-h-[85vh] flex items-center justify-center pt-20">
+      <div className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
         <div className="text-center px-8 max-w-6xl mx-auto">
           <motion.h1 
-            className="text-6xl font-bold mb-6 leading-tight text-white tracking-tight"
+            className="text-6xl font-bold mb-6 leading-tight text-gray-900 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -29,7 +29,7 @@ export default function CoursePlanning() {
           </motion.h1>
           
           <motion.p 
-            className="text-2xl mb-4 max-w-4xl mx-auto text-blue-100 leading-relaxed"
+            className="text-2xl mb-4 max-w-4xl mx-auto text-gray-600 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -38,7 +38,7 @@ export default function CoursePlanning() {
           </motion.p>
           
           <motion.p 
-            className="text-purple-200 mb-8 flex items-center justify-center gap-1"
+            className="text-gray-500 mb-8 flex items-center justify-center gap-1"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
