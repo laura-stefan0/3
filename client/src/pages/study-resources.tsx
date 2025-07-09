@@ -389,7 +389,7 @@ export default function StudyResources() {
               <span>Need help choosing courses?</span>
             </div>
             <Button asChild className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 py-2 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <a href="/course-planning" className="flex items-center">
+              <a href="/course-planner" className="flex items-center">
                 <Target className="w-4 h-4 mr-2" />
                 Try the Course Planner
                 <ArrowRight className="w-4 h-4 ml-2" />

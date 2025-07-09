@@ -11,7 +11,7 @@ export default function Home() {
   const [, setLocation] = useLocation();
 
   const handleCoursePlanning = () => {
-    setLocation("/course-planning");
+    setLocation("/course-planner");
   };
 
   return (
@@ -214,7 +214,7 @@ export default function Home() {
             <div>
               <h4 className="text-white font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm">
-                <li><button onClick={() => setLocation("/course-planning")} className="hover:text-white transition-colors">Course Planning</button></li>
+                <li><button onClick={() => setLocation("/course-planner")} className="hover:text-white transition-colors">Course Planning</button></li>
                 <li><button onClick={() => setLocation("/study-resources")} className="hover:text-white transition-colors">Study Resources</button></li>
                 <li><button onClick={() => setLocation("/study-tips")} className="hover:text-white transition-colors">Study Tips</button></li>
                 <li><button onClick={() => setLocation("/faqs")} className="hover:text-white transition-colors">FAQs</button></li>

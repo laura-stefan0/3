@@ -63,7 +63,7 @@ export default function Navigation() {
             </button>
 
             <Button
-              onClick={() => setLocation("/course-planning")}
+              onClick={() => setLocation("/course-planner")}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 py-2 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Start Planning
@@ -73,7 +73,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <Button
-              onClick={() => setLocation("/course-planning")}
+              onClick={() => setLocation("/course-planner")}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-4 py-2 rounded-xl"
             >
               Start Planning
