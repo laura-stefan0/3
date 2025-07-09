@@ -82,7 +82,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -102,8 +102,8 @@ export default function Home() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm"
@@ -119,16 +119,16 @@ export default function Home() {
               </p>
             </motion.div>
 
-          <motion.div
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <span className="text-purple-600 font-semibold">🧩</span>
+                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                  <span className="text-green-600 font-semibold">🧩</span>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900">A Course Planner</h3>
               </div>
