@@ -99,21 +99,47 @@ export default function StudyResources() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [showAllSophia, setShowAllSophia] = useState(false);
 
-  // Convert Sophia course data to match the Course interface
-  const sophiaCoursesConverted = sophiaCourses.map(course => ({
-    id: course.id,
-    courseName: course.name,
-    difficulty: course.difficulty,
-    difficultyColor: getDifficultyColor(course.difficulty),
-    description: course.description,
-    completionTime: course.completionTime,
-    keyTopics: course.tips.slice(0, 3), // Use first 3 tips as key topics
-    tips: course.tips[0] || "Study guide includes detailed strategies for success",
-    provider: "sophia" as const,
-    category: course.category,
-    categoryColor: getCategoryColor(course.category),
-    categoryIcon: getCategoryIcon(course.category)
-  }));
+  // Specific Sophia courses to display
+  const selectedSophiaCourses = [
+    "Foundations of English Composition",
+    "College Algebra", 
+    "Calculus",
+    "Introduction to Statistics",
+    "Introduction to Ethics",
+    "Approaches to Studying Religions",
+    "Introduction to Information Technology",
+    "Environmental Science",
+    "Art History I",
+    "Art History II", 
+    "Visual Communication",
+    "Ancient Greek Philosophers",
+    "U.S. History I",
+    "U.S. History II",
+    "Introduction to Psychology",
+    "Introduction to Sociology",
+    "Lifespan Development",
+    "Introduction to Nutrition",
+    "Conflict Resolution",
+    "College Readiness"
+  ];
+
+  // Convert selected Sophia course data to match the Course interface
+  const sophiaCoursesConverted = sophiaCourses
+    .filter(course => selectedSophiaCourses.includes(course.name))
+    .map(course => ({
+      id: course.id,
+      courseName: course.name,
+      difficulty: course.difficulty,
+      difficultyColor: getDifficultyColor(course.difficulty),
+      description: course.description,
+      completionTime: course.completionTime,
+      keyTopics: course.tips.slice(0, 3), // Use first 3 tips as key topics
+      tips: course.tips[0] || "Study guide includes detailed strategies for success",
+      provider: "sophia" as const,
+      category: course.category,
+      categoryColor: getCategoryColor(course.category),
+      categoryIcon: getCategoryIcon(course.category)
+    }));
 
   const allCourses: Course[] = [
     // Sophia Courses - now using comprehensive data
