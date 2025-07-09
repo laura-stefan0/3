@@ -4,7 +4,7 @@ import Guestbook from "@/components/guestbook";
 
 export default function GuestbookPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <Navigation />
       {/* Hero Section */}
       <div className="pt-32 pb-8 bg-gradient-to-br from-blue-50 via-white to-purple-50">
