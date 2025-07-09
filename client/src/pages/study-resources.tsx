@@ -642,7 +642,7 @@ export default function StudyResources() {
                   </div>
 
                   <h3 className="text-lg font-semibold mb-3 text-gray-900 flex items-center">
-                    <Lightbulb className="w-5 h-5 mr-2 text-yellow-500" />
+                    <Lightbulb className="w-5 h-5 mr-2 text-blue-500" />
                     Pro Tips
                   </h3>
                   <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
