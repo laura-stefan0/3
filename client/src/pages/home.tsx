@@ -114,7 +114,7 @@ export default function Home() {
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">My Course Choices</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    The specific UoPeople and Sophia courses I'm taking, with honest reviews about difficulty and time commitment.
+                    The UoPeople and Sophia courses I'm taking, with ratings about difficulty and time commitment.
                   </p>
                 </div>
               </div>
