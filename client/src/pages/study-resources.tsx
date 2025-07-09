@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { sophiaCourses, getDifficultyColor } from "../data/sophia-courses";
+import { supabase, DatabaseCourse, hasRealCredentials } from "@/lib/supabase";
 import { 
   ArrowRight,
   BookOpen, 
@@ -114,132 +115,76 @@ export default function StudyResources() {
 
   const fetchDatabaseCourses = async () => {
     try {
-      // Mock UoPeople and Sophia courses data
-      const mockData: DatabaseCourse[] = [
-        {
-          id: 1,
-          course_name: "English Composition 1",
-          platform: "UoPeople",
-          category: "Communication",
-          credits: 3,
-          equivalencies: "Introduction to Academic Writing, Writing Fundamentals"
-        },
-        {
-          id: 2,
-          course_name: "College Algebra",
-          platform: "UoPeople", 
-          category: "Mathematics",
-          credits: 3,
-          equivalencies: "Algebra, Mathematical Functions, Problem Solving"
-        },
-        {
-          id: 3,
-          course_name: "Introduction to Psychology",
-          platform: "UoPeople",
-          category: "Social Sciences",
-          credits: 3,
-          equivalencies: "Psychology Fundamentals, Human Behavior, Research Methods"
-        },
-        {
-          id: 4,
-          course_name: "Principles of Biology",
-          platform: "UoPeople",
-          category: "Science",
-          credits: 3,
-          equivalencies: "Biology, Life Sciences, Scientific Method"
-        },
-        {
-          id: 5,
-          course_name: "World History",
-          platform: "UoPeople",
-          category: "History",
-          credits: 3,
-          equivalencies: "Historical Analysis, World Civilizations, Cultural Studies"
-        },
-        {
-          id: 6,
-          course_name: "Introduction to Philosophy",
-          platform: "UoPeople",
-          category: "Philosophy",
-          credits: 3,
-          equivalencies: "Critical Thinking, Ethics, Philosophical Methods"
-        },
-        {
-          id: 7,
-          course_name: "Computer Science Fundamentals",
-          platform: "UoPeople",
-          category: "Computer Science",
-          credits: 3,
-          equivalencies: "Programming Logic, Data Structures, Problem Solving"
-        },
-        // Sophia Learning courses
-        {
-          id: 8,
-          course_name: "Foundations of English Composition",
-          platform: "Sophia Learning",
-          category: "Communication",
-          credits: 3,
-          equivalencies: "Academic Writing, Essay Structure, Research Skills"
-        },
-        {
-          id: 9,
-          course_name: "College Algebra",
-          platform: "Sophia Learning",
-          category: "Mathematics",
-          credits: 3,
-          equivalencies: "Algebraic Functions, Polynomial Operations, Graphing"
-        },
-        {
-          id: 10,
-          course_name: "Introduction to Statistics",
-          platform: "Sophia Learning",
-          category: "Mathematics",
-          credits: 3,
-          equivalencies: "Statistical Analysis, Probability, Data Interpretation"
-        },
-        {
-          id: 11,
-          course_name: "Introduction to Ethics",
-          platform: "Sophia Learning",
-          category: "Philosophy",
-          credits: 3,
-          equivalencies: "Moral Philosophy, Ethical Decision Making, Applied Ethics"
-        },
-        {
-          id: 12,
-          course_name: "Environmental Science",
-          platform: "Sophia Learning",
-          category: "Science",
-          credits: 3,
-          equivalencies: "Environmental Systems, Ecology, Sustainability"
-        },
-        {
-          id: 13,
-          course_name: "Introduction to Psychology",
-          platform: "Sophia Learning",
-          category: "Social Sciences",
-          credits: 3,
-          equivalencies: "Human Behavior, Psychological Theories, Research Methods"
-        },
-        {
-          id: 14,
-          course_name: "Art History I",
-          platform: "Sophia Learning",
-          category: "Humanities",
-          credits: 3,
-          equivalencies: "Art Movements, Cultural Context, Visual Analysis"
-        },
-        {
-          id: 15,
-          course_name: "U.S. History I",
-          platform: "Sophia Learning",
-          category: "History",
-          credits: 3,
-          equivalencies: "Colonial America, Revolution, Early Republic"
-        }
-      ];
+      if (!hasRealCredentials) {
+        // Use sample data for demonstration when credentials aren't configured
+        const sampleData: DatabaseCourse[] = [
+          {
+            id: 1,
+            course_name: "Foundations of English Composition",
+            platform: "Sophia Learning",
+            category: "Communication",
+            credits: 3,
+            equivalencies: "Academic Writing, Essay Structure, Research Skills"
+          },
+          {
+            id: 2,
+            course_name: "College Algebra",
+            platform: "Sophia Learning",
+            category: "Mathematics",
+            credits: 3,
+            equivalencies: "Algebraic Functions, Polynomial Operations, Graphing"
+          },
+          {
+            id: 3,
+            course_name: "Introduction to Statistics",
+            platform: "Sophia Learning",
+            category: "Mathematics",
+            credits: 3,
+            equivalencies: "Statistical Analysis, Probability, Data Interpretation"
+          },
+          {
+            id: 4,
+            course_name: "Introduction to Ethics",
+            platform: "Sophia Learning",
+            category: "Philosophy",
+            credits: 3,
+            equivalencies: "Moral Philosophy, Ethical Decision Making, Applied Ethics"
+          },
+          {
+            id: 5,
+            course_name: "Environmental Science",
+            platform: "Sophia Learning",
+            category: "Science",
+            credits: 3,
+            equivalencies: "Environmental Systems, Ecology, Sustainability"
+          },
+          {
+            id: 6,
+            course_name: "Introduction to Psychology",
+            platform: "Sophia Learning",
+            category: "Social Sciences",
+            credits: 3,
+            equivalencies: "Human Behavior, Psychological Theories, Research Methods"
+          }
+        ];
+        setDatabaseCourses(sampleData);
+        console.info('Using sample course data. Connect to Supabase for real data.');
+        return;
+      }
       
-      setDatabaseCourses(mockData);
+      const { data, error } = await supabase
+        .from('courses')
+        .select('*');
+      
+      if (error) {
+        console.error('Supabase error:', error);
+        return;
+      }
+      
+      if (data) {
+        setDatabaseCourses(data);
+        console.info('Successfully loaded courses from Supabase database.');
+      }
     } catch (error) {
       console.error('Error fetching courses:', error);
     } finally {
