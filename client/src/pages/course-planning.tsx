@@ -92,78 +92,104 @@ export default function CoursePlanning() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white rounded-xl p-6 shadow-sm text-center hover:shadow-md transition-shadow"
-            >
-              <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold text-blue-600">1</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                General Education
-              </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Compare UoPeople and Sophia courses and pick what works best for you.
-              </p>
-            </motion.div>
+          <div className="relative">
+            {/* Connecting line for desktop */}
+            <div className="hidden lg:block absolute top-[4.5rem] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-blue-200 via-green-200 via-orange-200 to-purple-200"></div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition-all duration-300 relative z-10 border-2 border-blue-100"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-xl font-bold text-white">1</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  General Education
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Compare UoPeople and Sophia courses and pick what works best for you.
+                </p>
+                
+                {/* Arrow for desktop */}
+                <div className="hidden lg:block absolute -right-4 top-[4rem] text-blue-400">
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"/>
+                  </svg>
+                </div>
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-xl p-6 shadow-sm text-center hover:shadow-md transition-shadow"
-            >
-              <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold text-green-600">2</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                Core CS Pathway
-              </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Review the Computer Science courses you'll take at UoPeople.
-              </p>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition-all duration-300 relative z-10 border-2 border-green-100"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-xl font-bold text-white">2</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  Core CS Pathway
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Review the Computer Science courses you'll take at UoPeople.
+                </p>
+                
+                {/* Arrow for desktop */}
+                <div className="hidden lg:block absolute -right-4 top-[4rem] text-green-400">
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"/>
+                  </svg>
+                </div>
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white rounded-xl p-6 shadow-sm text-center hover:shadow-md transition-shadow"
-            >
-              <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold text-orange-600">3</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                Elective Courses
-              </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Choose from CS-related or other electives to fulfill your credit requirements.
-              </p>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition-all duration-300 relative z-10 border-2 border-orange-100"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-xl font-bold text-white">3</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  Elective Courses
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Choose from CS-related or other electives to fulfill your credit requirements.
+                </p>
+                
+                {/* Arrow for desktop */}
+                <div className="hidden lg:block absolute -right-4 top-[4rem] text-orange-400">
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"/>
+                  </svg>
+                </div>
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white rounded-xl p-6 shadow-sm text-center hover:shadow-md transition-shadow"
-            >
-              <div className="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold text-purple-600">4</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                Download Plan
-              </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Get your complete course roadmap with UoPeople and Sophia courses.
-              </p>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition-all duration-300 relative z-10 border-2 border-purple-100"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-xl font-bold text-white">4</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  Download Plan
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Get your complete course roadmap with UoPeople and Sophia courses.
+                </p>
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
