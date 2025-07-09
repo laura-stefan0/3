@@ -66,7 +66,7 @@ export default function Home() {
       </div>
       {/* What I'm Sharing */}
       <div className="py-24 bg-gradient-to-b from-white to-blue-50">
-        <div className="max-w-4xl mx-auto px-8">
+        <div className="max-w-6xl mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -82,21 +82,21 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm"
+              className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <span className="text-blue-600 font-semibold">📚</span>
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <span className="text-blue-600 text-sm">📚</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">My Study Notes & Resources</h3>
+                <h3 className="text-lg font-semibold text-gray-900">My Study Notes & Resources</h3>
               </div>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Course materials, study guides, notes and helpful resources I'm collecting as I take each class.
               </p>
             </motion.div>
@@ -106,15 +106,15 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm"
+              className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <span className="text-purple-600 font-semibold">🎯</span>
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <span className="text-purple-600 text-sm">🎯</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">My Course Choices</h3>
+                <h3 className="text-lg font-semibold text-gray-900">My Course Choices</h3>
               </div>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 The specific UoPeople and Sophia courses I'm taking, with honest reviews about difficulty and time commitment.
               </p>
             </motion.div>
@@ -124,15 +124,15 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm"
+              className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                  <span className="text-green-600 font-semibold">🧩</span>
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                  <span className="text-green-600 text-sm">🧩</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">A Course Planner</h3>
+                <h3 className="text-lg font-semibold text-gray-900">A Course Planner</h3>
               </div>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 A tool to help you choose the best mix of UoPeople and Sophia courses.
               </p>
             </motion.div>
