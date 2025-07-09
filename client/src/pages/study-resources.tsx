@@ -115,62 +115,7 @@ export default function StudyResources() {
 
   const fetchDatabaseCourses = async () => {
     try {
-      if (!hasRealCredentials) {
-        // Use sample data for demonstration when credentials aren't configured
-        const sampleData: DatabaseCourse[] = [
-          {
-            id: 1,
-            course_name: "Foundations of English Composition",
-            platform: "Sophia Learning",
-            category: "Communication",
-            credits: 3,
-            equivalencies: "Academic Writing, Essay Structure, Research Skills"
-          },
-          {
-            id: 2,
-            course_name: "College Algebra",
-            platform: "Sophia Learning",
-            category: "Mathematics",
-            credits: 3,
-            equivalencies: "Algebraic Functions, Polynomial Operations, Graphing"
-          },
-          {
-            id: 3,
-            course_name: "Introduction to Statistics",
-            platform: "Sophia Learning",
-            category: "Mathematics",
-            credits: 3,
-            equivalencies: "Statistical Analysis, Probability, Data Interpretation"
-          },
-          {
-            id: 4,
-            course_name: "Introduction to Ethics",
-            platform: "Sophia Learning",
-            category: "Philosophy",
-            credits: 3,
-            equivalencies: "Moral Philosophy, Ethical Decision Making, Applied Ethics"
-          },
-          {
-            id: 5,
-            course_name: "Environmental Science",
-            platform: "Sophia Learning",
-            category: "Science",
-            credits: 3,
-            equivalencies: "Environmental Systems, Ecology, Sustainability"
-          },
-          {
-            id: 6,
-            course_name: "Introduction to Psychology",
-            platform: "Sophia Learning",
-            category: "Social Sciences",
-            credits: 3,
-            equivalencies: "Human Behavior, Psychological Theories, Research Methods"
-          }
-        ];
-        setDatabaseCourses(sampleData);
-        console.info('Using sample course data. Connect to Supabase for real data.');
-        return;
-      }
+      console.log('Fetching courses from Supabase database...');
       
       const { data, error } = await supabase
         .from('courses')
@@ -183,7 +128,7 @@ export default function StudyResources() {
       
       if (data) {
         setDatabaseCourses(data);
-        console.info('Successfully loaded courses from Supabase database.');
+        console.info(`Successfully loaded ${data.length} courses from Supabase database.`);
       }
     } catch (error) {
       console.error('Error fetching courses:', error);
@@ -194,34 +139,52 @@ export default function StudyResources() {
 
 
 
-  // Convert database Sophia courses to match the Course interface
-  const sophiaCoursesConverted = databaseCourses
-    .filter(course => course.platform === 'Sophia Learning' || course.platform === 'Sophia')
-    .map(course => ({
+  // Convert database courses to match the Course interface
+  const databaseCoursesConverted = databaseCourses.map(course => {
+    const materials = [
+      course.material_1 && {
+        title: course.material_1,
+        description: 'Study material for this course',
+        type: 'Resource',
+        pages: 'N/A',
+        updated: 'Recently'
+      },
+      course.material_2 && {
+        title: course.material_2,
+        description: 'Additional study material',
+        type: 'Resource',
+        pages: 'N/A',
+        updated: 'Recently'
+      },
+      course.material_3 && {
+        title: course.material_3,
+        description: 'Supplementary material',
+        type: 'Resource',
+        pages: 'N/A',
+        updated: 'Recently'
+      }
+    ].filter(Boolean);
+
+    return {
       id: course.id.toString(),
       courseName: course.course_name,
-      courseCode: `SOPH-${course.id}`,
+      courseCode: course.course_code,
       credits: course.credits,
-      description: `${course.credits} credit course covering ${course.equivalencies}`,
-      completionTime: "2-4 weeks",
-      keyTopics: course.equivalencies.split(',').map(s => s.trim()).slice(0, 3),
-      tips: "Complete all milestone assessments and utilize the course materials efficiently for optimal learning.",
-      provider: "sophia" as const,
+      description: course.description,
+      completionTime: course.completion_time,
+      keyTopics: [], // Not used in the current display
+      tips: course.tips,
+      provider: course.platform.toLowerCase().includes('sophia') ? "sophia" as const : "uopeople" as const,
       category: course.category,
       categoryColor: getCategoryColor(course.category),
       categoryIcon: getCategoryIcon(course.category),
-      materials: [{
-        title: `${course.course_name} Study Guide`,
-        description: 'Comprehensive study materials and practice exercises',
-        type: 'PDF',
-        pages: '45-60',
-        updated: '2024'
-      }]
-    }));
+      materials
+    };
+  });
 
   const allCourses: Course[] = [
-    // Sophia Courses - now using comprehensive data
-    ...sophiaCoursesConverted,
+    // Database courses (both Sophia and others)
+    ...databaseCoursesConverted,
     // UoPeople Courses
     {
       id: "uopeople-math1201",
@@ -394,8 +357,12 @@ export default function StudyResources() {
     totalCourses: uopeopleCourses.length,
     totalMaterials: uopeopleCourses.reduce((sum, course) => sum + (course.materials?.length || 0), 0),
     totalPages: uopeopleCourses.reduce((sum, course) => 
-      sum + (course.materials?.reduce((matSum, mat) => 
-        matSum + parseInt(mat.pages.split(' ')[0]), 0) || 0), 0),
+      sum + (course.materials?.reduce((matSum, mat) => {
+        const pageCount = mat.pages && mat.pages.includes(' ') 
+          ? parseInt(mat.pages.split(' ')[0]) 
+          : 0;
+        return matSum + (isNaN(pageCount) ? 0 : pageCount);
+      }, 0) || 0), 0),
     lastUpdated: "3 days ago"
   };
 
@@ -544,19 +511,11 @@ export default function StudyResources() {
                     <CardTitle className="text-lg font-semibold leading-tight mb-1">
                       {course.courseName}
                     </CardTitle>
-                    {course.provider === 'sophia' && (
-                      <div className="mb-2">
-                        <p className="text-sm text-orange-600 font-medium">
-                          {(() => {
-                            const sophiaCourse = sophiaCourses.find(sc => sc.name === course.courseName);
-                            return sophiaCourse?.courseCode || 'SOPH-XXXX';
-                          })()} • 3 Credits
-                        </p>
-                        {course.courseName === 'College Algebra' && (
-                          <p className="text-xs text-gray-500">Fulfills UoPeople's MATH 1201 College Algebra</p>
-                        )}
-                      </div>
-                    )}
+                    <div className="mb-2">
+                      <p className="text-sm text-orange-600 font-medium">
+                        {course.courseCode} • {course.credits} Credits
+                      </p>
+                    </div>
                     <CardDescription className="text-sm text-gray-600 line-clamp-2 leading-relaxed">
                       {course.description}
                     </CardDescription>
@@ -680,21 +639,7 @@ export default function StudyResources() {
               <DialogHeader>
                 <div>
                   <DialogTitle className="text-2xl">{selectedCourse.courseName}</DialogTitle>
-                  {selectedCourse.courseCode ? (
-                    <p className="text-gray-600 mt-1">{selectedCourse.courseCode} • {selectedCourse.credits} Credits</p>
-                  ) : selectedCourse.provider === 'sophia' ? (
-                    <div className="mt-1">
-                      <p className="text-gray-600">
-                        {(() => {
-                          const sophiaCourse = sophiaCourses.find(sc => sc.name === selectedCourse.courseName);
-                          return sophiaCourse?.courseCode || 'SOPH-XXXX';
-                        })()} • 3 Credits
-                      </p>
-                      {selectedCourse.courseName === 'College Algebra' && (
-                        <p className="text-sm text-orange-600 mt-1">Fulfills UoPeople's MATH 1201 College Algebra</p>
-                      )}
-                    </div>
-                  ) : null}
+                  <p className="text-gray-600 mt-1">{selectedCourse.courseCode} • {selectedCourse.credits} Credits</p>
                   <DialogDescription className="text-base mt-2">
                     {selectedCourse.description}
                   </DialogDescription>
@@ -712,7 +657,11 @@ export default function StudyResources() {
                     <div className="flex justify-between items-center">
                       <span className="text-gray-600">Platform:</span>
                       <Badge className={selectedCourse.provider === 'sophia' ? 'bg-orange-100 text-orange-800' : 'bg-blue-100 text-blue-800'}>
-                        {selectedCourse.provider === 'sophia' ? 'Sophia Learning' : 'UoPeople'}
+                        {/* Get platform from database course */}
+                        {(() => {
+                          const dbCourse = databaseCourses.find(dc => dc.id.toString() === selectedCourse.id);
+                          return dbCourse ? dbCourse.platform : (selectedCourse.provider === 'sophia' ? 'Sophia Learning' : 'UoPeople');
+                        })()}
                       </Badge>
                     </div>
                     <div className="flex justify-between items-center">
@@ -742,27 +691,10 @@ export default function StudyResources() {
                     Pro Tips
                   </h3>
                   <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
-                    {selectedCourse.provider === 'sophia' ? (
-                      <div className="space-y-2">
-                        {(() => {
-                          const sophiaCourse = sophiaCourses.find(sc => sc.name === selectedCourse.courseName);
-                          return sophiaCourse?.tips?.map((tip, index) => (
-                            <div key={index} className="flex items-start text-sm text-gray-700">
-                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                              {tip}
-                            </div>
-                          )) || (
-                            <p className="text-sm text-gray-700">
-                              Study tips will be available soon for this course.
-                            </p>
-                          );
-                        })()}
-                      </div>
-                    ) : (
-                      <p className="text-sm text-gray-700">
-                        {selectedCourse.tips || "Study tips will be available soon for this course."}
-                      </p>
-                    )}
+                    <div className="flex items-start text-sm text-gray-700">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      {selectedCourse.tips || "Study tips will be available soon for this course."}
+                    </div>
                   </div>
                 </div>
 
@@ -772,34 +704,21 @@ export default function StudyResources() {
                     Available Materials
                   </h3>
                   <div className="space-y-2">
-                    <Button variant="outline" className="w-full justify-start text-left h-auto p-3">
-                      <BookOpen className="w-4 h-4 text-blue-600 mr-3 flex-shrink-0" />
-                      <div>
-                        <div className="font-medium text-sm">Study Guide</div>
-                        <div className="text-xs text-gray-500">Comprehensive course overview</div>
+                    {selectedCourse.materials && selectedCourse.materials.length > 0 ? (
+                      selectedCourse.materials.map((material, index) => (
+                        <Button key={index} variant="outline" className="w-full justify-start text-left h-auto p-3">
+                          <FileText className="w-4 h-4 text-blue-600 mr-3 flex-shrink-0" />
+                          <div>
+                            <div className="font-medium text-sm">{material.title}</div>
+                            <div className="text-xs text-gray-500">{material.description}</div>
+                          </div>
+                        </Button>
+                      ))
+                    ) : (
+                      <div className="text-sm text-gray-500 p-3">
+                        No materials available for this course.
                       </div>
-                    </Button>
-                    <Button variant="outline" className="w-full justify-start text-left h-auto p-3">
-                      <FileText className="w-4 h-4 text-blue-600 mr-3 flex-shrink-0" />
-                      <div>
-                        <div className="font-medium text-sm">Practice Tests</div>
-                        <div className="text-xs text-gray-500">Sample questions and exams</div>
-                      </div>
-                    </Button>
-                    <Button variant="outline" className="w-full justify-start text-left h-auto p-3">
-                      <Download className="w-4 h-4 text-blue-600 mr-3 flex-shrink-0" />
-                      <div>
-                        <div className="font-medium text-sm">Notes Template</div>
-                        <div className="text-xs text-gray-500">Structured note-taking format</div>
-                      </div>
-                    </Button>
-                    <Button variant="outline" className="w-full justify-start text-left h-auto p-3">
-                      <Star className="w-4 h-4 text-blue-600 mr-3 flex-shrink-0" />
-                      <div>
-                        <div className="font-medium text-sm">Success Tips</div>
-                        <div className="text-xs text-gray-500">Expert strategies and advice</div>
-                      </div>
-                    </Button>
+                    )}
                   </div>
                 </div>
               </div>

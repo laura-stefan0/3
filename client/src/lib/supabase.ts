@@ -1,23 +1,23 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://placeholder.supabase.co'
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'placeholder-key'
-
-// Check if we have real credentials
-const hasRealCredentials = import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_ANON_KEY
-
-if (!hasRealCredentials) {
-  console.warn('Using placeholder Supabase credentials. Please set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY environment variables for real database access.')
-}
+// Supabase credentials - using the provided URL and anon key
+const supabaseUrl = 'https://ylspsowwfygmenivbfhp.supabase.co'
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inlsc3Bzb3d3ZnlnbWVuaXZiZmhwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIwMzQ1MzIsImV4cCI6MjA2NzYxMDUzMn0.M6Lb3pqfcrC6hlhWCoMZ9DgDnIXmjYtqPRGvgwF0w8w'
 
 export const supabase = createClient(supabaseUrl, supabaseKey)
-export { hasRealCredentials }
+export const hasRealCredentials = true
 
 export interface DatabaseCourse {
   id: number;
   course_name: string;
+  course_code: string;
   platform: string;
   category: string;
   credits: number;
-  equivalencies: string;
+  description: string;
+  completion_time: string;
+  tips: string;
+  material_1?: string;
+  material_2?: string;
+  material_3?: string;
 }
